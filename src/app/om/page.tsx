@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
   ArrowDoodle,
-  CircleDoodle,
   Paperclip,
   Stamp,
   StarDoodle,
@@ -80,10 +79,6 @@ export default function OmPage() {
             <br />
             <span className="relative inline-block">
               Knudsen
-              <CircleDoodle
-                className="absolute -inset-x-3 -inset-y-2 w-[110%] pointer-events-none"
-                color="#b53826"
-              />
             </span>
           </h1>
           <p className="text-xl mt-6 max-w-3xl text-ink-soft leading-relaxed">
@@ -236,10 +231,6 @@ export default function OmPage() {
               «Økonomisk bærekraft i selskapet, å levere
               kvalitetsjournalistikk, frihet under ansvar — å styre
               bedriften selv»
-              <CircleDoodle
-                className="absolute -inset-x-3 -inset-y-2 w-[110%] pointer-events-none"
-                color="#b53826"
-              />
             </span>
           </h2>
         </div>

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { getSak, saker } from "@/lib/saker";
 import {
   ArrowDoodle,
-  CircleDoodle,
   Paperclip,
   PushPin,
   Stamp,
@@ -284,10 +283,6 @@ export default async function SakDetail({
           </p>
           <h2 className="headline-hand text-4xl mt-2 relative inline-block">
             Kontakt Kaspar Knudsen
-            <CircleDoodle
-              className="absolute -inset-x-2 -inset-y-1 w-[110%] pointer-events-none"
-              color="#b53826"
-            />
           </h2>
           <p className="text-ink-soft mt-4 max-w-xl">
             Frilansjournalist i Bergen. Kontor på USF Verftet, Nordnes.

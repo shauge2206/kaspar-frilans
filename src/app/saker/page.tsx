@@ -3,7 +3,6 @@ import Link from "next/link";
 import { saker } from "@/lib/saker";
 import {
   ArrowDoodle,
-  CircleDoodle,
   Paperclip,
   PushPin,
   StarDoodle,
@@ -44,10 +43,6 @@ export default function SakerPage() {
             <br />
             <span className="relative inline-block">
               fra Kaspar
-              <CircleDoodle
-                className="absolute -inset-x-3 -inset-y-2 w-[110%] pointer-events-none"
-                color="#b53826"
-              />
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed">

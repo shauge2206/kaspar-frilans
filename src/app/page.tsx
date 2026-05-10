@@ -4,7 +4,6 @@ import { saker } from "@/lib/saker";
 import { Typewriter } from "@/components/Typewriter";
 import {
   ArrowDoodle,
-  CircleDoodle,
   Paperclip,
   PushPin,
   Stamp,
@@ -74,11 +73,6 @@ export default function Home() {
                 speed={50}
                 delay={500}
                 cursor={false}
-              />
-              <CircleDoodle
-                className="absolute -inset-x-3 -inset-y-2 w-[110%] pointer-events-none"
-                style={{ opacity: 0.7 }}
-                color="#b53826"
               />
             </span>
             <br />
