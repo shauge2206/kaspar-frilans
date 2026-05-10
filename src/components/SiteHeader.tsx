@@ -26,7 +26,7 @@ export function SiteHeader() {
             aria-label="Til forsiden"
           >
             <span className="typewriter text-[0.68rem] tracking-[0.32em] text-ink-fade uppercase">
-              Felt&shy;bok&nbsp;·&nbsp;Bergen
+              Frilansjournalist&nbsp;·&nbsp;Bergen
             </span>
             <span className="headline-hand text-3xl md:text-4xl mt-1">
               Kaspar&nbsp;Knudsen
@@ -57,7 +57,7 @@ export function SiteHeader() {
 
           <div className="hidden lg:flex flex-col items-end pt-1">
             <span className="typewriter text-[0.68rem] tracking-[0.22em] text-ink-fade">
-              FELTNOTAT NR. 047
+              KONTOR
             </span>
             <span className="handwritten text-pen-blue text-base">
               USF Verftet, Nordnes

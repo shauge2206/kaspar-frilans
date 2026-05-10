@@ -22,32 +22,28 @@ export default function Home() {
         <aside className="col-span-12 md:col-span-3 lg:col-span-3 relative">
           <div className="md:sticky md:top-8">
             <div className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-              Notert
+              Frilansjournalist
             </div>
             <p className="handwritten-red text-2xl leading-tight mt-1">
-              Tirsdag
-              <br />
-              <span className="text-ink/80">7. mai</span>
+              Bergen
             </p>
             <div className="mt-4 typewriter text-[0.68rem] tracking-[0.16em] text-ink-fade">
-              KL. 09.42
-              <br />
               USF VERFTET
               <br />
               NORDNES
             </div>
 
             <div className="mt-6 hidden md:block">
-              <Stamp label="Fra felt" rotation={-9} />
+              <Stamp label="Bergen" rotation={-9} />
             </div>
 
             <div className="hidden md:block mt-8 max-w-[12rem]">
               <p className="margin-note text-lg leading-snug">
-                NB! sjekk om
+                Mastergrad i
                 <br />
-                fiskeridepartementet
+                undersøkende
                 <br />
-                har svart i dag —
+                journalistikk
               </p>
               <ArrowDoodle
                 className="w-24 mt-1 -ml-2"
@@ -65,7 +61,7 @@ export default function Home() {
 
           <h1 className="headline-hand text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] mt-3 leading-[0.95]">
             <Typewriter
-              text="Historier som"
+              text="Kaspar"
               as="span"
               speed={48}
               cursor={false}
@@ -73,10 +69,10 @@ export default function Home() {
             <br />
             <span className="relative inline-block">
               <Typewriter
-                text="lukter sjø,"
+                text="Knudsen"
                 as="span"
                 speed={50}
-                delay={750}
+                delay={500}
                 cursor={false}
               />
               <CircleDoodle
@@ -87,21 +83,19 @@ export default function Home() {
             </span>
             <br />
             <Typewriter
-              text="diesel og kaffe."
+              text="frilansjournalist."
               as="span"
               speed={45}
-              delay={1700}
+              delay={1200}
             />
           </h1>
 
           <div className="mt-10 max-w-2xl">
             <p className="text-lg md:text-xl leading-relaxed">
-              Jeg er <span className="handwritten-red">Kaspar Knudsen</span> —
-              frilansjournalist med base på USF Verftet i Bergen. I femten år
-              har jeg dratt ut til kaier, kontorer og kjøkkenbord langs
-              kysten for å finne historiene som ikke skriver seg selv.
-              Spesialfelt: gravesaker, arbeidsliv, kriminalsaker, fiskeri og
-              kystnæring.
+              Frilansjournalist med kontor på USF Verftet, Nordnes i Bergen.
+              Mastergrad i undersøkende journalistikk og 15 år i mediebransjen.
+              Leverer kvalitetsjournalistikk til nisjepublikasjoner som
+              Fiskeribladet, Intrafish og Kystens Næringsliv.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -109,11 +103,11 @@ export default function Home() {
                 href="/saker"
                 className="inline-flex items-center gap-3 bg-ink text-paper px-5 py-3 typewriter text-[0.78rem] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
               >
-                Bla gjennom feltboka
+                Se saker
                 <span aria-hidden="true">→</span>
               </Link>
               <Link href="/kontakt" className="pencil-link text-base">
-                Eller send melding
+                Kontakt
               </Link>
             </div>
           </div>
@@ -121,12 +115,15 @@ export default function Home() {
           {/* Values strip — checklist style */}
           <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 max-w-2xl text-sm">
             {[
-              "Kvalitet før hastverk",
-              "Fra felt — alltid",
-              "Menneskenære vinkler",
-              "Kritisk og undersøkende",
-              "Fleksibel på leveranse",
-              "Tekst og foto i ett",
+              "Likeverd mellom mennesker",
+              "Empati",
+              "Høflighet og vennlighet",
+              "Holder ord og avtaler",
+              "Ærlighet",
+              "Samfunnsengasjert",
+              "Kritisk tenkning",
+              "Nysgjerrig",
+              "Åpen og inkluderende",
             ].map((v) => (
               <div key={v} className="flex items-start">
                 <span
@@ -158,15 +155,9 @@ export default function Home() {
             [
               "Fiskeribladet",
               "★",
-              "Bergens Tidende",
-              "★",
               "Intrafish",
               "★",
               "Kystens Næringsliv",
-              "★",
-              "Klassekampen",
-              "★",
-              "NRK Vestland",
               "★",
             ].map((p, i) => (
               <span key={`${dup}-${i}`} className="shrink-0">
@@ -270,30 +261,30 @@ export default function Home() {
               Kapittel 3 — Tjenester
             </p>
             <h2 className="headline-hand text-4xl md:text-5xl mt-1">
-              Det jeg leverer
+              Tjenester
             </h2>
 
             <ul className="mt-6 space-y-3 pl-16 pr-4">
               {[
                 {
-                  tittel: "Reportasjer fra felt",
+                  tittel: "Innsalg av enkelt-ideer",
                   detalj:
-                    "Lengre tekster med eget bildemateriale — kaier, fabrikker, kjøkkenbord.",
+                    "Forslag til saker for redaksjonen, klar til oppdrag.",
                 },
                 {
-                  tittel: "Gravesaker",
+                  tittel: "Påbegynte og ferdige artikler",
                   detalj:
-                    "Tålmodig dokumentasjon, kildearbeid og innsynsbegjæringer.",
+                    "Innsalg av artikler — tekst og bilder samlet.",
                 },
                 {
-                  tittel: "Portretter og menneskenære saker",
+                  tittel: "Enkeltoppdrag",
                   detalj:
-                    "Empatiske intervjuer som lar mennesker komme til orde.",
+                    "Stykkpris per sak. Kritisk og undersøkende journalistikk.",
                 },
                 {
-                  tittel: "Bilde og foto",
+                  tittel: "Periode-jobbing i redaksjoner",
                   detalj:
-                    "Egne foto som følger teksten, eller bestilt billedstoff.",
+                    "Betalt pr periode. Tilgang til gjenbruk av artikler.",
                 },
               ].map((it) => (
                 <li key={it.tittel} className="flex items-start">
@@ -305,10 +296,6 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-
-            <p className="mt-8 handwritten-red text-xl pl-16">
-              Ring meg, send e-post, eller stikk innom verkstedet.
-            </p>
           </div>
         </div>
 
@@ -319,24 +306,18 @@ export default function Home() {
               style={{ transform: "rotate(-6deg)" }}
             />
             <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-              Kontakt — kort utgave
+              Kontakt
             </p>
             <p className="handwritten text-pen-blue text-2xl mt-2">
-              Skriv til Kaspar
+              Kaspar Knudsen
             </p>
             <p className="text-ink-soft mt-3 leading-relaxed">
-              Trenger du en sak skrevet, eller noen som drar ut og ser etter?
-              Send et par linjer om hva det gjelder, så svarer jeg samme dag.
+              Enkeltpersonforetak, Bergen. Kontor på USF Verftet, Nordnes.
             </p>
             <div className="mt-5 space-y-1 typewriter text-sm">
               <p>
-                <span className="text-ink-fade">e-post:</span>{" "}
-                <a href="mailto:kaspar@feltbok.no" className="pencil-link">
-                  kaspar@feltbok.no
-                </a>
-              </p>
-              <p>
-                <span className="text-ink-fade">tlf:</span> +47 99 88 77 66
+                <span className="text-ink-fade">adresse:</span>{" "}
+                USF Verftet, Nordnes, Bergen
               </p>
             </div>
 

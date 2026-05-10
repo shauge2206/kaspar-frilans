@@ -10,9 +10,9 @@ import {
 } from "@/components/Decor";
 
 export const metadata = {
-  title: "Saker fra felt — Kaspar Knudsen",
+  title: "Saker — Kaspar Knudsen",
   description:
-    "Utvalgte reportasjer, gravesaker og portretter av frilansjournalist Kaspar Knudsen. Publisert i Bergens Tidende, Fiskeribladet og flere.",
+    "Utvalgte saker av frilansjournalist Kaspar Knudsen. Publisert i Fiskeribladet, Intrafish, Kystens Næringsliv og Bergens Tidende.",
 };
 
 export default function SakerPage() {
@@ -22,19 +22,12 @@ export default function SakerPage() {
       <section className="grid grid-cols-12 gap-x-6 lg:gap-x-10 pt-8">
         <aside className="col-span-12 md:col-span-3">
           <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-            Side 14 — 18
+            Saker
           </p>
           <p className="handwritten-red text-2xl mt-1 leading-tight">
-            Saker
+            Utvalgte
             <br />
-            fra felt
-          </p>
-          <p className="margin-note text-base mt-4 max-w-[12rem]">
-            festet med
-            <br />
-            stifter, tape og
-            <br />
-            knappenåler.
+            publikasjoner
           </p>
           <ArrowDoodle
             className="w-24 mt-2 hidden md:block"
@@ -44,13 +37,13 @@ export default function SakerPage() {
 
         <div className="col-span-12 md:col-span-9">
           <p className="typewriter text-[0.72rem] tracking-[0.22em] text-ink-fade uppercase">
-            Kapittel 4 · Mappa
+            Publikasjoner
           </p>
           <h1 className="headline-hand text-5xl md:text-7xl mt-2 leading-[0.95]">
-            Hva som ligger
+            Saker
             <br />
             <span className="relative inline-block">
-              i feltboka
+              fra Kaspar
               <CircleDoodle
                 className="absolute -inset-x-3 -inset-y-2 w-[110%] pointer-events-none"
                 color="#b53826"
@@ -58,9 +51,8 @@ export default function SakerPage() {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed">
-            Et utvalg saker fra de siste årene — fra gravesaker langs kysten
-            til reportasjer fra hverdagslivet i Bergen. Alle bildene er fra
-            felt; alle ordene har vært gjennom blyant før blekk.
+            Et utvalg saker publisert i Fiskeribladet, Intrafish, Kystens
+            Næringsliv og Bergens Tidende.
           </p>
         </div>
       </section>
@@ -166,16 +158,18 @@ export default function SakerPage() {
             />
             <div>
               <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-                Lapp på korktavla
+                Publikasjoner
               </p>
               <p className="handwritten-red text-3xl mt-3 leading-tight">
-                Flere saker
+                Fiskeribladet
                 <br />
-                kommer snart —
+                Intrafish
+                <br />
+                Kystens Næringsliv
               </p>
               <p className="text-ink-soft mt-3">
-                Akkurat nå jobber jeg med en lengre reportasje fra
-                lakseslakteriene i Hardanger. Følg med utover sommeren.
+                Kvalitetsjournalistikk levert til nisjepublikasjoner.
+                Stykkpris per sak eller betalt pr periode.
               </p>
             </div>
             <div className="mt-6">
@@ -183,7 +177,7 @@ export default function SakerPage() {
                 href="/kontakt"
                 className="pencil-link typewriter text-sm tracking-[0.16em] uppercase"
               >
-                Tips meg om en sak →
+                Kontakt →
               </Link>
             </div>
           </li>

@@ -11,21 +11,17 @@ export function SiteFooter() {
               Om Kaspar
             </span>
             <p className="typewriter text-sm text-ink mt-2">
-              Frilansjournalist med base på USF Verftet i Bergen.
+              Frilansjournalist med kontor på USF Verftet, Nordnes i Bergen.
             </p>
           </div>
 
           <div>
             <span className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-              Kontorpost
+              Adresse
             </span>
             <ul className="mt-2 space-y-1 text-sm">
-              <li>USF Verftet, Georgernes Verft 12</li>
-              <li>5011 Bergen, Nordnes</li>
-              <li className="typewriter text-xs mt-2">
-                kaspar@feltbok.no
-              </li>
-              <li className="typewriter text-xs">+47 99 88 77 66</li>
+              <li>USF Verftet</li>
+              <li>Nordnes, Bergen</li>
             </ul>
           </div>
 
@@ -36,7 +32,7 @@ export function SiteFooter() {
             <ul className="mt-2 space-y-1 text-sm">
               <li>
                 <Link href="/saker" className="pencil-link">
-                  Saker fra felt
+                  Saker
                 </Link>
               </li>
               <li>
@@ -46,7 +42,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/kontakt" className="pencil-link">
-                  Kontakt og oppdrag
+                  Kontakt
                 </Link>
               </li>
             </ul>
@@ -55,10 +51,11 @@ export function SiteFooter() {
 
         <div className="border-t border-dotted border-ink/25 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
           <p className="typewriter text-[0.7rem] tracking-[0.18em] text-ink-fade uppercase">
-            © {year} Kaspar Knudsen — Org.nr. 925&nbsp;437&nbsp;108
+            © {year} Kaspar Knudsen
           </p>
-          <p className="handwritten-red text-base">
-            Skrevet for hånd, satt med blyant og blekk.
+          <p className="handwritten-red text-base max-w-2xl md:text-right">
+            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+            frihet under ansvar — å styre bedriften selv»
           </p>
         </div>
       </div>

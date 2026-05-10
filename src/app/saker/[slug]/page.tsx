@@ -23,7 +23,7 @@ export async function generateMetadata({
   const sak = getSak(slug);
   if (!sak) return {};
   return {
-    title: `${sak.tittel} — Feltbok`,
+    title: `${sak.tittel} — Kaspar Knudsen`,
     description: sak.ingress,
   };
 }
@@ -49,7 +49,7 @@ export default async function SakDetail({
           href="/saker"
           className="pencil-link typewriter text-[0.78rem] tracking-[0.16em] uppercase"
         >
-          ← Tilbake til feltboka
+          ← Tilbake til saker
         </Link>
       </div>
 
@@ -72,9 +72,7 @@ export default async function SakDetail({
           </div>
           <div className="hidden md:block mt-8 max-w-[12rem]">
             <p className="margin-note text-lg leading-snug">
-              tatt opp på diktafon —
-              <br />
-              transkribert samme natt.
+              {sak.publikasjon}
             </p>
             <ArrowDoodle
               className="w-20 mt-1 -ml-2"
@@ -142,7 +140,7 @@ export default async function SakDetail({
                 Stikkord
               </p>
               <ul className="mt-2 flex flex-wrap gap-2">
-                {[sak.sted, sak.publikasjon, "Reportasje", "Fra felt"].map(
+                {[sak.sted, sak.publikasjon, sak.stempel].map(
                   (tag) => (
                     <li
                       key={tag}
@@ -156,12 +154,12 @@ export default async function SakDetail({
             </div>
             <div>
               <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-                Notater i marg
+                Publisert
               </p>
               <p className="margin-note text-lg leading-snug mt-2">
-                «hør på pause-
+                {sak.publikasjon}
                 <br />
-                opptaket fra 14.06»
+                {sak.dato}
               </p>
             </div>
           </div>
@@ -187,8 +185,8 @@ export default async function SakDetail({
                 </p>
               ))}
 
-              <p className="handwritten-red text-2xl mt-10">
-                — fortsettelse i utklippsbok →
+              <p className="typewriter text-xs text-ink-fade tracking-[0.16em] uppercase mt-10">
+                Publisert i {sak.publikasjon} · {sak.dato}
               </p>
             </div>
           </div>
@@ -200,9 +198,9 @@ export default async function SakDetail({
         <div className="flex items-end justify-between flex-wrap gap-3 mb-6">
           <div>
             <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-              Utklippsbok
+              Bilder
             </p>
-            <h2 className="headline-hand text-4xl mt-1">Bilder fra felt</h2>
+            <h2 className="headline-hand text-4xl mt-1">Bilder</h2>
           </div>
           <p className="typewriter text-xs text-ink-fade">
             Foto: {sak.fotograf}
@@ -282,18 +280,17 @@ export default async function SakDetail({
             style={{ transform: "rotate(-4deg)" }}
           />
           <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-            Vil du jobbe med Kaspar?
+            Kontakt
           </p>
           <h2 className="headline-hand text-4xl mt-2 relative inline-block">
-            Send et tips eller et oppdrag
+            Kontakt Kaspar Knudsen
             <CircleDoodle
               className="absolute -inset-x-2 -inset-y-1 w-[110%] pointer-events-none"
               color="#b53826"
             />
           </h2>
           <p className="text-ink-soft mt-4 max-w-xl">
-            Trenger du noen som kan dra ut, snakke med folk, og levere både
-            tekst og bilde? Da finner du meg her:
+            Frilansjournalist i Bergen. Kontor på USF Verftet, Nordnes.
           </p>
           <div className="mt-5 flex flex-wrap gap-4">
             <Link
@@ -303,7 +300,7 @@ export default async function SakDetail({
               Til kontakt →
             </Link>
             <Link href="/saker" className="pencil-link typewriter text-sm">
-              Tilbake til alle saker
+              Tilbake til saker
             </Link>
           </div>
         </div>

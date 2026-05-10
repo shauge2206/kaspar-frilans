@@ -31,9 +31,9 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kaspar Knudsen — frilansjournalist | Feltbok",
+  title: "Kaspar Knudsen — frilansjournalist",
   description:
-    "Frilansjournalist Kaspar Knudsen. Reportasjer, gravesaker og menneskenære historier fra felt — basert på USF Verftet, Bergen.",
+    "Frilansjournalist i Bergen med kontor på USF Verftet, Nordnes. Mastergrad i undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.",
 };
 
 export default function RootLayout({
