@@ -7,14 +7,14 @@ export function SiteFooter() {
     <footer className="relative mt-32 border-t border-line/70 bg-paper/60 backdrop-blur-sm">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-6 py-14 md:grid-cols-12 md:px-10">
         <div className="md:col-span-5">
-          <p className="font-display text-[1.6rem] leading-tight tracking-tight text-ink">
-            Kvalitetsjournalistikk —
-            <br />
-            <span className="text-coral-500">frihet under ansvar.</span>
+          <p className="font-display text-[1.25rem] leading-snug tracking-tight text-ink italic">
+            «Økonomisk bærekraft i selskapet, å levere
+            kvalitetsjournalistikk, frihet under ansvar — å styre
+            bedriften <span className="text-coral-500">selv»</span>
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-mute">
-            Kaspar Knudsen er frilansjournalist i Bergen med graving og
-            featurearbeid for kyst- og næringspresse.
+            Kaspar Knudsen — frilansjournalist i Bergen.
+            USF Verftet, Nordnes.
           </p>
         </div>
 
@@ -73,6 +73,7 @@ export function SiteFooter() {
                 +47 900 00 000
               </a>
             </li>
+            <li className="text-mute">USF Verftet, Nordnes</li>
             <li className="text-mute">Bergen, Norge</li>
           </ul>
         </div>

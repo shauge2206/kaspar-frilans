@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s — Kaspar Knudsen",
   },
   description:
-    "Kaspar Knudsen er frilansjournalist i Bergen. Kvalitetsjournalistikk om kyst, hav og næringsliv — med frihet under ansvar.",
+    "Kaspar Knudsen — frilansjournalist på USF Verftet, Bergen. Kvalitetsjournalistikk og gravejournalistikk levert til Fiskeribladet, Intrafish og Kystens Næringsliv.",
   openGraph: {
     type: "website",
     locale: "nb_NO",

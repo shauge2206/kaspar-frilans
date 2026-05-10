@@ -8,47 +8,44 @@ import { MagneticButton } from "@/components/magnetic-button";
 export const metadata: Metadata = {
   title: "Om Kaspar",
   description:
-    "Bergensbasert frilansjournalist med vekt på graving, kyst og næringsliv.",
+    "Frilansjournalist i Bergen med mastergrad i undersøkende journalistikk og 15 år i mediebransjen.",
 };
 
 const arbeidsområder = [
-  "Gravende reportasje",
-  "Featurearbeid",
-  "Næringslivsjournalistikk",
-  "Fiskeri & havbruk",
-  "Foto i felt",
-  "Tekstredigering",
+  "Gravejournalistikk",
+  "Reportasje fra felt",
+  "Arbeidsliv",
+  "Krim",
+  "Bilder og tekst",
+  "Menneskenære historier",
 ];
 
 const publikasjoner = [
-  { navn: "Fiskeribladet", tag: "Fast bidragsyter" },
-  { navn: "Bergens Tidende", tag: "Reportasje" },
-  { navn: "Intrafish", tag: "Næringsliv" },
-  { navn: "Kystens Næringsliv", tag: "Graving" },
-  { navn: "Dagens Næringsliv", tag: "Innleid" },
-  { navn: "NRK", tag: "Tips/research" },
+  { navn: "Kystens Næringsliv", tag: "Første kunde" },
+  { navn: "Intrafish", tag: "Første kunde" },
+  { navn: "Fiskeribladet", tag: "Første kunde" },
 ];
 
 const verdier = [
   {
     nr: "01",
-    tittel: "Frihet under ansvar",
-    body: "Frilansrollen gir meg friheten til å si nei — og pliktene som følger med å si ja. Ingen sak går i trykken før den tåler den prøven.",
+    tittel: "Likeverd og empati",
+    body: "Møter mennesker med likeverd og empati i alle ledd av journalistikken.",
   },
   {
     nr: "02",
-    tittel: "Kildevern først",
-    body: "Det første jeg lover en kilde er at jeg holder ord. Det andre er at jeg vurderer alt på nytt før publisering.",
+    tittel: "Holder ord og avtaler",
+    body: "Høflighet, vennlighet og ærlighet — holder det som blir avtalt.",
   },
   {
     nr: "03",
-    tittel: "Tid som verktøy",
-    body: "Noen saker krever uker, noen krever år. Jeg kalkulerer tid som en del av kvaliteten, ikke som motsats til den.",
+    tittel: "Samfunnsengasjert",
+    body: "Kritisk tenkning og nysgjerrighet driver det journalistiske arbeidet.",
   },
   {
     nr: "04",
-    tittel: "Klart språk",
-    body: "Jeg skriver så folk forstår — uten å miste presisjon. Sterke historier overlever sin egen kompleksitet.",
+    tittel: "Åpen og inkluderende",
+    body: "Frihet under ansvar — å styre bedriften selv og levere kvalitetsjournalistikk.",
   },
 ];
 
@@ -68,38 +65,39 @@ export default function OmPage() {
 
               <h1 className="mt-7 font-display text-[clamp(2.4rem,4vw+1rem,5.4rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
                 <WordReveal
-                  text="Bergensbasert."
+                  text="Frilansjournalist"
                   delay={0.05}
                 />
                 <br />
                 <WordReveal
-                  text="Bredt nedslag."
-                  highlightWords={["nedslag."]}
+                  text="i Bergen."
+                  highlightWords={["Bergen."]}
                   delay={0.35}
                 />
                 <br />
                 <WordReveal
-                  text="Lange linjer."
+                  text="USF Verftet, Nordnes."
                   delay={0.7}
                 />
               </h1>
 
               <Reveal delay={1.05} className="mt-10 grid gap-6 max-w-[58ch]">
                 <p className="text-[1.05rem] leading-relaxed text-ink-2">
-                  Jeg heter <strong className="font-medium text-ink">Kaspar Knudsen</strong> og jobber som frilansjournalist
-                  med utgangspunkt i Bergen. Etter år som ansatt i regional
-                  presse valgte jeg friheten — og forpliktelsene — som
-                  følger med å arbeide selvstendig.
+                  <strong className="font-medium text-ink">Kaspar Knudsen</strong> er
+                  frilansjournalist i Bergen med kontor på USF Verftet,
+                  Nordnes. Mastergrad i undersøkende journalistikk og 15 år
+                  i mediebransjen.
                 </p>
                 <p className="text-[1.05rem] leading-relaxed text-ink-2">
-                  Jeg skriver mest om kyst, hav og næringsliv, men beveger
-                  meg gjerne der historien ber meg gå: gravende reportasje,
-                  featurearbeid, og portretter som ikke nøyer seg med
-                  overflaten.
+                  Leverer kvalitetsjournalistikk til nisjepublikasjoner som
+                  Fiskeribladet, Intrafish og Kystens Næringsliv.
+                  Gravejournalistikk innenfor arbeidsliv, krim og flere
+                  områder — drar ut i felt.
                 </p>
-                <p className="text-[1.05rem] leading-relaxed text-ink-2">
-                  Mitt arbeid har stått på trykk i blant annet Fiskeribladet,
-                  Bergens Tidende, Intrafish og Kystens Næringsliv.
+                <p className="text-[1.05rem] leading-relaxed text-ink-2 italic">
+                  «Økonomisk bærekraft i selskapet, å levere
+                  kvalitetsjournalistikk, frihet under ansvar — å styre
+                  bedriften selv»
                 </p>
               </Reveal>
             </div>
@@ -107,12 +105,12 @@ export default function OmPage() {
             <Reveal delay={0.6} y={36} className="md:col-span-5 md:pt-6">
               <ParallaxImage
                 src="/images/saker/sak-2/bilde-1.jpeg"
-                alt="Kaspar Knudsen i felt"
+                alt="Fra reportasje på Skogsvåg, Øygarden"
                 className="aspect-[4/5] rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft"
                 offset={50}
               />
               <p className="mt-3 text-xs leading-relaxed text-mute">
-                Foto fra Skogsvåg, Øygarden — reportasje for Bergens Tidende, 2023.
+                Fra reportasje på Skogsvåg, Øygarden — Bergens Tidende, 2023.
               </p>
             </Reveal>
           </div>
@@ -167,10 +165,10 @@ export default function OmPage() {
                 </h2>
               </div>
               <p className="md:col-span-7 max-w-[60ch] text-base leading-relaxed text-ink-2">
-                Jeg påtar meg oppdrag fra redaksjoner, fagblader og
-                bransjepresse — som regel skrevet, men gjerne med eget foto
-                fra felt. Korte tips og lengre prosjekter behandles likt:
-                grundig research først, skriving etterpå.
+                Salgsmodell: innsalg av enkelt-ideer, innsalg av påbegynte
+                eller ferdige artikler, enkeltoppdrag og periode-jobbing i
+                redaksjoner. Prismodell: stykkpris per sak og betalt pr
+                periode.
               </p>
             </div>
           </Reveal>
@@ -191,7 +189,7 @@ export default function OmPage() {
         <div className="mx-auto max-w-[1280px]">
           <Reveal>
             <h2 className="mb-12 font-display text-[clamp(1.8rem,2.6vw+1rem,3.2rem)] font-medium leading-[1.05] tracking-tight text-ink">
-              Fire prinsipper jeg holder fast på.
+              Kjerneverdier
             </h2>
           </Reveal>
           <StaggerGroup className="grid gap-5 md:grid-cols-2">
@@ -229,11 +227,11 @@ export default function OmPage() {
                   Tilgjengelig for oppdrag
                 </p>
                 <p className="mt-2 max-w-[34ch] font-display text-[clamp(1.4rem,1.6vw+0.8rem,2.2rem)] font-medium leading-tight tracking-tight text-ink">
-                  Har du en sak du tror jeg burde se på?
+                  Enkeltoppdrag eller periode-jobbing i redaksjoner.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <MagneticButton href="/kontakt">Send tips</MagneticButton>
+                <MagneticButton href="/kontakt">Ta kontakt</MagneticButton>
                 <Link
                   href="/saker"
                   className="link-underline px-1 py-2 font-mono text-[0.78rem] uppercase tracking-[0.18em] text-ink"

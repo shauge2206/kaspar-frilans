@@ -8,7 +8,7 @@ import { WordReveal } from "@/components/word-reveal";
 export const metadata: Metadata = {
   title: "Saker",
   description:
-    "Et utvalg gravesaker, reportasjer og featurearbeid av Kaspar Knudsen.",
+    "Utvalgte saker av Kaspar Knudsen — gravejournalistikk, reportasje og feature.",
 };
 
 const sectionLabel: Record<(typeof saker)[number]["seksjon"], string> = {
@@ -30,20 +30,20 @@ export default function SakerPage() {
           </Reveal>
 
           <h1 className="mt-7 max-w-[18ch] font-display text-[clamp(2.6rem,4.6vw+1rem,5.8rem)] font-medium leading-[1.02] tracking-[-0.02em] text-ink">
-            <WordReveal text="Saker som har" delay={0.05} />
+            <WordReveal text="Saker" delay={0.05} />
             <br />
             <WordReveal
-              text="fått leve i bredt format."
-              highlightWords={["leve"]}
+              text="Graving og reportasje."
+              highlightWords={["Graving"]}
               delay={0.4}
             />
           </h1>
 
           <Reveal delay={0.95} className="mt-8 max-w-[52ch]">
             <p className="text-[1.05rem] leading-relaxed text-ink-2">
-              Et utvalg av arbeidet mitt — graving, reportasje og feature
-              — laget for redaksjoner som var villige til å sette av tid
-              og spalteplass.
+              Et utvalg saker — gravejournalistikk, reportasje og feature
+              levert til redaksjoner som Fiskeribladet, Intrafish og
+              Kystens Næringsliv.
             </p>
           </Reveal>
         </div>

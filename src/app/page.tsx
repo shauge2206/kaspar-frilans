@@ -8,30 +8,27 @@ import { ParallaxImage } from "@/components/parallax-image";
 
 const values = [
   {
-    title: "Graving",
-    body: "Lange linjer i kompliserte saker. Innsynsbegjæringer, kildearbeid og tålmodighet over tid.",
+    title: "Gravejournalistikk",
+    body: "Undersøkende journalistikk innenfor arbeidsliv, krim og flere områder.",
   },
   {
-    title: "Reportasje",
-    body: "Mennesker først. Jeg reiser dit historien er, og lar de jeg møter komme til orde.",
+    title: "Reportasje fra felt",
+    body: "Drar ut i felt og leverer menneskenære historier — bilder og tekst.",
   },
   {
-    title: "Kyst og hav",
-    body: "Fiskeri, havbruk og næringsliv langs kysten — et felt jeg kjenner særlig godt.",
+    title: "Kvalitet og fleksibilitet",
+    body: "Stykkpris per sak eller betalt pr periode. Enkeltoppdrag eller periode-jobbing i redaksjoner.",
   },
   {
-    title: "Foto",
-    body: "Jeg leverer egne bilder fra felt når oppdraget krever det. Stillferdig, dokumentarisk.",
+    title: "Gjenbruk",
+    body: "Bilder og tekst som kan brukes på tvers — kritisk og undersøkende journalistikk.",
   },
 ];
 
 const publikasjoner = [
-  "Fiskeribladet",
-  "Bergens Tidende",
-  "Intrafish",
   "Kystens Næringsliv",
-  "NRK",
-  "Dagens Næringsliv",
+  "Intrafish",
+  "Fiskeribladet",
 ];
 
 export default function HomePage() {
@@ -54,23 +51,22 @@ export default function HomePage() {
 
               <h1 className="mt-7 font-display text-[clamp(2.6rem,4.6vw+1.2rem,6.4rem)] font-medium leading-[1.02] tracking-[-0.022em] text-ink">
                 <WordReveal
-                  text="Saker som fortjener tid"
-                  highlightWords={["fortjener"]}
+                  text="Kaspar Knudsen"
                   delay={0.05}
                 />
                 <br />
                 <WordReveal
-                  text="og lesere som krever presisjon."
+                  text="Frilansjournalist i Bergen"
+                  highlightWords={["Bergen"]}
                   delay={0.45}
                 />
               </h1>
 
               <Reveal as="p" delay={1.05} y={14}>
                 <span className="mt-8 block max-w-[52ch] text-[1.05rem] leading-relaxed text-ink-2 md:text-[1.15rem]">
-                  Kaspar Knudsen er frilansjournalist med base i Bergen.
-                  Han skriver gravesaker og reportasje for kyst- og næringspresse —
-                  med kildevern, dokumentasjon og frihet under ansvar som
-                  bærebjelker.
+                  Frilansjournalist med base på USF Verftet, Bergen.
+                  Mastergrad i undersøkende journalistikk. Leverer til
+                  Fiskeribladet, Intrafish og Kystens Næringsliv.
                 </span>
               </Reveal>
 
@@ -159,9 +155,9 @@ export default function HomePage() {
                   id="utvalgte-saker"
                   className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.6rem)] font-medium leading-[1.02] tracking-tight text-ink"
                 >
-                  Tre saker.
+                  Utvalgte saker
                   <br />
-                  <span className="text-mute">Tre måter å fortelle på.</span>
+                  <span className="text-mute">Graving, reportasje, feature.</span>
                 </h2>
               </div>
               <Link
@@ -186,8 +182,8 @@ export default function HomePage() {
             <StaggerItem className="md:col-span-5 hidden md:block">
               <div className="flex h-full flex-col justify-end pb-4">
                 <p className="max-w-sm font-display text-[1.4rem] leading-snug tracking-tight text-ink-2">
-                  Hver sak begynner med et tips, et dokument eller en stemme
-                  som ikke får plass.
+                  Kritisk og undersøkende journalistikk innenfor arbeidsliv,
+                  krim og flere områder.
                 </p>
                 <Link
                   href="/saker"
@@ -210,17 +206,16 @@ export default function HomePage() {
                 Arbeidsmåte
               </p>
               <h2 className="mt-3 font-display text-[clamp(1.9rem,2.4vw+1rem,3.2rem)] font-medium leading-[1.05] tracking-tight text-ink">
-                Færre saker.
+                Kvalitetsjournalistikk
                 <br />
                 <span className="bg-gradient-to-r from-coral-500 to-apricot-200 bg-clip-text text-transparent">
-                  Mer dybde per sak.
+                  fra felt.
                 </span>
               </h2>
               <p className="mt-6 max-w-[44ch] text-base leading-relaxed text-ink-2">
-                Jeg jobber best når jeg får tid til å forstå hva en sak
-                egentlig handler om — og når jeg får ro til å la den modnes.
-                Resultatet er færre overskrifter, men sjelden uten kjøtt på
-                beinet.
+                Gode ideer, kvalitetsjournalistikk og fleksibilitet. Innsalg
+                av enkelt-ideer, påbegynte eller ferdige artikler, og
+                periode-jobbing i redaksjoner.
               </p>
             </Reveal>
 

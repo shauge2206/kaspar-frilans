@@ -6,7 +6,7 @@ import { WordReveal } from "@/components/word-reveal";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Tips, oppdrag eller bare en hilsen — slik får du tak i Kaspar Knudsen.",
+    "Kontakt Kaspar Knudsen — frilansjournalist på USF Verftet, Bergen.",
 };
 
 const channels = [
@@ -21,9 +21,8 @@ const channels = [
     href: "tel:+4790000000",
   },
   {
-    label: "Signal",
-    value: "Etter avtale",
-    href: "https://signal.org",
+    label: "Adresse",
+    value: "USF Verftet, Nordnes",
   },
   {
     label: "Sted",
@@ -45,22 +44,21 @@ export default function KontaktPage() {
             </Reveal>
 
             <h1 className="mt-7 font-display text-[clamp(2.4rem,4vw+1rem,5.2rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
-              <WordReveal text="Et tips," delay={0.05} />
+              <WordReveal text="Ta kontakt" delay={0.05} />
               <br />
               <WordReveal
-                text="et oppdrag,"
-                highlightWords={["oppdrag,"]}
+                text="for oppdrag"
+                highlightWords={["oppdrag"]}
                 delay={0.3}
               />
               <br />
-              <WordReveal text="en god samtale." delay={0.6} />
+              <WordReveal text="og samarbeid." delay={0.6} />
             </h1>
 
             <Reveal delay={1.05} className="mt-8 max-w-[44ch]">
               <p className="text-[1.05rem] leading-relaxed text-ink-2">
-                Har du sett noe som ikke står til? Trenger redaksjonen din
-                en frilanser med kjennskap til kyst- og næringsfeltet?
-                Skriv et par linjer — jeg svarer som regel innen et døgn.
+                Enkeltoppdrag, innsalg av ideer eller periode-jobbing i
+                redaksjoner. Send en e-post eller ring direkte.
               </p>
             </Reveal>
 
