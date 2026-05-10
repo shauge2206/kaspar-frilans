@@ -16,9 +16,9 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1240px] grid-cols-12 gap-6 px-5 pb-16 pt-12 sm:px-8 sm:pt-20">
           <div className="col-span-12 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
             <span aria-hidden className="inline-block h-px w-8 bg-ink/40" />
-            <span className="tabular">N 60° 23′ — Bergen, NO</span>
+            <span className="tabular">USF Verftet — Nordnes, Bergen</span>
             <span aria-hidden className="dot-divider" />
-            <span>Frilansjournalist siden 2018</span>
+            <span>Frilansjournalist</span>
           </div>
 
           <div className="col-span-12 mt-8 sm:col-span-9">
@@ -29,16 +29,15 @@ export default function Home() {
               >
                 Kaspar Knudsen.
                 <br />
-                <span className="text-ink/45">Reporter med kystlinje.</span>
+                <span className="text-ink/45">Frilansjournalist i Bergen.</span>
               </RevealItem>
               <RevealItem
                 as="p"
                 className="max-w-[44ch] text-[17px] leading-[1.55] text-ink/75"
               >
-                Gravesaker, reportasje og feature — med utgangspunkt i kyst,
-                fiskeri og samfunnsforhold. Skriver fast for Fiskeribladet,
-                Intrafish og Kystens Næringsliv, og jobber prosjektbasert med
-                publikasjoner som Bergens Tidende.
+                Frilansjournalist med base på USF Verftet, Bergen. Mastergrad
+                i undersøkende journalistikk. Leverer til Fiskeribladet,
+                Intrafish og Kystens Næringsliv.
               </RevealItem>
 
               <RevealItem className="flex flex-wrap items-center gap-3 pt-2">
@@ -69,19 +68,16 @@ export default function Home() {
             <FadeIn delay={0.15}>
               <dl className="space-y-5 border-l border-hairline pl-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/55">
                 <div>
-                  <dt>Område</dt>
-                  <dd className="mt-1 text-ink">Kyst · Fiskeri · Samfunn</dd>
+                  <dt>Fagfelt</dt>
+                  <dd className="mt-1 text-ink">Undersøkende journalistikk</dd>
                 </div>
                 <div>
-                  <dt>Sjanger</dt>
-                  <dd className="mt-1 text-ink">Graving · Reportasje · Feature</dd>
+                  <dt>Utdanning</dt>
+                  <dd className="mt-1 text-ink">Mastergrad</dd>
                 </div>
                 <div>
-                  <dt>Status</dt>
-                  <dd className="mt-1 flex items-center gap-2 text-ink">
-                    <span className="inline-block h-1.5 w-1.5 animate-pulse bg-ink" />
-                    Tilgjengelig for oppdrag
-                  </dd>
+                  <dt>Erfaring</dt>
+                  <dd className="mt-1 text-ink">15+ år i mediebransjen</dd>
                 </div>
               </dl>
             </FadeIn>
@@ -196,13 +192,11 @@ export default function Home() {
 
       {/* publications strip */}
       <section className="border-y border-hairline bg-paper">
-        <div className="mx-auto grid max-w-[1240px] grid-cols-2 divide-x divide-hairline px-5 py-10 sm:grid-cols-5 sm:px-8">
+        <div className="mx-auto grid max-w-[1240px] grid-cols-1 divide-x divide-hairline px-5 py-10 sm:grid-cols-3 sm:px-8">
           {[
             "Fiskeribladet",
             "Intrafish",
             "Kystens Næringsliv",
-            "Bergens Tidende",
-            "NRK",
           ].map((p) => (
             <div
               key={p}
@@ -219,11 +213,11 @@ export default function Home() {
         <div className="grid grid-cols-12 items-end gap-6">
           <div className="col-span-12 sm:col-span-8">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-              Neste sak
+              Kontakt
             </p>
             <h2 className="mt-3 text-[clamp(2rem,4vw,3.4rem)] font-medium leading-[1.04] tracking-[-0.02em]">
-              Har du et tips, eller et oppdrag som krever{" "}
-              <span className="text-ink/45">tid og kildearbeid?</span>
+              Tips, oppdrag eller{" "}
+              <span className="text-ink/45">samarbeid?</span>
             </h2>
           </div>
           <div className="col-span-12 sm:col-span-4 sm:text-right">
@@ -233,7 +227,7 @@ export default function Home() {
               className="focus-ring inline-flex h-12 items-center bg-ink px-6 text-[13px] font-medium tracking-wide text-paper"
               ariaLabel="Til kontakt"
             >
-              Skriv til meg
+              Ta kontakt
               <span
                 aria-hidden
                 className="ml-3 inline-block h-1 w-1 translate-y-[0.5px] bg-paper"

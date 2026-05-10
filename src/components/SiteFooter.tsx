@@ -9,10 +9,9 @@ export function SiteFooter() {
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50">
             01 — Frilans · Bergen
           </p>
-          <p className="mt-3 text-[22px] leading-[1.15] tracking-[-0.01em]">
-            Kaspar Knudsen.
-            <br />
-            Journalist med kystlinje.
+          <p className="mt-3 text-[18px] leading-[1.4] tracking-[-0.005em] text-ink/80">
+            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+            frihet under ansvar — å styre bedriften selv»
           </p>
         </div>
 
@@ -61,10 +60,9 @@ export function SiteFooter() {
                 post@kasparknudsen.no
               </a>
             </li>
-            <li className="font-mono text-[12px] tabular text-ink/60">
-              +47 920 00 000
+            <li className="text-[13px] text-ink/60">
+              USF Verftet, Nordnes, Bergen
             </li>
-            <li className="text-[13px] text-ink/60">Bergen, Vestland</li>
           </ul>
         </div>
       </div>

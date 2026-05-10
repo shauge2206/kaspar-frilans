@@ -16,7 +16,7 @@ export default function KontaktPage() {
           <span aria-hidden className="inline-block h-px w-8 bg-ink/40" />
           <span>Kontakt</span>
           <span aria-hidden className="dot-divider" />
-          <span>Bergen — Vestland</span>
+          <span>USF Verftet — Bergen</span>
         </div>
 
         <div className="mt-10 grid grid-cols-12 gap-6">
@@ -32,13 +32,8 @@ export default function KontaktPage() {
                 as="p"
                 className="max-w-[56ch] text-[17px] leading-[1.6] text-ink/75"
               >
-                Skriv noen linjer om hva saken handler om — gjerne med
-                bakgrunn, frist og hvilken publikasjon den eventuelt er
-                tiltenkt. Svar vanligvis innen et par dager.
-              </RevealItem>
-              <RevealItem className="font-mono text-[12px] uppercase tracking-[0.18em] text-ink/70">
-                For tips som krever fortrolighet — bruk Signal:{" "}
-                <span className="text-ink">+47 920 00 000</span>
+                Ta kontakt om enkelt-ideer, påbegynte eller ferdige
+                artikler, enkeltoppdrag eller periodejobbing i redaksjoner.
               </RevealItem>
             </RevealGroup>
           </div>
@@ -57,28 +52,16 @@ export default function KontaktPage() {
                     </a>
                   </dd>
                 </div>
-                <div>
-                  <dt>Telefon</dt>
-                  <dd className="mt-1 tabular text-[14px] tracking-normal text-ink">
-                    +47 920 00 000
-                  </dd>
-                </div>
-                <div>
-                  <dt>Signal</dt>
-                  <dd className="mt-1 tabular text-[14px] tracking-normal text-ink">
-                    +47 920 00 000
-                  </dd>
-                </div>
-                <div>
-                  <dt>Org.nr</dt>
-                  <dd className="mt-1 tabular text-[14px] tracking-normal text-ink">
-                    928 482 731
-                  </dd>
-                </div>
-                <div>
+                <div className="col-span-2">
                   <dt>Adresse</dt>
                   <dd className="mt-1 text-[14px] tracking-normal text-ink">
-                    Bergen, NO
+                    USF Verftet, Nordnes, Bergen
+                  </dd>
+                </div>
+                <div className="col-span-2">
+                  <dt>Foretak</dt>
+                  <dd className="mt-1 text-[14px] tracking-normal text-ink">
+                    Enkeltpersonforetak
                   </dd>
                 </div>
               </dl>
@@ -113,20 +96,20 @@ export default function KontaktPage() {
           </div>
           <div className="col-span-12 sm:col-span-9">
             <FaqItem
-              q="Tar du oppdrag utenfor Vestlandet?"
-              a="Ja — kysten er hovedfeltet, men jeg reiser gjerne for oppdrag som passer profilen."
+              q="Hva slags oppdrag tar du?"
+              a="Innsalg av enkelt-ideer, innsalg av påbegynte eller ferdige artikler, enkeltoppdrag og periodejobbing i redaksjoner."
             />
             <FaqItem
-              q="Hvilke formater jobber du i?"
-              a="Tekst først. Av og til lyd og foto i kombinasjon — alltid i samarbeid med foto- og lydprodusenter."
+              q="Hva er fagfeltet?"
+              a="Gravejournalistikk innenfor arbeidsliv, krim og flere områder. Mastergrad i undersøkende journalistikk."
             />
             <FaqItem
-              q="Hvordan håndterer du fortrolige kilder?"
-              a="Pressetisk kildevern står over alt annet. Sensitive tips bør sendes via Signal."
+              q="Hvilke publikasjoner leverer du til?"
+              a="Nisjepublikasjoner som Fiskeribladet, Intrafish og Kystens Næringsliv."
             />
             <FaqItem
               q="Pris?"
-              a="Avtales per oppdrag. Faktura via egen virksomhet."
+              a="Stykkpris per sak og betalt pr periode."
             />
           </div>
         </div>

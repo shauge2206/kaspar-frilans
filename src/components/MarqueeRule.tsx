@@ -3,13 +3,12 @@
 import { motion, useReducedMotion } from "motion/react";
 
 const TOKENS = [
-  "GRAVESAKER",
-  "REPORTASJE",
-  "FEATURE",
-  "KYST",
-  "FISKERI",
-  "SAMFUNN",
+  "UNDERSØKENDE JOURNALISTIKK",
+  "GRAVEJOURNALISTIKK",
+  "ARBEIDSLIV",
+  "KRIM",
   "BERGEN",
+  "USF VERFTET",
   "FRILANS",
 ];
 

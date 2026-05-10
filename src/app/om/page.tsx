@@ -6,51 +6,51 @@ import { TransitionLink } from "@/components/TransitionLink";
 export const metadata: Metadata = {
   title: "Om",
   description:
-    "Om Kaspar Knudsen — frilansjournalist i Bergen med fokus på kyst, fiskeri og samfunn.",
+    "Om Kaspar Knudsen — frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen.",
 };
 
-const TIMELINE = [
+const FAKTA = [
   {
-    year: "2024 —",
-    label: "Frilans",
-    place: "Bergen",
-    body: "Egen praksis. Faste oppdragsgivere innen kyst, fiskeri og samfunn.",
+    year: "Apr 2026 —",
+    label: "Kaspar Knudsen",
+    place: "Enkeltpersonforetak",
+    body: "Frilansvirksomhet etablert april 2026. Kontor på USF Verftet, Nordnes, Bergen.",
   },
   {
-    year: "2022 — 2024",
-    label: "Bergens Tidende",
-    place: "Reportasje",
-    body: "Reporter i nyhets- og featureavdelingen. Dramatiske hendelser, sosial reportasje, gravesaker.",
+    year: "15+ år",
+    label: "Mediebransjen i Bergen",
+    place: "Erfaring",
+    body: "Bakgrunn fra 15+ år i mediebransjen i Bergen før oppstart av egen virksomhet.",
   },
   {
-    year: "2020 — 2022",
-    label: "Fiskeribladet / Intrafish",
-    place: "Kyst & næring",
-    body: "Næringsjournalistikk og graving — fra havbruk og kvotespørsmål til skipsforlis.",
+    year: "Master",
+    label: "Undersøkende journalistikk",
+    place: "Utdanning",
+    body: "Mastergrad i undersøkende journalistikk. Gravejournalistikk innenfor arbeidsliv, krim og flere områder.",
   },
   {
-    year: "2018 — 2020",
-    label: "Praktikant og frilans",
-    place: "Vestlandet",
-    body: "Lokalaviser, magasiner og rapporter. Hovedsakelig kyst og småsamfunn.",
+    year: "Felt",
+    label: "Bilder og tekst",
+    place: "Metode",
+    body: "Drar ut i felt. Leverer bilder og tekst, gjenbruk, kritisk og undersøkende journalistikk, menneskenære historier.",
   },
 ];
 
 const FOKUS = [
   {
     n: "01",
-    title: "Graving",
-    body: "Lange forløp, dokumentinnsyn og kildearbeid. Saker som krever måneder, ikke timer.",
+    title: "Gode ideer",
+    body: "Innsalg av enkelt-ideer og påbegynte eller ferdige artikler.",
   },
   {
     n: "02",
-    title: "Reportasje",
-    body: "Reisende reportasje fra kyst og periferi. Nært, presist, med tid til detaljer som teller.",
+    title: "Kvalitetsjournalistikk",
+    body: "Kritisk og undersøkende journalistikk levert fra felt — bilder og tekst, med rom for gjenbruk.",
   },
   {
     n: "03",
-    title: "Feature",
-    body: "Lengre tekster og portretter. Sosial og kulturell tematikk med stillferdig tempo.",
+    title: "Fleksibilitet",
+    body: "Enkeltoppdrag, periodejobbing i redaksjoner, stykkpris per sak eller betalt pr periode.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function OmPage() {
           <span aria-hidden className="inline-block h-px w-8 bg-ink/40" />
           <span>Profil</span>
           <span aria-hidden className="dot-divider" />
-          <span className="tabular">Etabl. 2018</span>
+          <span className="tabular">Etabl. april 2026</span>
         </div>
 
         <div className="mt-10 grid grid-cols-12 gap-6">
@@ -72,26 +72,26 @@ export default function OmPage() {
                 as="h1"
                 className="text-[clamp(2.4rem,6vw,4.6rem)] font-medium leading-[0.98] tracking-[-0.03em]"
               >
-                Kaspar Knudsen er en frilansjournalist basert i Bergen,
-                med kysten som arbeidsfelt.
+                Kaspar Knudsen er frilansjournalist i Bergen
+                med kontor på USF Verftet, Nordnes.
               </RevealItem>
               <RevealItem
                 as="p"
                 className="max-w-[58ch] text-[17px] leading-[1.6] text-ink/75"
               >
-                Han har skrevet for Bergens Tidende, Fiskeribladet, Intrafish
-                og Kystens Næringsliv, og jobber primært med saker som krever
-                tid — graving, lange reportasjer og feature. Utgangspunktet er
-                Vestlandet, men oppdragsgivere finnes langs hele kysten.
+                Mastergrad i undersøkende journalistikk og 15 år i
+                mediebransjen. Leverer kvalitetsjournalistikk til
+                nisjepublikasjoner som Fiskeribladet, Intrafish og Kystens
+                Næringsliv.
               </RevealItem>
               <RevealItem
                 as="p"
                 className="max-w-[58ch] text-[15px] leading-[1.65] text-ink/65"
               >
-                Kaspar har bakgrunn fra både lokaljournalistikk og
-                næringspresse. Han er opptatt av at journalistikk skal være
-                konkret, etterprøvbar og åpen om sine kilder — og at lange
-                forløp bør få plass i moderne nyhetsbilde.
+                Gravejournalistikk innenfor arbeidsliv, krim og flere
+                områder. Drar ut i felt og leverer bilder og tekst, med rom
+                for gjenbruk, kritisk og undersøkende journalistikk og
+                menneskenære historier.
               </RevealItem>
             </RevealGroup>
           </div>
@@ -108,7 +108,7 @@ export default function OmPage() {
                 />
               </div>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/55">
-                Foto · arbeidsbilde fra Skogsvåg, 2023
+                Foto · arbeidsbilde fra felt
               </p>
             </FadeIn>
           </div>
@@ -119,7 +119,7 @@ export default function OmPage() {
       <section className="mx-auto mt-28 max-w-[1240px] px-5 sm:px-8">
         <div className="flex items-center justify-between border-b border-hairline pb-4">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-            Arbeidsfelt
+            Verdiløfte
           </h2>
           <span className="font-mono text-[11px] tabular uppercase tracking-[0.16em] text-ink/45">
             03
@@ -142,19 +142,19 @@ export default function OmPage() {
         </div>
       </section>
 
-      {/* timeline */}
+      {/* fakta */}
       <section className="mx-auto mt-28 max-w-[1240px] px-5 sm:px-8">
         <div className="flex items-center justify-between border-b border-hairline pb-4">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-            Spor — utvalgte stasjoner
+            Fakta
           </h2>
           <span className="font-mono text-[11px] tabular uppercase tracking-[0.16em] text-ink/45">
-            CV
+            04
           </span>
         </div>
 
         <ol className="mt-2 divide-y divide-hairline">
-          {TIMELINE.map((t) => (
+          {FAKTA.map((t) => (
             <li key={t.year} className="grid grid-cols-12 items-baseline gap-4 py-7">
               <span className="col-span-12 font-mono text-[11px] tabular uppercase tracking-[0.16em] text-ink/55 sm:col-span-3">
                 {t.year}
@@ -181,15 +181,15 @@ export default function OmPage() {
           <div className="grid grid-cols-12 gap-6 border-y border-hairline py-16">
             <div className="col-span-12 sm:col-span-3">
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                Premiss
+                Visjon
               </p>
             </div>
             <div className="col-span-12 sm:col-span-9">
               <p className="text-[clamp(1.4rem,2.4vw,2rem)] leading-[1.25] tracking-[-0.012em]">
-                <span className="text-ink/45">Frihet under ansvar.</span>{" "}
-                Lengre tid på færre saker. Åpne kilder.{" "}
-                <span className="text-ink/45">Konkret språk.</span>{" "}
-                Ingen stunts.
+                «Økonomisk bærekraft i selskapet, å levere
+                kvalitetsjournalistikk,{" "}
+                <span className="text-ink/45">frihet under ansvar</span> — å
+                styre bedriften selv»
               </p>
             </div>
           </div>

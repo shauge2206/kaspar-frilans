@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     template: "%s · Kaspar Knudsen",
   },
   description:
-    "Frilansjournalist i Bergen. Gravesaker, reportasje og feature — med fokus på kyst, fiskeri og samfunn.",
+    "Frilansjournalist i Bergen med base på USF Verftet. Mastergrad i undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.",
   applicationName: "Kaspar Knudsen",
   authors: [{ name: "Kaspar Knudsen" }],
   openGraph: {
     title: "Kaspar Knudsen — Frilansjournalist",
     description:
-      "Frilansjournalist i Bergen. Gravesaker, reportasje og feature.",
+      "Frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk.",
     locale: "nb_NO",
     type: "website",
   },
