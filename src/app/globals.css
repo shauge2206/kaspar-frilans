@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0b0b;
+  --bg-elev: #131312;
+  --fg: #f3efe9;
+  --fg-muted: #b8b1a4;
+  --rule: rgba(243, 239, 233, 0.14);
+  --amber: #d6a544;
+  --amber-soft: #e6bc6a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-rule: var(--rule);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--amber);
+  color: #0b0b0b;
+}
+
+.font-display {
+  font-family: var(--font-display), "Iowan Old Style", "Apple Garamond", Garamond, "Times New Roman", serif;
+  font-feature-settings: "liga", "dlig", "ss01";
+}
+
+.eyebrow {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+.smallcaps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.18em;
+}
+
+.rule {
+  height: 1px;
+  background: var(--rule);
+}
+
+/* Hairline gold underline for hover */
+.amber-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease, color 300ms ease;
+}
+.amber-underline:hover {
+  color: var(--amber-soft);
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 900ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform, opacity;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll indicator chevron */
+@keyframes scrollChevron {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+.chevron-bounce {
+  animation: scrollChevron 1.8s ease-in-out infinite;
+}
+
+/* Cross-fade between routes */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-fade {
+  animation: pageFadeIn 600ms ease-out both;
+}
+
+/* Reading progress bar */
+.reading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--amber);
+  z-index: 60;
+  transform-origin: 0 0;
+  transition: transform 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .chevron-bounce { animation: none; }
+  .page-fade { animation: none; }
 }
