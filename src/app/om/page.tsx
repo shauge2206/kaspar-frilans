@@ -12,32 +12,33 @@ export const metadata: Metadata = {
 };
 
 const verdier = [
-  ["Likeverd", "mellom mennesker — alle har en historie"],
-  ["Empati", "lytte før jeg skriver"],
-  ["Ærlighet", "i kilder, sitat og fremstilling"],
-  ["Samfunnsengasjert", "saker som berører folk og felleskap"],
-  ["Kritisk tenkning", "spør én gang til"],
-  ["Nysgjerrig", "graver i det andre slipper"],
-  ["Holder ord", "leverer det vi har avtalt"],
-  ["Åpen og inkluderende", "møter folk der de er"],
+  "Likeverd",
+  "Empati",
+  "Høflighet og vennlighet",
+  "Holder ord og avtaler",
+  "Ærlighet",
+  "Samfunnsengasjert",
+  "Kritisk tenkning",
+  "Nysgjerrig",
+  "Åpen og inkluderende",
 ];
 
 const tjenester = [
   {
-    title: "Enkeltsaker",
-    body: "Innsalg av enkelt-ideer eller ferdige artikler til redaksjoner — fra notis til dyptpløyende reportasje.",
+    title: "Innsalg av enkelt-ideer",
+    body: "Innsalg av enkelt-ideer til redaksjoner.",
+  },
+  {
+    title: "Påbegynte eller ferdige artikler",
+    body: "Innsalg av påbegynte eller ferdige artikler.",
+  },
+  {
+    title: "Enkeltoppdrag",
+    body: "Enkeltoppdrag etter avtale. Stykkpris per sak.",
   },
   {
     title: "Periode-jobbing",
-    body: "Tilgjengelig for kortere eller lengre perioder i redaksjon, både på tema og generell vakt.",
-  },
-  {
-    title: "Tekst og bilder",
-    body: "Leverer både tekst og foto fra felt — én journalist, én pakke, full kontekst.",
-  },
-  {
-    title: "Kritisk graving",
-    body: "Mastergrad i undersøkende journalistikk og praktisk erfaring med arbeidsliv, krim, fiskeri og kysten.",
+    body: "Periode-jobbing i redaksjoner. Betalt pr periode.",
   },
 ];
 
@@ -69,31 +70,21 @@ export default function OmPage() {
               </p>
 
               <p className="mt-7 font-serif text-xl leading-relaxed text-ink">
-                Femten år i mediebransjen i Bergen. Mastergrad i
-                undersøkende journalistikk. Spesialiserer meg på saker
-                fra arbeidsliv, kriminal, fiskeri og kystens næringsliv.
+                Kaspar Knudsen er frilansjournalist i Bergen med kontor på{" "}
+                <span className="underline decoration-stamp/40">USF Verftet</span>
+                , Nordnes.
               </p>
 
               <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-soft">
                 <p>
-                  Jeg drar ut i felt for å se stedene og møte menneskene
-                  jeg skriver om. Det gjør at journalistikken kommer
-                  nærmere — både for kilder og for leser. Bilder og tekst
-                  hører sammen.
+                  Mastergrad i undersøkende journalistikk og 15 år i
+                  mediebransjen. Leverer kvalitetsjournalistikk til
+                  nisjepublikasjoner som <em>Fiskeribladet</em>,{" "}
+                  <em>Intrafish</em> og <em>Kystens Næringsliv</em>.
                 </p>
                 <p>
-                  Faget mitt motiverer meg: historiefortelling og
-                  samfunnsoppdraget — å bidra til innsikt og søke
-                  sannhet. Etter mange år i fast stilling driver jeg nå
-                  enkeltpersonforetak fra kontorplass på{" "}
-                  <span className="underline decoration-stamp/40">USF Verftet</span>{" "}
-                  på Nordnes.
-                </p>
-                <p>
-                  Jeg leverer til redaksjoner som{" "}
-                  <em>Fiskeribladet</em>, <em>Intrafish</em>,{" "}
-                  <em>Kystens Næringsliv</em> og <em>Bergens Tidende</em> —
-                  og er åpen for nye samarbeid.
+                  Gravejournalistikk innenfor arbeidsliv, krim og flere
+                  områder. Bilder og tekst fra felt.
                 </p>
               </div>
             </div>
@@ -140,14 +131,13 @@ export default function OmPage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
               KJERNEVERDIER · INTERN
             </p>
-            <h2 className="mt-2 font-serif text-3xl">Slik jobber jeg</h2>
-            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {verdier.map(([k, v]) => (
+            <h2 className="mt-2 font-serif text-3xl">Kjerneverdier</h2>
+            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {verdier.map((k) => (
                 <div key={k} className="border border-ink/15 bg-paper-2/40 p-4">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-stamp">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-stamp">
                     {k}
                   </p>
-                  <p className="mt-1 text-sm text-ink-soft">{v}</p>
                 </div>
               ))}
             </div>
@@ -158,7 +148,7 @@ export default function OmPage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
               TJENESTER
             </p>
-            <h2 className="mt-2 font-serif text-3xl">Det jeg leverer</h2>
+            <h2 className="mt-2 font-serif text-3xl">Tjenester</h2>
             <div className="mt-6 grid md:grid-cols-2 gap-5">
               {tjenester.map((t) => (
                 <div key={t.title} className="paper p-5 relative">
@@ -179,11 +169,12 @@ export default function OmPage() {
                 VISJON
               </p>
               <p className="mt-3 font-serif text-2xl md:text-3xl leading-snug italic text-ink">
-                «Økonomisk bærekraft i selskapet, levere kvalitetsjournalistikk,
-                frihet under ansvar — å styre bedriften selv.»
+                «Økonomisk bærekraft i selskapet, å levere
+                kvalitetsjournalistikk, frihet under ansvar — å styre
+                bedriften selv»
               </p>
               <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
-                — Forretningsplan, april 2026
+                — Kaspar Knudsen
               </p>
             </div>
             <div className="lg:col-span-4 flex justify-center lg:justify-end">

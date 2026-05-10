@@ -58,10 +58,13 @@ export default function SakerPage() {
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
           ARKIVNOTAT
         </p>
-        <p className="mt-2 font-serif text-lg italic text-ink-soft">
-          «Arkivet er løpende. Nye saker legges til etter hvert som de
-          publiseres. Kontakt meg om du ønsker referanser, tidligere arbeid
-          eller å diskutere et nytt oppdrag.»
+        <p className="mt-2 font-serif text-lg text-ink-soft">
+          Utvalg av publiserte saker. For referanser eller forespørsel om
+          oppdrag, se{" "}
+          <a href="/kontakt" className="underline decoration-stamp/40 text-stamp">
+            kontakt
+          </a>
+          .
         </p>
       </div>
     </div>

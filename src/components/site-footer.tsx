@@ -11,10 +11,12 @@ export function SiteFooter() {
           <p className="mt-2 font-serif text-2xl italic">
             USF Verftet, Nordnes
           </p>
-          <p className="mt-2 text-sm text-ink-soft max-w-md">
-            Kaspar Knudsen driver enkeltpersonforetak som frilansjournalist i Bergen.
-            Gravesaker, reportasjer og bilder fra felt — for fagpresse, dagspresse
-            og tidsskrifter.
+          <p className="mt-4 text-sm text-ink-soft max-w-md italic">
+            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+            frihet under ansvar — å styre bedriften selv»
+          </p>
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
+            — Kaspar Knudsen
           </p>
         </div>
         <div>

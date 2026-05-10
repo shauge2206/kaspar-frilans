@@ -24,15 +24,15 @@ export default function Home() {
                 DOSSIER · KH-2026 · MAPPE 001
               </p>
               <h1 className="mt-3 font-serif text-5xl md:text-7xl leading-[1.05] text-ink">
-                Saksarkivet til
-                <br />
                 <span className="typed">Kaspar Knudsen</span>
               </h1>
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-stamp">
+                FRILANSJOURNALIST I BERGEN
+              </p>
               <p className="mt-5 max-w-xl text-base md:text-lg text-ink-soft leading-relaxed">
-                Frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk.
-                Femten år i bransjen, med fokus på arbeidsliv, krim, fiskeri og
-                kystens næringsliv. Dette er arbeidsbordet mitt — bla i mappene,
-                løft på papirene.
+                Frilansjournalist med base på USF Verftet, Bergen. Mastergrad i
+                undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish
+                og Kystens Næringsliv.
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -43,7 +43,7 @@ export default function Home() {
                   href="/om"
                   className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft underline decoration-ink-muted/40 hover:text-stamp"
                 >
-                  Les biografien →
+                  Om journalisten →
                 </Link>
               </div>
             </div>
@@ -87,22 +87,22 @@ export default function Home() {
               </div>
               <div className="md:pl-12">
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
-                  NOTAT — INTERN
+                  VISJON
                 </p>
                 <p className="mt-3 font-serif text-2xl md:text-3xl leading-snug">
-                  «Jeg drar ut i felt for å se stedene og møte menneskene jeg
-                  skriver om. Det gjør at journalistikken kommer{" "}
-                  <Redact title="Hold over for å avsløre">nærmere</Redact>.»
+                  «Økonomisk bærekraft i selskapet, å levere
+                  kvalitetsjournalistikk, frihet under ansvar — å styre{" "}
+                  <Redact title="Hold over for å avsløre">bedriften selv</Redact>»
                 </p>
                 <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
-                  — Kaspar Knudsen, mappenotat
+                  — Kaspar Knudsen
                 </p>
 
                 <div className="mt-6 grid sm:grid-cols-3 gap-3">
                   {[
-                    { k: "Kvalitet", v: "Grundig, kildebasert, redelig" },
-                    { k: "Fra felt", v: "Jeg reiser til stedene" },
-                    { k: "Fleksibilitet", v: "Tilpasset oppdragsgivers behov" },
+                    { k: "Kvalitet", v: "Kvalitetsjournalistikk" },
+                    { k: "Fra felt", v: "Leverer fra felt" },
+                    { k: "Fleksibilitet", v: "Tilgjengelighet og fleksibilitet" },
                   ].map((b) => (
                     <div key={b.k} className="border border-ink/15 p-3">
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-stamp">
@@ -198,11 +198,11 @@ export default function Home() {
                 ÅPEN FOR OPPDRAG · 2026
               </p>
               <h2 className="mt-3 font-serif text-3xl md:text-4xl leading-tight">
-                Har du en sak som trenger å bli gravd i?
+                Ta kontakt for oppdrag
               </h2>
               <p className="mt-3 max-w-xl text-ink-soft">
-                Jeg leverer enkeltsaker, ferdige artikler eller jobber i
-                periode i redaksjoner. Tekst og bilder, fra felt.
+                Enkeltsaker, ferdige artikler eller periode-jobbing i
+                redaksjoner. Stykkpris per sak eller betalt pr periode.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link href="/kontakt" className="btn">

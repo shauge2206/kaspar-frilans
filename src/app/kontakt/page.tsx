@@ -36,8 +36,7 @@ export default function KontaktPage() {
               Send en melding
             </h1>
             <p className="mt-3 text-ink-soft max-w-xl">
-              Skriv kort hva det gjelder, så svarer jeg som regel innen
-              ett døgn. Skjemaet åpner i din e-postklient.
+              Skriv kort hva det gjelder. Skjemaet åpner i din e-postklient.
             </p>
 
             <Form />
@@ -70,9 +69,9 @@ export default function KontaktPage() {
               </div>
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
-                  RESPONSTID
+                  KONTOR
                 </p>
-                <p className="mt-1">Vanligvis innen ett døgn</p>
+                <p className="mt-1">USF Verftet, Nordnes</p>
               </div>
             </div>
           </div>
@@ -155,9 +154,8 @@ export default function KontaktPage() {
               KILDEVERN
             </p>
             <p className="mt-2 text-sm text-ink-soft">
-              Som journalist har jeg taushetsplikt om kilder. Tips kan
-              sendes anonymt — bruk gjerne kryptert e-post om saken
-              krever det.
+              Journalister har taushetsplikt om kilder. Tips kan sendes
+              anonymt.
             </p>
           </div>
         </aside>
