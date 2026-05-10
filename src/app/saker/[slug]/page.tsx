@@ -148,7 +148,7 @@ export default async function ArticlePage(
 
           <div className="mt-16 border-t border-foreground pt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-muted tnum">
             {article.date} / {article.publication.toUpperCase()} /
-            KASPAR HAUGE
+            KASPAR KNUDSEN
           </div>
         </div>
       </section>

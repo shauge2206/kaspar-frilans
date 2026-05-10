@@ -50,10 +50,10 @@ export default function KontaktPage() {
                 E-post
               </div>
               <a
-                href="mailto:kaspar@kasparhauge.no"
+                href="mailto:kaspar@kasparknudsen.no"
                 className="mt-4 inline-block font-serif text-3xl tracking-tight md:text-5xl link-rule-reverse"
               >
-                kaspar@kasparhauge.no
+                kaspar@kasparknudsen.no
               </a>
               <p className="mt-6 max-w-md font-serif text-base leading-relaxed text-muted">
                 Beste kanal for redaksjoner, oppdragsgivere og lengre

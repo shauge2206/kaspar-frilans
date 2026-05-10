@@ -180,10 +180,10 @@ export default function Home() {
 
             <div className="mt-12 flex flex-col gap-6 font-mono text-[11px] uppercase tracking-[0.18em] sm:flex-row sm:items-center sm:gap-10">
               <a
-                href="mailto:kaspar@kasparhauge.no"
+                href="mailto:kaspar@kasparknudsen.no"
                 className="link-rule text-foreground"
               >
-                kaspar@kasparhauge.no
+                kaspar@kasparknudsen.no
               </a>
               <Link href="/kontakt" className="link-rule text-muted">
                 Send melding →

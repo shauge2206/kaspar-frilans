@@ -34,10 +34,10 @@ export default function Footer() {
           <ul className="mt-6 space-y-3 font-serif text-base">
             <li>
               <a
-                href="mailto:kaspar@kasparhauge.no"
+                href="mailto:kaspar@kasparknudsen.no"
                 className="link-rule"
               >
-                kaspar@kasparhauge.no
+                kaspar@kasparknudsen.no
               </a>
             </li>
             <li>
