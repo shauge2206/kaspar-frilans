@@ -194,31 +194,6 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* manifesto */}
-      <section className="mx-auto max-w-[1240px] px-5 py-28 sm:px-8">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 sm:col-span-3">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-              Manifest
-            </p>
-          </div>
-          <div className="col-span-12 sm:col-span-9">
-            <FadeIn>
-              <blockquote className="text-[clamp(1.5rem,3vw,2.4rem)] font-medium leading-[1.15] tracking-[-0.018em]">
-                Kvalitetsjournalistikk handler om{" "}
-                <span className="text-ink/45">tid</span>, om å våge å være
-                konkret, og om <span className="text-ink/45">frihet under
-                ansvar</span>. Jeg jobber for å holde alle tre i live —
-                samtidig.
-              </blockquote>
-              <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">
-                — Kaspar Knudsen, Bergen
-              </p>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       {/* publications strip */}
       <section className="border-y border-hairline bg-paper">
         <div className="mx-auto grid max-w-[1240px] grid-cols-2 divide-x divide-hairline px-5 py-10 sm:grid-cols-5 sm:px-8">

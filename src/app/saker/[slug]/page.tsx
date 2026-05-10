@@ -159,18 +159,6 @@ export default async function SakPage({
               </FadeIn>
             ))}
 
-            {/* pull quote */}
-            <FadeIn>
-              <figure className="my-16 border-y border-hairline-strong py-12">
-                <blockquote className="text-[clamp(1.6rem,3.2vw,2.4rem)] font-medium leading-[1.18] tracking-[-0.018em]">
-                  {sak.pullQuote}
-                </blockquote>
-                <figcaption className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">
-                  Sitat — {sak.publikasjon}
-                </figcaption>
-              </figure>
-            </FadeIn>
-
             {sak.brodtekst.slice(3).map((p, i) => (
               <FadeIn key={i} delay={0.04 * i}>
                 <p className="mt-6 max-w-[60ch] text-[17px] leading-[1.7] text-ink/80">
