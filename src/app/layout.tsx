@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s · Kaspar Knudsen",
   },
   description:
-    "Kaspar Knudsen er frilansjournalist i Bergen med spesialfelt innen gravejournalistikk, arbeidsliv, kyst og kriminalsaker. Reportasjer fra felt langs hele kysten.",
+    "Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen. Leverer kvalitetsjournalistikk til Fiskeribladet, Intrafish og Kystens Næringsliv.",
 };
 
 export default function RootLayout({

@@ -15,25 +15,24 @@ export default function Home() {
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-deep/60 mb-5 flex flex-wrap items-center gap-x-3 gap-y-1">
                 <span className="inline-flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  Reportasjer fra felt
+                  Frilansjournalist · Bergen
                 </span>
                 <span>·</span>
                 <span className="tabular">60°23′N · 05°19′Ø</span>
               </div>
               <h1 className="font-semibold tracking-[-0.02em] leading-[0.95] text-[clamp(2.6rem,6vw,5.2rem)] text-ink">
-                Historiene
+                Kaspar
                 <br />
-                ligger der
+                Knudsen
                 <br />
-                <span className="text-accent">menneskene er.</span>
+                <span className="text-accent">Frilansjournalist.</span>
               </h1>
             </div>
             <div className="lg:col-span-5 lg:pl-8 lg:border-l border-line/50">
               <p className="text-[17px] leading-relaxed text-deep/80 max-w-md font-serif">
-                Kaspar Knudsen er frilansjournalist i Bergen — med spesialfelt
-                innen gravejournalistikk, arbeidsliv, kyst og samfunn. Han drar
-                ut i felt: til kaier, kontorer, kommunale møter og kjøkkenbord.
-                Arbeidet er plottet på kartet — der det faktisk ble laget.
+                Frilansjournalist med base på USF Verftet, Bergen. Mastergrad i
+                undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish
+                og Kystens Næringsliv.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
@@ -63,22 +62,22 @@ export default function Home() {
             {
               k: "01",
               title: "Fra felt",
-              body: "Reportasjer som starter med at noen åpner døren — ikke en e-post.",
+              body: "Drar ut i felt. Leverer bilder og tekst fra stedet historien skjer.",
             },
             {
               k: "02",
               title: "Kvalitet",
-              body: "Master i gravejournalistikk og 15 år i Bergens-mediene. Tid til å sjekke.",
+              body: "Mastergrad i undersøkende journalistikk og 15 år i mediebransjen i Bergen.",
             },
             {
               k: "03",
-              title: "Menneskenært",
-              body: "Likeverd og empati i møtet — også når historien er ubehagelig.",
+              title: "Undersøkende",
+              body: "Gravejournalistikk innenfor arbeidsliv, krim og flere områder.",
             },
             {
               k: "04",
               title: "Fleksibel",
-              body: "Tar oppdrag fra hele bransjen: nyhet, feature, foto, dokumentar.",
+              body: "Enkeltoppdrag, ferdige saker eller periodejobbing i redaksjoner.",
             },
           ].map((c) => (
             <div key={c.k}>
@@ -171,17 +170,18 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-24 grid md:grid-cols-[1fr_auto] items-center gap-10">
           <div>
             <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/60 mb-5">
-              Tipse · Bestille · Samarbeide
+              Kontakt · Oppdrag · Samarbeid
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
-              Har du en sak som
+              Ta kontakt for
               <br />
-              fortjener tid?
+              oppdrag.
             </h2>
             <p className="text-[17px] text-paper/80 max-w-xl leading-relaxed font-serif mb-8">
-              Jeg tar imot tips, redaksjonelle bestillinger og samarbeid med
-              andre frilansere og fotografer. Bergen er base — kysten er
-              feltet.
+              Salgsmodell: innsalg av enkeltideer, innsalg av påbegynte eller
+              ferdige artikler, enkeltoppdrag og periodejobbing i redaksjoner.
+              Prismodell: stykkpris per sak eller betalt per periode. Base på
+              USF Verftet, Bergen.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link

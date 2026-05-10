@@ -17,10 +17,9 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
-          <p className="text-paper/70 max-w-md leading-relaxed text-[15px]">
-            Reportasjer fra felt — om arbeidsliv, kyst, kriminalsaker og
-            samfunn. Med base på USF Verftet i Bergen, og et stort
-            interesseområde langs hele kysten.
+          <p className="text-paper/70 max-w-md leading-relaxed text-[15px] font-serif italic">
+            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+            frihet under ansvar — å styre bedriften selv»
           </p>
         </div>
 

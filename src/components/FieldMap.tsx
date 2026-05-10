@@ -420,8 +420,7 @@ function Empty({ variant }: { variant: "hero" | "page" }) {
         Klikk en markør for å lese et utdrag.
       </h2>
       <p className="text-[14.5px] text-deep/75 leading-relaxed mb-6">
-        Hver reportasje er plottet der den ble laget — fra Senja og Sotra til
-        Bergen sentrum. Følg sporet, ikke datolinjen.
+        Hver reportasje er plottet på kartet etter stedet den ble laget.
       </p>
       <ul className="space-y-3">
         {articles.map((a, i) => (
