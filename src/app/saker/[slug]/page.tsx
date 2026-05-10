@@ -125,13 +125,6 @@ export default async function SakPage({
             </p>
           ))}
 
-          <blockquote className="my-12 border-y-2 border-rule py-8 md:py-10">
-            <p className="font-serif font-semibold text-3xl md:text-4xl leading-[1.15] tracking-[-0.02em] text-ink">
-              {sak.pullQuote}
-            </p>
-            <footer className="dateline mt-5">— {sak.sted} · KASPAR</footer>
-          </blockquote>
-
           {afterPull.map((p, i) => (
             <p
               key={`a-${i}`}
