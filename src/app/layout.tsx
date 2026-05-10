@@ -18,7 +18,7 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kasparhauge.no"),
+  metadataBase: new URL("https://kasparknudsen.no"),
   title: {
     default: "Kaspar Knudsen — frilansjournalist i Bergen",
     template: "%s · Kaspar Knudsen",

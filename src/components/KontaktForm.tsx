@@ -11,7 +11,7 @@ export default function KontaktForm() {
   const buildMailto = () => {
     const subject = `${emne} fra ${navn || "kontaktskjema"}`;
     const body = `${melding}\n\n— ${navn}\n${epost}`;
-    return `mailto:kaspar@kasparhauge.no?subject=${encodeURIComponent(
+    return `mailto:kaspar@kasparknudsen.no?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
   };

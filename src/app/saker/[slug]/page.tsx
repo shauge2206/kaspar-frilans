@@ -4,7 +4,6 @@ import Image from "next/image";
 import { saker, getSak } from "@/lib/saker";
 import ParallaxImage from "@/components/ParallaxImage";
 import StickyImage from "@/components/StickyImage";
-import PullQuote from "@/components/PullQuote";
 import Reveal from "@/components/Reveal";
 import ReadingProgress from "@/components/ReadingProgress";
 
@@ -135,9 +134,6 @@ export default async function SakDetail(props: PageProps<"/saker/[slug]">) {
           </div>
         </Reveal>
       </section>
-
-      {/* PULL QUOTE */}
-      <PullQuote quote={sak.pullQuote} attribution={sak.bildetekst.split(",")[0]} />
 
       {/* IMAGE 2 — full bleed parallax */}
       <section className="my-24 md:my-40">

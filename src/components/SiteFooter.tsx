@@ -19,10 +19,10 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2 text-fg-muted">
               <li>
                 <a
-                  href="mailto:kaspar@kasparhauge.no"
+                  href="mailto:kaspar@kasparknudsen.no"
                   className="amber-underline"
                 >
-                  kaspar@kasparhauge.no
+                  kaspar@kasparknudsen.no
                 </a>
               </li>
               <li>

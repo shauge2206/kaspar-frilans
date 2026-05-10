@@ -40,10 +40,10 @@ export default function Kontakt() {
                     E-post
                   </p>
                   <a
-                    href="mailto:kaspar@kasparhauge.no"
+                    href="mailto:kaspar@kasparknudsen.no"
                     className="font-display text-2xl md:text-3xl amber-underline"
                   >
-                    kaspar@kasparhauge.no
+                    kaspar@kasparknudsen.no
                   </a>
                 </li>
                 <li>
@@ -62,7 +62,7 @@ export default function Kontakt() {
                     Kryptert tips
                   </p>
                   <p className="font-display text-2xl md:text-3xl">
-                    Signal · @kasparhauge
+                    Signal · @kasparknudsen
                   </p>
                 </li>
               </ul>

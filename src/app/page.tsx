@@ -242,7 +242,7 @@ export default function Home() {
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-6">
                 <a
-                  href="mailto:kaspar@kasparhauge.no"
+                  href="mailto:kaspar@kasparknudsen.no"
                   className="inline-flex items-center gap-3 border border-amber px-7 py-4 smallcaps text-amber transition-colors hover:bg-amber hover:text-bg"
                 >
                   Send en e-post

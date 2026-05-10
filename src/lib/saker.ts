@@ -60,8 +60,7 @@ export const saker: Sak[] = [
       "Nå mener Arnfinn Hay at det endelig er bevegelse i saken. På Stortinget snakkes det åpent om en ny gransking, og flere partier har signalisert støtte. – Det er grunn til optimisme, sier han.",
       "Hay forteller at familien har levd med en uavklart sorg i nesten 50 år. Hver vinter, når mørket legger seg over Senja, kommer minnene tilbake.",
     ],
-    pullQuote:
-      "Vi har lett etter sannheten i 47 år. Nå føles det endelig som om noen vil høre etter.",
+    pullQuote: "",
   },
   {
     slug: "drama-paa-sotra-truet-med-armbroest",
@@ -107,8 +106,7 @@ export const saker: Sak[] = [
       "– Naboen min ringte meg rett etter midnatt. Hun var redd og fortalte at naboen hennes hadde knust ruten hennes med et stort hageredskap, sier Olsen.",
       "Da Olsen kom ut, sto mannen midt i veien med en armbrøst hevet mot ham. Det første pilskuddet bommet med få centimeter. Det neste traff bilen hans.",
     ],
-    pullQuote:
-      "Han stilte seg opp midt i veien med armbrøsten hevet. Jeg trodde ikke det var virkelig.",
+    pullQuote: "",
   },
   {
     slug: "gratisbutikk-for-flyktninger-oedelagte-klaer",
@@ -153,8 +151,7 @@ export const saker: Sak[] = [
       "Men ett problem har vært vedvarende over tid: De får inn altfor mye klær og gjenstander av dårlig kvalitet. En fjerdedel av det butikken mottar går rett i bosset.",
       "– Folk ser ikke alltid på det de gir bort. Vi får inn flekkete plagg, ødelagte sko og leker uten deler, sier Novosad.",
     ],
-    pullQuote:
-      "Folk ser ikke alltid på det de gir bort. En fjerdedel av alt vi mottar, går rett i bosset.",
+    pullQuote: "",
   },
 ];
 
