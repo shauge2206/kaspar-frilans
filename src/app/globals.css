@@ -1,26 +1,240 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #fbf9f4;
+  --paper-deep: #f3eee2;
+  --ink: #141210;
+  --ink-soft: #2a2622;
+  --ink-mute: #5b554d;
+  --rule: #1a1814;
+  --rule-soft: #cfc7b4;
+  --accent: #a02828;
+  --accent-deep: #791b1b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-mute: var(--ink-mute);
+  --color-rule: var(--rule);
+  --color-rule-soft: var(--rule-soft);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "ss01", "kern", "liga";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif,
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif), "Times New Roman", Georgia, serif;
+  font-feature-settings: "kern", "liga", "dlig", "onum";
+}
+
+.smallcaps {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.dateline {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 500;
+}
+
+.rule-thin {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.rule-thick {
+  border-top: 3px double var(--rule);
+}
+
+.rule-bar {
+  border-top: 4px solid var(--rule);
+}
+
+.col-rule {
+  border-left: 1px solid var(--rule-soft);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes splitWord {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes ruleDraw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes underlineDraw {
+  from {
+    background-size: 0% 1px;
+  }
+  to {
+    background-size: 100% 1px;
+  }
+}
+
+.split-word {
+  display: inline-block;
+  opacity: 0;
+  animation: splitWord 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.rule-draw {
+  transform-origin: left;
+  animation: ruleDraw 0.9s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+}
+
+.link-editorial {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    letter-spacing 0.3s ease, color 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.link-editorial:hover {
+  background-size: 100% 1px;
+  letter-spacing: -0.005em;
+}
+
+.card-image {
+  overflow: hidden;
+}
+
+.card-image img {
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.6s ease;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.04);
+  filter: saturate(1) contrast(1.05);
+}
+
+.card-headline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  padding-bottom: 2px;
+}
+
+.card:hover .card-headline {
+  background-size: 100% 1px;
+}
+
+.dropcap::first-letter {
+  font-family: var(--font-serif), serif;
+  font-weight: 700;
+  font-size: 4.6em;
+  line-height: 0.85;
+  float: left;
+  padding: 0.05em 0.12em 0 0;
+  margin-top: 0.05em;
+  color: var(--accent);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+/* paper texture */
+.paper-grain {
+  background-image: radial-gradient(
+      rgba(20, 18, 16, 0.025) 1px,
+      transparent 1px
+    ),
+    radial-gradient(rgba(20, 18, 16, 0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-word,
+  .fade-up,
+  .fade-in,
+  .rule-draw {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
