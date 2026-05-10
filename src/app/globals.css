@@ -1,26 +1,158 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f4f1ea;
+  --ink: #0a0a0a;
+  --rule: #0a0a0a;
+  --red: #ff1f1f;
+  --paper-dark: #ebe6db;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-dark: var(--paper-dark);
+  --color-ink: var(--ink);
+  --color-red: var(--red);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle newsprint paper texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.5) 0.5px, transparent 0.5px),
+    radial-gradient(rgba(0, 0, 0, 0.3) 0.5px, transparent 0.5px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 1px;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--paper);
+}
+
+/* Crosshair on interactive */
+a,
+button,
+[role="button"] {
+  cursor: crosshair;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Stamp / fly-in */
+@keyframes stamp {
+  0% { transform: translateY(-20px) rotate(-2deg) scale(1.1); opacity: 0; }
+  60% { transform: translateY(0) rotate(-2deg) scale(1); opacity: 1; }
+  80% { transform: translateY(0) rotate(0deg) scale(0.98); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+}
+.animate-stamp {
+  animation: stamp 0.55s steps(8, end) both;
+}
+
+/* Hover jitter */
+@keyframes jitter {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+.hover-jitter:hover {
+  animation: jitter 0.18s steps(2, end) infinite;
+}
+
+/* Headline tracking */
+.display {
+  font-family: var(--font-display), Impact, "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+
+.mono {
+  font-family: var(--font-mono), "Courier New", monospace;
+}
+
+/* Thick rule */
+.rule-x {
+  border-top: 6px solid var(--ink);
+}
+.rule-x-thin {
+  border-top: 2px solid var(--ink);
+}
+.rule-y {
+  border-left: 2px solid var(--ink);
+}
+
+/* Drop cap */
+.dropcap::first-letter {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-weight: 900;
+  float: left;
+  font-size: 5.2rem;
+  line-height: 0.85;
+  padding: 0.25rem 0.5rem 0 0;
+  margin-bottom: -0.25rem;
+  color: var(--ink);
+}
+
+/* Stamp seal */
+.stamp {
+  border: 3px solid var(--red);
+  color: var(--red);
+  padding: 0.35rem 0.75rem;
+  display: inline-block;
+  transform: rotate(-4deg);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+/* Hide scrollbar on marquee parent, keep scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Newsprint columns helper */
+@media (min-width: 768px) {
+  .news-columns-2 { columns: 2; column-gap: 2rem; column-rule: 1px solid var(--ink); }
+  .news-columns-3 { columns: 3; column-gap: 1.75rem; column-rule: 1px solid var(--ink); }
+}
+
+/* Brutalist focus */
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
 }
