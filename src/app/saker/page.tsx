@@ -8,7 +8,7 @@ import { WordReveal } from "@/components/word-reveal";
 export const metadata: Metadata = {
   title: "Saker",
   description:
-    "Et utvalg gravesaker, reportasjer og featurearbeid av Stian Pablo Hauge.",
+    "Et utvalg gravesaker, reportasjer og featurearbeid av Kaspar Knudsen.",
 };
 
 const sectionLabel: Record<(typeof saker)[number]["seksjon"], string> = {

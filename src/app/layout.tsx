@@ -20,17 +20,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://stianhauge.no"),
+  metadataBase: new URL("https://kasparknudsen.no"),
   title: {
-    default: "Stian Pablo Hauge — Frilansjournalist",
-    template: "%s — Stian Pablo Hauge",
+    default: "Kaspar Knudsen — Frilansjournalist",
+    template: "%s — Kaspar Knudsen",
   },
   description:
-    "Stian Pablo Hauge er frilansjournalist i Bergen. Kvalitetsjournalistikk om kyst, hav og næringsliv — med frihet under ansvar.",
+    "Kaspar Knudsen er frilansjournalist i Bergen. Kvalitetsjournalistikk om kyst, hav og næringsliv — med frihet under ansvar.",
   openGraph: {
     type: "website",
     locale: "nb_NO",
-    siteName: "Stian Pablo Hauge",
+    siteName: "Kaspar Knudsen",
   },
 };
 

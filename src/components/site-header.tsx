@@ -40,14 +40,14 @@ export function SiteHeader() {
         <Link
           href="/"
           className="group flex items-center gap-2 font-display text-[1.05rem] font-medium tracking-tight text-ink"
-          aria-label="Stian Pablo Hauge — forside"
+          aria-label="Kaspar Knudsen — forside"
         >
           <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-coral-300 to-apricot-200 text-ink shadow-soft">
             <span className="font-display text-[0.78rem] font-semibold leading-none">
-              SH
+              KK
             </span>
           </span>
-          <span className="hidden sm:inline">Stian Pablo Hauge</span>
+          <span className="hidden sm:inline">Kaspar Knudsen</span>
         </Link>
 
         <nav aria-label="Hovednavigasjon" className="flex items-center gap-1">

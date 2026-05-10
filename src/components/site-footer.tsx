@@ -13,7 +13,7 @@ export function SiteFooter() {
             <span className="text-coral-500">frihet under ansvar.</span>
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-mute">
-            Stian Pablo Hauge er frilansjournalist i Bergen med graving og
+            Kaspar Knudsen er frilansjournalist i Bergen med graving og
             featurearbeid for kyst- og næringspresse.
           </p>
         </div>
@@ -59,10 +59,10 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <a
-                href="mailto:post@stianhauge.no"
+                href="mailto:post@kasparknudsen.no"
                 className="link-underline text-ink-2 hover:text-ink"
               >
-                post@stianhauge.no
+                post@kasparknudsen.no
               </a>
             </li>
             <li>
@@ -80,7 +80,7 @@ export function SiteFooter() {
 
       <div className="border-t border-line/60">
         <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-2 px-6 py-5 text-xs text-mute md:flex-row md:items-center md:px-10">
-          <p>© {year} Stian Pablo Hauge</p>
+          <p>© {year} Kaspar Knudsen</p>
           <p className="font-mono uppercase tracking-[0.2em]">
             Bygget i Bergen
           </p>

@@ -6,7 +6,7 @@ import { ParallaxImage } from "@/components/parallax-image";
 import { MagneticButton } from "@/components/magnetic-button";
 
 export const metadata: Metadata = {
-  title: "Om Stian",
+  title: "Om Kaspar",
   description:
     "Bergensbasert frilansjournalist med vekt på graving, kyst og næringsliv.",
 };
@@ -86,7 +86,7 @@ export default function OmPage() {
 
               <Reveal delay={1.05} className="mt-10 grid gap-6 max-w-[58ch]">
                 <p className="text-[1.05rem] leading-relaxed text-ink-2">
-                  Jeg heter <strong className="font-medium text-ink">Stian Pablo Hauge</strong> og jobber som frilansjournalist
+                  Jeg heter <strong className="font-medium text-ink">Kaspar Knudsen</strong> og jobber som frilansjournalist
                   med utgangspunkt i Bergen. Etter år som ansatt i regional
                   presse valgte jeg friheten — og forpliktelsene — som
                   følger med å arbeide selvstendig.
@@ -107,7 +107,7 @@ export default function OmPage() {
             <Reveal delay={0.6} y={36} className="md:col-span-5 md:pt-6">
               <ParallaxImage
                 src="/images/saker/sak-2/bilde-1.jpeg"
-                alt="Stian Pablo Hauge i felt"
+                alt="Kaspar Knudsen i felt"
                 className="aspect-[4/5] rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft"
                 offset={50}
               />

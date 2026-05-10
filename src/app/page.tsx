@@ -67,7 +67,7 @@ export default function HomePage() {
 
               <Reveal as="p" delay={1.05} y={14}>
                 <span className="mt-8 block max-w-[52ch] text-[1.05rem] leading-relaxed text-ink-2 md:text-[1.15rem]">
-                  Stian Pablo Hauge er frilansjournalist med base i Bergen.
+                  Kaspar Knudsen er frilansjournalist med base i Bergen.
                   Han skriver gravesaker og reportasje for kyst- og næringspresse —
                   med kildevern, dokumentasjon og frihet under ansvar som
                   bærebjelker.
@@ -264,7 +264,7 @@ export default function HomePage() {
               </blockquote>
               <figcaption className="relative mt-8 flex items-center gap-3 text-sm text-ink-2">
                 <span className="h-px w-10 bg-ink/40" />
-                Stian Pablo Hauge
+                Kaspar Knudsen
               </figcaption>
 
               <div className="relative mt-10 flex flex-wrap items-center gap-3">

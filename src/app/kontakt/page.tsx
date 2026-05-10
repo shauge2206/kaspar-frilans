@@ -6,14 +6,14 @@ import { WordReveal } from "@/components/word-reveal";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Tips, oppdrag eller bare en hilsen — slik får du tak i Stian Pablo Hauge.",
+    "Tips, oppdrag eller bare en hilsen — slik får du tak i Kaspar Knudsen.",
 };
 
 const channels = [
   {
     label: "E-post",
-    value: "post@stianhauge.no",
-    href: "mailto:post@stianhauge.no",
+    value: "post@kasparknudsen.no",
+    href: "mailto:post@kasparknudsen.no",
   },
   {
     label: "Telefon",
