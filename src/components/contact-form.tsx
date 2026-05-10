@@ -3,14 +3,14 @@
 import { useMemo, useState } from "react";
 
 const TYPER = [
-  { value: "tips", label: "Tips til en sak" },
-  { value: "oppdrag", label: "Oppdragsforespørsel" },
-  { value: "samarbeid", label: "Samarbeid eller co-creation" },
-  { value: "annet", label: "Noe annet" },
+  { value: "ide", label: "Innsalg av idé eller artikkel" },
+  { value: "oppdrag", label: "Enkeltoppdrag" },
+  { value: "periode", label: "Periode-jobbing i redaksjon" },
+  { value: "annet", label: "Annet" },
 ] as const;
 
 export function ContactForm() {
-  const [type, setType] = useState<(typeof TYPER)[number]["value"]>("tips");
+  const [type, setType] = useState<(typeof TYPER)[number]["value"]>("ide");
   const [navn, setNavn] = useState("");
   const [epost, setEpost] = useState("");
   const [emne, setEmne] = useState("");

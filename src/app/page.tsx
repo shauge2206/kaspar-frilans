@@ -17,12 +17,12 @@ export default function HomePage() {
               className="smallcaps text-accent fade-up"
               style={{ animationDelay: "60ms" }}
             >
-              Forsiden · Utgave 014
+              Forsiden · Frilansjournalist
             </p>
 
             <SplitText
               as="h1"
-              text="Historier fra felt — fortalt med varme og kritisk blikk."
+              text="Kvalitetsjournalistikk fra Bergen."
               className="font-serif font-black text-[2.6rem] sm:text-[3.6rem] md:text-[5.4rem] leading-[0.95] tracking-[-0.035em] text-ink mt-5"
               delayBase={150}
               step={70}
@@ -32,10 +32,10 @@ export default function HomePage() {
               className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-ink-soft fade-up"
               style={{ animationDelay: "1100ms" }}
             >
-              Kaspar er frilansjournalist i Bergen. Femten år i media, master
-              i undersøkende journalistikk og kontor på USF Verftet. Han
-              skriver for nyhets- og fagpresse — med blikk for arbeidsliv,
-              krim, fiskeri og kystens næringer.
+              Kaspar Knudsen er frilansjournalist med kontor på USF Verftet,
+              Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
+              mediebransjen i Bergen. Leverer til Fiskeribladet, Intrafish og
+              Kystens Næringsliv.
             </p>
 
             <div
@@ -53,7 +53,7 @@ export default function HomePage() {
                 href="/kontakt"
                 className="smallcaps link-editorial text-ink"
               >
-                Tips · oppdrag · samarbeid
+                Kontakt
               </Link>
             </div>
           </div>
@@ -64,36 +64,35 @@ export default function HomePage() {
             style={{ animationDelay: "900ms" }}
           >
             <div className="rule-bar mb-4" />
-            <p className="smallcaps mb-3">Avdelinger</p>
+            <p className="smallcaps mb-3">Publikasjoner</p>
             <ul className="font-serif text-2xl leading-snug space-y-2">
               <li>
                 <Link href="/saker" className="link-editorial">
-                  Reportasje
+                  Fiskeribladet
                 </Link>
               </li>
               <li>
                 <Link href="/saker" className="link-editorial">
-                  Feature
+                  Intrafish
                 </Link>
               </li>
               <li>
                 <Link href="/saker" className="link-editorial text-accent">
-                  Graving
+                  Kystens Næringsliv
                 </Link>
               </li>
             </ul>
 
             <div className="rule-thin mt-8 pt-5">
-              <p className="smallcaps mb-3 text-ink-mute">I dag</p>
+              <p className="smallcaps mb-3 text-ink-mute">Hovedsak</p>
               <p className="text-ink-soft leading-relaxed">
-                Stortinget vurderer å gjenåpne én av Norges mest omdiskuterte
-                forlissaker. Les Kaspars langlesning fra Senja og Nord-Norge.
+                {saker[0].ingress}
               </p>
               <Link
                 href={`/saker/${saker[0].slug}`}
                 className="smallcaps link-editorial text-accent mt-3 inline-block"
               >
-                Til hovedsaken
+                Les saken
               </Link>
             </div>
           </aside>
@@ -229,31 +228,32 @@ export default function HomePage() {
             id="about-strip"
             className="font-serif font-bold text-[2rem] md:text-[2.8rem] leading-[1.05] tracking-[-0.025em] mt-3"
           >
-            Tett på menneskene. Ute i felt. Med kritisk blikk.
+            Kvalitetsjournalistikk. Frihet under ansvar.
           </h2>
         </div>
 
         <div className="md:col-span-7 md:col-rule md:pl-10">
           <p className="text-lg leading-relaxed text-ink-soft">
-            Kaspar har 15 år bak seg i bergensmedier og en master i
-            gravejournalistikk. Spesialitetene er reportasje og undersøkende
-            saker innen arbeidsliv, krim, fiskeri og kystens næringer.
+            Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+            Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
+            år i mediebransjen i Bergen. Gravejournalistikk innenfor
+            arbeidsliv, krim og flere områder.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-            Han drar ut til stedene, møter menneskene og forteller historien
-            med både tekst og foto. Faste oppdragsgivere er nisjepresse som
-            Fiskeribladet, Intrafish og Kystens Næringsliv — i tillegg til
-            regionale og nasjonale aviser.
+            Leverer kvalitetsjournalistikk til nisjepublikasjoner som
+            Fiskeribladet, Intrafish og Kystens Næringsliv. Produktet er
+            bilder og tekst, kritisk og undersøkende journalistikk og
+            menneskenære historier — levert fra felt.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6">
             {[
-              "Kvalitet",
-              "Fra felt",
-              "Fleksibilitet",
-              "Menneskenært",
-              "Kritisk",
-              "Undersøkende",
+              "Likeverd",
+              "Empati",
+              "Ærlighet",
+              "Samfunnsengasjert",
+              "Kritisk tenkning",
+              "Nysgjerrig",
             ].map((v) => (
               <li
                 key={v}

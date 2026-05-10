@@ -24,9 +24,9 @@ export default function SakerPage() {
           step={0}
         />
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft fade-up" style={{ animationDelay: "300ms" }}>
-          Et representativt utvalg fra de siste årene — fra langlesninger om
-          forlissaker i nord til nattlige drama på Sotra og hverdagsreportasjer
-          fra Fyllingsdalen.
+          Et utvalg saker publisert for Fiskeribladet, Bergens Tidende og
+          andre. Kritisk og undersøkende journalistikk med bilder og tekst —
+          levert fra felt.
         </p>
       </header>
 

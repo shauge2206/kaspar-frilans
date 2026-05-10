@@ -12,11 +12,12 @@ export function SiteFooter() {
               KASPAR
             </div>
             <p className="dateline mt-3">
-              FRILANSJOURNALIST · BERGEN · ETABLERT 2026
+              FRILANSJOURNALIST · BERGEN · ETABLERT APRIL 2026
             </p>
             <p className="mt-5 max-w-md text-ink-soft">
-              Reportasje, feature og graving fra Vestlandet og kysten. Tett
-              på menneskene, ute i felt, med kritisk blikk og varme.
+              «Økonomisk bærekraft i selskapet, å levere
+              kvalitetsjournalistikk, frihet under ansvar — å styre bedriften
+              selv.»
             </p>
           </div>
 
@@ -62,8 +63,8 @@ export function SiteFooter() {
         </div>
 
         <div className="rule-thin mt-12 pt-5 flex flex-col md:flex-row justify-between gap-3 dateline text-ink-mute">
-          <span>© {new Date().getFullYear()} KASPAR · ORG. NR. 933 117 482</span>
-          <span>MEDLEM AV NORSK JOURNALISTLAG</span>
+          <span>© {new Date().getFullYear()} KASPAR KNUDSEN</span>
+          <span>ENKELTPERSONFORETAK · BERGEN</span>
         </div>
       </div>
     </footer>

@@ -9,34 +9,37 @@ export const metadata: Metadata = {
 };
 
 const verdier = [
-  { ord: "Likeverd", forklaring: "Mellom mennesker, alltid." },
-  { ord: "Empati", forklaring: "Lytte først, skrive etterpå." },
-  { ord: "Ærlighet", forklaring: "Med kilder og lesere." },
-  { ord: "Samfunnsengasjert", forklaring: "Journalistikk som bidrar." },
-  { ord: "Kritisk tenkning", forklaring: "Aldri stille seg på siden." },
-  { ord: "Nysgjerrig", forklaring: "Drivkraften i alt arbeidet." },
+  { ord: "Likeverd" },
+  { ord: "Empati" },
+  { ord: "Høflighet og vennlighet" },
+  { ord: "Holder ord og avtaler" },
+  { ord: "Ærlighet" },
+  { ord: "Samfunnsengasjert" },
+  { ord: "Kritisk tenkning" },
+  { ord: "Nysgjerrig" },
+  { ord: "Åpen og inkluderende" },
 ];
 
 const tjenester = [
   {
-    tittel: "Reportasje fra felt",
+    tittel: "Innsalg av enkelt-ideer",
     beskrivelse:
-      "Tekst og foto fra stedene, menneskene og hendelsene — for nyhets- og fagpresse.",
+      "Gode ideer til saker publikasjonene ønsker, levert som forslag til redaksjonen.",
   },
   {
-    tittel: "Undersøkende journalistikk",
+    tittel: "Innsalg av påbegynte eller ferdige artikler",
     beskrivelse:
-      "Lengre graveprosjekter med dokumentinnsyn, kildearbeid og kritisk analyse.",
+      "Bilder og tekst — kritisk og undersøkende journalistikk, menneskenære historier fra felt.",
   },
   {
-    tittel: "Feature og portrett",
+    tittel: "Enkeltoppdrag",
     beskrivelse:
-      "Dyptgående portretter og temasaker om arbeidsliv, krim, fiskeri og kysten.",
+      "Stykkpris per sak etter dialog og forhandling. Tilgang til gjenbruk av artikler.",
   },
   {
     tittel: "Periode-jobbing i redaksjoner",
     beskrivelse:
-      "Tilgjengelig for vakter og prosjekter i kortere eller lengre perioder.",
+      "Betalt per periode etter dialog og forhandling. Fleksibilitet og tilpasning til kundebehov.",
   },
 ];
 
@@ -48,7 +51,7 @@ export default function OmPage() {
           <p className="smallcaps text-accent">Profil · Om journalisten</p>
           <SplitText
             as="h1"
-            text="Femten år i bergensmedier. Master i graving. Kontor på Verftet."
+            text="Kaspar Knudsen"
             className="font-serif font-black text-[2.4rem] sm:text-[3.4rem] md:text-[4.6rem] leading-[0.97] tracking-[-0.03em] mt-4 block"
             step={50}
           />
@@ -56,23 +59,23 @@ export default function OmPage() {
             className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-ink-soft fade-up"
             style={{ animationDelay: "1100ms" }}
           >
-            Kaspar er frilansjournalist med base i Bergen. Etter halvannet
-            tiår i lokal- og regionalpresse driver han nå eget enkeltperson­foretak
-            — med fokus på reportasje, feature og undersøkende journalistikk
-            for nyhets- og fagpresse.
+            Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+            Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
+            år i mediebransjen i Bergen. Driver eget enkeltpersonforetak fra
+            april 2026.
           </p>
         </div>
         <aside className="md:col-span-4 md:col-rule md:pl-8 fade-up" style={{ animationDelay: "900ms" }}>
           <div className="rule-bar mb-4" />
           <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-3 text-sm">
-            <dt className="smallcaps text-ink-mute">Base</dt>
+            <dt className="smallcaps text-ink-mute">Kontor</dt>
             <dd className="text-ink">USF Verftet, Nordnes</dd>
             <dt className="smallcaps text-ink-mute">Utdanning</dt>
             <dd className="text-ink">Master i undersøkende journalistikk</dd>
             <dt className="smallcaps text-ink-mute">Erfaring</dt>
-            <dd className="text-ink">15 år i bergensmedier</dd>
-            <dt className="smallcaps text-ink-mute">Medlem</dt>
-            <dd className="text-ink">Norsk Journalistlag</dd>
+            <dd className="text-ink">15 år i mediebransjen i Bergen</dd>
+            <dt className="smallcaps text-ink-mute">Foretak</dt>
+            <dd className="text-ink">Enkeltpersonforetak, april 2026</dd>
           </dl>
         </aside>
       </header>
@@ -84,21 +87,21 @@ export default function OmPage() {
         <div className="md:col-span-7">
           <p className="smallcaps text-accent mb-3">Bakgrunn</p>
           <h2 className="font-serif font-bold text-3xl md:text-[2.4rem] leading-[1.1] tracking-[-0.02em] mb-6">
-            Tett på menneskene jeg skriver om
+            Frilansjournalist i Bergen
           </h2>
           <p className="font-serif text-[1.1rem] md:text-[1.18rem] leading-[1.7] text-ink dropcap">
-            Faget motiverer meg — historiefortellingen, samfunnsoppdraget,
-            det å bidra til innsikt og søke sannhet. Etter 15 år i
-            bergensmedier kjenner jeg byen, kysten og menneskene godt. Jeg
-            drar ut i felt for å se stedene og møte kildene mine. Det gjør at
-            journalistikken kommer nærmere — og at fortellingen blir
-            menneskelig, ikke bare faktuell.
+            Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+            Verftet, Nordnes. Han har mastergrad i undersøkende journalistikk
+            og 15 år i mediebransjen i Bergen. Unik kompetanse innenfor
+            gravejournalistikk knyttet til arbeidsliv, krim og flere
+            områder, og evne til å komme tett på og fortelle sterke
+            historier — han drar ut i felt.
           </p>
           <p className="mt-6 font-serif text-[1.1rem] md:text-[1.18rem] leading-[1.7] text-ink">
-            Spesialiteten er undersøkende arbeid og lange feature-saker
-            innenfor arbeidsliv, krim, fiskeri og kystens næringer. Jeg
-            leverer både tekst og bilder, og er trygg på alle plattformer —
-            fra papir til lengre nettpubliseringer.
+            Produktet er bilder og tekst, tilgang til gjenbruk av artikler,
+            kritisk og undersøkende journalistikk og menneskenære historier.
+            Første kunder er Kystens Næringsliv, Intrafish og Fiskeribladet,
+            med målgruppe lesere av nisjeavisene Fiskeribladet og Intrafish.
           </p>
         </div>
 
@@ -107,14 +110,12 @@ export default function OmPage() {
           <ul className="font-serif text-2xl md:text-3xl leading-tight space-y-3 mt-2">
             <li>Arbeidsliv</li>
             <li>Krim</li>
-            <li>Fiskeri</li>
-            <li>Kystens næringer</li>
+            <li>Flere områder</li>
           </ul>
           <div className="rule-thin mt-8 pt-5">
-            <p className="dateline">Faste kanaler</p>
+            <p className="dateline">Første kunder</p>
             <p className="mt-2 text-ink-soft leading-relaxed">
-              Fiskeribladet · Intrafish · Kystens Næringsliv · Bergens
-              Tidende · regional og nasjonal presse.
+              Kystens Næringsliv · Intrafish · Fiskeribladet.
             </p>
           </div>
         </aside>
@@ -128,13 +129,11 @@ export default function OmPage() {
           <div className="md:col-span-7">
             <p className="smallcaps text-accent mb-3">Kjerneverdier</p>
             <h2 className="font-serif font-bold text-3xl md:text-[2.6rem] leading-[1.05] tracking-[-0.02em]">
-              Slik jobber jeg.
+              Kjerneverdier.
             </h2>
           </div>
           <p className="md:col-span-5 text-ink-soft leading-relaxed">
-            Verdiene styrer hvilke saker jeg sier ja til, hvordan jeg
-            forholder meg til kilder, og hvordan jeg bygger relasjoner med
-            redaksjoner over tid.
+            Verdiene som ligger til grunn for arbeidet og virksomheten.
           </p>
         </div>
 
@@ -145,9 +144,6 @@ export default function OmPage() {
                 {String(i + 1).padStart(2, "0")}
               </p>
               <p className="smallcaps mt-2">{v.ord}</p>
-              <p className="mt-2 text-ink-soft leading-relaxed">
-                {v.forklaring}
-              </p>
             </li>
           ))}
         </ul>
@@ -161,12 +157,12 @@ export default function OmPage() {
           <div className="md:col-span-7">
             <p className="smallcaps text-accent mb-3">Tjenester</p>
             <h2 className="font-serif font-bold text-3xl md:text-[2.6rem] leading-[1.05] tracking-[-0.02em]">
-              Hva jeg leverer.
+              Tjenester.
             </h2>
           </div>
           <p className="md:col-span-5 text-ink-soft leading-relaxed">
-            Stykkpris per sak, periode-jobbing eller faste leveranser —
-            tilpasset redaksjonens behov.
+            Stykkpris per sak og betalt per periode. Etter dialog og
+            forhandlinger.
           </p>
         </div>
 

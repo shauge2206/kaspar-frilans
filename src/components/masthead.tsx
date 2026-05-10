@@ -13,8 +13,8 @@ const NAV = [
 
 const EDITION = {
   city: "BERGEN",
-  date: "MANDAG 10. MAI 2026",
-  vol: "ÅRG. I · NR. 014",
+  location: "USF VERFTET · NORDNES",
+  role: "FRILANSJOURNALIST",
 };
 
 export function Masthead() {
@@ -54,13 +54,13 @@ export function Masthead() {
           ].join(" ")}
         >
           <div className="dateline justify-self-start">
-            {EDITION.city} · {EDITION.date}
+            {EDITION.city} · {EDITION.location}
           </div>
           <div className="dateline justify-self-center hidden md:block">
-            FRILANSJOURNALIST · KVALITETSJOURNALISTIKK FRA FELT
+            FRILANSJOURNALIST · KVALITETSJOURNALISTIKK
           </div>
           <div className="dateline justify-self-end tabular">
-            {EDITION.vol}
+            {EDITION.role}
           </div>
         </div>
 

@@ -136,8 +136,7 @@ export default async function SakPage({
 
           <p className="mt-10 dateline border-t border-rule-soft pt-6">
             Saken stod først på trykk i {sak.publikasjon},{" "}
-            <time dateTime={sak.datoIso}>{sak.dato}</time>. Utdrag gjengitt
-            med tillatelse.
+            <time dateTime={sak.datoIso}>{sak.dato}</time>.
           </p>
         </div>
       </div>
