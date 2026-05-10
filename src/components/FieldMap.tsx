@@ -104,7 +104,7 @@ export function FieldMap({
         </div>
       )}
 
-      <div className="relative grid lg:grid-cols-[1fr_minmax(0,420px)] gap-6 items-start">
+      <div className="relative grid lg:grid-cols-[minmax(0,360px)_minmax(0,420px)] gap-6 items-start lg:justify-start mx-auto lg:mx-0 lg:max-w-[820px]">
         <div className="relative bg-fog/40 border border-line/50 rounded-lg overflow-hidden">
           <div className="absolute inset-0 grid-paper opacity-50 pointer-events-none" />
           <svg
