@@ -1,0 +1,250 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/reveal";
+import { WordReveal } from "@/components/word-reveal";
+import { ParallaxImage } from "@/components/parallax-image";
+import { MagneticButton } from "@/components/magnetic-button";
+
+export const metadata: Metadata = {
+  title: "Om Stian",
+  description:
+    "Bergensbasert frilansjournalist med vekt på graving, kyst og næringsliv.",
+};
+
+const arbeidsområder = [
+  "Gravende reportasje",
+  "Featurearbeid",
+  "Næringslivsjournalistikk",
+  "Fiskeri & havbruk",
+  "Foto i felt",
+  "Tekstredigering",
+];
+
+const publikasjoner = [
+  { navn: "Fiskeribladet", tag: "Fast bidragsyter" },
+  { navn: "Bergens Tidende", tag: "Reportasje" },
+  { navn: "Intrafish", tag: "Næringsliv" },
+  { navn: "Kystens Næringsliv", tag: "Graving" },
+  { navn: "Dagens Næringsliv", tag: "Innleid" },
+  { navn: "NRK", tag: "Tips/research" },
+];
+
+const verdier = [
+  {
+    nr: "01",
+    tittel: "Frihet under ansvar",
+    body: "Frilansrollen gir meg friheten til å si nei — og pliktene som følger med å si ja. Ingen sak går i trykken før den tåler den prøven.",
+  },
+  {
+    nr: "02",
+    tittel: "Kildevern først",
+    body: "Det første jeg lover en kilde er at jeg holder ord. Det andre er at jeg vurderer alt på nytt før publisering.",
+  },
+  {
+    nr: "03",
+    tittel: "Tid som verktøy",
+    body: "Noen saker krever uker, noen krever år. Jeg kalkulerer tid som en del av kvaliteten, ikke som motsats til den.",
+  },
+  {
+    nr: "04",
+    tittel: "Klart språk",
+    body: "Jeg skriver så folk forstår — uten å miste presisjon. Sterke historier overlever sin egen kompleksitet.",
+  },
+];
+
+export default function OmPage() {
+  return (
+    <>
+      <section className="relative px-6 pt-20 pb-20 md:px-10 md:pt-28 md:pb-28">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="grid gap-12 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-7">
+              <Reveal as="p" delay={0.1} y={12}>
+                <span className="inline-flex items-center gap-2 rounded-full border border-line/80 bg-paper/70 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-mute backdrop-blur-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-coral-400" />
+                  Om
+                </span>
+              </Reveal>
+
+              <h1 className="mt-7 font-display text-[clamp(2.4rem,4vw+1rem,5.4rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+                <WordReveal
+                  text="Bergensbasert."
+                  delay={0.05}
+                />
+                <br />
+                <WordReveal
+                  text="Bredt nedslag."
+                  highlightWords={["nedslag."]}
+                  delay={0.35}
+                />
+                <br />
+                <WordReveal
+                  text="Lange linjer."
+                  delay={0.7}
+                />
+              </h1>
+
+              <Reveal delay={1.05} className="mt-10 grid gap-6 max-w-[58ch]">
+                <p className="text-[1.05rem] leading-relaxed text-ink-2">
+                  Jeg heter <strong className="font-medium text-ink">Stian Pablo Hauge</strong> og jobber som frilansjournalist
+                  med utgangspunkt i Bergen. Etter år som ansatt i regional
+                  presse valgte jeg friheten — og forpliktelsene — som
+                  følger med å arbeide selvstendig.
+                </p>
+                <p className="text-[1.05rem] leading-relaxed text-ink-2">
+                  Jeg skriver mest om kyst, hav og næringsliv, men beveger
+                  meg gjerne der historien ber meg gå: gravende reportasje,
+                  featurearbeid, og portretter som ikke nøyer seg med
+                  overflaten.
+                </p>
+                <p className="text-[1.05rem] leading-relaxed text-ink-2">
+                  Mitt arbeid har stått på trykk i blant annet Fiskeribladet,
+                  Bergens Tidende, Intrafish og Kystens Næringsliv.
+                </p>
+              </Reveal>
+            </div>
+
+            <Reveal delay={0.6} y={36} className="md:col-span-5 md:pt-6">
+              <ParallaxImage
+                src="/images/saker/sak-2/bilde-1.jpeg"
+                alt="Stian Pablo Hauge i felt"
+                className="aspect-[4/5] rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft"
+                offset={50}
+              />
+              <p className="mt-3 text-xs leading-relaxed text-mute">
+                Foto fra Skogsvåg, Øygarden — reportasje for Bergens Tidende, 2023.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* PUBLIKASJONER */}
+      <section className="relative px-6 pb-24 md:px-10">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
+                  Publikasjoner
+                </p>
+                <h2 className="mt-3 font-display text-[clamp(1.8rem,2.6vw+1rem,3rem)] font-medium leading-[1.05] tracking-tight text-ink">
+                  Hvor du finner arbeidet mitt
+                </h2>
+              </div>
+            </div>
+          </Reveal>
+
+          <StaggerGroup className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {publikasjoner.map((p) => (
+              <StaggerItem
+                key={p.navn}
+                className="group flex items-center justify-between rounded-[18px] bg-paper/70 px-6 py-5 ring-1 ring-line/70 shadow-soft backdrop-blur-sm transition-shadow duration-500 hover:shadow-lift"
+              >
+                <span className="font-display text-[1.25rem] font-medium tracking-tight text-ink">
+                  {p.navn}
+                </span>
+                <span className="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-mute">
+                  {p.tag}
+                </span>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
+
+      {/* ARBEIDSOMRÅDER */}
+      <section className="relative px-6 pb-24 md:px-10">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <div className="mb-10 grid gap-4 md:grid-cols-12">
+              <div className="md:col-span-5">
+                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
+                  Arbeidsområder
+                </p>
+                <h2 className="mt-3 font-display text-[clamp(1.8rem,2.6vw+1rem,3rem)] font-medium leading-[1.05] tracking-tight text-ink">
+                  Hva jeg leverer
+                </h2>
+              </div>
+              <p className="md:col-span-7 max-w-[60ch] text-base leading-relaxed text-ink-2">
+                Jeg påtar meg oppdrag fra redaksjoner, fagblader og
+                bransjepresse — som regel skrevet, men gjerne med eget foto
+                fra felt. Korte tips og lengre prosjekter behandles likt:
+                grundig research først, skriving etterpå.
+              </p>
+            </div>
+          </Reveal>
+          <StaggerGroup className="flex flex-wrap gap-3">
+            {arbeidsområder.map((a) => (
+              <StaggerItem key={a}>
+                <span className="inline-block rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-line/80 shadow-soft">
+                  {a}
+                </span>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
+
+      {/* VERDIER */}
+      <section className="relative px-6 pb-32 md:px-10">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <h2 className="mb-12 font-display text-[clamp(1.8rem,2.6vw+1rem,3.2rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              Fire prinsipper jeg holder fast på.
+            </h2>
+          </Reveal>
+          <StaggerGroup className="grid gap-5 md:grid-cols-2">
+            {verdier.map((v) => (
+              <StaggerItem
+                key={v.nr}
+                className="rounded-[var(--radius-card)] bg-paper/75 p-8 ring-1 ring-line/70 shadow-soft backdrop-blur-sm"
+              >
+                <div className="flex items-start gap-5">
+                  <span className="font-mono text-xs uppercase tracking-[0.22em] text-coral-500">
+                    {v.nr}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-[1.4rem] font-medium tracking-tight text-ink">
+                      {v.tittel}
+                    </h3>
+                    <p className="mt-2.5 text-[0.98rem] leading-relaxed text-ink-2">
+                      {v.body}
+                    </p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative px-6 pb-32 md:px-10">
+        <div className="mx-auto max-w-[1100px]">
+          <Reveal>
+            <div className="flex flex-col items-start gap-6 rounded-[28px] bg-gradient-to-br from-paper-2 via-paper to-coral-100 p-10 ring-1 ring-line/70 shadow-soft md:flex-row md:items-center md:justify-between md:p-14">
+              <div>
+                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
+                  Tilgjengelig for oppdrag
+                </p>
+                <p className="mt-2 max-w-[34ch] font-display text-[clamp(1.4rem,1.6vw+0.8rem,2.2rem)] font-medium leading-tight tracking-tight text-ink">
+                  Har du en sak du tror jeg burde se på?
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <MagneticButton href="/kontakt">Send tips</MagneticButton>
+                <Link
+                  href="/saker"
+                  className="link-underline px-1 py-2 font-mono text-[0.78rem] uppercase tracking-[0.18em] text-ink"
+                >
+                  Se siste saker →
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
