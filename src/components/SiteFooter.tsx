@@ -8,12 +8,11 @@ export function SiteFooter() {
         <div className="border-t border-ink/30 border-dashed pt-8 pb-12 grid gap-8 md:grid-cols-3">
           <div>
             <span className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-              Bakerst i feltboka
+              Om Kaspar
             </span>
-            <p className="handwritten text-pen-blue text-xl mt-2">
-              «Det er menneskene som forteller — jeg holder bare blyanten.»
+            <p className="typewriter text-sm text-ink mt-2">
+              Frilansjournalist med base på USF Verftet i Bergen.
             </p>
-            <p className="typewriter text-xs text-ink-fade mt-3">— K.H.</p>
           </div>
 
           <div>

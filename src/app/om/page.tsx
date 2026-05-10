@@ -36,13 +36,11 @@ const VERDIER = [
   },
   {
     ord: "Kritisk tenkning",
-    forklaring:
-      "Jeg tar ingenting for gitt — heller ikke pressemeldingene fra «egen side».",
+    forklaring: "En kjerneverdi i arbeidet.",
   },
   {
     ord: "Nysgjerrig",
-    forklaring:
-      "Det er som regel der noen sier «det her tror jeg ikke noe på» at sakene begynner.",
+    forklaring: "En kjerneverdi i arbeidet.",
   },
 ];
 
