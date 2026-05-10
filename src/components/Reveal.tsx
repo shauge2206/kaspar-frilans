@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { createElement, useEffect, useRef, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -40,15 +40,13 @@ export default function Reveal({
     return () => io.disconnect();
   }, []);
 
-  const Tag = as as keyof React.JSX.IntrinsicElements;
-  return (
-    // @ts-expect-error generic ref on dynamic element
-    <Tag
-      ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </Tag>
+  return createElement(
+    as,
+    {
+      ref,
+      className: `reveal ${visible ? "is-visible" : ""} ${className}`,
+      style: { transitionDelay: `${delay}ms` },
+    },
+    children,
   );
 }
