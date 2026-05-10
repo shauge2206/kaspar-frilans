@@ -38,7 +38,7 @@ export function useCommandPalette() {
 const SIDE_ACTIONS: Action[] = [
   { id: "forside", label: "Forside", kind: "side", href: "/" },
   { id: "saker", label: "Saker", kind: "side", href: "/saker" },
-  { id: "om", label: "Om Stian Pablo", kind: "side", href: "/om" },
+  { id: "om", label: "Om Kaspar", kind: "side", href: "/om" },
   { id: "kontakt", label: "Kontakt", kind: "kontakt", href: "/kontakt" },
 ];
 

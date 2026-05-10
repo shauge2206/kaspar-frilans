@@ -5,7 +5,7 @@ import { FadeIn, RevealGroup, RevealItem } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Ta kontakt med Stian Pablo Hauge — frilansjournalist i Bergen.",
+    "Ta kontakt med Kaspar Knudsen — frilansjournalist i Bergen.",
 };
 
 export default function KontaktPage() {
@@ -50,10 +50,10 @@ export default function KontaktPage() {
                   <dt>E-post</dt>
                   <dd className="mt-1 text-[14px] tracking-normal text-ink">
                     <a
-                      href="mailto:post@stianpablohauge.no"
+                      href="mailto:post@kasparknudsen.no"
                       className="underline-offset-4 hover:underline"
                     >
-                      post@stianpablohauge.no
+                      post@kasparknudsen.no
                     </a>
                   </dd>
                 </div>

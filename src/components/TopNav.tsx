@@ -46,7 +46,7 @@ export function TopNav() {
               aria-hidden
               className="inline-block h-1.5 w-1.5 -translate-y-[0.5px] bg-ink"
             />
-            SPH
+            KK
           </span>
         </TransitionLink>
 

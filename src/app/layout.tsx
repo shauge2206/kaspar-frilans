@@ -18,17 +18,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://stianpablohauge.no"),
+  metadataBase: new URL("https://kasparknudsen.no"),
   title: {
-    default: "Stian Pablo Hauge — Frilansjournalist",
-    template: "%s · Stian Pablo Hauge",
+    default: "Kaspar Knudsen — Frilansjournalist",
+    template: "%s · Kaspar Knudsen",
   },
   description:
     "Frilansjournalist i Bergen. Gravesaker, reportasje og feature — med fokus på kyst, fiskeri og samfunn.",
-  applicationName: "Stian Pablo Hauge",
-  authors: [{ name: "Stian Pablo Hauge" }],
+  applicationName: "Kaspar Knudsen",
+  authors: [{ name: "Kaspar Knudsen" }],
   openGraph: {
-    title: "Stian Pablo Hauge — Frilansjournalist",
+    title: "Kaspar Knudsen — Frilansjournalist",
     description:
       "Frilansjournalist i Bergen. Gravesaker, reportasje og feature.",
     locale: "nb_NO",

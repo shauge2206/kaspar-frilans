@@ -10,7 +10,7 @@ export function SiteFooter() {
             01 — Frilans · Bergen
           </p>
           <p className="mt-3 text-[22px] leading-[1.15] tracking-[-0.01em]">
-            Stian Pablo Hauge.
+            Kaspar Knudsen.
             <br />
             Journalist med kystlinje.
           </p>
@@ -55,10 +55,10 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-[14px]">
             <li>
               <a
-                href="mailto:post@stianpablohauge.no"
+                href="mailto:post@kasparknudsen.no"
                 className="underline-offset-4 hover:underline"
               >
-                post@stianpablohauge.no
+                post@kasparknudsen.no
               </a>
             </li>
             <li className="font-mono text-[12px] tabular text-ink/60">
@@ -71,7 +71,7 @@ export function SiteFooter() {
 
       <div className="border-t border-hairline">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-5 py-5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <span>© {year} — Stian Pablo Hauge</span>
+          <span>© {year} — Kaspar Knudsen</span>
           <span>Idé 07 · Precision Monochrome</span>
         </div>
       </div>

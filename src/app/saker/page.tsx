@@ -5,7 +5,7 @@ import { SakerIndex } from "@/components/SakerIndex";
 export const metadata: Metadata = {
   title: "Saker",
   description:
-    "Indeks over publiserte saker av Stian Pablo Hauge — gravesaker, reportasje og feature.",
+    "Indeks over publiserte saker av Kaspar Knudsen — gravesaker, reportasje og feature.",
 };
 
 export default function SakerPage() {

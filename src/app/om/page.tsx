@@ -6,7 +6,7 @@ import { TransitionLink } from "@/components/TransitionLink";
 export const metadata: Metadata = {
   title: "Om",
   description:
-    "Om Stian Pablo Hauge — frilansjournalist i Bergen med fokus på kyst, fiskeri og samfunn.",
+    "Om Kaspar Knudsen — frilansjournalist i Bergen med fokus på kyst, fiskeri og samfunn.",
 };
 
 const TIMELINE = [
@@ -72,7 +72,7 @@ export default function OmPage() {
                 as="h1"
                 className="text-[clamp(2.4rem,6vw,4.6rem)] font-medium leading-[0.98] tracking-[-0.03em]"
               >
-                Stian Pablo Hauge er en frilansjournalist basert i Bergen,
+                Kaspar Knudsen er en frilansjournalist basert i Bergen,
                 med kysten som arbeidsfelt.
               </RevealItem>
               <RevealItem
@@ -88,7 +88,7 @@ export default function OmPage() {
                 as="p"
                 className="max-w-[58ch] text-[15px] leading-[1.65] text-ink/65"
               >
-                Stian Pablo har bakgrunn fra både lokaljournalistikk og
+                Kaspar har bakgrunn fra både lokaljournalistikk og
                 næringspresse. Han er opptatt av at journalistikk skal være
                 konkret, etterprøvbar og åpen om sine kilder — og at lange
                 forløp bør få plass i moderne nyhetsbilde.
@@ -101,7 +101,7 @@ export default function OmPage() {
               <div className="mask-reveal aspect-[3/4] w-full overflow-hidden border border-hairline bg-ink/5">
                 <CursorPanImage
                   src="/images/saker/sak-2/bilde-1.jpeg"
-                  alt="Portrett av Stian Pablo Hauge"
+                  alt="Portrett av Kaspar Knudsen"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   containerClassName="h-full w-full"

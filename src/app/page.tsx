@@ -27,7 +27,7 @@ export default function Home() {
                 as="h1"
                 className="text-[clamp(2.6rem,7vw,5.6rem)] font-medium leading-[0.96] tracking-[-0.035em]"
               >
-                Stian Pablo Hauge.
+                Kaspar Knudsen.
                 <br />
                 <span className="text-ink/45">Reporter med kystlinje.</span>
               </RevealItem>
@@ -212,7 +212,7 @@ export default function Home() {
                 samtidig.
               </blockquote>
               <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">
-                — Stian Pablo Hauge, Bergen
+                — Kaspar Knudsen, Bergen
               </p>
             </FadeIn>
           </div>
