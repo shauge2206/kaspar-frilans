@@ -124,18 +124,6 @@ export default async function SakPage(props: Props) {
           </Reveal>
 
           <Reveal>
-            <figure className="my-14">
-              <blockquote className="font-display text-[clamp(1.6rem,2vw+1rem,2.6rem)] font-medium leading-[1.18] tracking-tight text-ink">
-                <span
-                  aria-hidden
-                  className="mb-4 block h-px w-14 bg-coral-400"
-                />
-                {sak.pullQuote}
-              </blockquote>
-            </figure>
-          </Reveal>
-
-          <Reveal>
             <article className="prose-fluid">
               {sak.brodtekst.slice(2).map((p, i) => (
                 <p key={i}>{p}</p>

@@ -251,23 +251,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* QUOTE / CTA */}
+      {/* CTA */}
       <section className="relative px-6 pb-32 md:px-10">
         <div className="mx-auto max-w-[1100px]">
           <Reveal>
-            <figure className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-coral-100 via-apricot-50 to-teal-100 p-10 md:p-16 ring-1 ring-line/70 shadow-soft">
+            <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-coral-100 via-apricot-50 to-teal-100 p-10 md:p-16 ring-1 ring-line/70 shadow-soft">
               <div className="paper-grain absolute inset-0" />
-              <blockquote className="relative font-display text-[clamp(1.8rem,2.6vw+1rem,3.2rem)] font-medium leading-[1.12] tracking-tight text-ink">
-                «Jeg tror på journalistikk som tar leseren på alvor — som
-                tåler tid, som henter fram dokumenter, som lar mennesker
-                snakke ferdig.»
-              </blockquote>
-              <figcaption className="relative mt-8 flex items-center gap-3 text-sm text-ink-2">
-                <span className="h-px w-10 bg-ink/40" />
-                Kaspar Knudsen
-              </figcaption>
-
-              <div className="relative mt-10 flex flex-wrap items-center gap-3">
+              <div className="relative flex flex-wrap items-center gap-3">
                 <MagneticButton href="/kontakt">
                   Snakkes om et oppdrag
                 </MagneticButton>
@@ -275,7 +265,7 @@ export default function HomePage() {
                   Mer om meg
                 </MagneticButton>
               </div>
-            </figure>
+            </div>
           </Reveal>
         </div>
       </section>

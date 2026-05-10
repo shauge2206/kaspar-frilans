@@ -49,8 +49,7 @@ export const saker: Sak[] = [
       "En statlig gransking konkluderte tidlig med at fiskebåten hadde grunnstøtt og at forliset var selvforskyldt.",
       "De etterlatte har hele veien hevdet at dette umulig kunne være tilfelle, og at et annet fartøy må ha kollidert med «Utvik Senior».",
     ],
-    pullQuote:
-      "«Vi har ventet i 47 år. Nå er det grunn til optimisme — endelig.»",
+    pullQuote: "",
   },
   {
     slug: "drama-paa-sotra",
@@ -85,8 +84,7 @@ export const saker: Sak[] = [
       "Thomas Olsen (45) bor i nærheten. Han forteller om en svært dramatisk natt.",
       "«Naboen min ringte meg rett etter midnatt. Hun var redd og fortalte at naboen hennes hadde knust ruten hennes med et stort hageredskap», sier Olsen.",
     ],
-    pullQuote:
-      "«Jeg så ham komme gjennom hagen med armbrøsten hevet — det var helt uvirkelig.»",
+    pullQuote: "",
   },
   {
     slug: "gratisbutikk-flyktninger",
@@ -123,8 +121,7 @@ export const saker: Sak[] = [
       "Hun sier de er svært takknemlige for at folk leverer inn ting.",
       "Men et problem har vært vedvarende over tid: De får inn altfor mye klær og gjenstander av dårlig kvalitet. En fjerdedel av det butikken mottar går derfor rett i bosset.",
     ],
-    pullQuote:
-      "«Folk vil hjelpe — men en fjerdedel av det vi får inn må vi kaste.»",
+    pullQuote: "",
   },
 ];
 
