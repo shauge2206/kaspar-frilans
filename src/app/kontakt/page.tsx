@@ -17,12 +17,11 @@ export default function Kontakt() {
           <Reveal>
             <p className="eyebrow">Kontakt</p>
             <h1 className="mt-6 font-display font-light text-5xl sm:text-7xl md:text-[7.5rem] lg:text-[9rem] leading-[0.92] tracking-[-0.02em]">
-              Ta kontakt
-              <span className="block italic text-amber-soft">— jeg lytter.</span>
+              Kontakt
             </h1>
             <p className="mt-12 max-w-3xl font-display text-xl md:text-2xl leading-snug text-fg-muted">
-              Tips, oppdrag, samarbeid eller en kopp kaffe på Verftet —
-              henvendelser behandles fortrolig.
+              Kaspar Knudsen, frilansjournalist. Kontor på USF Verftet,
+              Nordnes i Bergen.
             </p>
           </Reveal>
         </div>
@@ -46,25 +45,6 @@ export default function Kontakt() {
                     kaspar@kasparknudsen.no
                   </a>
                 </li>
-                <li>
-                  <p className="smallcaps text-fg-muted text-[0.7rem]">
-                    Telefon
-                  </p>
-                  <a
-                    href="tel:+4790000000"
-                    className="font-display text-2xl md:text-3xl amber-underline"
-                  >
-                    +47 900 00 000
-                  </a>
-                </li>
-                <li>
-                  <p className="smallcaps text-fg-muted text-[0.7rem]">
-                    Kryptert tips
-                  </p>
-                  <p className="font-display text-2xl md:text-3xl">
-                    Signal · @kasparknudsen
-                  </p>
-                </li>
               </ul>
             </Reveal>
 
@@ -74,32 +54,22 @@ export default function Kontakt() {
                 <p className="mt-6 font-display text-2xl md:text-3xl leading-tight">
                   USF Verftet
                   <br />
-                  Georgernes Verft 12
-                  <br />
-                  5011 Bergen
-                </p>
-                <p className="mt-6 text-fg-muted leading-relaxed max-w-md">
-                  Inngang fra kaisiden. Si ifra i resepsjonen — eller send
-                  en melding på forhånd, så møter jeg deg ute.
+                  Nordnes, Bergen
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={200}>
               <div className="border-t border-rule pt-10">
-                <p className="eyebrow">Treffes</p>
+                <p className="eyebrow">Foretak</p>
                 <ul className="mt-6 space-y-2 font-display text-xl md:text-2xl text-fg">
                   <li className="flex justify-between gap-8">
-                    <span>Mandag — torsdag</span>
-                    <span className="text-fg-muted">09 — 16</span>
+                    <span>Form</span>
+                    <span className="text-fg-muted">Enkeltpersonforetak</span>
                   </li>
                   <li className="flex justify-between gap-8">
-                    <span>Fredag</span>
-                    <span className="text-fg-muted">09 — 14</span>
-                  </li>
-                  <li className="flex justify-between gap-8">
-                    <span>Helg</span>
-                    <span className="text-fg-muted">etter avtale</span>
+                    <span>Periode</span>
+                    <span className="text-fg-muted">April 2026 — mars 2027</span>
                   </li>
                 </ul>
               </div>
@@ -137,7 +107,7 @@ export default function Kontakt() {
           <Reveal>
             <p className="smallcaps text-amber-soft">Bergen — Nordnes</p>
             <h2 className="mt-5 font-display font-light text-4xl md:text-6xl lg:text-7xl leading-[0.98] tracking-[-0.015em] max-w-3xl">
-              Møt meg der byen åpner seg mot havet.
+              USF Verftet, Nordnes.
             </h2>
           </Reveal>
         </div>

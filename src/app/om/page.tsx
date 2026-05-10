@@ -6,56 +6,44 @@ import ParallaxImage from "@/components/ParallaxImage";
 export const metadata = {
   title: "Om Kaspar",
   description:
-    "Kaspar Knudsen er frilansjournalist med base på USF Verftet i Bergen. Femten år i pressen, mastergrad i gravejournalistikk.",
+    "Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen.",
 };
 
 const verdier = [
-  {
-    ord: "Likeverd",
-    tekst:
-      "Hver kilde fortjener samme respekt — om de står i havna eller på taler­stolen.",
-  },
-  {
-    ord: "Empati",
-    tekst:
-      "Mennesket først. Saken etter. Historiene som varer er de hvor vi har tatt oss tid.",
-  },
-  {
-    ord: "Ærlighet",
-    tekst:
-      "Tydelig om hva jeg vet, hva jeg ikke vet, og hva jeg fortsatt arbeider med å forstå.",
-  },
-  {
-    ord: "Nysgjerrighet",
-    tekst:
-      "En gravejournalists viktigste verktøy. Spørsmål som ikke alltid har et svar.",
-  },
+  { ord: "Likeverd", tekst: "" },
+  { ord: "Empati", tekst: "" },
+  { ord: "Høflighet og vennlighet", tekst: "" },
+  { ord: "Holder ord og avtaler", tekst: "" },
+  { ord: "Ærlighet", tekst: "" },
+  { ord: "Samfunnsengasjert", tekst: "" },
+  { ord: "Kritisk tenkning", tekst: "" },
+  { ord: "Nysgjerrig", tekst: "" },
+  { ord: "Åpen og inkluderende", tekst: "" },
 ];
 
 const tjenester = [
   {
     nr: "01",
-    tittel: "Undersøkende journalistikk",
-    tekst:
-      "Lengre research-prosjekter for redaksjoner og fagblader. Dokument­basert arbeid kombinert med kildearbeid i felt.",
+    tittel: "Innsalg av enkelt-ideer",
+    tekst: "Idéer selges inn til redaksjoner.",
   },
   {
     nr: "02",
-    tittel: "Featurereportasjer",
+    tittel: "Påbegynte og ferdige artikler",
     tekst:
-      "Menneskenære historier fra arbeidsliv og kystsamfunn. Tekst og foto i ett — visuell historiefortelling som henger sammen.",
+      "Innsalg av påbegynte eller ferdige artikler — bilder og tekst, mulighet for gjenbruk.",
   },
   {
     nr: "03",
-    tittel: "Foto og bildedokumentasjon",
+    tittel: "Enkeltoppdrag",
     tekst:
-      "Egenproduserte bilder fra felt. Reportasjefoto, portrett og dokumentar — i tråd med journalistikkens etiske krav.",
+      "Enkeltoppdrag for redaksjoner og fagblader. Kritisk og undersøkende journalistikk, menneskenære historier.",
   },
   {
     nr: "04",
-    tittel: "Fagspesifikt arbeid",
+    tittel: "Periode-jobbing i redaksjoner",
     tekst:
-      "Fiskeri, maritim industri, kriminalitet og arbeidsliv. Tett kontakt med Fiskeribladet, Intrafish og Kystens Næringsliv.",
+      "Periode-jobbing i redaksjoner. Prismodell: stykkpris per sak eller betalt per periode.",
   },
 ];
 
@@ -68,13 +56,12 @@ export default function Om() {
           <Reveal>
             <p className="eyebrow">Om Kaspar Knudsen</p>
             <h1 className="mt-6 font-display font-light text-5xl sm:text-7xl md:text-[7rem] lg:text-[9rem] leading-[0.92] tracking-[-0.02em]">
-              Femten år
-              <span className="block italic text-amber-soft">i pressen.</span>
+              Kaspar
+              <span className="block italic text-amber-soft">Knudsen</span>
             </h1>
             <p className="mt-12 max-w-3xl font-display text-2xl md:text-3xl leading-[1.3] text-fg-muted">
-              En master i gravejournalistikk. En arbeidsdag som starter med
-              kaffe på USF Verftet, og ofte ender et helt annet sted enn
-              planlagt.
+              Frilansjournalist i Bergen med kontor på USF Verftet, Nordnes.
+              Mastergrad i undersøkende journalistikk og 15 år i mediebransjen.
             </p>
           </Reveal>
         </div>
@@ -94,9 +81,6 @@ export default function Om() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
               </div>
-              <p className="mt-4 smallcaps text-fg-muted">
-                Foto: Kaspar Knudsen · Sotra, 2023
-              </p>
             </Reveal>
           </div>
 
@@ -105,21 +89,17 @@ export default function Om() {
               <p className="eyebrow">Bakgrunn</p>
               <div className="mt-6 space-y-7 font-display text-xl md:text-[1.5rem] leading-[1.5] text-fg">
                 <p>
-                  Jeg har skrevet for Bergen-pressen siden 2010. Først som
-                  nyhets­journalist, så som featureskribent, og de siste
-                  årene som frilanser med spesialfelt innenfor
-                  gravejournalistikk og kystens næringer.
+                  Kaspar Knudsen er frilansjournalist i Bergen med kontor på
+                  USF Verftet, Nordnes. Mastergrad i undersøkende
+                  journalistikk og 15 år i mediebransjen.
                 </p>
                 <p>
-                  Mastergraden min ved Universitetet i Bergen handlet om
-                  hvordan norske myndigheter dokumenterer — og glemmer —
-                  forlis. Det er fortsatt et tema jeg vender tilbake til.
+                  Gravejournalistikk innenfor arbeidsliv, krim og flere
+                  områder — drar ut i felt og leverer både bilder og tekst.
                 </p>
                 <p>
-                  Arbeidet mitt har stått på trykk i Fiskeribladet,
-                  Intrafish, Kystens Næringsliv og Bergens Tidende. Jeg
-                  jobber gjerne over tid med en sak — og foretrekker felt
-                  framfor telefon når det er mulig.
+                  Leverer kvalitetsjournalistikk til nisjepublikasjoner som
+                  Fiskeribladet, Intrafish og Kystens Næringsliv.
                 </p>
               </div>
             </Reveal>
@@ -131,10 +111,9 @@ export default function Om() {
       <section className="py-32 md:py-44 border-t border-rule mt-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <Reveal>
-            <p className="eyebrow">Verdier</p>
+            <p className="eyebrow">Kjerneverdier</p>
             <h2 className="mt-6 font-display text-4xl md:text-6xl lg:text-7xl tracking-[-0.015em] leading-[1] max-w-4xl">
-              Det jeg
-              <span className="italic text-amber-soft"> bygger på.</span>
+              Kjerneverdier
             </h2>
           </Reveal>
           <div className="mt-16 md:mt-24 grid md:grid-cols-2 gap-y-14 gap-x-16">
@@ -148,9 +127,11 @@ export default function Om() {
                     <h3 className="font-display text-3xl md:text-4xl tracking-tight">
                       {v.ord}
                     </h3>
-                    <p className="mt-3 text-fg-muted leading-relaxed max-w-md">
-                      {v.tekst}
-                    </p>
+                    {v.tekst && (
+                      <p className="mt-3 text-fg-muted leading-relaxed max-w-md">
+                        {v.tekst}
+                      </p>
+                    )}
                   </div>
                 </div>
               </Reveal>
@@ -165,11 +146,10 @@ export default function Om() {
           <div className="mx-auto max-w-5xl px-6 text-center">
             <p className="eyebrow">Visjon</p>
             <p className="mt-10 font-display text-3xl md:text-5xl lg:text-6xl leading-[1.08] tracking-[-0.01em]">
-              <span className="text-amber">“</span>
-              Økonomisk bærekraftig journalistikk som holder kvalitet over
-              tid — frihet under ansvar, der nysgjerrigheten styrer
-              kompasset.
-              <span className="text-amber">”</span>
+              <span className="text-amber">«</span>
+              Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+              frihet under ansvar — å styre bedriften selv
+              <span className="text-amber">»</span>
             </p>
             <div aria-hidden className="mx-auto mt-12 h-px w-16 bg-amber" />
           </div>
@@ -182,8 +162,7 @@ export default function Om() {
           <Reveal>
             <p className="eyebrow">Tjenester</p>
             <h2 className="mt-6 font-display text-4xl md:text-6xl lg:text-7xl tracking-[-0.015em] leading-[1] max-w-4xl">
-              Slik kan vi
-              <span className="italic text-amber-soft"> jobbe sammen.</span>
+              Salgsmodell
             </h2>
           </Reveal>
           <div className="mt-16">
@@ -221,22 +200,19 @@ export default function Om() {
         <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 md:px-10 pb-14 md:pb-20">
           <Reveal>
             <p className="smallcaps text-amber-soft">
-              Kontorfellesskap · Nordnes
+              Kontor · Nordnes
             </p>
             <h2 className="mt-5 font-display font-light text-4xl md:text-6xl lg:text-7xl leading-[0.98] tracking-[-0.015em] max-w-4xl">
-              USF Verftet — der dagene begynner.
+              USF Verftet
             </h2>
             <p className="mt-7 max-w-2xl text-fg/85 leading-relaxed">
-              Den gamle sardinfabrikken på Nordnes huser i dag Bergens
-              kunst- og kulturmiljø. Det er her jeg har kontor, der
-              fjorden møter byen og hvor researchen ofte starter ved et
-              langt bord med kaffe.
+              Kontor på USF Verftet, Nordnes i Bergen.
             </p>
             <Link
               href="/kontakt"
               className="mt-10 inline-flex items-center gap-3 border border-fg/80 px-7 py-4 smallcaps text-fg transition-colors hover:bg-fg hover:text-bg w-fit"
             >
-              Finn meg på Verftet
+              Kontaktinformasjon
               <span aria-hidden>→</span>
             </Link>
           </Reveal>

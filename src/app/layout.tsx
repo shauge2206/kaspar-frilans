@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s · Kaspar Knudsen",
   },
   description:
-    "Undersøkende journalistikk og featurearbeid fra felt. Arbeidsliv, kriminalitet og kystens næringer — fortalt med tekst og bilde.",
+    "Frilansjournalist i Bergen med kontor på USF Verftet, Nordnes. Mastergrad i undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.",
 };
 
 export default function RootLayout({

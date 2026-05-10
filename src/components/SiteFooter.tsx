@@ -9,8 +9,8 @@ export default function SiteFooter() {
           <div className="md:col-span-5">
             <p className="eyebrow">Kolofon</p>
             <p className="mt-4 font-display text-2xl md:text-3xl leading-tight max-w-md">
-              Kaspar Knudsen — frilansjournalist med base på USF Verftet i
-              Bergen.
+              «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+              frihet under ansvar — å styre bedriften selv»
             </p>
           </div>
 
@@ -25,15 +25,10 @@ export default function SiteFooter() {
                   kaspar@kasparknudsen.no
                 </a>
               </li>
-              <li>
-                <a href="tel:+4790000000" className="amber-underline">
-                  +47 900 00 000
-                </a>
-              </li>
               <li className="pt-2 text-sm">
-                USF Verftet, Georgernes Verft 12
+                USF Verftet
                 <br />
-                5011 Bergen
+                Nordnes, Bergen
               </li>
             </ul>
           </div>
@@ -60,21 +55,18 @@ export default function SiteFooter() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="eyebrow">Publiserer for</p>
+            <p className="eyebrow">Publikasjoner</p>
             <ul className="mt-4 space-y-2 text-fg-muted text-sm">
               <li>Fiskeribladet</li>
               <li>Intrafish</li>
               <li>Kystens Næringsliv</li>
-              <li>Bergens Tidende</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-16 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-xs text-fg-muted">
-          <p className="smallcaps">© {aar} Kaspar Knudsen — alle rettigheter</p>
-          <p className="smallcaps">
-            Org.nr 999 999 999 — Medlem av Norsk Journalistlag
-          </p>
+          <p className="smallcaps">© {aar} Kaspar Knudsen</p>
+          <p className="smallcaps">Enkeltpersonforetak</p>
         </div>
       </div>
     </footer>

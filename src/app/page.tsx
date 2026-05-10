@@ -33,16 +33,16 @@ export default function Home() {
         <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="max-w-5xl">
             <p className="eyebrow text-fg/80">
-              Frilansjournalist · Bergen · 2010—
+              Frilansjournalist · Bergen
             </p>
             <h1 className="mt-6 font-display font-light text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.94] tracking-[-0.02em]">
-              Historier <span className="italic text-amber-soft">fra felt</span>
-              <span className="block">— der menneskene er.</span>
+              Kaspar <span className="italic text-amber-soft">Knudsen</span>
+              <span className="block">Frilansjournalist i Bergen</span>
             </h1>
             <p className="mt-8 max-w-2xl text-base md:text-lg text-fg/80 leading-relaxed">
-              Kaspar Knudsen er gravejournalist og featureskribent med base på
-              USF Verftet. I femten år har han fortalt om arbeidsliv,
-              kriminalitet, fiskeri og kystens næringer — i tekst og bilde.
+              Frilansjournalist med base på USF Verftet, Bergen. Mastergrad i
+              undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish
+              og Kystens Næringsliv.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <Link
@@ -83,7 +83,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-12 md:gap-20">
           <div className="lg:col-span-4">
             <Reveal>
-              <p className="eyebrow">Et redaksjonelt verksted</p>
+              <p className="eyebrow">Base</p>
               <p className="mt-6 smallcaps text-fg-muted">
                 USF Verftet · Nordnes · Bergen
               </p>
@@ -92,24 +92,24 @@ export default function Home() {
           <div className="lg:col-span-8">
             <Reveal delay={120}>
               <p className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.12] tracking-[-0.01em] text-fg">
-                Jeg jobber sakte og grundig — der det krever tid å forstå.
-                Femten år i Bergen-pressen og en mastergrad i
-                gravejournalistikk har lært meg at de viktigste historiene
-                sjelden roper høyest.
+                Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+                Verftet, Nordnes. Mastergrad i undersøkende journalistikk og
+                15 år i mediebransjen.
               </p>
               <div className="mt-12 grid sm:grid-cols-2 gap-10 md:gap-14 max-w-3xl">
                 <div>
                   <p className="smallcaps text-amber">Spesialfelt</p>
                   <p className="mt-3 text-fg-muted leading-relaxed">
-                    Arbeidsliv, kriminalitet, fiskeri og kystens næringer.
-                    Tekst, foto og visuell historiefortelling.
+                    Gravejournalistikk innenfor arbeidsliv, krim og flere
+                    områder. Bilder og tekst — leverer fra felt.
                   </p>
                 </div>
                 <div>
-                  <p className="smallcaps text-amber">Verdier</p>
+                  <p className="smallcaps text-amber">Kjerneverdier</p>
                   <p className="mt-3 text-fg-muted leading-relaxed">
-                    Likeverd, empati og ærlighet. Kritisk tenkning,
-                    samfunnsengasjement og frihet under ansvar.
+                    Likeverd, empati, høflighet og vennlighet, holder ord og
+                    avtaler, ærlighet, samfunnsengasjert, kritisk tenkning,
+                    nysgjerrig, åpen og inkluderende.
                   </p>
                 </div>
               </div>
@@ -228,17 +228,18 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <Reveal>
-              <p className="eyebrow">Et samarbeid</p>
+              <p className="eyebrow">Kontakt</p>
               <h2 className="mt-6 font-display font-light text-4xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.015em]">
-                Har du en sak?
+                Ta kontakt
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-7 lg:pt-6">
             <Reveal delay={120}>
               <p className="font-display text-xl md:text-2xl leading-snug text-fg max-w-2xl">
-                Jeg tar imot oppdrag fra redaksjoner, fagblader og
-                organisasjoner. Tips og henvendelser behandles fortrolig.
+                Salgsmodell: innsalg av enkelt-ideer, innsalg av påbegynte
+                eller ferdige artikler, enkeltoppdrag og periode-jobbing i
+                redaksjoner. Prising per sak eller per periode.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-6">
                 <a
@@ -252,7 +253,7 @@ export default function Home() {
                   href="/kontakt"
                   className="smallcaps text-fg-muted amber-underline"
                 >
-                  Andre måter å nå meg på
+                  Kontaktinformasjon
                 </Link>
               </div>
             </Reveal>

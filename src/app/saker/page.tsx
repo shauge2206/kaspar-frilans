@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 export const metadata = {
   title: "Saker",
   description:
-    "Et utvalg journalistisk arbeid av Kaspar Knudsen — fra Senja, Sotra og Bergen.",
+    "Et utvalg saker av Kaspar Knudsen publisert i Fiskeribladet, Intrafish og Kystens Næringsliv.",
 };
 
 export default function SakerIndex() {
@@ -21,8 +21,8 @@ export default function SakerIndex() {
               Saker
             </h1>
             <p className="mt-10 max-w-2xl font-display text-xl md:text-2xl leading-snug text-fg-muted">
-              Et utvalg featurearbeid og undersøkende journalistikk —
-              publisert i norsk dags- og fagpresse mellom 2023 og 2025.
+              Et utvalg saker publisert i Fiskeribladet, Intrafish og Kystens
+              Næringsliv.
             </p>
           </Reveal>
         </div>

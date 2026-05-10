@@ -77,14 +77,13 @@ export default function KontaktForm() {
           value={melding}
           onChange={(e) => setMelding(e.target.value)}
           className="w-full bg-transparent border border-rule focus:border-amber outline-none px-4 py-3 font-display text-lg leading-relaxed transition-colors placeholder:text-fg-muted/60"
-          placeholder="Skriv noen ord om saken — jeg svarer som regel innen et døgn."
+          placeholder="Skriv noen ord om saken."
         />
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
         <p className="text-xs text-fg-muted max-w-md">
-          Skjemaet åpner e-postprogrammet ditt med innholdet. Foretrekker
-          du kryptert kanal, send en melding på Signal i stedet.
+          Skjemaet åpner e-postprogrammet ditt med innholdet.
         </p>
         <button
           type="submit"
