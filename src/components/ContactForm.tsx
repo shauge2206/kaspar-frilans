@@ -103,7 +103,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-wrap items-center justify-between gap-4 pt-3">
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-          Svar vanligvis innen ett døgn
+          USF Verftet · Bergen
         </p>
         <button
           type="submit"

@@ -17,15 +17,15 @@ export default function Home() {
               Utgave 09 · Mai 2026
             </p>
             <h1 className="font-serif text-[clamp(2.4rem,6vw,5rem)] leading-[1.05] tracking-tight text-ink">
-              Sakte journalistikk
+              Kaspar Knudsen
               <span className="block italic text-ink-soft">
-                fra felt og kyst.
+                Frilansjournalist i Bergen.
               </span>
             </h1>
             <p className="mt-8 max-w-xl text-lg md:text-xl leading-relaxed text-ink-soft">
-              Kaspar Knudsen er undersøkende journalist i Bergen. Han skriver
-              lange reportasjer om arbeidsliv, fiskeri og folk som sjelden får
-              ordet. Skrevet i felt — laget for å leses i ro.
+              Frilansjournalist med base på USF Verftet, Bergen. Mastergrad i
+              undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish
+              og Kystens Næringsliv.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
@@ -70,21 +70,19 @@ export default function Home() {
           <div className="md:col-span-4">
             <p className="smallcaps text-amber mb-4">Posisjon</p>
             <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-              Kvalitet før kvantitet.
+              Kvalitetsjournalistikk fra Bergen.
             </h2>
           </div>
           <div className="md:col-span-7 md:col-start-6 prose-longform max-w-none">
             <p>
-              Femten år i Bergens medieliv. Master i gravejournalistikk fra
-              Universitetet i Bergen. Kaspar er ute der historiene faktisk
-              skjer — på kaiene, i havna, i hjemmene til folk som har båret
-              tunge byrder altfor lenge.
+              Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+              Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
+              år i mediebransjen.
             </p>
             <p>
-              Han jobber for Fiskeribladet, Bergens Tidende, Intrafish og
-              Kystens Næringsliv. Verdiene er enkle: likeverd, empati,
-              ærlighet. Verktøyene er tradisjonelle: tid, tillit, og
-              dokumentasjon som tåler dagslys.
+              Leverer kvalitetsjournalistikk til nisjepublikasjoner som
+              Fiskeribladet, Intrafish og Kystens Næringsliv. Gravejournalistikk
+              innenfor arbeidsliv, krim og flere områder — drar ut i felt.
             </p>
           </div>
         </div>
@@ -171,12 +169,12 @@ export default function Home() {
           <div className="border border-rule bg-bg-elev p-10 md:p-14">
             <p className="smallcaps text-amber mb-5">Bestilling</p>
             <h2 className="font-serif text-3xl md:text-5xl leading-tight max-w-3xl">
-              Har du en sak som fortjener tid og tilstedeværelse?
+              Trenger redaksjonen din en frilanser?
             </h2>
             <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">
-              Kaspar tar oppdrag for redaksjoner og fagblader. Reportasje,
-              feature, gravesaker, intervju og bilde. Alt fra korte
-              nyhetssaker til prosjekter over flere måneder.
+              Innsalg av enkelt-ideer, påbegynte eller ferdige artikler,
+              enkeltoppdrag og periode-jobbing i redaksjoner. Stykkpris per sak
+              eller betalt pr periode.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

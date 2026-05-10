@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 export const metadata = {
   title: "Kontakt — Kaspar Knudsen",
   description:
-    "Skriv til Kaspar Knudsen for redaksjonelle oppdrag, tips eller bare en kaffeprat på USF Verftet i Bergen.",
+    "Skriv til Kaspar Knudsen for redaksjonelle oppdrag eller tips. Kontor på USF Verftet i Bergen.",
 };
 
 export default function KontaktPage() {
@@ -13,15 +13,14 @@ export default function KontaktPage() {
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
         <p className="smallcaps text-amber mb-5">Kontakt</p>
         <h1 className="font-serif text-[clamp(2.4rem,5vw,4.8rem)] leading-[1.05] tracking-tight max-w-4xl">
-          Send et tips,
+          Kontakt Kaspar
           <span className="block italic text-ink-soft">
-            eller en bestilling.
+            USF Verftet, Bergen.
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">
-          E-post er enklest, men du finner Kaspar også på USF Verftet om du
-          vil ta en kaffe. Kildevern står sterkt — krypterte kanaler er
-          tilgjengelige på forespørsel.
+          For oppdrag, innsalg av ideer, ferdige artikler eller periode-jobbing
+          i redaksjoner.
         </p>
       </section>
 
@@ -67,31 +66,30 @@ export default function KontaktPage() {
           </Reveal>
           <Reveal>
             <div>
-              <p className="smallcaps text-ink-mute mb-3">Slik jobber Kaspar</p>
+              <p className="smallcaps text-ink-mute mb-3">Salgsmodell</p>
               <ul className="tick-list font-sans text-sm">
                 <li>
                   <span className="text-amber font-mono">01</span>
                   <span className="text-ink-soft">
-                    Brief på telefon eller e-post — hva slags sak, hvor lang,
-                    når.
+                    Innsalg av enkelt-ideer.
                   </span>
                 </li>
                 <li>
                   <span className="text-amber font-mono">02</span>
                   <span className="text-ink-soft">
-                    Tilbud med pris og tidsplan innen ett døgn.
+                    Innsalg av påbegynte eller ferdige artikler.
                   </span>
                 </li>
                 <li>
                   <span className="text-amber font-mono">03</span>
                   <span className="text-ink-soft">
-                    Reportasjearbeid i felt, gjerne med fotograf på laget.
+                    Enkeltoppdrag — stykkpris per sak.
                   </span>
                 </li>
                 <li>
                   <span className="text-amber font-mono">04</span>
                   <span className="text-ink-soft">
-                    Levering med kildeliste, sitatkontroll og bildevalg.
+                    Periode-jobbing i redaksjoner — betalt pr periode.
                   </span>
                 </li>
               </ul>

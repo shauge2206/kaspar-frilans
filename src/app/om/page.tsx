@@ -4,52 +4,38 @@ import { Reveal } from "@/components/Reveal";
 export const metadata = {
   title: "Om Kaspar Knudsen — frilansjournalist i Bergen",
   description:
-    "Femten år i Bergens medieliv, master i gravejournalistikk, og et kontor på USF Verftet. Slik jobber Kaspar Knudsen.",
+    "Mastergrad i undersøkende journalistikk, 15 år i mediebransjen og kontor på USF Verftet. Slik jobber Kaspar Knudsen.",
 };
 
 const verdier = [
-  {
-    tittel: "Likeverd",
-    tekst:
-      "Alle stemmer skal høres på samme premiss. Den som er på toppen av et system og den som står utenfor det, skal møte samme respekt — og samme spørsmål.",
-  },
-  {
-    tittel: "Empati",
-    tekst:
-      "Folk som forteller en sak gir bort noe. Kaspars jobb er å forvalte det med tid, varsomhet og redaksjonell skjerping.",
-  },
-  {
-    tittel: "Ærlighet",
-    tekst:
-      "Kilder og lesere får det samme bildet. Kontekst, motforestillinger og åpne spørsmål er en del av historien — ikke en utfordring som må løses.",
-  },
-  {
-    tittel: "Kritisk tenkning",
-    tekst:
-      "Spørsmål før konklusjon. Dokumenter før referat. Avstand før nærhet. Slik holder en gravejournalist linja over tid.",
-  },
+  "Likeverd",
+  "Empati",
+  "Høflighet og vennlighet",
+  "Holder ord og avtaler",
+  "Ærlighet",
+  "Samfunnsengasjert",
+  "Kritisk tenkning",
+  "Nysgjerrig",
+  "Åpen og inkluderende",
 ];
 
 const tjenester = [
   {
-    tittel: "Reportasje",
-    tekst:
-      "Lange tekster fra felt — fiskeri, kyst, arbeidsliv. Skreddersydd for redaksjoner som vil ha noe annet enn pressemeldinger.",
+    tittel: "Enkelt-ideer",
+    tekst: "Innsalg av enkelt-ideer til redaksjonen.",
   },
   {
-    tittel: "Featurejournalistikk",
-    tekst:
-      "Portretter, miljøreportasjer og dypdykk. Egne foto følger med, eller fotograf på laget.",
+    tittel: "Påbegynte og ferdige artikler",
+    tekst: "Innsalg av påbegynte eller ferdige artikler.",
   },
   {
-    tittel: "Gravesaker",
+    tittel: "Enkeltoppdrag",
     tekst:
-      "Lengre prosjekter med dokumentinnsyn, datajournalistikk og kildearbeid over måneder.",
+      "Enkeltoppdrag med bilder og tekst. Kritisk og undersøkende journalistikk og menneskenære historier.",
   },
   {
-    tittel: "Foto",
-    tekst:
-      "Stille, observerende billedjournalistikk. Egne bilder til egne saker — eller på oppdrag.",
+    tittel: "Periode-jobbing",
+    tekst: "Periode-jobbing i redaksjoner. Betalt pr periode.",
   },
 ];
 
@@ -59,9 +45,9 @@ export default function OmPage() {
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
         <p className="smallcaps text-amber mb-5">Bio</p>
         <h1 className="font-serif text-[clamp(2.4rem,5vw,4.8rem)] leading-[1.05] tracking-tight max-w-4xl">
-          En journalist
+          Om Kaspar Knudsen
           <span className="block italic text-ink-soft">
-            som tror på tid og tillit.
+            Frilansjournalist i Bergen.
           </span>
         </h1>
       </section>
@@ -71,40 +57,33 @@ export default function OmPage() {
           <div className="md:col-span-4">
             <p className="smallcaps text-ink-mute mb-3">Kort fortalt</p>
             <ul className="font-sans text-sm space-y-3 text-ink-soft">
-              <li>15 år i Bergens medieliv</li>
-              <li>Master i gravejournalistikk, UiB</li>
+              <li>15+ år i mediebransjen i Bergen</li>
+              <li>Mastergrad i undersøkende journalistikk</li>
               <li>Kontor: USF Verftet, Nordnes</li>
-              <li>Fast for Fiskeribladet og Bergens Tidende</li>
-              <li>Frilanser siden 2024</li>
+              <li>Leverer til Fiskeribladet, Intrafish og Kystens Næringsliv</li>
+              <li>Enkeltpersonforetak fra april 2026</li>
             </ul>
           </div>
           <div className="md:col-span-7 md:col-start-6 prose-longform max-w-none">
             <Reveal>
               <p>
-                Kaspar Knudsen er født og oppvokst på Vestlandet. Etter femten
-                år i fast redaksjonsstilling — sist som politisk reporter i
-                Bergens Tidende — gikk han over til frilanstilværelsen for å
-                kunne fordype seg i de lange reportasjene. Han driver nå
-                enkeltpersonforetak fra et lite kontor på USF Verftet på
-                Nordnes.
+                Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+                Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
+                år i mediebransjen.
               </p>
             </Reveal>
             <Reveal>
               <p>
-                Hans faglige hjerte ligger i sjøkanten. Fiskeri, oppdrett og
-                arbeidsliv langs kysten er feltene han kjenner best, men han
-                tar også oppdrag innen krim, samfunn og featurejournalistikk.
-                Han er svært opptatt av menneskenære historier — og av at
-                journalistikken skal være tilgjengelig også for folk som ikke
-                vanligvis leser store reportasjer.
+                Leverer kvalitetsjournalistikk til nisjepublikasjoner som
+                Fiskeribladet, Intrafish og Kystens Næringsliv.
+                Gravejournalistikk innenfor arbeidsliv, krim og flere områder
+                — drar ut i felt.
               </p>
             </Reveal>
             <Reveal>
               <p>
-                Kaspar tror at god journalistikk krever to ting: tid på
-                stedet, og fri vilje til å publisere det som faktisk er
-                viktig. Begge deler er forsøkt løst i dette
-                enkeltpersonforetaket.
+                Foretaket er et enkeltpersonforetak etablert april 2026, med
+                drift i perioden april 2026 til mars 2027.
               </p>
             </Reveal>
           </div>
@@ -118,19 +97,14 @@ export default function OmPage() {
           <div className="md:col-span-4">
             <p className="smallcaps text-amber mb-4">Verdier</p>
             <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-              Den indre kompasset.
+              Kjerneverdier.
             </h2>
-            <p className="mt-4 text-ink-soft leading-relaxed">
-              Fire ord som styrer prioriteringene — fra det første
-              telefonintervjuet til siste sitatkontroll.
-            </p>
           </div>
-          <div className="md:col-span-8 grid sm:grid-cols-2 gap-px bg-rule">
+          <div className="md:col-span-8 grid sm:grid-cols-3 gap-px bg-rule">
             {verdier.map((v) => (
-              <Reveal key={v.tittel}>
+              <Reveal key={v}>
                 <div className="bg-bg-elev p-7 h-full">
-                  <p className="smallcaps text-amber mb-3">{v.tittel}</p>
-                  <p className="text-ink-soft leading-relaxed">{v.tekst}</p>
+                  <p className="smallcaps text-amber">{v}</p>
                 </div>
               </Reveal>
             ))}
@@ -149,17 +123,10 @@ export default function OmPage() {
             </h2>
           </div>
           <div className="md:col-span-7 md:col-start-6 prose-longform max-w-none">
-            <p>
-              Foretakets visjon er enkel: økonomisk bærekraft som gjør det
-              mulig å levere kvalitetsjournalistikk over tid. Det betyr at
-              Kaspar takker nei til oppdrag som ikke holder mål — og ja til
-              dem som krever det.
-            </p>
-            <p>
-              Frihet under ansvar er det som skiller en god frilanser fra en
-              billig en. Tid er den viktigste ressursen i dette yrket. Den må
-              brukes på saker som har noe å si.
-            </p>
+            <blockquote className="pullquote">
+              «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+              frihet under ansvar — å styre bedriften selv»
+            </blockquote>
           </div>
         </div>
       </section>
@@ -169,7 +136,7 @@ export default function OmPage() {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <p className="smallcaps text-amber mb-4">Tjenester</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight max-w-2xl">
-          Det Kaspar tar oppdrag på.
+          Salgsmodell.
         </h2>
         <div className="mt-12 grid md:grid-cols-2 gap-px bg-rule">
           {tjenester.map((t) => (
@@ -195,24 +162,17 @@ export default function OmPage() {
           <div className="md:col-span-7">
             <p className="smallcaps text-amber mb-4">Kontoret</p>
             <h2 className="font-serif text-3xl md:text-5xl leading-tight">
-              Et lite arbeidsbord på USF Verftet.
+              USF Verftet, Nordnes.
             </h2>
             <p className="mt-6 text-ink-soft text-lg leading-relaxed max-w-2xl">
-              På Nordnes ligger USF Verftet — et tidligere
-              sardinfabrikkskompleks som i dag huser kunstnere, musikere og
-              et fåtall journalister. Herfra ser man rett ut på Vågen, og
-              kaffen er sterkere enn de fleste redaksjoner.
-            </p>
-            <p className="mt-4 text-ink-soft text-lg leading-relaxed max-w-2xl">
-              Kontoret fungerer som base mellom turer. Sakene er sjelden
-              skrevet ferdig her — de starter i felt og kommer hjem for
-              redigering.
+              Kontoret ligger på USF Verftet på Nordnes i Bergen. Foretaket er
+              et enkeltpersonforetak etablert april 2026.
             </p>
             <Link
               href="/kontakt"
               className="mt-8 inline-flex font-sans text-sm bg-amber text-[#0e0e0e] px-5 py-3 rounded-full hover:brightness-110 transition"
             >
-              Stikk innom →
+              Ta kontakt →
             </Link>
           </div>
           <div className="md:col-span-5">
@@ -226,11 +186,11 @@ export default function OmPage() {
                 5011 Bergen
               </p>
               <hr className="my-6 border-rule" />
-              <p className="smallcaps text-ink-mute mb-3">Åpent</p>
+              <p className="smallcaps text-ink-mute mb-3">Form</p>
               <p className="text-ink-soft leading-relaxed">
-                Mandag–fredag, 09–17.
+                Enkeltpersonforetak
                 <br />
-                Avtale anbefales — Kaspar er ofte ute.
+                April 2026–mars 2027
               </p>
             </div>
           </div>

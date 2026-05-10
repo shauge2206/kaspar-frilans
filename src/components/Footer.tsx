@@ -8,7 +8,7 @@ export function Footer() {
           <p className="font-serif text-2xl leading-snug">
             Kaspar Knudsen
             <span className="block text-ink-mute text-base mt-1 italic">
-              Skriver fra felt — leses i ro.
+              Frilansjournalist · Bergen
             </span>
           </p>
         </div>

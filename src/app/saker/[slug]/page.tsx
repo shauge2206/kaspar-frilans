@@ -234,13 +234,12 @@ export default async function SakDetailPage({
           href="/kontakt"
           className="group border border-rule p-8 hover:bg-bg-elev/40 transition-colors block"
         >
-          <p className="smallcaps text-amber mb-3">Et tips eller en sak?</p>
+          <p className="smallcaps text-amber mb-3">Ta kontakt</p>
           <h3 className="font-serif text-2xl leading-tight group-hover:text-amber transition-colors">
             Skriv til Kaspar.
           </h3>
           <p className="mt-3 text-ink-soft leading-relaxed">
-            Kildevern står sterkt. Krypterte kanaler tilgjengelig på
-            forespørsel.
+            For oppdrag, innsalg av ideer eller periode-jobbing i redaksjoner.
           </p>
         </Link>
       </section>
