@@ -252,33 +252,33 @@ export default function Home() {
             />
 
             <p className="typewriter text-[0.72rem] tracking-[0.22em] text-ink-fade uppercase">
-              Kapittel 3 — Tjenester
+              Kapittel 3 — Erfaring
             </p>
             <h2 className="headline-hand text-4xl md:text-5xl mt-1">
-              Tjenester
+              Dette har jeg gjort
             </h2>
 
             <ul className="mt-6 space-y-3 pl-16 pr-4">
               {[
                 {
-                  tittel: "Innsalg av enkelt-ideer",
+                  tittel: "Gravejournalistikk",
                   detalj:
-                    "Forslag til saker for redaksjonen, klar til oppdrag.",
+                    "Undersøkende journalistikk innenfor arbeidsliv, krim og flere områder.",
                 },
                 {
-                  tittel: "Påbegynte og ferdige artikler",
+                  tittel: "Reportasje fra felt",
                   detalj:
-                    "Innsalg av artikler — tekst og bilder samlet.",
+                    "Drar ut for å se stedene og møte menneskene jeg skriver om.",
                 },
                 {
-                  tittel: "Enkeltoppdrag",
+                  tittel: "Bilder og tekst",
                   detalj:
-                    "Stykkpris per sak. Kritisk og undersøkende journalistikk.",
+                    "Leverer både bilder og tekst som del av oppdragene.",
                 },
                 {
-                  tittel: "Periode-jobbing i redaksjoner",
+                  tittel: "Bergen-presse",
                   detalj:
-                    "Betalt pr periode. Tilgang til gjenbruk av artikler.",
+                    "15 år i mediebransjen i Bergen.",
                 },
               ].map((it) => (
                 <li key={it.tittel} className="flex items-start">

@@ -3,7 +3,6 @@ import {
   ArrowDoodle,
   Paperclip,
   Stamp,
-  StarDoodle,
 } from "@/components/Decor";
 
 export const metadata = {
@@ -24,27 +23,24 @@ const VERDIER = [
   { ord: "Åpen og inkluderende" },
 ];
 
-const TJENESTER = [
+const ERFARING = [
   {
-    tittel: "Innsalg av enkelt-ideer",
-    detalj: "Forslag til saker for redaksjonen.",
-    pris: "Stykkpris",
-  },
-  {
-    tittel: "Påbegynte og ferdige artikler",
-    detalj: "Innsalg av artikler — tekst og bilder.",
-    pris: "Stykkpris",
-  },
-  {
-    tittel: "Enkeltoppdrag",
+    tittel: "Gravejournalistikk",
     detalj:
-      "Kritisk og undersøkende journalistikk. Bilder og tekst. Tilgang til gjenbruk av artikler.",
-    pris: "Stykkpris",
+      "Undersøkende journalistikk innenfor arbeidsliv, krim og flere områder.",
   },
   {
-    tittel: "Periode-jobbing i redaksjoner",
-    detalj: "Tilgjengelighet og fleksibilitet over en avtalt periode.",
-    pris: "Betalt pr periode",
+    tittel: "Reportasje fra felt",
+    detalj: "Drar ut for å se stedene og møte menneskene jeg skriver om.",
+  },
+  {
+    tittel: "Bilder og tekst",
+    detalj:
+      "Leverer både bilder og tekst som del av oppdragene. Kritisk og undersøkende journalistikk.",
+  },
+  {
+    tittel: "Bergen-presse",
+    detalj: "15 år i mediebransjen i Bergen.",
   },
 ];
 
@@ -236,24 +232,24 @@ export default function OmPage() {
         </div>
       </section>
 
-      {/* Tjenester — pricing-ish list */}
+      {/* Erfaring — past work */}
       <section className="mt-24">
         <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
           <div>
             <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-              Tjenester
+              Erfaring
             </p>
             <h2 className="headline-hand text-4xl md:text-5xl mt-2">
-              Tjenester
+              Dette har jeg gjort
             </h2>
           </div>
           <Link href="/kontakt" className="pencil-link typewriter text-sm">
-            Be om tilbud →
+            Ta kontakt →
           </Link>
         </div>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {TJENESTER.map((t, i) => (
+          {ERFARING.map((t, i) => (
             <li
               key={t.tittel}
               className="paper-card p-6 relative"
@@ -263,14 +259,9 @@ export default function OmPage() {
                 className="absolute -top-5 right-4 w-5 h-14 z-10"
                 style={{ transform: `rotate(${i % 2 ? 12 : -8}deg)` }}
               />
-              <div className="flex items-baseline justify-between gap-3">
-                <p className="handwritten text-pen-blue text-2xl leading-tight">
-                  {t.tittel}
-                </p>
-                <span className="typewriter text-[0.72rem] tracking-[0.16em] uppercase text-ink-fade">
-                  {t.pris}
-                </span>
-              </div>
+              <p className="handwritten text-pen-blue text-2xl leading-tight">
+                {t.tittel}
+              </p>
               <p className="text-ink-soft mt-2 leading-relaxed">{t.detalj}</p>
             </li>
           ))}
@@ -278,8 +269,8 @@ export default function OmPage() {
       </section>
 
       {/* USF Verftet */}
-      <section className="mt-24 grid grid-cols-12 gap-x-6 lg:gap-x-10 items-start">
-        <div className="col-span-12 md:col-span-7">
+      <section className="mt-24">
+        <div>
           <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
             Adresse
           </p>
@@ -308,87 +299,6 @@ export default function OmPage() {
           </div>
         </div>
 
-        <div
-          className="col-span-12 md:col-span-5 relative paper-card p-6"
-          style={{ transform: "rotate(1.6deg)" }}
-        >
-          <Paperclip
-            className="absolute -top-7 left-8 w-6 h-16 z-10"
-            style={{ transform: "rotate(-10deg)" }}
-          />
-          <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-            Skisse / kart
-          </p>
-          <div className="mt-3 grid-paper aspect-[4/3] relative overflow-hidden">
-            <svg
-              viewBox="0 0 320 240"
-              className="absolute inset-0 w-full h-full"
-              aria-hidden="true"
-            >
-              <path
-                d="M-20 130 C 60 90, 110 145, 170 130 C 230 115, 260 150, 340 140"
-                fill="none"
-                stroke="#233a6b"
-                strokeWidth="2"
-                strokeLinecap="round"
-                opacity="0.5"
-              />
-              <path
-                d="M-20 165 C 80 150, 130 175, 200 160 C 260 148, 300 175, 340 165"
-                fill="none"
-                stroke="#233a6b"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                opacity="0.35"
-              />
-              <text
-                x="40"
-                y="60"
-                fontFamily="var(--font-hand)"
-                fontSize="22"
-                fill="#1a1814"
-              >
-                Nordnes
-              </text>
-              <text
-                x="220"
-                y="200"
-                fontFamily="var(--font-hand)"
-                fontSize="18"
-                fill="#1a1814"
-              >
-                Bergen S
-              </text>
-              <circle cx="120" cy="120" r="6" fill="#b53826" />
-              <text
-                x="135"
-                y="115"
-                fontFamily="var(--font-hand)"
-                fontSize="16"
-                fill="#b53826"
-              >
-                ← USF
-              </text>
-              <path
-                d="M120 120 C 95 95, 80 80, 60 70"
-                fill="none"
-                stroke="#1a1814"
-                strokeWidth="1.4"
-                opacity="0.6"
-                strokeDasharray="3 4"
-              />
-            </svg>
-          </div>
-          <p className="margin-note text-lg leading-snug mt-3">
-            USF Verftet,
-            <br />
-            Nordnes, Bergen
-          </p>
-          <StarDoodle
-            className="absolute -bottom-4 -right-3 w-9 h-9"
-            color="#233a6b"
-          />
-        </div>
       </section>
     </div>
   );

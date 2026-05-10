@@ -110,12 +110,6 @@ export default function SakerPage() {
                     className="object-cover sepia-photo"
                     priority={i < 2}
                   />
-                  <span
-                    className="absolute top-3 left-3 stamp"
-                    style={{ transform: `rotate(${i % 2 ? 6 : -7}deg)` }}
-                  >
-                    {sak.stempel}
-                  </span>
                 </div>
 
                 <div className="mt-3 px-1">
@@ -164,7 +158,6 @@ export default function SakerPage() {
               </p>
               <p className="text-ink-soft mt-3">
                 Kvalitetsjournalistikk levert til nisjepublikasjoner.
-                Stykkpris per sak eller betalt pr periode.
               </p>
             </div>
             <div className="mt-6">

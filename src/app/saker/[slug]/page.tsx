@@ -2,12 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSak, saker } from "@/lib/saker";
-import {
-  ArrowDoodle,
-  Paperclip,
-  PushPin,
-  Stamp,
-} from "@/components/Decor";
+import { ArrowDoodle } from "@/components/Decor";
 
 export function generateStaticParams() {
   return saker.map((s) => ({ slug: s.slug }));
@@ -65,9 +60,6 @@ export default async function SakDetail({
             <p>Publisert i</p>
             <p className="text-ink mt-1 not-italic">{sak.publikasjon}</p>
             <p className="text-ink/70 mt-0.5">{sak.dato}</p>
-          </div>
-          <div className="mt-6">
-            <Stamp label={sak.stempel} rotation={-7} />
           </div>
           <div className="hidden md:block mt-8 max-w-[12rem]">
             <p className="margin-note text-lg leading-snug">
@@ -139,7 +131,7 @@ export default async function SakDetail({
                 Stikkord
               </p>
               <ul className="mt-2 flex flex-wrap gap-2">
-                {[sak.sted, sak.publikasjon, sak.stempel].map(
+                {[sak.sted, sak.publikasjon].map(
                   (tag) => (
                     <li
                       key={tag}
@@ -190,55 +182,6 @@ export default async function SakDetail({
             </div>
           </div>
         </article>
-      </section>
-
-      {/* Gallery */}
-      <section className="mt-20">
-        <div className="flex items-end justify-between flex-wrap gap-3 mb-6">
-          <div>
-            <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
-              Bilder
-            </p>
-            <h2 className="headline-hand text-4xl mt-1">Bilder</h2>
-          </div>
-          <p className="typewriter text-xs text-ink-fade">
-            Foto: {sak.fotograf}
-          </p>
-        </div>
-
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {sak.bilder.map((bilde, i) => (
-            <li
-              key={bilde.src}
-              className="polaroid relative"
-              style={{ transform: `rotate(${i === 1 ? 1.6 : i === 2 ? -1.8 : 0.4}deg)` }}
-            >
-              {i === 0 ? (
-                <PushPin className="absolute -top-3 left-6 w-7 h-7 z-10" />
-              ) : (
-                <Paperclip
-                  className="absolute -top-5 right-3 w-5 h-14 z-10"
-                  style={{ transform: `rotate(${i === 1 ? 10 : -8}deg)` }}
-                />
-              )}
-              <div className="relative aspect-[4/3] overflow-hidden bg-ink/10">
-                <Image
-                  src={bilde.src}
-                  alt={bilde.alt}
-                  fill
-                  sizes="(min-width: 768px) 30vw, 90vw"
-                  className="object-cover sepia-photo"
-                />
-              </div>
-              <p className="mt-3 typewriter text-[0.72rem] tracking-[0.16em] uppercase text-ink-fade">
-                {bilde.rolle}
-              </p>
-              <p className="handwritten text-pen-blue text-base leading-snug mt-1">
-                {bilde.alt}
-              </p>
-            </li>
-          ))}
-        </ul>
       </section>
 
       {/* Pagination */}
