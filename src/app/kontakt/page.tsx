@@ -42,10 +42,10 @@ export default function KontaktPage() {
                 <li className="flex justify-between gap-4">
                   <span className="text-ink-mute">E-post</span>
                   <a
-                    href="mailto:kaspar@hauge.no"
+                    href="mailto:kaspar@knudsen.no"
                     className="text-amber glow"
                   >
-                    kaspar@hauge.no
+                    kaspar@knudsen.no
                   </a>
                 </li>
                 <li className="flex justify-between gap-4">
@@ -110,10 +110,10 @@ export default function KontaktPage() {
                 Skjemaet åpner en e-post i din vanlige klient. Du står fritt
                 til å sende direkte til{" "}
                 <a
-                  href="mailto:kaspar@hauge.no"
+                  href="mailto:kaspar@knudsen.no"
                   className="text-amber glow"
                 >
-                  kaspar@hauge.no
+                  kaspar@knudsen.no
                 </a>{" "}
                 hvis du foretrekker det.
               </p>

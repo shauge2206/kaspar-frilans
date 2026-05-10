@@ -23,7 +23,7 @@ export function ListenButton({ minutes }: { minutes: number }) {
           <p className="leading-relaxed">
             Lydversjon kommer snart. Vil du varsles når den er klar?{" "}
             <a
-              href="mailto:kaspar@hauge.no?subject=Lydversjon"
+              href="mailto:kaspar@knudsen.no?subject=Lydversjon"
               className="text-amber glow"
             >
               Send en e-post

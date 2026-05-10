@@ -50,8 +50,7 @@ export const saker: Sak[] = [
       "I april 2025 vedtok Stortinget å åpne for en ny, uavhengig granskning. For Arnfinn Hay er det første gang på flere tiår han våger å håpe.",
       "– Jeg har lært meg å ikke bli for optimistisk. Men nå ser jeg en åpning. Vi har grunn til optimisme, sier han.",
     ],
-    pullquote:
-      "Vi har båret denne sorgen i nesten et halvt århundre. Nå håper vi at sannheten endelig får komme fram.",
+    pullquote: "",
     emneknagger: ["Fiskeri", "Gravejournalistikk", "Senja"],
   },
   {
@@ -89,8 +88,7 @@ export const saker: Sak[] = [
       "– Naboen min ringte meg rett etter midnatt. Hun var redd og fortalte at naboen hennes hadde knust ruten hennes med et stort hageredskap, sier Olsen.",
       "Han la på, kledde på seg, og gikk ut for å se hva som foregikk. Det skulle bli en natt han ikke kommer til å glemme.",
     ],
-    pullquote:
-      "Jeg så ham komme imot meg med armbrøst. Da skjønte jeg at dette var alvor.",
+    pullquote: "",
     emneknagger: ["Krim", "Bergen", "Reportasje"],
   },
   {
@@ -126,8 +124,7 @@ export const saker: Sak[] = [
       "Men et problem har vært vedvarende over tid: De får inn altfor mye klær og gjenstander av dårlig kvalitet. En fjerdedel av det butikken mottar går derfor rett i bosset.",
       "– Det er trist å måtte kaste så mye. Vi vil heller ha færre, men brukbare ting, sier Novosad.",
     ],
-    pullquote:
-      "Vi vil heller ha færre ting, men brukbare ting. En fjerdedel går rett i bosset.",
+    pullquote: "",
     emneknagger: ["Samfunn", "Bergen", "Featurereportasje"],
   },
 ];

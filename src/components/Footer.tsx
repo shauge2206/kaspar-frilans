@@ -42,10 +42,10 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="mailto:kaspar@hauge.no"
+                href="mailto:kaspar@knudsen.no"
                 className="glow text-ink-soft"
               >
-                kaspar@hauge.no
+                kaspar@knudsen.no
               </a>
             </li>
           </ul>

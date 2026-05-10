@@ -22,7 +22,7 @@ export function ContactForm() {
     const body = encodeURIComponent(
       `${melding}\n\n— ${navn}\n${epost}`,
     );
-    window.location.href = `mailto:kaspar@hauge.no?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:kaspar@knudsen.no?subject=${subject}&body=${body}`;
   }
 
   const inputCls =
