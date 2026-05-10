@@ -31,10 +31,10 @@ export function SiteFooter() {
           <ul className="space-y-2 text-[14px] text-paper/85">
             <li>
               <a
-                href="mailto:post@kasparhauge.no"
+                href="mailto:post@kasparknudsen.no"
                 className="dotted-link hover:text-accent"
               >
-                post@kasparhauge.no
+                post@kasparknudsen.no
               </a>
             </li>
             <li className="font-mono text-[12px] text-paper/60">

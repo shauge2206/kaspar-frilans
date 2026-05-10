@@ -191,10 +191,10 @@ export default function Home() {
                 Send melding
               </Link>
               <a
-                href="mailto:post@kasparhauge.no"
+                href="mailto:post@kasparknudsen.no"
                 className="font-mono text-[11px] uppercase tracking-[0.18em] border border-paper/30 text-paper px-6 py-3.5 rounded-full hover:border-paper transition-colors"
               >
-                post@kasparhauge.no
+                post@kasparknudsen.no
               </a>
             </div>
           </div>
