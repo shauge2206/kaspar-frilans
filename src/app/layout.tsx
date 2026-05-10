@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   description:
     "Frilansjournalist med base på USF Verftet i Bergen. Gravejournalistikk og featurer fra kysten — fiskeri, arbeidsliv og menneskenære historier.",
-  metadataBase: new URL("https://kasparhauge.no"),
+  metadataBase: new URL("https://kasparknudsen.no"),
 };
 
 export default function RootLayout({

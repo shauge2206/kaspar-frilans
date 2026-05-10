@@ -40,10 +40,10 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-[0.95rem]">
             <li>
               <a
-                href="mailto:kontakt@kasparhauge.no"
+                href="mailto:kontakt@kasparknudsen.no"
                 className="link-grow text-paper"
               >
-                kontakt@kasparhauge.no
+                kontakt@kasparknudsen.no
               </a>
             </li>
             <li>

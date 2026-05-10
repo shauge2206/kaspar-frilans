@@ -54,7 +54,7 @@ export default function HomePage() {
           <div className="flex items-center gap-4 text-sand">
             <CompassMark className="w-6 h-6" />
             <span className="smallcaps text-[0.75rem]">
-              kaspar hauge — frilansjournalist
+              kaspar knudsen — frilansjournalist
             </span>
             <span className="hidden md:inline-block h-px w-32 bg-sand/50" />
             <span className="hidden md:inline-block text-[0.7rem] tracking-meta opacity-70">
@@ -213,32 +213,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PULLQUOTE ------------------------------------------------------ */}
-      <section className="relative">
-        <div className="mx-auto max-w-[88rem] px-6 py-28 lg:px-12">
-          <div className="grid grid-cols-12 gap-6 items-start">
-            <div className="col-span-12 lg:col-span-2 flex justify-start">
-              <div className="rounded-full border border-deep/30 bg-fog-soft/60 px-4 py-2 smallcaps text-[0.7rem] text-deep">
-                Pullquote
-              </div>
-            </div>
-            <blockquote className="col-span-12 lg:col-span-9 lg:col-start-3">
-              <p className="font-display text-[clamp(1.7rem,3.6vw,3rem)] leading-[1.15] tracking-tight text-deep text-balance">
-                <span className="text-driftwood font-light italic">«</span>
-                Min jobb er å sitte stille lenge nok til at noen tør å si det
-                som ikke står i pressemeldingen — og så stå opp av stolen og
-                reise dit det skjer.
-                <span className="text-driftwood font-light italic">»</span>
-              </p>
-              <footer className="mt-8 flex items-center gap-4 text-[0.72rem] tracking-meta text-deep">
-                <span className="h-px w-10 bg-deep/40" />
-                Kaspar Knudsen · Bergen, 2026
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT CTA ---------------------------------------------------- */}
       <section className="relative isolate overflow-hidden bg-deep text-paper">
         <WaveBackdrop className="absolute inset-x-0 -bottom-2 h-56 text-paper/70" />
@@ -259,7 +233,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <a
-                href="mailto:kontakt@kasparhauge.no"
+                href="mailto:kontakt@kasparknudsen.no"
                 className="inline-flex items-center gap-3 bg-sand px-6 py-3 text-[0.78rem] tracking-meta text-deep transition-colors hover:bg-paper"
               >
                 Skriv til Kaspar →
@@ -285,10 +259,10 @@ export default function HomePage() {
               <li className="flex items-center gap-3">
                 <span aria-hidden className="h-px w-8 bg-paper/40" />
                 <a
-                  href="mailto:kontakt@kasparhauge.no"
+                  href="mailto:kontakt@kasparknudsen.no"
                   className="link-grow"
                 >
-                  kontakt@kasparhauge.no
+                  kontakt@kasparknudsen.no
                 </a>
               </li>
               <li className="flex items-center gap-3">

@@ -97,10 +97,10 @@ export default function KontaktPage() {
                       E-post
                     </div>
                     <a
-                      href="mailto:kontakt@kasparhauge.no"
+                      href="mailto:kontakt@kasparknudsen.no"
                       className="link-grow font-display text-lg text-deep"
                     >
-                      kontakt@kasparhauge.no
+                      kontakt@kasparknudsen.no
                     </a>
                   </li>
                   <li>
@@ -171,10 +171,10 @@ export default function KontaktPage() {
                 finne ut.
               </p>
               <a
-                href="mailto:tips@kasparhauge.no"
+                href="mailto:tips@kasparknudsen.no"
                 className="mt-8 inline-flex items-center gap-3 border border-deep/40 px-6 py-3 text-[0.78rem] tracking-meta text-deep transition-colors hover:bg-deep hover:text-paper"
               >
-                Send tips → tips@kasparhauge.no
+                Send tips → tips@kasparknudsen.no
               </a>
             </div>
           </div>

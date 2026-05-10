@@ -37,8 +37,7 @@ export const saker: Sak[] = [
       "En statlig gransking konkluderte tidlig med at fiskebåten hadde grunnstøtt og at forliset var selvforskyldt.",
       "De etterlatte har hele veien hevdet at dette umulig kunne være tilfelle, og at et annet fartøy må ha kollidert med «Utvik Senior».",
     ],
-    pullquote:
-      "I 47 år har de etterlatte ventet på at noen skal høre dem. Nå er det en sprekk av lys i horisonten.",
+    pullquote: "",
     bilder: [
       {
         src: "/images/saker/sak-1/bilde-1.jpeg",
@@ -75,8 +74,7 @@ export const saker: Sak[] = [
       "Thomas Olsen (45) bor i nærheten. Han forteller om en svært dramatisk natt.",
       "– Naboen min ringte meg rett etter midnatt. Hun var redd og fortalte at naboen hennes hadde knust ruten hennes med et stort hageredskap, sier Olsen.",
     ],
-    pullquote:
-      "Stillheten i et lite kystsamfunn ble brutt av glasskår, røyk og en pil som suste forbi.",
+    pullquote: "",
     bilder: [
       {
         src: "/images/saker/sak-2/bilde-1.jpeg",
@@ -112,8 +110,7 @@ export const saker: Sak[] = [
       "Hun sier de er svært takknemlige for at folk leverer inn ting.",
       "Men et problem har vært vedvarende over tid: De får inn altfor mye klær og gjenstander av dårlig kvalitet. En fjerdedel av det butikken mottar går derfor rett i bosset.",
     ],
-    pullquote:
-      "Det skal være en gave. I stedet havner en fjerdedel rett i konteineren utenfor.",
+    pullquote: "",
     bilder: [
       {
         src: "/images/saker/sak-3/bilde-1.png",

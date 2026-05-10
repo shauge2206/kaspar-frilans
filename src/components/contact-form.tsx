@@ -25,7 +25,7 @@ export function ContactForm() {
       "",
       melding || "",
     ].join("\n");
-    return `mailto:kontakt@kasparhauge.no?subject=${encodeURIComponent(
+    return `mailto:kontakt@kasparknudsen.no?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
   }, [type, navn, epost, emne, melding]);
@@ -114,7 +114,7 @@ export function ContactForm() {
         </button>
         <p className="text-[0.78rem] tracking-meta text-ink-muted">
           Sender til{" "}
-          <span className="text-deep">kontakt@kasparhauge.no</span>
+          <span className="text-deep">kontakt@kasparknudsen.no</span>
         </p>
       </div>
     </form>
