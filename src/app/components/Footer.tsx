@@ -6,11 +6,12 @@ export default function Footer() {
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-12 gap-x-6 gap-y-12 px-6 py-16 md:px-12 md:py-24">
         <div className="col-span-12 md:col-span-5">
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-            Kolofon
+            Visjon
           </div>
           <p className="mt-6 max-w-md font-serif text-2xl leading-snug tracking-tight md:text-3xl">
-            Kaspar Knudsen — frilansjournalist med base i Bergen.
-            Kvalitetsjournalistikk fra felt.
+            «Økonomisk bærekraft i selskapet, å levere
+            kvalitetsjournalistikk, frihet under ansvar — å styre
+            bedriften selv»
           </p>
         </div>
 

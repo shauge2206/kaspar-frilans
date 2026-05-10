@@ -11,34 +11,35 @@ export const metadata: Metadata = {
 const verdier = [
   "Likeverd",
   "Empati",
-  "Ærlighet",
-  "Samfunns­engasjement",
-  "Kritisk tenkning",
-  "Nysgjerrighet",
-  "Åpenhet",
+  "Høflighet og vennlighet",
   "Holder ord og avtaler",
+  "Ærlighet",
+  "Samfunns­engasjert",
+  "Kritisk tenkning",
+  "Nysgjerrig",
+  "Åpen og inkluderende",
 ];
 
 const tjenester = [
   {
     n: "01",
-    t: "Reportasje fra felt",
-    b: "Saker fra stedet — bilder og tekst i samme leveranse. Egnet for nyhets- og featuresaker.",
+    t: "Innsalg av enkelt-ideer",
+    b: "Ideer tilbys redaksjoner.",
   },
   {
     n: "02",
-    t: "Undersøkende journalistikk",
-    b: "Graving innen arbeidsliv, krim, fiskeri og kystnæring. Mastergrad i undersøkende journalistikk.",
+    t: "Innsalg av påbegynte eller ferdige artikler",
+    b: "Saker tilbys redaksjoner.",
   },
   {
     n: "03",
-    t: "Innsalg av idéer og saker",
-    b: "Påbegynte eller ferdige artikler tilbys redaksjoner. Eksklusivitet og format etter avtale.",
+    t: "Enkeltoppdrag",
+    b: "Stykkpris per sak.",
   },
   {
     n: "04",
-    t: "Periode-jobbing",
-    b: "Tilgjengelig for vikariater og periode-oppdrag i redaksjon. Fleksibel avtaleform.",
+    t: "Periode-jobbing i redaksjoner",
+    b: "Betalt pr periode.",
   },
 ];
 
@@ -57,16 +58,15 @@ export default function OmPage() {
         </div>
 
         <h1 className="col-span-12 font-serif text-5xl leading-[1.02] tracking-[-0.02em] md:col-span-11 md:text-[112px]">
-          En journalist
-          <br />
-          <span className="italic font-light text-muted">som drar ut.</span>
+          Om
         </h1>
 
         <p className="col-span-12 mt-12 max-w-3xl font-serif text-xl leading-snug md:col-span-7 md:col-start-6 md:mt-20 md:text-2xl">
-          Kaspar Knudsen har femten år i bergensk mediebransje og en
-          mastergrad i undersøkende journalistikk. Spesialfeltene er
-          arbeidsliv, krim, fiskeri og kystnæring — gjerne med en kritisk
-          og gravende tilnærming.
+          Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+          Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
+          år i mediebransjen. Leverer kvalitetsjournalistikk til
+          nisjepublikasjoner som Fiskeribladet, Intrafish og Kystens
+          Næringsliv.
         </p>
       </section>
 
@@ -83,21 +83,17 @@ export default function OmPage() {
           <FadeUp>
             <div className="space-y-6 font-serif text-xl leading-[1.55] tracking-[-0.005em] md:text-[22px]">
               <p className="first-letter:float-left first-letter:mr-2 first-letter:font-serif first-letter:text-7xl first-letter:leading-[0.85]">
-                Faget motiverer meg — historiefortellingen og samfunns­oppdraget.
-                Å bidra til innsikt og å søke sannhet, det er kjernen i
-                arbeidet.
+                Kaspar Knudsen er frilansjournalist i Bergen med kontor på
+                USF Verftet, Nordnes.
               </p>
               <p>
-                Jeg jobber alene i enkeltpersonforetaket. Tjenesten består
-                i salg av journalistisk arbeid: idéer, ferdige saker,
-                enkeltoppdrag og periode-jobbing i redaksjoner. Leveransene
-                er typisk en kombinasjon av tekst og bilder.
+                Mastergrad i undersøkende journalistikk og 15 år i
+                mediebransjen. Gravejournalistikk innen arbeidsliv, krim
+                og flere områder — drar ut i felt.
               </p>
               <p>
-                De siste årene har jeg jobbet mest med saker for
-                Fiskeribladet, Intrafish, Kystens Næringsliv og Bergens
-                Tidende — om sjarkfiske, oppdrett, ulykker til havs,
-                arbeidsliv og lokale samfunnshistorier i og rundt Bergen.
+                Leverer kvalitetsjournalistikk til nisjepublikasjoner som
+                Fiskeribladet, Intrafish og Kystens Næringsliv.
               </p>
             </div>
           </FadeUp>
@@ -197,9 +193,7 @@ export default function OmPage() {
               USF Verftet, Nordnes.
             </h2>
             <p className="mt-8 max-w-3xl font-serif text-xl leading-snug text-muted md:text-2xl">
-              Etablert kontorplass i kulturhuset på Nordnes, et
-              steinkast fra sjøen og bryggene. Et godt sted å skrive — og
-              et godt sted å møtes.
+              Kontor i Bergen, på USF Verftet, Nordnes.
             </p>
 
             <div className="mt-12 grid grid-cols-12 gap-x-6 gap-y-6 border-t border-foreground pt-6">
@@ -222,7 +216,7 @@ export default function OmPage() {
                 <p className="mt-3 font-serif text-base leading-relaxed">
                   Enkeltpersonforetak
                   <br />
-                  Etablert 2026
+                  April 2026 – mars 2027
                 </p>
               </div>
               <div className="col-span-12 md:col-span-4">

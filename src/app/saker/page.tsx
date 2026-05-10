@@ -29,9 +29,8 @@ export default function SakerPage() {
         </h1>
 
         <p className="col-span-12 mt-10 max-w-3xl font-serif text-xl leading-snug text-muted md:col-span-7 md:col-start-6 md:mt-16 md:text-2xl">
-          Et utvalg publiserte saker — reportasje, nyhet og feature.
-          Skrevet for Fiskeribladet, Bergens Tidende og andre
-          redaksjoner.
+          Et utvalg saker levert til Fiskeribladet, Intrafish og Kystens
+          Næringsliv.
         </p>
       </section>
 

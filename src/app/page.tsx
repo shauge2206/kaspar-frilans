@@ -19,16 +19,14 @@ export default function Home() {
 
         <h1 className="col-span-12 font-serif text-[44px] leading-[1.02] tracking-[-0.02em] sm:text-6xl md:col-span-11 md:text-[112px] lg:text-[140px]">
           Kvalitets&shy;journalistikk
-          <br />
-          <span className="italic font-light text-muted">fra felt.</span>
         </h1>
 
         <div className="col-span-12 mt-12 grid grid-cols-12 gap-x-6 md:mt-20">
           <div className="col-span-12 md:col-span-4 md:col-start-7">
             <p className="font-serif text-xl leading-snug tracking-tight md:text-2xl">
-              Kaspar Knudsen er frilansjournalist i Bergen. Femten år i
-              mediebransjen, mastergrad i undersøkende journalistikk og
-              spesialfelt innen fiskeri, kystnæring, arbeidsliv og krim.
+              Frilansjournalist med base på USF Verftet, Bergen. Mastergrad
+              i undersøkende journalistikk. Leverer til Fiskeribladet,
+              Intrafish, Kystens Næringsliv.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 font-mono text-[11px] uppercase tracking-[0.18em] sm:flex-row sm:items-center sm:gap-8">
@@ -55,10 +53,9 @@ export default function Home() {
         <div className="col-span-12 md:col-span-9">
           <FadeUp>
             <p className="max-w-4xl font-serif text-2xl leading-snug tracking-tight md:text-[34px] md:leading-[1.18]">
-              <span className="text-muted">Jeg drar ut i felt — </span>
-              ser stedene, møter menneskene. Resultatet er en journalistikk
-              som kommer nærmere kilden, og en historiefortelling som
-              forener tekst, foto og kritisk graving.
+              <span className="text-muted">Drar ut i felt. </span>
+              Kritisk og undersøkende journalistikk innen arbeidsliv, krim
+              og flere områder — levert som bilder og tekst.
             </p>
           </FadeUp>
 
@@ -67,17 +64,17 @@ export default function Home() {
               {
                 k: "01",
                 t: "Fra felt",
-                b: "Reportasje på stedet — ikke ved skrivebordet.",
+                b: "Drar ut i felt.",
               },
               {
                 k: "02",
                 t: "Graving",
-                b: "Mastergrad i undersøkende journalistikk og 15 år i bransjen.",
+                b: "Mastergrad i undersøkende journalistikk; 15+ år i mediebransjen.",
               },
               {
                 k: "03",
-                t: "Tekst og foto",
-                b: "Visuell historiefortelling som del av leveransen.",
+                t: "Bilder og tekst",
+                b: "Leveres som bilder og tekst; mulig gjenbruk.",
               },
             ].map((x, i) => (
               <FadeUp key={x.k} delay={i * 80}>
@@ -171,11 +168,12 @@ export default function Home() {
         <div className="col-span-12 md:col-span-9">
           <FadeUp>
             <h2 className="max-w-4xl font-serif text-4xl leading-tight tracking-[-0.02em] md:text-6xl">
-              Har du en sak — eller en mistanke om en?
+              Henvendelser
             </h2>
             <p className="mt-8 max-w-2xl font-serif text-xl leading-snug text-muted">
-              Tips og henvendelser fra kilder, redaksjoner og oppdragsgivere
-              er velkomne. All kontakt blir behandlet konfidensielt.
+              Innsalg av ideer, ferdige saker, enkeltoppdrag eller
+              periode-jobbing i redaksjon. Stykkpris per sak eller betalt
+              pr periode.
             </p>
 
             <div className="mt-12 flex flex-col gap-6 font-mono text-[11px] uppercase tracking-[0.18em] sm:flex-row sm:items-center sm:gap-10">

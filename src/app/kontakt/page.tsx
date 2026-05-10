@@ -28,9 +28,8 @@ export default function KontaktPage() {
         </h1>
 
         <p className="col-span-12 mt-12 max-w-3xl font-serif text-xl leading-snug text-muted md:col-span-7 md:col-start-6 md:mt-20 md:text-2xl">
-          Tips, henvendelser fra kilder og forespørsler fra redaksjoner og
-          oppdragsgivere er velkomne. All kontakt blir behandlet
-          konfidensielt.
+          Henvendelser om innsalg av ideer, ferdige saker, enkeltoppdrag
+          og periode-jobbing.
         </p>
       </section>
 
@@ -55,15 +54,11 @@ export default function KontaktPage() {
               >
                 kaspar@kasparknudsen.no
               </a>
-              <p className="mt-6 max-w-md font-serif text-base leading-relaxed text-muted">
-                Beste kanal for redaksjoner, oppdragsgivere og lengre
-                henvendelser. Svar innen ett døgn.
-              </p>
             </FadeUp>
 
             <FadeUp className="col-span-12 md:col-span-6" delay={80}>
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-                Telefon · Signal
+                Telefon
               </div>
               <a
                 href="tel:+4799999999"
@@ -71,10 +66,6 @@ export default function KontaktPage() {
               >
                 +47 99 99 99 99
               </a>
-              <p className="mt-6 max-w-md font-serif text-base leading-relaxed text-muted">
-                For tips og kilder som ønsker en kryptert linje. Også
-                tilgjengelig på Signal på samme nummer.
-              </p>
             </FadeUp>
           </div>
         </div>
@@ -92,11 +83,10 @@ export default function KontaktPage() {
         <div className="col-span-12 md:col-span-9">
           <FadeUp>
             <h2 className="font-serif text-3xl leading-tight tracking-[-0.015em] md:text-5xl">
-              Send melding direkte fra nettleseren.
+              Skjema
             </h2>
             <p className="mt-6 max-w-2xl font-serif text-lg leading-snug text-muted">
-              Skjemaet åpner et utkast i din egen e-postklient — ingen
-              data sendes via denne nettsiden.
+              Skjemaet åpner et utkast i din e-postklient.
             </p>
           </FadeUp>
 
@@ -119,8 +109,7 @@ export default function KontaktPage() {
               USF Verftet, Nordnes.
             </h2>
             <p className="mt-8 max-w-2xl font-serif text-xl leading-snug text-muted">
-              Møter etter avtale. Lokalet ligger ved sjøen, et par
-              minutter fra Bergen sentrum.
+              Kontor i Bergen, på USF Verftet, Nordnes.
             </p>
 
             <div className="mt-12 grid grid-cols-12 gap-x-6 gap-y-6 border-t border-foreground pt-6">
