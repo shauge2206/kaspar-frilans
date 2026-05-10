@@ -37,19 +37,18 @@ export default function KontaktPage() {
             <span className="smallcaps text-[0.72rem]">kontakt · usf verftet</span>
           </div>
           <h1 className="mt-10 max-w-5xl font-display text-[clamp(2.6rem,7vw,6rem)] leading-[0.95] tracking-tight text-balance">
-            Skriv til
+            Kontakt
             <br />
-            <span className="italic font-light text-sand">redaksjonen.</span>
+            <span className="italic font-light text-sand">Kaspar Knudsen.</span>
           </h1>
           <p className="mt-10 max-w-xl text-paper/85 text-pretty leading-relaxed">
-            Tips om saker, henvendelser fra redaksjoner, eller bare en hilsen
-            — alt er velkomment. Skriv på e-post, eller stikk innom kontoret
-            på USF Verftet om du er i Bergen.
+            Tips, oppdrag og henvendelser fra redaksjoner mottas på e-post.
+            Kontoret ligger på USF Verftet, Nordnes i Bergen.
           </p>
           <Dateline
             sted="Bergen"
             koordinat="60.39°N"
-            dato="åpen for nye oppdrag · våren 2026"
+            dato="USF Verftet · Nordnes"
             className="mt-8 text-sand"
           />
         </div>
@@ -66,9 +65,8 @@ export default function KontaktPage() {
                 Send en melding.
               </h2>
               <p className="text-ink/75 leading-relaxed max-w-xl mb-10 text-pretty">
-                Skjemaet under åpner e-postklienten din med teksten ferdig
-                utfylt — så kan du sende fra din egen adresse. Foretrekker du
-                kryptert kommunikasjon, ta kontakt så avtaler vi en kanal.
+                Skjemaet åpner e-postklienten med teksten ferdig utfylt — så
+                kan meldingen sendes fra din egen adresse.
               </p>
               <ContactForm />
             </div>
@@ -132,15 +130,15 @@ export default function KontaktPage() {
                   <li className="flex items-start gap-3">
                     <Buoy className="w-3 h-5 text-driftwood shrink-0 mt-0.5" />
                     <span>
-                      <strong className="font-medium text-deep">Norsk Journalistlag.</strong>{" "}
-                      Følger Vær Varsom-plakaten i alt redaksjonelt arbeid.
+                      <strong className="font-medium text-deep">Enkeltpersonforetak.</strong>{" "}
+                      Etablert april 2026.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Buoy className="w-3 h-5 text-driftwood shrink-0 mt-0.5" />
                     <span>
-                      <strong className="font-medium text-deep">Org.nr.</strong> 932 110 480 —
-                      enkeltpersonforetak.
+                      <strong className="font-medium text-deep">USF Verftet,</strong>{" "}
+                      Nordnes, Bergen.
                     </span>
                   </li>
                 </ul>
@@ -155,20 +153,13 @@ export default function KontaktPage() {
             <div className="col-span-12 lg:col-span-4">
               <SectionMarker label="Tipslinje · III" className="mb-5" />
               <h2 className="font-display text-3xl md:text-4xl leading-tight tracking-tight text-deep text-balance">
-                Sitter du på en historie ingen vil høre?
+                Har du tips til en sak?
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-7 lg:col-start-6 max-w-[60ch] text-pretty">
               <p className="text-[1.05rem] leading-[1.75] text-ink/85">
-                Mye av det viktigste journalistikken handler om begynner med
-                noen som tar mot til seg og sender en melding til en
-                journalist. Jeg behandler tips konfidensielt. Hvis du trenger
-                det, kan vi avtale et kryptert møtepunkt før du forteller noe
-                som helst.
-              </p>
-              <p className="mt-5 text-[1.05rem] leading-[1.75] text-ink/85">
-                Du trenger ikke å vite hva slags sak det er. Det er min jobb å
-                finne ut.
+                Tips behandles konfidensielt. Send en e-post, så avtales videre
+                kommunikasjonskanal ved behov.
               </p>
               <a
                 href="mailto:tips@kasparknudsen.no"

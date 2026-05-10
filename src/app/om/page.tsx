@@ -21,55 +21,70 @@ const verdier = [
   {
     nr: "01",
     tittel: "Likeverd",
-    body: "Folk i felt og folk i toppen møtes med samme respekt. Det er sjelden de mektige som mest trenger å bli hørt.",
+    body: "Møter alle kilder med samme respekt.",
   },
   {
     nr: "02",
     tittel: "Empati",
-    body: "Tar meg tid til å forstå før jeg formidler. Sterke historier krever rolige samtaler.",
+    body: "Tar seg tid til å forstå før noe formidles.",
   },
   {
     nr: "03",
-    tittel: "Ærlighet",
-    body: "Holder ord og avtaler. Sier hva intervjuet skal brukes til, og hva det ikke skal brukes til.",
+    tittel: "Høflighet og vennlighet",
+    body: "Ordentlig framferd i alle ledd av arbeidet.",
   },
   {
     nr: "04",
-    tittel: "Samfunnsengasjement",
-    body: "Journalistikk er et samfunnsoppdrag. Jeg skriver for innbyggere, ikke for algoritmer.",
+    tittel: "Holder ord og avtaler",
+    body: "Avtaler om innhold, frist og bruk holdes.",
   },
   {
     nr: "05",
-    tittel: "Kritisk tenkning",
-    body: "Sjekker, dobbeltsjekker, og leter etter dokumentet ingen ville at jeg skulle finne.",
+    tittel: "Ærlighet",
+    body: "Åpen om hva intervjuet skal brukes til.",
   },
   {
     nr: "06",
-    tittel: "Nysgjerrighet",
-    body: "Den som spør én gang for mye, får svaret før alle andre. Det er det jeg lever av.",
+    tittel: "Samfunnsengasjert",
+    body: "Journalistikk som et samfunnsoppdrag.",
+  },
+  {
+    nr: "07",
+    tittel: "Kritisk tenkning",
+    body: "Sjekker og dobbeltsjekker fakta og kilder.",
+  },
+  {
+    nr: "08",
+    tittel: "Nysgjerrig",
+    body: "Søker svar og stiller spørsmål til det er klart.",
+  },
+  {
+    nr: "09",
+    tittel: "Åpen og inkluderende",
+    body: "Lytter til kilder og perspektiver.",
   },
 ];
 
 const tjenester = [
   {
     nr: "I",
-    tittel: "Reportasje &amp; feature",
-    body: "Lengre saker fra felt — fiskeri, kystindustri, arbeidsliv og samfunnsliv. Jeg leverer både tekst og bilder.",
+    tittel: "Enkelt-ideer &amp; ferdige artikler",
+    body: "Innsalg av enkelt-ideer og innsalg av påbegynte eller ferdige artikler til redaksjoner.",
   },
   {
     nr: "II",
-    tittel: "Gravesaker",
-    body: "Kritisk og undersøkende journalistikk. Mastergrad i graving, og praktisk erfaring med komplekse saker.",
+    tittel: "Enkeltoppdrag",
+    body: "Bestilte saker — kritisk og undersøkende journalistikk innenfor arbeidsliv, krim og flere andre områder.",
   },
   {
     nr: "III",
     tittel: "Periodejobbing",
-    body: "Tilgjengelig for periodevis innleie i redaksjoner — ferievikar, prosjektarbeid eller lengre engasjement.",
+    body: "Periode-jobbing i redaksjoner. Betalt per periode etter avtale.",
   },
   {
     nr: "IV",
-    tittel: "Foto",
-    body: "Pressefoto til egne saker, eller på oppdrag. Jeg ser bildet samtidig som jeg leter etter sitatet.",
+    tittel: "Bilder &amp; tekst",
+    body: "Leverer bilder og tekst, med mulighet for gjenbruk. Menneskenære historier fra felt.",
   },
 ];
 
@@ -94,18 +109,18 @@ export default function OmPage() {
             <span className="smallcaps text-[0.72rem]">profil · journalist</span>
           </div>
           <h1 className="mt-10 max-w-5xl font-display text-[clamp(2.6rem,7vw,6rem)] leading-[0.95] tracking-tight text-balance">
-            En journalist
+            Om
             <br />
             <span className="italic font-light text-sand">
-              med kystlinje i ryggraden.
+              Kaspar Knudsen.
             </span>
           </h1>
           <div className="mt-12 grid grid-cols-12 gap-x-6 gap-y-10">
             <p className="col-span-12 lg:col-span-5 text-paper/85 text-pretty leading-relaxed">
-              Kaspar Knudsen er Bergensbasert frilansjournalist med 15 år i media
-              og mastergrad i undersøkende journalistikk. Han skriver om
-              arbeidsliv, krim, fiskeri og kystindustri — gjerne i lange
-              featurer, alltid i menneskenært tonefall.
+              Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
+              Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15 år
+              i mediebransjen. Leverer kvalitetsjournalistikk til nisjepublikasjoner
+              som Fiskeribladet, Intrafish og Kystens Næringsliv.
             </p>
             <div className="col-span-12 lg:col-span-4 lg:col-start-9 self-end">
               <Dateline
@@ -135,29 +150,26 @@ export default function OmPage() {
                 fra felt — for fagpressen
               </p>
               <h2 className="mt-3 font-display text-3xl md:text-4xl leading-tight tracking-tight text-deep text-balance">
-                15 år i Bergens-media. <span className="italic font-light">Nå frilans.</span>
+                15 år i mediebransjen i Bergen. <span className="italic font-light">Nå frilans.</span>
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-7 lg:col-start-6 max-w-[64ch]">
               <p className="mb-5 text-[1.07rem] leading-[1.75] text-ink/90 text-pretty first-letter:font-display first-letter:text-[3.6rem] first-letter:leading-[0.85] first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-deep">
-                Etter femten år i bergenske redaksjoner ble veien videre å ta
-                journalistikken i egne hender. Som enkeltpersonforetak leverer
-                jeg journalistiske tekster og bilder til avis, fagpresse og
-                tidsskrifter — med hovedvekt på nyhets- og reportasjesaker, og
-                en utvikling i retning av mer dyptgående feature- og
-                temasaker.
+                Kaspar Knudsen driver enkeltpersonforetak fra USF Verftet på
+                Nordnes i Bergen, etablert april 2026. Bakgrunn fra 15 år i
+                mediebransjen i Bergen og mastergrad i undersøkende
+                journalistikk.
               </p>
               <p className="mb-5 text-[1.07rem] leading-[1.75] text-ink/90 text-pretty">
-                Mastergraden i gravejournalistikk er et håndverk jeg bruker
-                hver uke. Den lærte meg å lese årsmeldinger, å innhente
-                offentlige dokumenter, og å la kildene få tid til å si det de
-                egentlig kom for å si.
+                Unik kompetanse innen gravejournalistikk innenfor arbeidsliv,
+                krim og flere andre områder. Drar ut i felt, leverer bilder og
+                tekst, og jobber med menneskenære historier.
               </p>
               <p className="text-[1.07rem] leading-[1.75] text-ink/90 text-pretty">
-                Jeg jobber tett mot redaksjoner som <em>Fiskeribladet</em>,{" "}
-                <em>Intrafish</em> og <em>Kystens Næringsliv</em>, men leverer
-                også til dagspressen og til magasiner som vil sette saker i
-                større format.
+                Første kunder er <em>Kystens Næringsliv</em>, <em>Intrafish</em>{" "}
+                og <em>Fiskeribladet</em>. Salgsmodellen omfatter innsalg av
+                enkelt-ideer, innsalg av påbegynte eller ferdige artikler,
+                enkeltoppdrag og periodejobbing i redaksjoner.
               </p>
             </div>
           </div>
@@ -175,15 +187,14 @@ export default function OmPage() {
             <blockquote className="col-span-12 lg:col-span-9 lg:col-start-4">
               <p className="font-display text-[clamp(2rem,4.6vw,4rem)] leading-[1.05] tracking-tight text-deep text-balance">
                 <span className="text-driftwood font-light italic">«</span>
-                Økonomisk bærekraft. Kvalitetsjournalistikk.
-                <br />
+                Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,{" "}
                 <span className="italic font-light text-deep/75">
-                  Frihet under ansvar — å styre bedriften selv.
+                  frihet under ansvar — å styre bedriften selv
                 </span>
                 <span className="text-driftwood font-light italic">»</span>
               </p>
               <footer className="mt-8 text-[0.72rem] tracking-meta text-deep">
-                — fra forretningsplanen, april 2026
+                — Kaspar Knudsen, forretningsplan 2026
               </footer>
             </blockquote>
           </div>
@@ -197,14 +208,13 @@ export default function OmPage() {
             <div className="col-span-12 lg:col-span-7">
               <SectionMarker label="Kjerneverdier" className="mb-5" />
               <h2 className="font-display text-[clamp(2rem,4.6vw,4rem)] leading-[1] tracking-tight text-deep text-balance">
-                Seks kompasspunkter — for hvordan jobben gjøres.
+                Kjerneverdier — slik arbeidet drives.
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-4 lg:col-start-9 lg:pb-4 text-pretty">
               <p className="text-ink/75 leading-relaxed">
-                Verdiene står i forretningsplanen, men de prøves hver eneste
-                dag i felt. Det er sjelden de store sakene som tester dem
-                — det er de små.
+                Verdiene er definert i forretningsplanen for
+                enkeltpersonforetaket.
               </p>
             </div>
           </div>
@@ -241,16 +251,15 @@ export default function OmPage() {
                 <span className="smallcaps text-[0.72rem]">tjenester</span>
               </div>
               <h2 className="mt-5 font-display text-[clamp(2rem,4.6vw,4rem)] leading-[1] tracking-tight text-balance">
-                Hva jeg leverer —
+                Tjenester —
                 <br />
-                <span className="italic font-light text-sand">til redaksjonen din.</span>
+                <span className="italic font-light text-sand">og salgsmodell.</span>
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-4 lg:col-start-9 lg:pb-4 text-pretty">
               <p className="text-paper/80 leading-relaxed">
-                Stykkpris per sak eller honorar per periode — det avtales i
-                dialog. Jeg er fleksibel, og tilpasser leveranse til
-                plattformen, formatet og publikummet du har.
+                Prismodell: stykkpris per sak og betalt per periode. Fleksibel
+                tilpasning til redaksjonens format og behov.
               </p>
             </div>
           </div>
@@ -283,13 +292,11 @@ export default function OmPage() {
               <h2 className="font-display text-[clamp(2rem,4.6vw,4rem)] leading-[1.05] tracking-tight text-deep text-balance">
                 USF Verftet —
                 <br />
-                <span className="italic font-light text-driftwood">på Nordnes, ved sjøkanten.</span>
+                <span className="italic font-light text-driftwood">på Nordnes i Bergen.</span>
               </h2>
               <p className="mt-7 max-w-2xl text-ink/80 leading-relaxed text-pretty">
-                Kontoret ligger i den gamle hermetikkfabrikken på Nordnes, blant
-                kunstnere, scener og kafeer. Et godt sted å skrive — og et
-                praktisk møtepunkt for redaksjoner og kilder som er innom Bergen.
-                Stikk innom om du er i nærheten.
+                Kontoret ligger på USF Verftet, Nordnes — et kulturhus i Bergen
+                sentrum. Praktisk møtepunkt for redaksjoner og kilder i Bergen.
               </p>
               <ul className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-[0.85rem] text-ink/75">
                 <li className="border-t border-deep/20 pt-3">
@@ -301,18 +308,17 @@ export default function OmPage() {
                 </li>
                 <li className="border-t border-deep/20 pt-3">
                   <span className="smallcaps text-[0.7rem] text-deep block mb-1">
-                    Reise
+                    Område
                   </span>
-                  10 min til gå fra Bryggen.
+                  Nordnes
                   <br />
-                  Buss 11 fra sentrum.
+                  Bergen sentrum
                 </li>
                 <li className="border-t border-deep/20 pt-3">
                   <span className="smallcaps text-[0.7rem] text-deep block mb-1">
                     Møter
                   </span>
-                  Kaffe, samtale og notatblokk —
-                  <br /> etter avtale.
+                  Etter avtale.
                 </li>
               </ul>
             </div>

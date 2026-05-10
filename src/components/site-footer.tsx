@@ -11,11 +11,11 @@ export function SiteFooter() {
             <Lighthouse className="w-9 h-16 text-sand" />
             <div>
               <h2 className="font-display text-3xl leading-tight tracking-tight">
-                Fra felt — til redaksjon.
+                Kaspar Knudsen.
               </h2>
               <p className="mt-3 max-w-md text-paper/75 text-pretty">
-                Kvalitetsjournalistikk, bilder og featurer fra Bergen og kysten.
-                Tar oppdrag for fagpresse, dagspresse og tidsskrifter.
+                «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
+                frihet under ansvar — å styre bedriften selv»
               </p>
             </div>
           </div>
@@ -81,8 +81,7 @@ export function SiteFooter() {
           <span>
             © {new Date().getFullYear()} Kaspar Knudsen — enkeltpersonforetak
           </span>
-          <span>Org.nr. 932 110 480</span>
-          <span>Medlem · Norsk Journalistlag</span>
+          <span>USF Verftet · Bergen</span>
         </div>
       </div>
     </footer>

@@ -58,24 +58,22 @@ export default function HomePage() {
             </span>
             <span className="hidden md:inline-block h-px w-32 bg-sand/50" />
             <span className="hidden md:inline-block text-[0.7rem] tracking-meta opacity-70">
-              utg. № VII · våren 2026
+              USF Verftet · Bergen
             </span>
           </div>
 
           <h1 className="mt-12 max-w-5xl font-display text-[clamp(2.7rem,7vw,6rem)] leading-[0.95] tracking-tight text-balance">
             <span className="block italic font-light text-sand/95">
-              Historier
+              Kvalitetsjournalistikk
             </span>
-            <span className="block">fra felt — der</span>
-            <span className="block">tåka løfter seg.</span>
+            <span className="block">fra Bergen.</span>
           </h1>
 
           <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-12">
             <p className="lg:col-span-5 max-w-md text-paper/85 text-pretty leading-relaxed">
-              Bergensbasert journalist med 15 år i bransjen og mastergrad i
-              gravejournalistikk. Jeg drar ut til stedene jeg skriver om, møter
-              menneskene som bærer historiene, og kommer hjem med både tekst og
-              bilder.
+              Frilansjournalist med base på USF Verftet, Bergen. Mastergrad i
+              undersøkende journalistikk og 15 år i mediebransjen. Leverer til
+              Fiskeribladet, Intrafish og Kystens Næringsliv.
             </p>
             <div className="lg:col-span-4 lg:col-start-9 self-end">
               <Dateline
@@ -147,24 +145,23 @@ export default function HomePage() {
             </div>
             <div className="col-span-12 lg:col-span-9 lg:col-start-4">
               <h2 className="font-display text-[clamp(2rem,4.6vw,4rem)] leading-[1.05] tracking-tight text-deep text-balance">
-                <span className="italic font-light text-driftwood">Kvalitet</span>{" "}
-                framfor mengde. Et menneske
-                <br className="hidden md:block" /> framfor en overskrift.{" "}
-                <span className="italic font-light text-driftwood">Stedet</span>{" "}
-                framfor pulten.
+                <span className="italic font-light text-driftwood">Kvalitetsjournalistikk</span>,{" "}
+                fleksibilitet
+                <br className="hidden md:block" /> og{" "}
+                <span className="italic font-light text-driftwood">tilgjengelighet</span>.
               </h2>
               <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-3 text-pretty">
                 <Pillar
                   title="Fra felt"
-                  body="Jeg drar ut til havnene, til verftene, til de små samfunnene langs kysten. Kvalitetsjournalistikk skjer i møtet, ikke i innboksen."
+                  body="Drar ut i felt og leverer kritisk og undersøkende journalistikk innenfor arbeidsliv, krim og flere andre områder."
                 />
                 <Pillar
                   title="Kritisk graving"
-                  body="Mastergrad i undersøkende journalistikk. Praktisk erfaring med kritisk graving innenfor arbeidsliv, krim, fiskeri og kystindustri."
+                  body="Mastergrad i undersøkende journalistikk og 15 år i mediebransjen i Bergen."
                 />
                 <Pillar
                   title="Tekst &amp; bilde"
-                  body="Jeg leverer ferdige pakker — reportasje, intervju, foto. Ett bestillingssted, en stemme, og bilder som hører til teksten."
+                  body="Leverer bilder og tekst, gjenbruk og menneskenære historier. Stykkpris per sak eller honorar per periode."
                 />
               </div>
             </div>
@@ -185,15 +182,15 @@ export default function HomePage() {
                 Utvalgte saker —
                 <br />
                 <span className="italic font-light text-deep/70">
-                  langs kystens lange linje.
+                  fra Fiskeribladet, Intrafish og Kystens Næringsliv.
                 </span>
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-4 lg:col-start-9 lg:pb-3 text-pretty">
               <p className="text-ink/80 leading-relaxed">
-                Et utvalg av sakene jeg har levert til norske redaksjoner —
-                gravesaker, øyeblikksbilder og reportasjer. Klikk for å lese hele
-                historien.
+                Et utvalg av sakene levert til norske redaksjoner —
+                gravesaker, reportasjer og featurer. Klikk for å lese hele
+                saken.
               </p>
               <Link
                 href="/saker"
@@ -220,16 +217,16 @@ export default function HomePage() {
           <div className="col-span-12 lg:col-span-7">
             <SectionMarker label="Avgang" className="mb-6 text-sand" />
             <h2 className="font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[1] tracking-tight text-balance">
-              Har du en sak —
+              Tips, ideer
               <br />
               <span className="italic font-light text-sand">
-                eller en mistanke om en?
+                eller oppdrag?
               </span>
             </h2>
             <p className="mt-8 max-w-xl text-paper/80 text-pretty leading-relaxed">
-              Jeg tar imot tips, oppdrag og henvendelser fra redaksjoner. Skriv
-              til meg på e-post, eller stikk innom kontoret på USF Verftet på
-              Nordnes — kaffen er på.
+              Tar imot tips, oppdrag og henvendelser fra redaksjoner. Kontor på
+              USF Verftet, Nordnes i Bergen. Stykkpris per sak eller honorar per
+              periode.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <a

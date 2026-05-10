@@ -30,15 +30,14 @@ export default function SakerIndex() {
             <span className="smallcaps text-[0.72rem]">arkiv · sakene</span>
           </div>
           <h1 className="mt-10 max-w-5xl font-display text-[clamp(2.6rem,7vw,6rem)] leading-[0.95] tracking-tight text-balance">
-            Saker fra
+            Saker —
             <br />
-            <span className="italic font-light text-sand">felt og fjord.</span>
+            <span className="italic font-light text-sand">arkiv.</span>
           </h1>
           <p className="mt-10 max-w-xl text-paper/80 text-pretty leading-relaxed">
-            Et levende arkiv over saker jeg har levert til norske redaksjoner —
-            gravesaker, øyeblikksbilder og reportasjer. Mange av sakene er
-            blitt til etter dager eller uker ute i felt; alle er skrevet for
-            mennesker.
+            Arkiv over saker levert til norske redaksjoner — gravesaker,
+            reportasjer og featurer for Fiskeribladet, Intrafish og Kystens
+            Næringsliv.
           </p>
         </div>
       </section>

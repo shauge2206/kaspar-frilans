@@ -44,7 +44,7 @@ export function SiteHeader() {
           href="/kontakt"
           className="hidden md:inline-flex items-center gap-2 border border-deep/40 px-4 py-2 text-[0.72rem] tracking-meta text-deep transition-colors hover:bg-deep hover:text-paper"
         >
-          <span>Skriv til redaksjonen</span>
+          <span>Ta kontakt</span>
           <span aria-hidden>→</span>
         </Link>
 

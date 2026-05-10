@@ -207,9 +207,8 @@ export default async function SakDetail({
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9 text-pretty">
               <p className="text-ink/75 leading-relaxed">
-                Bilder hører til teksten. Jeg jobber med stillferdige
-                portretter og dokumentariske utklipp — ikke som dekorasjon, men
-                som en parallell måte å fortelle historien på.
+                Bilder og tekst leveres samlet — egne foto fra felt som
+                supplerer teksten.
               </p>
             </div>
           </div>
@@ -273,8 +272,7 @@ export default async function SakDetail({
               Neste sak fra arkivet
             </h2>
             <p className="mt-3 text-paper/70 text-pretty leading-relaxed">
-              Bla videre — hver sak begynner med en posisjon, en dato og et
-              menneske som har noe på hjertet.
+              Bla videre i arkivet over leverte saker.
             </p>
           </div>
           <Link
