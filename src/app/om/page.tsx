@@ -20,26 +20,25 @@ const verdier = [
   { ord: "Åpen og inkluderende" },
 ];
 
-const tjenester = [
+const erfaring = [
   {
-    tittel: "Innsalg av enkelt-ideer",
+    tittel: "Gravejournalistikk",
     beskrivelse:
-      "Gode ideer til saker publikasjonene ønsker, levert som forslag til redaksjonen.",
+      "Undersøkende journalistikk innenfor arbeidsliv, krim og flere områder.",
   },
   {
-    tittel: "Innsalg av påbegynte eller ferdige artikler",
+    tittel: "Reportasje fra felt",
     beskrivelse:
-      "Bilder og tekst — kritisk og undersøkende journalistikk, menneskenære historier fra felt.",
+      "Drar ut for å se stedene og møte menneskene jeg skriver om.",
   },
   {
-    tittel: "Enkeltoppdrag",
+    tittel: "Bilder og tekst",
     beskrivelse:
-      "Stykkpris per sak etter dialog og forhandling. Tilgang til gjenbruk av artikler.",
+      "Leverer både bilder og tekst som del av oppdragene. Tilgang til gjenbruk av artikler.",
   },
   {
-    tittel: "Periode-jobbing i redaksjoner",
-    beskrivelse:
-      "Betalt per periode etter dialog og forhandling. Fleksibilitet og tilpasning til kundebehov.",
+    tittel: "Bergen-presse",
+    beskrivelse: "15 år i mediebransjen i Bergen.",
   },
 ];
 
@@ -137,13 +136,12 @@ export default function OmPage() {
           </p>
         </div>
 
-        <ul className="grid gap-y-6 md:grid-cols-3 md:gap-x-10">
+        <ul className="grid gap-y-8 md:grid-cols-3 md:gap-x-10">
           {verdier.map((v, i) => (
             <li key={v.ord} className={i > 0 && i % 3 !== 0 ? "md:col-rule md:pl-8" : ""}>
-              <p className="font-serif text-3xl md:text-4xl text-accent tracking-[-0.02em]">
-                {String(i + 1).padStart(2, "0")}
+              <p className="font-serif font-semibold text-3xl md:text-4xl text-accent tracking-[-0.02em] leading-[1.1]">
+                {v.ord}
               </p>
-              <p className="smallcaps mt-2">{v.ord}</p>
             </li>
           ))}
         </ul>
@@ -151,26 +149,24 @@ export default function OmPage() {
 
       <div className="rule-thick mb-12" />
 
-      {/* Tjenester */}
+      {/* Erfaring */}
       <section className="mb-16">
         <div className="grid gap-10 md:grid-cols-12 items-end mb-8">
           <div className="md:col-span-7">
-            <p className="smallcaps text-accent mb-3">Tjenester</p>
+            <p className="smallcaps text-accent mb-3">Erfaring</p>
             <h2 className="font-serif font-bold text-3xl md:text-[2.6rem] leading-[1.05] tracking-[-0.02em]">
-              Tjenester.
+              Dette har jeg gjort.
             </h2>
           </div>
           <p className="md:col-span-5 text-ink-soft leading-relaxed">
-            Stykkpris per sak og betalt per periode. Etter dialog og
-            forhandlinger.
+            Tidligere arbeid og fagområder.
           </p>
         </div>
 
         <ul className="grid gap-y-10 md:grid-cols-2 md:gap-x-10">
-          {tjenester.map((t, i) => (
+          {erfaring.map((t, i) => (
             <li key={t.tittel} className={i % 2 === 1 ? "md:col-rule md:pl-10" : ""}>
-              <p className="dateline">Tjeneste 0{i + 1}</p>
-              <h3 className="font-serif font-semibold text-2xl md:text-[1.9rem] leading-[1.1] tracking-[-0.02em] mt-2">
+              <h3 className="font-serif font-semibold text-2xl md:text-[1.9rem] leading-[1.1] tracking-[-0.02em]">
                 {t.tittel}
               </h3>
               <p className="mt-3 text-ink-soft leading-relaxed">

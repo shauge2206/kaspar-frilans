@@ -2,33 +2,23 @@
 
 import { useMemo, useState } from "react";
 
-const TYPER = [
-  { value: "ide", label: "Innsalg av idé eller artikkel" },
-  { value: "oppdrag", label: "Enkeltoppdrag" },
-  { value: "periode", label: "Periode-jobbing i redaksjon" },
-  { value: "annet", label: "Annet" },
-] as const;
-
 export function ContactForm() {
-  const [type, setType] = useState<(typeof TYPER)[number]["value"]>("ide");
   const [navn, setNavn] = useState("");
   const [epost, setEpost] = useState("");
   const [emne, setEmne] = useState("");
   const [melding, setMelding] = useState("");
 
   const mailto = useMemo(() => {
-    const subjectLabel = TYPER.find((t) => t.value === type)?.label ?? "";
-    const subject = `[${subjectLabel}] ${emne || "Ingen emne"}`.trim();
+    const subject = (emne || "Ingen emne").trim();
     const body = [
       `Fra: ${navn || "—"} <${epost || "—"}>`,
-      `Type: ${subjectLabel}`,
       "",
       melding || "",
     ].join("\n");
     return `mailto:post@kaspar.no?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
-  }, [type, navn, epost, emne, melding]);
+  }, [navn, epost, emne, melding]);
 
   return (
     <form
@@ -41,31 +31,6 @@ export function ContactForm() {
         void e;
       }}
     >
-      <fieldset>
-        <legend className="smallcaps text-ink-mute mb-3">Type henvendelse</legend>
-        <div className="flex flex-wrap gap-2">
-          {TYPER.map((t) => {
-            const active = type === t.value;
-            return (
-              <button
-                key={t.value}
-                type="button"
-                onClick={() => setType(t.value)}
-                aria-pressed={active}
-                className={[
-                  "smallcaps px-4 py-2 border transition-colors",
-                  active
-                    ? "bg-ink text-paper border-ink"
-                    : "bg-transparent text-ink border-rule-soft hover:border-ink",
-                ].join(" ")}
-              >
-                {t.label}
-              </button>
-            );
-          })}
-        </div>
-      </fieldset>
-
       <div className="grid gap-6 md:grid-cols-2">
         <Field label="Navn" htmlFor="navn">
           <input
