@@ -49,10 +49,10 @@ export default function KontaktPage() {
                 </p>
                 <p className="mt-1">
                   <a
-                    href="mailto:kaspar@hauge.no"
+                    href="mailto:kaspar@knudsen.no"
                     className="underline decoration-stamp/40 hover:text-stamp"
                   >
-                    kaspar@hauge.no
+                    kaspar@knudsen.no
                   </a>
                 </p>
               </div>
@@ -171,7 +171,7 @@ function Form() {
   return (
     <form
       method="post"
-      action={`mailto:kaspar@hauge.no`}
+      action={`mailto:kaspar@knudsen.no`}
       encType="text/plain"
       className="mt-7 grid gap-4 font-mono text-sm"
     >

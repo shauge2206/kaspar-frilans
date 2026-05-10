@@ -57,7 +57,7 @@ export default function Home() {
               <dl className="space-y-1">
                 <div className="flex justify-between">
                   <dt>Arkivansvarlig</dt>
-                  <dd>K. Hauge</dd>
+                  <dd>K. Knudsen</dd>
                 </div>
                 <div className="flex justify-between">
                   <dt>Distrikt</dt>
@@ -149,7 +149,7 @@ export default function Home() {
                 <p className="mt-2 text-sm">
                   Tips, oppdrag eller spørsmål?{" "}
                   <Link href="/kontakt" className="underline decoration-stamp/40 text-stamp">
-                    kaspar@hauge.no
+                    kaspar@knudsen.no
                   </Link>
                 </p>
               </div>
@@ -209,10 +209,10 @@ export default function Home() {
                   Send melding
                 </Link>
                 <a
-                  href="mailto:kaspar@hauge.no"
+                  href="mailto:kaspar@knudsen.no"
                   className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft underline decoration-ink-muted/40 hover:text-stamp"
                 >
-                  kaspar@hauge.no
+                  kaspar@knudsen.no
                 </a>
               </div>
             </div>

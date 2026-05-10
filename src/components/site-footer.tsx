@@ -33,8 +33,8 @@ export function SiteFooter() {
           </p>
           <ul className="mt-2 space-y-1.5 text-sm">
             <li>
-              <a href="mailto:kaspar@hauge.no" className="hover:text-stamp">
-                kaspar@hauge.no
+              <a href="mailto:kaspar@knudsen.no" className="hover:text-stamp">
+                kaspar@knudsen.no
               </a>
             </li>
             <li className="font-mono text-xs text-ink-muted">+47 ▮▮▮ ▮▮ ▮▮▮</li>
