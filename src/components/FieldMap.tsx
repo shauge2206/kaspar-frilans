@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { articles, formatCoord, themes, type ThemeKey } from "@/lib/articles";
@@ -15,6 +15,36 @@ type Props = {
 
 const ALL_THEMES: ThemeKey[] = ["krim", "arbeidsliv", "kyst", "samfunn", "feature"];
 
+// Rectangular visible window. Underlying map data is ~660×940 (MAP_VIEWBOX)
+// — the user pans within this smaller window.
+const WIN = { w: 460, h: 320 };
+
+// Soft pan limits in MAP coords (translate offset applied to map content)
+const PAN_MIN = { x: -240, y: -640 };
+const PAN_MAX = { x: 60, y: 60 };
+
+function clampOffset(o: { x: number; y: number }) {
+  return {
+    x: Math.min(PAN_MAX.x, Math.max(PAN_MIN.x, o.x)),
+    y: Math.min(PAN_MAX.y, Math.max(PAN_MIN.y, o.y)),
+  };
+}
+
+type RegionKey = "sor" | "vest" | "midt" | "nord";
+
+const REGIONS: Record<RegionKey, { label: string; lat: number; lng: number }> = {
+  sor: { label: "Sør", lat: 58.5, lng: 7.5 },
+  vest: { label: "Vest", lat: 60.4, lng: 5.4 },
+  midt: { label: "Midt", lat: 63.4, lng: 10.4 },
+  nord: { label: "Nord", lat: 69.4, lng: 18.6 },
+};
+
+function offsetForRegion(key: RegionKey) {
+  const r = REGIONS[key];
+  const p = project(r.lat, r.lng);
+  return clampOffset({ x: WIN.w / 2 - p.x, y: WIN.h / 2 - p.y });
+}
+
 export function FieldMap({
   variant = "hero",
   showLabels = true,
@@ -23,7 +53,52 @@ export function FieldMap({
 }: Props) {
   const [active, setActive] = useState<string | null>(null);
   const [filters, setFilters] = useState<Set<ThemeKey>>(new Set());
+  const [offset, setOffset] = useState(() => offsetForRegion("vest"));
+  const [isDragging, setIsDragging] = useState(false);
+  const [activeRegion, setActiveRegion] = useState<RegionKey | null>("vest");
+  const dragRef = useRef({ x: 0, y: 0, ox: 0, oy: 0, moved: false });
+  const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  function panToRegion(key: RegionKey) {
+    setActiveRegion(key);
+    setOffset(offsetForRegion(key));
+  }
+
+  function onPointerDown(e: PointerEvent<SVGSVGElement>) {
+    setIsDragging(true);
+    dragRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      ox: offset.x,
+      oy: offset.y,
+      moved: false,
+    };
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+
+  function onPointerMoveSvg(e: PointerEvent<SVGSVGElement>) {
+    if (!isDragging || !svgRef.current) return;
+    const rect = svgRef.current.getBoundingClientRect();
+    const scaleX = WIN.w / rect.width;
+    const scaleY = WIN.h / rect.height;
+    const dx = (e.clientX - dragRef.current.x) * scaleX;
+    const dy = (e.clientY - dragRef.current.y) * scaleY;
+    if (!dragRef.current.moved && (Math.abs(dx) > 2 || Math.abs(dy) > 2)) {
+      dragRef.current.moved = true;
+      setActiveRegion(null);
+    }
+    setOffset(
+      clampOffset({
+        x: dragRef.current.ox + dx,
+        y: dragRef.current.oy + dy,
+      }),
+    );
+  }
+
+  function onPointerUp() {
+    setIsDragging(false);
+  }
 
   const points = useMemo(
     () =>
@@ -104,14 +179,24 @@ export function FieldMap({
         </div>
       )}
 
-      <div className="relative grid lg:grid-cols-[minmax(0,360px)_minmax(0,420px)] gap-6 items-start lg:justify-start mx-auto lg:mx-0 lg:max-w-[820px]">
+      <div className="relative grid lg:grid-cols-[minmax(0,460px)_minmax(0,400px)] gap-6 items-start lg:justify-start mx-auto lg:mx-0 lg:max-w-[884px]">
         <div className="relative bg-fog/40 border border-line/50 rounded-lg overflow-hidden">
           <div className="absolute inset-0 grid-paper opacity-50 pointer-events-none" />
           <svg
-            viewBox={`${MAP_VIEWBOX.x} ${MAP_VIEWBOX.y} ${MAP_VIEWBOX.w} ${MAP_VIEWBOX.h}`}
+            ref={svgRef}
+            viewBox={`0 0 ${WIN.w} ${WIN.h}`}
             className="w-full h-auto block"
             role="img"
-            aria-label="Kart over Norge med plottede reportasjer"
+            aria-label="Kart over Norge med plottede reportasjer — dra for å bla, eller velg region"
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMoveSvg}
+            onPointerUp={onPointerUp}
+            onPointerCancel={onPointerUp}
+            style={{
+              cursor: isDragging ? "grabbing" : "grab",
+              touchAction: "none",
+              userSelect: "none",
+            }}
           >
             <defs>
               <pattern
@@ -137,6 +222,15 @@ export function FieldMap({
               </radialGradient>
             </defs>
 
+            {/* Pannable map content */}
+            <g
+              style={{
+                transform: `translate(${offset.x}px, ${offset.y}px)`,
+                transition: isDragging
+                  ? "none"
+                  : "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)",
+              }}
+            >
             {/* sea grid markers */}
             <g opacity="0.18">
               {Array.from({ length: 8 }).map((_, i) => (
@@ -241,6 +335,7 @@ export function FieldMap({
                     }}
                     onClick={() => {
                       if (dimmed) return;
+                      if (dragRef.current.moved) return;
                       setActive(isActive ? null : p.article.slug);
                     }}
                   >
@@ -314,82 +409,35 @@ export function FieldMap({
               })}
             </g>
 
-            {/* legend */}
-            <g transform={`translate(${MAP_VIEWBOX.x + 10} ${MAP_VIEWBOX.y + MAP_VIEWBOX.h - 70})`}>
-              <rect
-                width="170"
-                height="56"
-                fill="#f4ede0"
-                stroke="#1f3852"
-                strokeWidth="0.6"
-                rx="2"
-              />
-              <text
-                x="10"
-                y="14"
-                fontFamily="var(--font-mono)"
-                fontSize="8"
-                fill="#1f3852"
-                letterSpacing="1"
-              >
-                MARKØR — TEMA
-              </text>
-              <g transform="translate(10 24)">
-                <circle r="5" fill={themes.krim.color} />
-                <text
-                  x="10"
-                  y="3"
-                  fontFamily="var(--font-mono)"
-                  fontSize="8"
-                  fill="#1f3852"
-                >
-                  KRIM
-                </text>
-              </g>
-              <g transform="translate(60 24)">
-                <circle r="5" fill={themes.kyst.color} />
-                <text
-                  x="10"
-                  y="3"
-                  fontFamily="var(--font-mono)"
-                  fontSize="8"
-                  fill="#1f3852"
-                >
-                  KYST
-                </text>
-              </g>
-              <g transform="translate(110 24)">
-                <circle r="5" fill={themes.samfunn.color} />
-                <text
-                  x="10"
-                  y="3"
-                  fontFamily="var(--font-mono)"
-                  fontSize="8"
-                  fill="#1f3852"
-                >
-                  SAMFUNN
-                </text>
-              </g>
-              <g transform="translate(10 40)">
-                <circle r="5" fill="#e95c2b" />
-                <text
-                  x="10"
-                  y="3"
-                  fontFamily="var(--font-mono)"
-                  fontSize="8"
-                  fill="#1f3852"
-                >
-                  AKTIV REPORTASJE
-                </text>
-              </g>
             </g>
           </svg>
 
-          <div className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.18em] text-deep/60 bg-paper/80 backdrop-blur px-2.5 py-1.5 rounded">
-            Skala 1 : 5 000 000
+          {/* Region selector — top right */}
+          <div className="absolute top-3 right-3 flex flex-col gap-1 bg-paper/90 backdrop-blur-sm rounded-md border border-line/60 p-1.5 shadow-sm">
+            <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-deep/55 px-2 pt-0.5 pb-0.5">
+              Region
+            </span>
+            {(Object.keys(REGIONS) as RegionKey[]).map((key) => (
+              <button
+                key={key}
+                onClick={() => panToRegion(key)}
+                className={`text-left font-mono text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded transition-colors ${
+                  activeRegion === key
+                    ? "bg-deep text-paper"
+                    : "text-deep/75 hover:bg-deep/10"
+                }`}
+              >
+                {REGIONS[key].label}
+              </button>
+            ))}
           </div>
-          <div className="absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-[0.18em] text-deep/60 bg-paper/80 backdrop-blur px-2.5 py-1.5 rounded">
-            {filtered.length} av {articles.length} reportasjer
+
+          {/* Hint + counter */}
+          <div className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.18em] text-deep/60 bg-paper/80 backdrop-blur px-2.5 py-1.5 rounded">
+            Dra for å bla
+          </div>
+          <div className="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] text-deep/60 bg-paper/80 backdrop-blur px-2.5 py-1.5 rounded">
+            {filtered.length} av {articles.length}
           </div>
         </div>
 
