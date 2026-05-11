@@ -215,12 +215,6 @@ export default function Home() {
                   priority={i === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
-                <span
-                  className="absolute top-3 left-3 stamp"
-                  style={{ transform: "rotate(-7deg)" }}
-                >
-                  {sak.stempel}
-                </span>
               </div>
 
               <div className="pt-3 px-1">
