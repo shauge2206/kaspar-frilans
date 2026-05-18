@@ -73,15 +73,7 @@ export function Masthead() {
             aria-label="Til forsiden"
             className="block leading-none"
           >
-            <span
-              className={[
-                "font-serif font-black tracking-[-0.04em] text-ink",
-                "transition-[font-size,letter-spacing] duration-500 ease-out",
-                scrolled
-                  ? "text-[2.2rem] md:text-[2.4rem]"
-                  : "text-[3.2rem] md:text-[5.2rem]",
-              ].join(" ")}
-            >
+            <span className="font-serif font-black tracking-[-0.04em] text-ink text-[2.4rem] md:text-[3.4rem]">
               KASPAR
             </span>
           </Link>

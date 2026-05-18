@@ -8,7 +8,6 @@ const serif = Fraunces({
   variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
-  axes: ["opsz", "SOFT"],
 });
 
 const sans = Inter({

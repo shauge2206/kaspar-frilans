@@ -141,25 +141,6 @@ export default async function SakPage({
         </div>
       </div>
 
-      {/* gallery */}
-      <section className="mt-16">
-        <div className="rule-thick mb-6" />
-        <p className="smallcaps text-accent mb-6">Bildegalleri</p>
-        <div className="grid gap-6 md:grid-cols-3">
-          {sak.bilder.map((b, i) => (
-            <figure key={i} className="card-image relative aspect-[4/5] bg-paper-deep">
-              <Image
-                src={b.src}
-                alt={b.alt}
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
-              />
-            </figure>
-          ))}
-        </div>
-      </section>
-
       {/* read next */}
       <section className="mt-20">
         <div className="rule-thick mb-8" />

@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #fbf9f4;
-  --paper-deep: #f3eee2;
-  --ink: #141210;
-  --ink-soft: #2a2622;
-  --ink-mute: #5b554d;
-  --rule: #1a1814;
-  --rule-soft: #cfc7b4;
-  --accent: #a02828;
-  --accent-deep: #791b1b;
+  --paper: #e6ecd3;
+  --paper-deep: #cfd6b3;
+  --ink: #14201a;
+  --ink-soft: #243024;
+  --ink-mute: #4f5a4a;
+  --rule: #1a261d;
+  --rule-soft: #aab39a;
+  --accent: #2f7a3f;
+  --accent-deep: #1b5226;
 }
 
 @theme inline {
@@ -199,6 +199,21 @@ h4 {
   }
 }
 
+@keyframes swoopIn {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.swoop-in {
+  animation: swoopIn 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 .split-word {
   display: inline-block;
   opacity: 0;
@@ -226,13 +241,12 @@ h4 {
   background-repeat: no-repeat;
   background-size: 0% 1px;
   transition: background-size 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
-    letter-spacing 0.3s ease, color 0.2s ease;
+    color 0.2s ease;
   padding-bottom: 2px;
 }
 
 .link-editorial:hover {
   background-size: 100% 1px;
-  letter-spacing: -0.005em;
 }
 
 .card-image {

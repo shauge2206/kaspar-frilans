@@ -58,10 +58,9 @@ export default function OmPage() {
             className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-ink-soft fade-up"
             style={{ animationDelay: "1100ms" }}
           >
-            Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
-            Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
-            år i mediebransjen i Bergen. Driver eget enkeltpersonforetak fra
-            april 2026.
+            Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
+            Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
+            mediebransjen — eget enkeltpersonforetak fra april 2026.
           </p>
         </div>
         <aside className="md:col-span-4 md:col-rule md:pl-8 fade-up" style={{ animationDelay: "900ms" }}>
@@ -73,8 +72,6 @@ export default function OmPage() {
             <dd className="text-ink">Master i undersøkende journalistikk</dd>
             <dt className="smallcaps text-ink-mute">Erfaring</dt>
             <dd className="text-ink">15 år i mediebransjen i Bergen</dd>
-            <dt className="smallcaps text-ink-mute">Foretak</dt>
-            <dd className="text-ink">Enkeltpersonforetak, april 2026</dd>
           </dl>
         </aside>
       </header>
@@ -89,30 +86,29 @@ export default function OmPage() {
             Frilansjournalist i Bergen
           </h2>
           <p className="font-serif text-[1.1rem] md:text-[1.18rem] leading-[1.7] text-ink dropcap">
-            Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
-            Verftet, Nordnes. Han har mastergrad i undersøkende journalistikk
-            og 15 år i mediebransjen i Bergen. Unik kompetanse innenfor
-            gravejournalistikk knyttet til arbeidsliv, krim og flere
-            områder, og evne til å komme tett på og fortelle sterke
-            historier — han drar ut i felt.
+            Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
+            Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
+            mediebransjen — særlig gravejournalistikk knyttet til arbeidsliv,
+            krim og flere felt. Jeg drar ut i felt for å komme tett på og
+            fortelle de sterke historiene.
           </p>
           <p className="mt-6 font-serif text-[1.1rem] md:text-[1.18rem] leading-[1.7] text-ink">
-            Produktet er bilder og tekst, tilgang til gjenbruk av artikler,
-            kritisk og undersøkende journalistikk og menneskenære historier.
-            Første kunder er Kystens Næringsliv, Intrafish og Fiskeribladet,
-            med målgruppe lesere av nisjeavisene Fiskeribladet og Intrafish.
+            Det jeg leverer er kritisk og undersøkende journalistikk og
+            menneskenære historier — bilder og tekst, levert til
+            nisjepublikasjoner som Kystens Næringsliv, Intrafish og
+            Fiskeribladet.
           </p>
         </div>
 
         <aside className="md:col-span-5 md:col-rule md:pl-10">
-          <p className="smallcaps text-accent mb-3">Spesialitet</p>
+          <p className="smallcaps text-accent mb-3">Fagfelt</p>
           <ul className="font-serif text-2xl md:text-3xl leading-tight space-y-3 mt-2">
             <li>Arbeidsliv</li>
             <li>Krim</li>
-            <li>Flere områder</li>
+            <li>Samfunn</li>
           </ul>
           <div className="rule-thin mt-8 pt-5">
-            <p className="dateline">Første kunder</p>
+            <p className="dateline">Publikasjoner</p>
             <p className="mt-2 text-ink-soft leading-relaxed">
               Kystens Næringsliv · Intrafish · Fiskeribladet.
             </p>
@@ -131,9 +127,6 @@ export default function OmPage() {
               Kjerneverdier.
             </h2>
           </div>
-          <p className="md:col-span-5 text-ink-soft leading-relaxed">
-            Verdiene som ligger til grunn for arbeidet og virksomheten.
-          </p>
         </div>
 
         <ul className="grid gap-y-8 md:grid-cols-3 md:gap-x-10">
@@ -158,9 +151,6 @@ export default function OmPage() {
               Dette har jeg gjort.
             </h2>
           </div>
-          <p className="md:col-span-5 text-ink-soft leading-relaxed">
-            Tidligere arbeid og fagområder.
-          </p>
         </div>
 
         <ul className="grid gap-y-10 md:grid-cols-2 md:gap-x-10">
@@ -189,11 +179,10 @@ export default function OmPage() {
         </div>
         <blockquote className="md:col-span-7 md:col-rule md:pl-10">
           <p className="font-serif text-2xl md:text-3xl leading-[1.25] tracking-[-0.015em] text-ink">
-            «Økonomisk bærekraft i selskapet, å levere
-            kvalitetsjournalistikk, frihet under ansvar — å styre bedriften
-            selv.»
+            «God journalistikk begynner med å være der saken er. Jeg drar ut i
+            felt og lar virkeligheten forme det jeg skriver.»
           </p>
-          <footer className="dateline mt-5">— FORRETNINGSPLAN, 2026</footer>
+          <footer className="dateline mt-5">— KASPAR KNUDSEN</footer>
 
           <Link
             href="/kontakt"

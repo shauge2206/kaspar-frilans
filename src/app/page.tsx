@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { saker } from "@/lib/saker";
 import { SplitText } from "@/components/split-text";
+import { RotatingLead } from "@/components/rotating-lead";
+import { RandomTeaser } from "@/components/random-teaser";
 
 export default function HomePage() {
-  const [lead, ...rest] = saker;
+  const rest = saker.slice(1);
 
   return (
     <div className="mx-auto w-full max-w-[1280px] px-5 md:px-10">
@@ -23,7 +25,7 @@ export default function HomePage() {
             <SplitText
               as="h1"
               text="Kvalitetsjournalistikk fra Bergen."
-              className="font-serif font-black text-[2.6rem] sm:text-[3.6rem] md:text-[5.4rem] leading-[0.95] tracking-[-0.035em] text-ink mt-5"
+              className="font-serif font-black text-[2.4rem] sm:text-[3.2rem] md:text-[3.6rem] lg:text-[4.2rem] leading-[0.98] tracking-[-0.035em] text-ink mt-5"
               delayBase={150}
               step={70}
             />
@@ -32,10 +34,7 @@ export default function HomePage() {
               className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-ink-soft fade-up"
               style={{ animationDelay: "1100ms" }}
             >
-              Kaspar Knudsen er frilansjournalist med kontor på USF Verftet,
-              Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
-              mediebransjen i Bergen. Leverer til Fiskeribladet, Intrafish og
-              Kystens Næringsliv.
+              Jeg er frilansjournalist med kontor på USF Verftet på Nordnes. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen i Bergen — jeg leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.
             </p>
 
             <div
@@ -83,81 +82,15 @@ export default function HomePage() {
               </li>
             </ul>
 
-            <div className="rule-thin mt-8 pt-5">
-              <p className="smallcaps mb-3 text-ink-mute">Hovedsak</p>
-              <p className="text-ink-soft leading-relaxed">
-                {saker[0].ingress}
-              </p>
-              <Link
-                href={`/saker/${saker[0].slug}`}
-                className="smallcaps link-editorial text-accent mt-3 inline-block"
-              >
-                Les saken
-              </Link>
-            </div>
+            <RandomTeaser saker={saker} />
           </aside>
         </div>
       </section>
 
       <div className="rule-thick" />
 
-      {/* lead story */}
-      <section aria-labelledby="lead-heading" className="py-10 md:py-14">
-        <div className="grid gap-8 md:grid-cols-12 md:gap-10">
-          <div className="md:col-span-7">
-            <Link
-              href={`/saker/${lead.slug}`}
-              className="card group block"
-            >
-              <div className="card-image relative aspect-[5/4] md:aspect-[6/5] bg-paper-deep">
-                <Image
-                  src={lead.hovedbilde}
-                  alt={lead.bildetekst}
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 60vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <p className="dateline mt-4">
-                {lead.sted} · {lead.dato.toUpperCase()} · {lead.publikasjon.toUpperCase()}
-              </p>
-            </Link>
-          </div>
-
-          <div className="md:col-span-5 md:col-rule md:pl-10">
-            <p className="smallcaps text-accent">
-              Hovedsak · {lead.seksjon}
-            </p>
-            <h2
-              id="lead-heading"
-              className="font-serif font-bold text-[2.2rem] md:text-[3.2rem] leading-[1.02] tracking-[-0.025em] mt-4"
-            >
-              <Link
-                href={`/saker/${lead.slug}`}
-                className="card-headline"
-              >
-                <span className="card-headline">{lead.tittel}</span>
-              </Link>
-            </h2>
-            <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-              {lead.ingress}
-            </p>
-
-            <div className="rule-thin mt-7 pt-5">
-              <p className="dateline">
-                Av Kaspar · {lead.dato} · for {lead.publikasjon}
-              </p>
-              <Link
-                href={`/saker/${lead.slug}`}
-                className="smallcaps link-editorial mt-4 inline-block"
-              >
-                Les hele saken →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* rotating lead — random sak every 15s with a swoop-in on change */}
+      <RotatingLead saker={saker} />
 
       <div className="rule-thick" />
 
@@ -234,16 +167,16 @@ export default function HomePage() {
 
         <div className="md:col-span-7 md:col-rule md:pl-10">
           <p className="text-lg leading-relaxed text-ink-soft">
-            Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
-            Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
-            år i mediebransjen i Bergen. Gravejournalistikk innenfor
-            arbeidsliv, krim og flere områder.
+            Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
+            Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
+            mediebransjen — særlig gravejournalistikk innen arbeidsliv, krim
+            og flere felt.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-            Leverer kvalitetsjournalistikk til nisjepublikasjoner som
-            Fiskeribladet, Intrafish og Kystens Næringsliv. Produktet er
-            bilder og tekst, kritisk og undersøkende journalistikk og
-            menneskenære historier — levert fra felt.
+            Jeg leverer kritisk og undersøkende journalistikk og menneskenære
+            historier — bilder og tekst, til nisjepublikasjoner som
+            Fiskeribladet, Intrafish og Kystens Næringsliv. Alt levert fra
+            felt.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6">

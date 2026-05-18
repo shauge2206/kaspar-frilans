@@ -15,9 +15,8 @@ export function SiteFooter() {
               FRILANSJOURNALIST · BERGEN · ETABLERT APRIL 2026
             </p>
             <p className="mt-5 max-w-md text-ink-soft">
-              «Økonomisk bærekraft i selskapet, å levere
-              kvalitetsjournalistikk, frihet under ansvar — å styre bedriften
-              selv.»
+              «God journalistikk begynner med å være der saken er. Jeg drar ut
+              i felt og lar virkeligheten forme det jeg skriver.»
             </p>
           </div>
 
