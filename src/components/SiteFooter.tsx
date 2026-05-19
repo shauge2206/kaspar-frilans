@@ -67,20 +67,24 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-hairline">
+        <div className="mx-auto max-w-[1240px] px-5 py-6 text-center sm:px-8">
+          <p className="font-serif text-lg md:text-xl text-ink">
+            Lagd av{" "}
+            <a
+              href="https://www.naermedia.no/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline underline-offset-4 hover:text-ink/70"
+            >
+              Nær Media
+            </a>
+          </p>
+        </div>
+      </div>
+      <div className="border-t border-hairline">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-5 py-5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <span>© {year} – Kaspar Knudsen</span>
           <span>Idé 07 · Precision Monochrome</span>
-        </div>
-        <div className="mx-auto max-w-[1240px] px-5 pb-5 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-ink/50 sm:px-8">
-          Lagd av{" "}
-          <a
-            href="https://www.naermedia.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline-offset-4 hover:underline hover:text-ink"
-          >
-            Nær Media
-          </a>
         </div>
       </div>
     </footer>
