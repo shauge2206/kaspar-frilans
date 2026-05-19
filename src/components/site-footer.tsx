@@ -61,21 +61,23 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="rule-thin mt-12 pt-5 flex flex-col md:flex-row justify-between gap-3 dateline text-ink-mute">
+        <div className="rule-thick mt-12 pt-6 pb-5 text-center">
+          <p className="font-serif text-lg md:text-xl text-ink">
+            Lagd av{" "}
+            <a
+              href="https://www.naermedia.no/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent font-bold link-editorial"
+            >
+              Nær Media
+            </a>
+          </p>
+        </div>
+        <div className="rule-thin pt-5 flex flex-col md:flex-row justify-between gap-3 dateline text-ink-mute">
           <span>© {new Date().getFullYear()} KASPAR KNUDSEN</span>
           <span>ENKELTPERSONFORETAK · BERGEN</span>
         </div>
-        <p className="mt-4 text-center dateline text-ink-mute">
-          Lagd av{" "}
-          <a
-            href="https://www.naermedia.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-editorial"
-          >
-            Nær Media
-          </a>
-        </p>
       </div>
     </footer>
   );
