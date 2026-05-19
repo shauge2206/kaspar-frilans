@@ -65,6 +65,17 @@ export function SiteFooter() {
           <span>© {new Date().getFullYear()} KASPAR KNUDSEN</span>
           <span>ENKELTPERSONFORETAK · BERGEN</span>
         </div>
+        <p className="mt-4 text-center dateline text-ink-mute">
+          Lagd av{" "}
+          <a
+            href="https://www.naermedia.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-editorial"
+          >
+            Nær Media
+          </a>
+        </p>
       </div>
     </footer>
   );
