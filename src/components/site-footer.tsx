@@ -43,21 +43,25 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
+      <div className="border-t border-ink/15">
+        <div className="mx-auto max-w-6xl px-6 py-6 text-center">
+          <p className="font-serif text-lg md:text-xl text-ink">
+            Lagd av{" "}
+            <a
+              href="https://www.naermedia.no/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stamp font-bold underline-offset-4 hover:underline"
+            >
+              Nær Media
+            </a>
+          </p>
+        </div>
+      </div>
       <div className="border-t border-ink/10">
         <div className="mx-auto max-w-6xl px-6 py-4 flex flex-wrap gap-4 items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
           <span>KH-ARKIV / DOSSIER v.1.0 / 2026</span>
           <span>SIDE STEMPLET: ARKIVERT</span>
-        </div>
-        <div className="mx-auto max-w-6xl px-6 pb-4 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
-          Lagd av{" "}
-          <a
-            href="https://www.naermedia.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline-offset-4 hover:underline hover:text-stamp"
-          >
-            Nær Media
-          </a>
         </div>
       </div>
     </footer>
