@@ -173,9 +173,9 @@ export default function Home() {
               Trenger redaksjonen din en frilanser?
             </h2>
             <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">
-              Innsalg av enkelt-ideer, påbegynte eller ferdige artikler,
-              enkeltoppdrag og periode-jobbing i redaksjoner. Stykkpris per sak
-              eller betalt pr periode.
+              Undersøkende reportasje, research, intervju og bilder – levert
+              som ferdig sak fra felt. Tilgjengelig for både enkeltoppdrag og
+              lengre perioder i redaksjonen.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

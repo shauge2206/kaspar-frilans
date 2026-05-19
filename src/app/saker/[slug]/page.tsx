@@ -207,7 +207,7 @@ export default async function SakDetailPage({
             Skriv til Kaspar.
           </h3>
           <p className="mt-3 text-ink-soft leading-relaxed">
-            For oppdrag, innsalg av ideer eller periode-jobbing i redaksjoner.
+            For oppdrag, reportasjer eller ekstern redaksjonsressurs.
           </p>
         </Link>
       </section>

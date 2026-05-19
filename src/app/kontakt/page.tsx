@@ -19,8 +19,8 @@ export default function KontaktPage() {
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">
-          For oppdrag, innsalg av ideer, ferdige artikler eller periode-jobbing
-          i redaksjoner.
+          For oppdrag, reportasjer eller lengre perioder som ekstern
+          redaksjonsressurs.
         </p>
       </section>
 
@@ -66,30 +66,30 @@ export default function KontaktPage() {
           </Reveal>
           <Reveal>
             <div>
-              <p className="smallcaps text-ink-mute mb-3">Salgsmodell</p>
+              <p className="smallcaps text-ink-mute mb-3">Erfaring</p>
               <ul className="tick-list font-sans text-sm">
                 <li>
                   <span className="text-amber font-mono">01</span>
                   <span className="text-ink-soft">
-                    Innsalg av enkelt-ideer.
+                    Undersøkende reportasje innen arbeidsliv, krim og samfunn.
                   </span>
                 </li>
                 <li>
                   <span className="text-amber font-mono">02</span>
                   <span className="text-ink-soft">
-                    Innsalg av påbegynte eller ferdige artikler.
+                    Reportasje fra felt – ser stedene og møter menneskene.
                   </span>
                 </li>
                 <li>
                   <span className="text-amber font-mono">03</span>
                   <span className="text-ink-soft">
-                    Enkeltoppdrag – stykkpris per sak.
+                    Bilder og tekst levert som én helhet.
                   </span>
                 </li>
                 <li>
                   <span className="text-amber font-mono">04</span>
                   <span className="text-ink-soft">
-                    Periode-jobbing i redaksjoner – betalt pr periode.
+                    Ekstern redaksjonsressurs i kortere eller lengre perioder.
                   </span>
                 </li>
               </ul>

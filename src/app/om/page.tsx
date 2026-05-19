@@ -21,21 +21,24 @@ const verdier = [
 
 const tjenester = [
   {
-    tittel: "Enkelt-ideer",
-    tekst: "Innsalg av enkelt-ideer til redaksjonen.",
-  },
-  {
-    tittel: "Påbegynte og ferdige artikler",
-    tekst: "Innsalg av påbegynte eller ferdige artikler.",
-  },
-  {
-    tittel: "Enkeltoppdrag",
+    tittel: "Undersøkende reportasje",
     tekst:
-      "Enkeltoppdrag med bilder og tekst. Kritisk og undersøkende journalistikk og menneskenære historier.",
+      "Gravesaker innen arbeidsliv, krim og samfunn – lange løp der research og kildekontakt avgjør utfallet.",
   },
   {
-    tittel: "Periode-jobbing",
-    tekst: "Periode-jobbing i redaksjoner. Betalt pr periode.",
+    tittel: "Reportasje fra felt",
+    tekst:
+      "Drar ut til stedet, ser miljøet og møter menneskene. Journalistikk som kommer nærmere virkeligheten.",
+  },
+  {
+    tittel: "Bilder og tekst",
+    tekst:
+      "Leverer bilder og tekst som én helhet – kritisk og undersøkende journalistikk, menneskenære historier.",
+  },
+  {
+    tittel: "Ekstern redaksjonsressurs",
+    tekst:
+      "Tilgjengelig i kortere eller lengre perioder når redaksjonen trenger ekstra hender.",
   },
 ];
 
@@ -159,9 +162,9 @@ export default function OmPage() {
       <div className="rule-grad h-px mx-auto max-w-6xl" />
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <p className="smallcaps text-amber mb-4">Tjenester</p>
+        <p className="smallcaps text-amber mb-4">Erfaring</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight max-w-2xl">
-          Salgsmodell.
+          Hva jeg leverer.
         </h2>
         <div className="mt-12 grid md:grid-cols-2 gap-px bg-rule">
           {tjenester.map((t) => (
