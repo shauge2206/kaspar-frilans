@@ -1,0 +1,588 @@
+"use client";
+
+import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { articles, formatCoord, themes, type ThemeKey } from "@/lib/articles";
+import { MAP_VIEWBOX, NORWAY_PATH, SCALE_Y, project } from "@/lib/map";
+
+type Props = {
+  variant?: "hero" | "page";
+  showLabels?: boolean;
+  enableFilters?: boolean;
+  className?: string;
+};
+
+const ALL_THEMES: ThemeKey[] = ["krim", "arbeidsliv", "kyst", "samfunn", "feature"];
+
+// Rectangular visible window. Underlying map data is ~660×940 (MAP_VIEWBOX)
+// – the user pans within this smaller window. Smaller window = more zoom
+// because the same content units fill the same screen width.
+const WIN = { w: 360, h: 340 };
+
+// Soft pan limits in MAP coords (translate offset applied to map content).
+// y range matches the vertically-compressed country (about 12–540 effective).
+const PAN_MIN = { x: -240, y: -360 };
+const PAN_MAX = { x: 60, y: 100 };
+
+function clampOffset(o: { x: number; y: number }) {
+  return {
+    x: Math.min(PAN_MAX.x, Math.max(PAN_MIN.x, o.x)),
+    y: Math.min(PAN_MAX.y, Math.max(PAN_MIN.y, o.y)),
+  };
+}
+
+type RegionKey = "sor" | "vest" | "midt" | "nord";
+
+const REGIONS: Record<RegionKey, { label: string; lat: number; lng: number }> = {
+  sor: { label: "Sør", lat: 58.5, lng: 7.5 },
+  vest: { label: "Vest", lat: 60.4, lng: 5.4 },
+  midt: { label: "Midt", lat: 63.4, lng: 10.4 },
+  nord: { label: "Nord", lat: 69.4, lng: 18.6 },
+};
+
+function regionForLat(lat: number): RegionKey {
+  if (lat >= 65.5) return "nord";
+  if (lat >= 62.5) return "midt";
+  if (lat >= 59.5) return "vest";
+  return "sor";
+}
+
+function offsetForRegion(key: RegionKey) {
+  const r = REGIONS[key];
+  const p = project(r.lat, r.lng);
+  return clampOffset({ x: WIN.w / 2 - p.x, y: WIN.h / 2 - p.y });
+}
+
+export function FieldMap({
+  variant = "hero",
+  showLabels = true,
+  enableFilters = false,
+  className,
+}: Props) {
+  const [active, setActive] = useState<string | null>(null);
+  const [filters, setFilters] = useState<Set<ThemeKey>>(new Set());
+  const [offset, setOffset] = useState(() => offsetForRegion("vest"));
+  const [isDragging, setIsDragging] = useState(false);
+  const [activeRegion, setActiveRegion] = useState<RegionKey | null>("vest");
+  const dragRef = useRef({ x: 0, y: 0, ox: 0, oy: 0, moved: false });
+  const svgRef = useRef<SVGSVGElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  function panToRegion(key: RegionKey) {
+    setActiveRegion(key);
+    setOffset(offsetForRegion(key));
+    setActive(null);
+  }
+
+  function onPointerDown(e: PointerEvent<SVGSVGElement>) {
+    setIsDragging(true);
+    dragRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      ox: offset.x,
+      oy: offset.y,
+      moved: false,
+    };
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+
+  function onPointerMoveSvg(e: PointerEvent<SVGSVGElement>) {
+    if (!isDragging || !svgRef.current) return;
+    const rect = svgRef.current.getBoundingClientRect();
+    const scaleX = WIN.w / rect.width;
+    const scaleY = WIN.h / rect.height;
+    const dx = (e.clientX - dragRef.current.x) * scaleX;
+    const dy = (e.clientY - dragRef.current.y) * scaleY;
+    if (!dragRef.current.moved && (Math.abs(dx) > 2 || Math.abs(dy) > 2)) {
+      dragRef.current.moved = true;
+      setActiveRegion(null);
+    }
+    setOffset(
+      clampOffset({
+        x: dragRef.current.ox + dx,
+        y: dragRef.current.oy + dy,
+      }),
+    );
+  }
+
+  function onPointerUp() {
+    setIsDragging(false);
+  }
+
+  const points = useMemo(
+    () =>
+      articles.map((a) => ({
+        article: a,
+        ...project(a.location.lat, a.location.lng),
+      })),
+    [],
+  );
+
+  const filtered = useMemo(() => {
+    if (filters.size === 0) return points;
+    return points.filter((p) =>
+      p.article.themes.some((t) => filters.has(t)),
+    );
+  }, [filters, points]);
+
+  const activePoint = active
+    ? points.find((p) => p.article.slug === active)
+    : null;
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setActive(null);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  function toggleFilter(t: ThemeKey) {
+    setFilters((prev) => {
+      const next = new Set(prev);
+      if (next.has(t)) next.delete(t);
+      else next.add(t);
+      return next;
+    });
+  }
+
+  return (
+    <div
+      ref={containerRef}
+      className={`relative ${className ?? ""}`}
+    >
+      {enableFilters && (
+        <div className="flex flex-wrap items-center gap-2 mb-6">
+          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-deep/60 mr-2">
+            Filtrer felt:
+          </span>
+          {ALL_THEMES.map((t) => {
+            const on = filters.has(t);
+            return (
+              <button
+                key={t}
+                onClick={() => toggleFilter(t)}
+                className={`font-mono text-[11px] uppercase tracking-[0.18em] px-3 py-1.5 rounded-full border transition-all duration-200 ${
+                  on
+                    ? "bg-deep text-paper border-deep scale-[1.02]"
+                    : "bg-paper text-deep/70 border-line/60 hover:border-deep/40 hover:text-deep"
+                }`}
+                style={
+                  on
+                    ? { background: themes[t].color, borderColor: themes[t].color }
+                    : undefined
+                }
+              >
+                {themes[t].label}
+              </button>
+            );
+          })}
+          {filters.size > 0 && (
+            <button
+              onClick={() => setFilters(new Set())}
+              className="font-mono text-[11px] uppercase tracking-[0.18em] px-2 py-1.5 text-deep/50 hover:text-accent transition-colors"
+            >
+              Nullstill
+            </button>
+          )}
+        </div>
+      )}
+
+      <div className="relative grid lg:grid-cols-12 gap-10 items-start">
+        <div className="relative bg-fog/40 border border-line/50 rounded-lg overflow-hidden lg:col-span-7">
+          <div className="absolute inset-0 grid-paper opacity-50 pointer-events-none" />
+          <svg
+            ref={svgRef}
+            viewBox={`0 0 ${WIN.w} ${WIN.h}`}
+            className="w-full h-auto block"
+            role="img"
+            aria-label="Kart over Norge med plottede reportasjer – dra for å bla, eller velg region"
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMoveSvg}
+            onPointerUp={onPointerUp}
+            onPointerCancel={onPointerUp}
+            style={{
+              cursor: isDragging ? "grabbing" : "grab",
+              touchAction: "none",
+              userSelect: "none",
+            }}
+          >
+            <defs>
+              <pattern
+                id="topoLines"
+                width="14"
+                height="14"
+                patternUnits="userSpaceOnUse"
+                patternTransform="rotate(15)"
+              >
+                <line
+                  x1="0"
+                  y1="7"
+                  x2="14"
+                  y2="7"
+                  stroke="#1f3852"
+                  strokeWidth="0.4"
+                  opacity="0.18"
+                />
+              </pattern>
+              <radialGradient id="landGlow" cx="35%" cy="50%" r="60%">
+                <stop offset="0%" stopColor="#f1e7d0" />
+                <stop offset="100%" stopColor="#e6dcc7" />
+              </radialGradient>
+            </defs>
+
+            {/* Pannable map content */}
+            <g
+              style={{
+                transform: `translate(${offset.x}px, ${offset.y}px)`,
+                transition: isDragging
+                  ? "none"
+                  : "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)",
+              }}
+            >
+            {/* sea grid markers */}
+            <g opacity="0.18">
+              {Array.from({ length: 8 }).map((_, i) => {
+                const y = (i + 1) * 100 * SCALE_Y;
+                return (
+                  <line
+                    key={`h${i}`}
+                    x1={MAP_VIEWBOX.x}
+                    x2={MAP_VIEWBOX.x + MAP_VIEWBOX.w}
+                    y1={y}
+                    y2={y}
+                    stroke="#1f3852"
+                    strokeDasharray="2 6"
+                    strokeWidth="0.5"
+                  />
+                );
+              })}
+            </g>
+
+            {/* lat labels */}
+            <g
+              fontFamily="var(--font-mono)"
+              fontSize="9"
+              fill="#1f3852"
+              opacity="0.55"
+            >
+              {[60, 65, 70].map((lat) => {
+                const y = project(lat, 0).y;
+                return (
+                  <g key={lat}>
+                    <text x={-22} y={y + 3}>
+                      {lat}°N
+                    </text>
+                    <line
+                      x1="0"
+                      x2={MAP_VIEWBOX.w + MAP_VIEWBOX.x - 10}
+                      y1={y}
+                      y2={y}
+                      stroke="#1f3852"
+                      strokeWidth="0.4"
+                      strokeDasharray="3 7"
+                      opacity="0.35"
+                    />
+                  </g>
+                );
+              })}
+            </g>
+
+            {/* mainland – vertical compression to fix the natural-earth
+                projection's stretched aspect at Nordic latitudes */}
+            <g transform={`scale(1 ${SCALE_Y})`}>
+              <path
+                d={NORWAY_PATH}
+                fill="url(#landGlow)"
+                stroke="#1f3852"
+                strokeWidth={1.4}
+                strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d={NORWAY_PATH}
+                fill="url(#topoLines)"
+                stroke="none"
+                opacity="0.6"
+              />
+            </g>
+
+            {/* Bergen reference */}
+            {(() => {
+              const bergen = project(60.39, 5.32);
+              return (
+                <g>
+                  <circle
+                    cx={bergen.x}
+                    cy={bergen.y}
+                    r="3"
+                    fill="#1f3852"
+                  />
+                  <text
+                    x={bergen.x + 9}
+                    y={bergen.y + 4}
+                    fontFamily="var(--font-mono)"
+                    fontSize="10"
+                    fill="#1f3852"
+                  >
+                    BERGEN
+                  </text>
+                </g>
+              );
+            })()}
+
+            {/* markers */}
+            <g>
+              {points.map((p) => {
+                const isActive = active === p.article.slug;
+                const dimmed =
+                  filters.size > 0 &&
+                  !p.article.themes.some((t) => filters.has(t));
+                return (
+                  <g
+                    key={p.article.slug}
+                    transform={`translate(${p.x} ${p.y})`}
+                    style={{
+                      cursor: dimmed ? "default" : "pointer",
+                      opacity: dimmed ? 0.2 : 1,
+                      transition: "opacity 0.3s",
+                    }}
+                    onClick={() => {
+                      if (dimmed) return;
+                      if (dragRef.current.moved) return;
+                      setActive(isActive ? null : p.article.slug);
+                    }}
+                  >
+                    {/* pulse */}
+                    <circle
+                      r="14"
+                      fill={themes[p.article.themes[0]!].color}
+                      opacity="0.35"
+                      className="animate-pulse-ring"
+                    />
+                    {/* outer halo on active */}
+                    {isActive && (
+                      <circle
+                        r="22"
+                        fill="none"
+                        stroke="#e95c2b"
+                        strokeWidth="1.5"
+                        strokeDasharray="2 3"
+                      />
+                    )}
+                    {/* core */}
+                    <circle
+                      r={isActive ? 10 : 8}
+                      fill={
+                        isActive
+                          ? "#e95c2b"
+                          : themes[p.article.themes[0]!].color
+                      }
+                      stroke="#0e1a26"
+                      strokeWidth="1"
+                      style={{ transition: "r 0.2s" }}
+                    />
+                    {/* theme letter */}
+                    <text
+                      y="3.5"
+                      textAnchor="middle"
+                      fontSize="9"
+                      fontFamily="var(--font-mono)"
+                      fontWeight="700"
+                      fill="#f4ede0"
+                    >
+                      {themes[p.article.themes[0]!].label[0]}
+                    </text>
+                    {/* label */}
+                    {showLabels && !isActive && (
+                      <g transform="translate(14 4)" opacity="0.95">
+                        <rect
+                          x="-1"
+                          y="-9"
+                          width={p.article.location.name.length * 5 + 14}
+                          height="13"
+                          fill="#f4ede0"
+                          stroke="#1f3852"
+                          strokeWidth="0.5"
+                          rx="1"
+                          opacity="0.92"
+                        />
+                        <text
+                          x="6"
+                          y="0"
+                          fontFamily="var(--font-mono)"
+                          fontSize="8.5"
+                          fill="#1f3852"
+                        >
+                          {p.article.location.name.toUpperCase()}
+                        </text>
+                      </g>
+                    )}
+                  </g>
+                );
+              })}
+            </g>
+
+            </g>
+          </svg>
+
+          {/* Region selector – top right */}
+          <div className="absolute top-3 right-3 flex flex-col gap-1 bg-paper/90 backdrop-blur-sm rounded-md border border-line/60 p-1.5 shadow-sm">
+            <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-deep/55 px-2 pt-0.5 pb-0.5">
+              Region
+            </span>
+            {(Object.keys(REGIONS) as RegionKey[]).map((key) => (
+              <button
+                key={key}
+                onClick={() => panToRegion(key)}
+                className={`text-left font-mono text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded transition-colors ${
+                  activeRegion === key
+                    ? "bg-deep text-paper"
+                    : "text-deep/75 hover:bg-deep/10"
+                }`}
+              >
+                {REGIONS[key].label}
+              </button>
+            ))}
+          </div>
+
+          {/* Hint + counter */}
+          <div className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.18em] text-deep/60 bg-paper/80 backdrop-blur px-2.5 py-1.5 rounded">
+            Dra for å bla
+          </div>
+          <div className="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] text-deep/60 bg-paper/80 backdrop-blur px-2.5 py-1.5 rounded">
+            {filtered.length} av {articles.length}
+          </div>
+        </div>
+
+        {/* side card panel */}
+        <aside className="lg:col-span-5 lg:sticky lg:top-24 self-start min-h-[420px]">
+          {activePoint ? (
+            <SideCard slug={activePoint.article.slug} />
+          ) : (
+            <Empty
+              variant={variant}
+              activeRegion={activeRegion}
+              onSelect={(slug) => setActive(slug)}
+            />
+          )}
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+function Empty({
+  variant,
+  activeRegion,
+  onSelect,
+}: {
+  variant: "hero" | "page";
+  activeRegion: RegionKey | null;
+  onSelect: (slug: string) => void;
+}) {
+  const list = activeRegion
+    ? articles.filter((a) => regionForLat(a.location.lat) === activeRegion)
+    : articles;
+  const regionLabel = activeRegion ? REGIONS[activeRegion].label : null;
+  return (
+    <div className="border border-line/50 bg-sand/40 rounded-lg p-7 text-deep">
+      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-deep/60 mb-4">
+        Reportasjeregister
+        {regionLabel ? (
+          <span className="ml-2 text-accent">– {regionLabel}</span>
+        ) : null}
+      </div>
+      <h2
+        className={`font-semibold tracking-tight leading-tight ${
+          variant === "hero" ? "text-2xl" : "text-xl"
+        } mb-4`}
+      >
+        {activeRegion
+          ? list.length > 0
+            ? "Reportasjer fra denne regionen."
+            : "Ingen reportasjer i denne regionen ennå."
+          : "Klikk en markør for å lese et utdrag."}
+      </h2>
+      <p className="text-[14.5px] text-deep/75 leading-relaxed mb-6">
+        Hver reportasje er plottet på kartet etter stedet den ble laget.
+      </p>
+      {list.length > 0 ? (
+        <ul className="divide-y divide-deep/10 -mx-2">
+          {list.map((a, i) => (
+            <li key={a.slug}>
+              <button
+                type="button"
+                onClick={() => onSelect(a.slug)}
+                className="group w-full text-left flex items-baseline gap-3 text-[13px] text-deep/80 px-2 py-2.5 rounded transition-colors hover:bg-deep/5"
+              >
+                <span className="font-mono text-[11px] text-deep/50 tabular">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-medium group-hover:text-accent transition-colors">
+                  {a.location.name}
+                </span>
+                <span className="text-deep/50 truncate">{a.publication}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+  );
+}
+
+function SideCard({ slug }: { slug: string }) {
+  const article = articles.find((a) => a.slug === slug)!;
+  return (
+    <article
+      key={slug}
+      className="animate-slide-in-right border border-deep/30 bg-paper rounded-lg overflow-hidden shadow-[6px_6px_0_rgba(31,56,82,0.08)]"
+    >
+      <div className="relative h-48 w-full bg-fog">
+        <Image
+          src={article.images[0]!.src}
+          alt={article.images[0]!.alt}
+          fill
+          sizes="(min-width: 1024px) 420px, 100vw"
+          className="object-cover"
+        />
+        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+          {article.themes.map((t) => (
+            <span
+              key={t}
+              className="font-mono text-[9px] uppercase tracking-[0.18em] px-2 py-0.5 text-paper"
+              style={{ background: themes[t].color }}
+            >
+              {themes[t].label}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="p-6">
+        <div className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-deep/60 mb-3 flex flex-wrap gap-x-3 gap-y-1">
+          <span>{article.publication}</span>
+          <span>·</span>
+          <span>{article.dateLabel}</span>
+        </div>
+        <h3 className="text-xl font-semibold leading-tight tracking-tight text-ink mb-3">
+          {article.title}
+        </h3>
+        <div className="font-mono text-[10.5px] text-deep/55 mb-4 tabular">
+          {formatCoord(article.location.lat, article.location.lng)}
+        </div>
+        <p className="text-[14.5px] text-deep/80 font-serif leading-relaxed mb-5">
+          {article.excerpt}
+        </p>
+        <Link
+          href={`/saker/${article.slug}`}
+          className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-accent hover:text-accent-deep transition-colors"
+        >
+          Les hele reportasjen
+          <span aria-hidden>→</span>
+        </Link>
+      </div>
+    </article>
+  );
+}
