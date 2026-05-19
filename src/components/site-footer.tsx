@@ -85,11 +85,7 @@ export function SiteFooter() {
           <p className="font-mono uppercase tracking-[0.2em]">
             Bygget i Bergen
           </p>
-        </div>
-      </div>
-      <div className="border-t border-line/60 bg-paper-2/40">
-        <div className="mx-auto max-w-[1280px] px-6 py-6 text-center md:px-10">
-          <p className="font-display text-lg md:text-xl text-ink">
+          <p className="text-sm text-ink-2 md:text-right">
             Lagd av{" "}
             <a
               href="https://www.naermedia.no/"
