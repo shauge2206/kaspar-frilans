@@ -6,7 +6,7 @@ import { WordReveal } from "@/components/word-reveal";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontakt Kaspar Knudsen — frilansjournalist på USF Verftet, Bergen.",
+    "Kontakt Kaspar Knudsen – frilansjournalist på USF Verftet, Bergen.",
 };
 
 const channels = [
@@ -91,7 +91,7 @@ export default function KontaktPage() {
           <Reveal delay={0.4} y={36} className="md:col-span-7">
             <ContactForm />
             <p className="mt-5 text-xs leading-relaxed text-mute">
-              Skjemaet er en demonstrasjon — i produksjon kan det kobles til
+              Skjemaet er en demonstrasjon – i produksjon kan det kobles til
               en e-postservice eller webhook. Inntil videre er det raskest
               å sende e-post direkte.
             </p>

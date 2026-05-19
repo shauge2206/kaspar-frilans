@@ -50,7 +50,7 @@ export default async function SakPage(props: Props) {
 
       {/* HERO IMAGE */}
       <section className="relative px-4 pt-6 md:px-8 md:pt-8">
-        <div className="mx-auto max-w-[1280px]">
+        <div className="mx-auto max-w-[960px]">
           <Reveal y={20}>
             <ParallaxImage
               src={sak.hovedbilde}
@@ -58,7 +58,7 @@ export default async function SakPage(props: Props) {
               priority
               className="aspect-[16/9] rounded-[28px] ring-1 ring-line/70 shadow-soft"
               offset={60}
-              sizes="(min-width: 1280px) 1200px, 100vw"
+              sizes="(min-width: 960px) 920px, 100vw"
             />
           </Reveal>
         </div>
@@ -130,44 +130,6 @@ export default async function SakPage(props: Props) {
               ))}
             </article>
           </Reveal>
-        </div>
-      </section>
-
-      {/* GALLERI */}
-      <section className="relative px-6 pb-24 md:px-10">
-        <div className="mx-auto max-w-[1180px]">
-          <Reveal>
-            <p className="mb-6 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
-              Bilder fra saken
-            </p>
-          </Reveal>
-          <div className="grid gap-4 md:grid-cols-12 md:gap-6">
-            {sak.bilder.map((b, i) => {
-              const span =
-                i === 0
-                  ? "md:col-span-7 md:row-span-2 aspect-[4/5]"
-                  : i === 1
-                    ? "md:col-span-5 aspect-[4/3]"
-                    : "md:col-span-5 aspect-[4/3]";
-              return (
-                <Reveal
-                  key={b.src}
-                  delay={i * 0.05}
-                  className={span}
-                >
-                  <figure className="relative h-full overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft">
-                    <Image
-                      src={b.src}
-                      alt={b.alt}
-                      fill
-                      sizes="(min-width: 1024px) 700px, 100vw"
-                      className="object-cover"
-                    />
-                  </figure>
-                </Reveal>
-              );
-            })}
-          </div>
         </div>
       </section>
 

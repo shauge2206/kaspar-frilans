@@ -4,7 +4,6 @@ import { ArticleCard } from "@/components/article-card";
 import { MagneticButton } from "@/components/magnetic-button";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/reveal";
 import { WordReveal } from "@/components/word-reveal";
-import { ParallaxImage } from "@/components/parallax-image";
 
 const values = [
   {
@@ -13,7 +12,7 @@ const values = [
   },
   {
     title: "Reportasje fra felt",
-    body: "Drar ut i felt og leverer menneskenære historier — bilder og tekst.",
+    body: "Drar ut i felt og leverer menneskenære historier – bilder og tekst.",
   },
   {
     title: "Kvalitet og fleksibilitet",
@@ -21,7 +20,7 @@ const values = [
   },
   {
     title: "Gjenbruk",
-    body: "Bilder og tekst som kan brukes på tvers — kritisk og undersøkende journalistikk.",
+    body: "Bilder og tekst som kan brukes på tvers – kritisk og undersøkende journalistikk.",
   },
 ];
 
@@ -101,22 +100,57 @@ export default function HomePage() {
               className="md:col-span-4 md:pt-10"
             >
               <div className="relative overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft">
-                <ParallaxImage
-                  src={featured.hovedbilde}
-                  alt={featured.bilder[0]?.alt ?? featured.tittel}
-                  className="aspect-[4/5]"
-                />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/70 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="font-mono text-[0.66rem] uppercase tracking-[0.22em] text-paper/85">
-                    Siste sak — {featured.publikasjon}
-                  </p>
-                  <Link
-                    href={`/saker/${featured.slug}`}
-                    className="mt-2 block font-display text-[1.05rem] leading-tight tracking-tight text-paper hover:underline"
+                <div
+                  className="aspect-[4/5] w-full flex items-center justify-center"
+                  aria-label="Portrettplassholder"
+                >
+                  <svg
+                    viewBox="0 0 200 250"
+                    className="w-full h-full"
+                    aria-hidden="true"
                   >
-                    {featured.tittel}
-                  </Link>
+                    <defs>
+                      <pattern
+                        id="hero-placeholder-grid"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <path
+                          d="M 20 0 L 0 0 0 20"
+                          fill="none"
+                          stroke="rgba(40,30,20,0.10)"
+                          strokeWidth="0.5"
+                        />
+                      </pattern>
+                    </defs>
+                    <rect width="200" height="250" fill="url(#hero-placeholder-grid)" />
+                    <g
+                      stroke="rgba(40,30,20,0.35)"
+                      strokeWidth="1"
+                      fill="none"
+                    >
+                      <path d="M 10 10 L 22 10 M 10 10 L 10 22" />
+                      <path d="M 190 10 L 178 10 M 190 10 L 190 22" />
+                      <path d="M 10 240 L 22 240 M 10 240 L 10 228" />
+                      <path d="M 190 240 L 178 240 M 190 240 L 190 228" />
+                    </g>
+                    <g fill="rgba(40,30,20,0.22)">
+                      <circle cx="100" cy="100" r="34" />
+                      <path d="M 50 200 Q 50 150 100 150 Q 150 150 150 200 Z" />
+                    </g>
+                    <text
+                      x="100"
+                      y="222"
+                      textAnchor="middle"
+                      fontFamily="ui-monospace, monospace"
+                      fontSize="9"
+                      letterSpacing="3"
+                      fill="rgba(40,30,20,0.6)"
+                    >
+                      PORTRETT
+                    </text>
+                  </svg>
                 </div>
               </div>
             </Reveal>

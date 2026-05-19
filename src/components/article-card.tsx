@@ -24,7 +24,7 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
     <Link
       href={`/saker/${sak.slug}`}
       className={`group relative block ${className}`}
-      aria-label={`${sak.tittel} — ${sak.publikasjon}, ${sak.dato}`}
+      aria-label={`${sak.tittel} – ${sak.publikasjon}, ${sak.dato}`}
     >
       <motion.div
         whileHover={reduce ? undefined : { y: -4 }}

@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/reveal";
 import { WordReveal } from "@/components/word-reveal";
-import { ParallaxImage } from "@/components/parallax-image";
 import { MagneticButton } from "@/components/magnetic-button";
 
 export const metadata: Metadata = {
@@ -21,9 +20,9 @@ const arbeidsområder = [
 ];
 
 const publikasjoner = [
-  { navn: "Kystens Næringsliv", tag: "Første kunde" },
-  { navn: "Intrafish", tag: "Første kunde" },
-  { navn: "Fiskeribladet", tag: "Første kunde" },
+  { navn: "Kystens Næringsliv" },
+  { navn: "Intrafish" },
+  { navn: "Fiskeribladet" },
 ];
 
 const verdier = [
@@ -35,7 +34,7 @@ const verdier = [
   {
     nr: "02",
     tittel: "Holder ord og avtaler",
-    body: "Høflighet, vennlighet og ærlighet — holder det som blir avtalt.",
+    body: "Høflighet, vennlighet og ærlighet – holder det som blir avtalt.",
   },
   {
     nr: "03",
@@ -45,7 +44,7 @@ const verdier = [
   {
     nr: "04",
     tittel: "Åpen og inkluderende",
-    body: "Frihet under ansvar — å styre bedriften selv og levere kvalitetsjournalistikk.",
+    body: "Frihet under ansvar – å styre bedriften selv og levere kvalitetsjournalistikk.",
   },
 ];
 
@@ -83,34 +82,79 @@ export default function OmPage() {
 
               <Reveal delay={1.05} className="mt-10 grid gap-6 max-w-[58ch]">
                 <p className="text-[1.05rem] leading-relaxed text-ink-2">
-                  <strong className="font-medium text-ink">Kaspar Knudsen</strong> er
-                  frilansjournalist i Bergen med kontor på USF Verftet,
+                  <strong className="font-medium text-ink">Jeg er</strong>{" "}
+                  frilansjournalist i Bergen, med kontor på USF Verftet på
                   Nordnes. Mastergrad i undersøkende journalistikk og 15 år
                   i mediebransjen.
                 </p>
                 <p className="text-[1.05rem] leading-relaxed text-ink-2">
-                  Leverer kvalitetsjournalistikk til nisjepublikasjoner som
-                  Fiskeribladet, Intrafish og Kystens Næringsliv.
-                  Gravejournalistikk innenfor arbeidsliv, krim og flere
-                  områder — drar ut i felt.
+                  Jeg jobber særlig med gravejournalistikk innen arbeidsliv,
+                  krim og flere felt – og leverer kritisk og undersøkende
+                  journalistikk, menneskenære historier, bilder og tekst til
+                  Fiskeribladet, Intrafish og Kystens Næringsliv. Alt levert
+                  fra felt.
                 </p>
                 <p className="text-[1.05rem] leading-relaxed text-ink-2 italic">
-                  «Økonomisk bærekraft i selskapet, å levere
-                  kvalitetsjournalistikk, frihet under ansvar — å styre
-                  bedriften selv»
+                  «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
                 </p>
               </Reveal>
             </div>
 
             <Reveal delay={0.6} y={36} className="md:col-span-5 md:pt-6">
-              <ParallaxImage
-                src="/images/saker/sak-2/bilde-1.jpeg"
-                alt="Fra reportasje på Skogsvåg, Øygarden"
-                className="aspect-[4/5] rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft"
-                offset={50}
-              />
+              <div
+                className="aspect-[4/5] rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft bg-paper-2 flex items-center justify-center overflow-hidden"
+                aria-label="Bildeplassholder"
+              >
+                <svg
+                  viewBox="0 0 200 250"
+                  className="w-full h-full"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <pattern
+                      id="om-placeholder-grid"
+                      width="20"
+                      height="20"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <path
+                        d="M 20 0 L 0 0 0 20"
+                        fill="none"
+                        stroke="rgba(40,30,20,0.10)"
+                        strokeWidth="0.5"
+                      />
+                    </pattern>
+                  </defs>
+                  <rect width="200" height="250" fill="url(#om-placeholder-grid)" />
+                  <g
+                    stroke="rgba(40,30,20,0.35)"
+                    strokeWidth="1"
+                    fill="none"
+                  >
+                    <path d="M 10 10 L 22 10 M 10 10 L 10 22" />
+                    <path d="M 190 10 L 178 10 M 190 10 L 190 22" />
+                    <path d="M 10 240 L 22 240 M 10 240 L 10 228" />
+                    <path d="M 190 240 L 178 240 M 190 240 L 190 228" />
+                  </g>
+                  <g fill="rgba(40,30,20,0.22)">
+                    <circle cx="100" cy="100" r="34" />
+                    <path d="M 50 200 Q 50 150 100 150 Q 150 150 150 200 Z" />
+                  </g>
+                  <text
+                    x="100"
+                    y="222"
+                    textAnchor="middle"
+                    fontFamily="ui-monospace, monospace"
+                    fontSize="9"
+                    letterSpacing="3"
+                    fill="rgba(40,30,20,0.6)"
+                  >
+                    PORTRETT
+                  </text>
+                </svg>
+              </div>
               <p className="mt-3 text-xs leading-relaxed text-mute">
-                Fra reportasje på Skogsvåg, Øygarden — Bergens Tidende, 2023.
+                Plassholder for portrett.
               </p>
             </Reveal>
           </div>
@@ -142,9 +186,6 @@ export default function OmPage() {
                 <span className="font-display text-[1.25rem] font-medium tracking-tight text-ink">
                   {p.navn}
                 </span>
-                <span className="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-mute">
-                  {p.tag}
-                </span>
               </StaggerItem>
             ))}
           </StaggerGroup>
@@ -165,10 +206,10 @@ export default function OmPage() {
                 </h2>
               </div>
               <p className="md:col-span-7 max-w-[60ch] text-base leading-relaxed text-ink-2">
-                Salgsmodell: innsalg av enkelt-ideer, innsalg av påbegynte
-                eller ferdige artikler, enkeltoppdrag og periode-jobbing i
-                redaksjoner. Prismodell: stykkpris per sak og betalt pr
-                periode.
+                Jeg leverer alt fra korte enkeltoppdrag — reportasjer,
+                intervjuer og research — til lengre prosjekter og perioder som
+                ekstern redaksjonsressurs. Tekst og bilder leveres som én
+                helhet, klar til redigering.
               </p>
             </div>
           </Reveal>

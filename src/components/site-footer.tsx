@@ -8,12 +8,12 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1280px] gap-10 px-6 py-14 md:grid-cols-12 md:px-10">
         <div className="md:col-span-5">
           <p className="font-display text-[1.25rem] leading-snug tracking-tight text-ink italic">
-            «Økonomisk bærekraft i selskapet, å levere
-            kvalitetsjournalistikk, frihet under ansvar — å styre
-            bedriften <span className="text-coral-500">selv»</span>
+            «Jeg drar ut i felt for å se stedene og møte menneskene jeg
+            skriver om – det er det som gjør journalistikken{" "}
+            <span className="text-coral-500">nærmere.»</span>
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-mute">
-            Kaspar Knudsen — frilansjournalist i Bergen.
+            Kaspar Knudsen – frilansjournalist i Bergen.
             USF Verftet, Nordnes.
           </p>
         </div>

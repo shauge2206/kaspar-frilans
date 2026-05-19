@@ -22,11 +22,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kasparknudsen.no"),
   title: {
-    default: "Kaspar Knudsen — Frilansjournalist",
-    template: "%s — Kaspar Knudsen",
+    default: "Kaspar Knudsen – Frilansjournalist",
+    template: "%s – Kaspar Knudsen",
   },
   description:
-    "Kaspar Knudsen — frilansjournalist på USF Verftet, Bergen. Kvalitetsjournalistikk og gravejournalistikk levert til Fiskeribladet, Intrafish og Kystens Næringsliv.",
+    "Kaspar Knudsen – frilansjournalist på USF Verftet, Bergen. Kvalitetsjournalistikk og gravejournalistikk levert til Fiskeribladet, Intrafish og Kystens Næringsliv.",
   openGraph: {
     type: "website",
     locale: "nb_NO",

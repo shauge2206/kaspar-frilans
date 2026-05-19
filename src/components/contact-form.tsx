@@ -110,7 +110,7 @@ export function ContactForm() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                Takk — jeg svarer snart
+                Takk – jeg svarer snart
               </motion.span>
             )}
           </AnimatePresence>

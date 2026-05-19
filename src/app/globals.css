@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette — warm paper-white base, deep ink, apricot/coral accent gradient */
+  /* Palette – warm paper-white base, deep ink, apricot/coral accent gradient */
   --color-paper: #faf6f0;
   --color-paper-2: #f3ece2;
   --color-paper-3: #ebe1d2;
@@ -66,7 +66,7 @@ body {
   letter-spacing: -0.018em;
 }
 
-/* Drifting fluid gradient — purely CSS, GPU friendly. */
+/* Drifting fluid gradient – purely CSS, GPU friendly. */
 @keyframes drift-a {
   0%   { transform: translate3d(-12%, -8%, 0) scale(1.05); }
   50%  { transform: translate3d(8%, 4%, 0) scale(1.18); }
@@ -115,7 +115,7 @@ body {
   animation: drift-c 40s ease-in-out infinite;
 }
 
-/* Paper grain — very subtle */
+/* Paper grain – very subtle */
 .paper-grain::before {
   content: "";
   position: absolute;

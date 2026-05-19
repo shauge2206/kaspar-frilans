@@ -8,7 +8,7 @@ import { WordReveal } from "@/components/word-reveal";
 export const metadata: Metadata = {
   title: "Saker",
   description:
-    "Utvalgte saker av Kaspar Knudsen — gravejournalistikk, reportasje og feature.",
+    "Utvalgte saker av Kaspar Knudsen – gravejournalistikk, reportasje og feature.",
 };
 
 const sectionLabel: Record<(typeof saker)[number]["seksjon"], string> = {
@@ -41,7 +41,7 @@ export default function SakerPage() {
 
           <Reveal delay={0.95} className="mt-8 max-w-[52ch]">
             <p className="text-[1.05rem] leading-relaxed text-ink-2">
-              Et utvalg saker — gravejournalistikk, reportasje og feature
+              Et utvalg saker – gravejournalistikk, reportasje og feature
               levert til redaksjoner som Fiskeribladet, Intrafish og
               Kystens Næringsliv.
             </p>
@@ -57,7 +57,7 @@ export default function SakerPage() {
                 <Link
                   href={`/saker/${sak.slug}`}
                   className="grid items-stretch gap-6 py-8 md:grid-cols-12 md:gap-10 md:py-12"
-                  aria-label={`${sak.tittel} — ${sak.publikasjon}, ${sak.dato}`}
+                  aria-label={`${sak.tittel} – ${sak.publikasjon}, ${sak.dato}`}
                 >
                   {/* number */}
                   <div className="md:col-span-1">

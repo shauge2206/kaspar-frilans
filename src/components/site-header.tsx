@@ -40,7 +40,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="group flex items-center gap-2 font-display text-[1.05rem] font-medium tracking-tight text-ink"
-          aria-label="Kaspar Knudsen — forside"
+          aria-label="Kaspar Knudsen – forside"
         >
           <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-coral-300 to-apricot-200 text-ink shadow-soft">
             <span className="font-display text-[0.78rem] font-semibold leading-none">
