@@ -7,17 +7,16 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1240px] gap-10 px-5 py-14 sm:grid-cols-12 sm:px-8">
         <div className="sm:col-span-5">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50">
-            01 — Frilans · Bergen
+            01 – Frilans · Bergen
           </p>
           <p className="mt-3 text-[18px] leading-[1.4] tracking-[-0.005em] text-ink/80">
-            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
-            frihet under ansvar — å styre bedriften selv»
+            «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
           </p>
         </div>
 
         <div className="sm:col-span-3">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50">
-            02 — Indeks
+            02 – Indeks
           </p>
           <ul className="mt-3 space-y-2 text-[14px]">
             <li>
@@ -49,7 +48,7 @@ export function SiteFooter() {
 
         <div className="sm:col-span-4">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50">
-            03 — Kontakt
+            03 – Kontakt
           </p>
           <ul className="mt-3 space-y-2 text-[14px]">
             <li>
@@ -69,7 +68,7 @@ export function SiteFooter() {
 
       <div className="border-t border-hairline">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-5 py-5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <span>© {year} — Kaspar Knudsen</span>
+          <span>© {year} – Kaspar Knudsen</span>
           <span>Idé 07 · Precision Monochrome</span>
         </div>
       </div>

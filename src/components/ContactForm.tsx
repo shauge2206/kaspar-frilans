@@ -31,7 +31,7 @@ export function ContactForm() {
       case "sending":
         return { label: "Sender…", dot: "bg-ink/60 animate-pulse" };
       case "sent":
-        return { label: "Sendt — takk", dot: "bg-ink" };
+        return { label: "Sendt – takk", dot: "bg-ink" };
       case "error":
         return { label: "Fyll ut alle felter", dot: "bg-ink" };
       default:

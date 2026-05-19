@@ -16,7 +16,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1240px] grid-cols-12 gap-6 px-5 pb-16 pt-12 sm:px-8 sm:pt-20">
           <div className="col-span-12 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
             <span aria-hidden className="inline-block h-px w-8 bg-ink/40" />
-            <span className="tabular">USF Verftet — Nordnes, Bergen</span>
+            <span className="tabular">USF Verftet – Nordnes, Bergen</span>
             <span aria-hidden className="dot-divider" />
             <span>Frilansjournalist</span>
           </div>
@@ -91,7 +91,7 @@ export default function Home() {
       <section className="mx-auto max-w-[1240px] px-5 pt-20 sm:px-8">
         <div className="flex items-center justify-between border-b border-hairline pb-4">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-            Utvalgt sak — 01 / {String(saker.length).padStart(2, "0")}
+            Utvalgt sak – 01 / {String(saker.length).padStart(2, "0")}
           </h2>
           <TransitionLink
             href="/saker"
@@ -155,7 +155,7 @@ export default function Home() {
       <section className="mx-auto max-w-[1240px] px-5 pt-24 sm:px-8">
         <div className="flex items-center justify-between border-b border-hairline pb-4">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-            Indeks — nylig publisert
+            Indeks – nylig publisert
           </h2>
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/45">
             Bla / klikk

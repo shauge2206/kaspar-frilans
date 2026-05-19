@@ -241,7 +241,7 @@ export function CommandPaletteProvider({
                 )}
               </ul>
               <div className="flex items-center justify-between border-t border-hairline px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink/50">
-                <span>⌘K — palett</span>
+                <span>⌘K – palett</span>
                 <span>↑↓ naviger · ↵ velg</span>
               </div>
             </motion.div>

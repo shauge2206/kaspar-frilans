@@ -5,7 +5,7 @@ import { SakerIndex } from "@/components/SakerIndex";
 export const metadata: Metadata = {
   title: "Saker",
   description:
-    "Indeks over publiserte saker av Kaspar Knudsen — undersøkende journalistikk.",
+    "Indeks over publiserte saker av Kaspar Knudsen – undersøkende journalistikk.",
 };
 
 export default function SakerPage() {
@@ -24,7 +24,7 @@ export default function SakerPage() {
           Saker
         </h1>
         <p className="mt-5 max-w-[58ch] text-[16px] leading-[1.6] text-ink/70">
-          Et utvalg publiserte saker. Tabular sortering — bruk{" "}
+          Et utvalg publiserte saker. Tabular sortering – bruk{" "}
           <kbd className="font-mono border border-hairline px-1.5 py-0.5 text-[11px]">
             J
           </kbd>{" "}

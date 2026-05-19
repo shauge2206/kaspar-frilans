@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { CursorPanImage } from "@/components/CursorPanImage";
 import { FadeIn, RevealGroup, RevealItem } from "@/components/Reveal";
 import { TransitionLink } from "@/components/TransitionLink";
 
 export const metadata: Metadata = {
   title: "Om",
   description:
-    "Om Kaspar Knudsen — frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen.",
+    "Om Kaspar Knudsen – frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen.",
 };
 
 const FAKTA = [
   {
-    year: "Apr 2026 —",
+    year: "Apr 2026 –",
     label: "Kaspar Knudsen",
     place: "Enkeltpersonforetak",
     body: "Frilansvirksomhet etablert april 2026. Kontor på USF Verftet, Nordnes, Bergen.",
@@ -45,7 +44,7 @@ const FOKUS = [
   {
     n: "02",
     title: "Kvalitetsjournalistikk",
-    body: "Kritisk og undersøkende journalistikk levert fra felt — bilder og tekst, med rom for gjenbruk.",
+    body: "Kritisk og undersøkende journalistikk levert fra felt – bilder og tekst, med rom for gjenbruk.",
   },
   {
     n: "03",
@@ -72,15 +71,15 @@ export default function OmPage() {
                 as="h1"
                 className="text-[clamp(2.4rem,6vw,4.6rem)] font-medium leading-[0.98] tracking-[-0.03em]"
               >
-                Kaspar Knudsen er frilansjournalist i Bergen
-                med kontor på USF Verftet, Nordnes.
+                Jeg er frilansjournalist i Bergen,
+                med kontor på USF Verftet på Nordnes.
               </RevealItem>
               <RevealItem
                 as="p"
                 className="max-w-[58ch] text-[17px] leading-[1.6] text-ink/75"
               >
                 Mastergrad i undersøkende journalistikk og 15 år i
-                mediebransjen. Leverer kvalitetsjournalistikk til
+                mediebransjen. Jeg leverer kvalitetsjournalistikk til
                 nisjepublikasjoner som Fiskeribladet, Intrafish og Kystens
                 Næringsliv.
               </RevealItem>
@@ -88,27 +87,66 @@ export default function OmPage() {
                 as="p"
                 className="max-w-[58ch] text-[15px] leading-[1.65] text-ink/65"
               >
-                Gravejournalistikk innenfor arbeidsliv, krim og flere
-                områder. Drar ut i felt og leverer bilder og tekst, med rom
-                for gjenbruk, kritisk og undersøkende journalistikk og
-                menneskenære historier.
+                Jeg jobber særlig med gravejournalistikk innen arbeidsliv,
+                krim og flere felt. Drar ut i felt og leverer både bilder og
+                tekst – kritisk og undersøkende journalistikk og menneskenære
+                historier.
               </RevealItem>
             </RevealGroup>
           </div>
 
           <div className="col-span-12 sm:col-span-4">
             <FadeIn delay={0.2}>
-              <div className="mask-reveal aspect-[3/4] w-full overflow-hidden border border-hairline bg-ink/5">
-                <CursorPanImage
-                  src="/images/saker/sak-2/bilde-1.jpeg"
-                  alt="Portrett av Kaspar Knudsen"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  containerClassName="h-full w-full"
-                />
+              <div
+                className="aspect-[3/4] w-full overflow-hidden border border-hairline bg-ink/5 flex items-center justify-center"
+                aria-label="Bildeplassholder"
+              >
+                <svg
+                  viewBox="0 0 200 270"
+                  className="w-full h-full"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <pattern
+                      id="om-07-placeholder-grid"
+                      width="20"
+                      height="20"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <path
+                        d="M 20 0 L 0 0 0 20"
+                        fill="none"
+                        stroke="rgba(0,0,0,0.08)"
+                        strokeWidth="0.5"
+                      />
+                    </pattern>
+                  </defs>
+                  <rect width="200" height="270" fill="url(#om-07-placeholder-grid)" />
+                  <g stroke="rgba(0,0,0,0.3)" strokeWidth="1" fill="none">
+                    <path d="M 10 10 L 22 10 M 10 10 L 10 22" />
+                    <path d="M 190 10 L 178 10 M 190 10 L 190 22" />
+                    <path d="M 10 260 L 22 260 M 10 260 L 10 248" />
+                    <path d="M 190 260 L 178 260 M 190 260 L 190 248" />
+                  </g>
+                  <g fill="rgba(0,0,0,0.18)">
+                    <circle cx="100" cy="110" r="34" />
+                    <path d="M 50 215 Q 50 160 100 160 Q 150 160 150 215 Z" />
+                  </g>
+                  <text
+                    x="100"
+                    y="242"
+                    textAnchor="middle"
+                    fontFamily="ui-monospace, monospace"
+                    fontSize="9"
+                    letterSpacing="3"
+                    fill="rgba(0,0,0,0.55)"
+                  >
+                    PORTRETT
+                  </text>
+                </svg>
               </div>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/55">
-                Foto · arbeidsbilde fra felt
+                Plassholder · portrett kommer
               </p>
             </FadeIn>
           </div>
@@ -186,10 +224,12 @@ export default function OmPage() {
             </div>
             <div className="col-span-12 sm:col-span-9">
               <p className="text-[clamp(1.4rem,2.4vw,2rem)] leading-[1.25] tracking-[-0.012em]">
-                «Økonomisk bærekraft i selskapet, å levere
-                kvalitetsjournalistikk,{" "}
-                <span className="text-ink/45">frihet under ansvar</span> — å
-                styre bedriften selv»
+                «Jeg drar ut i felt for å se stedene og møte menneskene jeg
+                skriver om –{" "}
+                <span className="text-ink/45">
+                  det er det som gjør journalistikken nærmere.
+                </span>
+                »
               </p>
             </div>
           </div>

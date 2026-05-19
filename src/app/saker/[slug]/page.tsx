@@ -167,51 +167,6 @@ export default async function SakPage({
               </FadeIn>
             ))}
 
-            {/* gallery */}
-            {sak.bilder.length > 1 ? (
-              <section className="mt-20">
-                <div className="flex items-center justify-between border-b border-hairline pb-3">
-                  <h2 className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                    Bildemateriale
-                  </h2>
-                  <span className="font-mono text-[11px] tabular uppercase tracking-[0.16em] text-ink/45">
-                    {String(sak.bilder.length).padStart(2, "0")} bilder
-                  </span>
-                </div>
-                <div className="mt-6 grid grid-cols-12 gap-4">
-                  {sak.bilder.map((b, i) => (
-                    <FadeIn
-                      key={b.src}
-                      delay={0.05 * i}
-                      className={
-                        i === 0
-                          ? "col-span-12"
-                          : "col-span-6 sm:col-span-6"
-                      }
-                    >
-                      <div
-                        className={`relative w-full overflow-hidden border border-hairline bg-ink/5 ${
-                          i === 0
-                            ? "aspect-[16/9]"
-                            : "aspect-[3/4]"
-                        }`}
-                      >
-                        <Image
-                          src={b.src}
-                          alt={b.alt}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-cover transition-transform duration-700 hover:scale-[1.02]"
-                        />
-                      </div>
-                      <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">
-                        Bilde {String(i + 1).padStart(2, "0")} — {b.alt}
-                      </p>
-                    </FadeIn>
-                  ))}
-                </div>
-              </section>
-            ) : null}
           </div>
         </div>
       </section>

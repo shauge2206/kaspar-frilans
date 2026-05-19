@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kasparknudsen.no"),
   title: {
-    default: "Kaspar Knudsen — Frilansjournalist",
+    default: "Kaspar Knudsen – Frilansjournalist",
     template: "%s · Kaspar Knudsen",
   },
   description:
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   applicationName: "Kaspar Knudsen",
   authors: [{ name: "Kaspar Knudsen" }],
   openGraph: {
-    title: "Kaspar Knudsen — Frilansjournalist",
+    title: "Kaspar Knudsen – Frilansjournalist",
     description:
       "Frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk.",
     locale: "nb_NO",

@@ -5,7 +5,7 @@ import { FadeIn, RevealGroup, RevealItem } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Ta kontakt med Kaspar Knudsen — frilansjournalist i Bergen.",
+    "Ta kontakt med Kaspar Knudsen – frilansjournalist i Bergen.",
 };
 
 export default function KontaktPage() {
@@ -16,7 +16,7 @@ export default function KontaktPage() {
           <span aria-hidden className="inline-block h-px w-8 bg-ink/40" />
           <span>Kontakt</span>
           <span aria-hidden className="dot-divider" />
-          <span>USF Verftet — Bergen</span>
+          <span>USF Verftet – Bergen</span>
         </div>
 
         <div className="mt-10 grid grid-cols-12 gap-6">
@@ -74,7 +74,7 @@ export default function KontaktPage() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 sm:col-span-3">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-              Skjema — 01
+              Skjema – 01
             </p>
             <p className="mt-3 text-[14px] leading-[1.6] text-ink/65">
               Skjemaet er en demo: meldingen sendes ikke til en server, men
@@ -91,7 +91,7 @@ export default function KontaktPage() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 sm:col-span-3">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-              Spørsmål — 02
+              Spørsmål – 02
             </p>
           </div>
           <div className="col-span-12 sm:col-span-9">
