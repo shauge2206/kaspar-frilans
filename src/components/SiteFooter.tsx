@@ -49,6 +49,19 @@ export function SiteFooter() {
           </div>
         </div>
 
+        <div className="border-t border-dotted border-ink/25 py-6 text-center">
+          <p className="handwritten-red text-2xl md:text-3xl leading-tight">
+            Lagd av{" "}
+            <a
+              href="https://www.naermedia.no/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pencil-link"
+            >
+              Nær Media
+            </a>
+          </p>
+        </div>
         <div className="border-t border-dotted border-ink/25 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
           <p className="typewriter text-[0.7rem] tracking-[0.18em] text-ink-fade uppercase">
             © {year} Kaspar Knudsen
@@ -57,17 +70,6 @@ export function SiteFooter() {
             «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
           </p>
         </div>
-        <p className="pb-4 text-center typewriter text-[0.7rem] tracking-[0.18em] text-ink-fade uppercase">
-          Lagd av{" "}
-          <a
-            href="https://www.naermedia.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pencil-link"
-          >
-            Nær Media
-          </a>
-        </p>
       </div>
     </footer>
   );
