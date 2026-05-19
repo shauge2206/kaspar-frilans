@@ -52,6 +52,21 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-rule">
+        <div className="mx-auto max-w-6xl px-6 py-6 text-center">
+          <p className="font-serif text-lg md:text-xl text-ink-soft">
+            Lagd av{" "}
+            <a
+              href="https://www.naermedia.no/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber font-semibold glow hover:brightness-110"
+            >
+              Nær Media
+            </a>
+          </p>
+        </div>
+      </div>
+      <div className="border-t border-rule">
         <div className="mx-auto max-w-6xl px-6 py-5 flex flex-wrap items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
           <span>© {new Date().getFullYear()} Kaspar Knudsen</span>
           <span>Org.nr 999 999 999</span>
@@ -62,17 +77,6 @@ export function Footer() {
             />
             Sist oppdatert mai 2026
           </span>
-        </div>
-        <div className="mx-auto max-w-6xl px-6 pb-5 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-          Lagd av{" "}
-          <a
-            href="https://www.naermedia.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glow text-ink-soft hover:text-amber"
-          >
-            Nær Media
-          </a>
         </div>
       </div>
     </footer>
