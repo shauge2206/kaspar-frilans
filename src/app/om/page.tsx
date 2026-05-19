@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata = {
-  title: "Om Kaspar Knudsen — frilansjournalist i Bergen",
+  title: "Om Kaspar Knudsen – frilansjournalist i Bergen",
   description:
     "Mastergrad i undersøkende journalistikk, 15 år i mediebransjen og kontor på USF Verftet. Slik jobber Kaspar Knudsen.",
 };
@@ -55,6 +55,32 @@ export default function OmPage() {
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
+            <div
+              className="aspect-[4/5] w-full max-w-[280px] mb-7 border border-rule bg-bg-2 flex items-center justify-center overflow-hidden"
+              aria-label="Portrettplassholder"
+            >
+              <svg viewBox="0 0 200 250" className="w-full h-full" aria-hidden="true">
+                <defs>
+                  <pattern id="om-09-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
+                  </pattern>
+                </defs>
+                <rect width="200" height="250" fill="url(#om-09-grid)" />
+                <g stroke="rgba(255,255,255,0.2)" strokeWidth="1" fill="none">
+                  <path d="M 10 10 L 22 10 M 10 10 L 10 22" />
+                  <path d="M 190 10 L 178 10 M 190 10 L 190 22" />
+                  <path d="M 10 240 L 22 240 M 10 240 L 10 228" />
+                  <path d="M 190 240 L 178 240 M 190 240 L 190 228" />
+                </g>
+                <g fill="rgba(255,255,255,0.12)">
+                  <circle cx="100" cy="100" r="34" />
+                  <path d="M 50 200 Q 50 150 100 150 Q 150 150 150 200 Z" />
+                </g>
+                <text x="100" y="222" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" letterSpacing="3" fill="rgba(255,255,255,0.45)">
+                  PORTRETT
+                </text>
+              </svg>
+            </div>
             <p className="smallcaps text-ink-mute mb-3">Kort fortalt</p>
             <ul className="font-sans text-sm space-y-3 text-ink-soft">
               <li>15+ år i mediebransjen i Bergen</li>
@@ -67,22 +93,22 @@ export default function OmPage() {
           <div className="md:col-span-7 md:col-start-6 prose-longform max-w-none">
             <Reveal>
               <p>
-                Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
-                Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
-                år i mediebransjen.
+                Jeg er frilansjournalist i Bergen, med kontor på USF Verftet
+                på Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
+                mediebransjen.
               </p>
             </Reveal>
             <Reveal>
               <p>
-                Leverer kvalitetsjournalistikk til nisjepublikasjoner som
-                Fiskeribladet, Intrafish og Kystens Næringsliv.
-                Gravejournalistikk innenfor arbeidsliv, krim og flere områder
-                — drar ut i felt.
+                Jeg leverer kvalitetsjournalistikk til nisjepublikasjoner som
+                Fiskeribladet, Intrafish og Kystens Næringsliv – særlig
+                gravejournalistikk innen arbeidsliv, krim og flere felt. Drar
+                ut i felt.
               </p>
             </Reveal>
             <Reveal>
               <p>
-                Foretaket er et enkeltpersonforetak etablert april 2026, med
+                Jeg driver eget enkeltpersonforetak, etablert april 2026, med
                 drift i perioden april 2026 til mars 2027.
               </p>
             </Reveal>
@@ -124,8 +150,7 @@ export default function OmPage() {
           </div>
           <div className="md:col-span-7 md:col-start-6 prose-longform max-w-none">
             <blockquote className="pullquote">
-              «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
-              frihet under ansvar — å styre bedriften selv»
+              «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
             </blockquote>
           </div>
         </div>

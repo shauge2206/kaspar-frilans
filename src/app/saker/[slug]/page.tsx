@@ -20,7 +20,7 @@ export async function generateMetadata({
   const sak = hentSak(slug);
   if (!sak) return {};
   return {
-    title: `${sak.tittel} — Kaspar Knudsen`,
+    title: `${sak.tittel} – Kaspar Knudsen`,
     description: sak.ingress,
   };
 }
@@ -39,7 +39,6 @@ export default async function SakDetailPage({
     hovedbilde: "hovedbilde",
     brodtekst: "brodtekst",
     sitat: "sitat",
-    galleri: "galleri",
     kolofon: "kolofon",
   };
 
@@ -48,7 +47,6 @@ export default async function SakDetailPage({
     { id: sectionIds.hovedbilde, label: "Hovedbilde" },
     { id: sectionIds.brodtekst, label: "Reportasjen" },
     ...(sak.pullquote ? [{ id: sectionIds.sitat, label: "Sitat" }] : []),
-    { id: sectionIds.galleri, label: "Bilder" },
     { id: sectionIds.kolofon, label: "Kolofon" },
   ];
 
@@ -159,36 +157,6 @@ export default async function SakDetailPage({
               </Reveal>
             ))}
           </div>
-
-          <section
-            id={sectionIds.galleri}
-            className="mt-24 max-w-[760px] mx-auto scroll-mt-24"
-          >
-            <p className="smallcaps text-amber mb-4">Bilder</p>
-            <h2 className="font-serif text-3xl leading-tight">
-              Fra reportasjen
-            </h2>
-            <div className="mt-8 space-y-12">
-              {sak.bilder.map((b, i) => (
-                <Reveal key={b.src} delay={i * 60}>
-                  <figure>
-                    <div className="relative aspect-[3/2] border border-rule overflow-hidden">
-                      <Image
-                        src={b.src}
-                        alt={b.tekst}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 760px"
-                        className="object-cover"
-                      />
-                    </div>
-                    <figcaption className="mt-3 font-mono text-xs uppercase tracking-[0.15em] text-ink-mute">
-                      {String(i + 1).padStart(2, "0")} · {b.tekst}
-                    </figcaption>
-                  </figure>
-                </Reveal>
-              ))}
-            </div>
-          </section>
 
           <section
             id={sectionIds.kolofon}

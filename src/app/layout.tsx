@@ -27,7 +27,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kaspar Knudsen — frilansjournalist i Bergen",
+  title: "Kaspar Knudsen – frilansjournalist i Bergen",
   description:
     "Frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.",
 };

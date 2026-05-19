@@ -20,7 +20,7 @@ export function ContactForm() {
     e.preventDefault();
     const subject = encodeURIComponent(`[${emne}] ${navn || "Henvendelse"}`);
     const body = encodeURIComponent(
-      `${melding}\n\n— ${navn}\n${epost}`,
+      `${melding}\n\n– ${navn}\n${epost}`,
     );
     window.location.href = `mailto:kaspar@knudsen.no?subject=${subject}&body=${body}`;
   }

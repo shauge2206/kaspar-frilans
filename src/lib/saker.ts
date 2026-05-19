@@ -111,7 +111,7 @@ export const saker: Sak[] = [
       },
       {
         src: "/images/saker/sak-3/bilde-2.jpeg",
-        tekst: "Saken på mobil — første dag etter publisering.",
+        tekst: "Saken på mobil – første dag etter publisering.",
       },
       {
         src: "/images/saker/sak-3/bilde-3.jpeg",

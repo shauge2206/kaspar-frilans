@@ -75,14 +75,15 @@ export default function Home() {
           </div>
           <div className="md:col-span-7 md:col-start-6 prose-longform max-w-none">
             <p>
-              Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
-              Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
-              år i mediebransjen.
+              Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
+              Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
+              mediebransjen.
             </p>
             <p>
-              Leverer kvalitetsjournalistikk til nisjepublikasjoner som
-              Fiskeribladet, Intrafish og Kystens Næringsliv. Gravejournalistikk
-              innenfor arbeidsliv, krim og flere områder — drar ut i felt.
+              Jeg leverer kvalitetsjournalistikk til nisjepublikasjoner som
+              Fiskeribladet, Intrafish og Kystens Næringsliv – særlig
+              gravejournalistikk innen arbeidsliv, krim og flere felt. Drar
+              ut i felt.
             </p>
           </div>
         </div>

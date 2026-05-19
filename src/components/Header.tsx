@@ -15,7 +15,7 @@ export function Header() {
         <Link
           href="/"
           className="flex items-baseline gap-3 group"
-          aria-label="Kaspar Knudsen — forside"
+          aria-label="Kaspar Knudsen – forside"
         >
           <span className="font-serif text-xl tracking-tight group-hover:text-amber transition-colors">
             Kaspar Knudsen

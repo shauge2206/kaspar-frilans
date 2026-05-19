@@ -4,9 +4,9 @@ import { saker } from "@/lib/saker";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata = {
-  title: "Saker — Kaspar Knudsen",
+  title: "Saker – Kaspar Knudsen",
   description:
-    "Et utvalg artikler fra Kaspar Knudsen — publisert i Fiskeribladet, Intrafish og Kystens Næringsliv.",
+    "Et utvalg artikler fra Kaspar Knudsen – publisert i Fiskeribladet, Intrafish og Kystens Næringsliv.",
 };
 
 export default function SakerPage() {
@@ -22,7 +22,7 @@ export default function SakerPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">
           Artikler publisert i Fiskeribladet, Intrafish og Kystens Næringsliv.
-          Bilder og tekst — kritisk og undersøkende journalistikk og
+          Bilder og tekst – kritisk og undersøkende journalistikk og
           menneskenære historier.
         </p>
       </section>

@@ -2,7 +2,7 @@ import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Kontakt — Kaspar Knudsen",
+  title: "Kontakt – Kaspar Knudsen",
   description:
     "Skriv til Kaspar Knudsen for redaksjonelle oppdrag eller tips. Kontor på USF Verftet i Bergen.",
 };
@@ -83,13 +83,13 @@ export default function KontaktPage() {
                 <li>
                   <span className="text-amber font-mono">03</span>
                   <span className="text-ink-soft">
-                    Enkeltoppdrag — stykkpris per sak.
+                    Enkeltoppdrag – stykkpris per sak.
                   </span>
                 </li>
                 <li>
                   <span className="text-amber font-mono">04</span>
                   <span className="text-ink-soft">
-                    Periode-jobbing i redaksjoner — betalt pr periode.
+                    Periode-jobbing i redaksjoner – betalt pr periode.
                   </span>
                 </li>
               </ul>
