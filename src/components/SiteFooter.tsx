@@ -75,8 +75,10 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-paper/15">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-6 text-center">
-          <p className="font-serif text-lg md:text-xl text-paper">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5 flex flex-wrap items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/55">
+          <span>© {new Date().getFullYear()} Kaspar Knudsen</span>
+          <span>Org.nr 999 999 999 – Enkeltpersonforetak</span>
+          <span className="text-sm normal-case tracking-normal font-sans text-paper/80 md:text-right">
             Lagd av{" "}
             <a
               href="https://www.naermedia.no/"
@@ -86,13 +88,7 @@ export function SiteFooter() {
             >
               Nær Media
             </a>
-          </p>
-        </div>
-      </div>
-      <div className="border-t border-paper/15">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5 flex flex-wrap items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/55">
-          <span>© {new Date().getFullYear()} Kaspar Knudsen</span>
-          <span>Org.nr 999 999 999 – Enkeltpersonforetak</span>
+          </span>
         </div>
       </div>
     </footer>
