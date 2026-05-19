@@ -48,6 +48,17 @@ export function SiteFooter() {
           <span>KH-ARKIV / DOSSIER v.1.0 / 2026</span>
           <span>SIDE STEMPLET: ARKIVERT</span>
         </div>
+        <div className="mx-auto max-w-6xl px-6 pb-4 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
+          Lagd av{" "}
+          <a
+            href="https://www.naermedia.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-4 hover:underline hover:text-stamp"
+          >
+            Nær Media
+          </a>
+        </div>
       </div>
     </footer>
   );
