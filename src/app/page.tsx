@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div className="notebook-shell pt-4 pb-20">
-      {/* Hero — journal entry */}
+      {/* Hero – journal entry */}
       <section className="relative grid grid-cols-12 gap-x-6 lg:gap-x-10 pt-8">
         {/* Margin column */}
         <aside className="col-span-12 md:col-span-3 lg:col-span-3 relative">
@@ -55,17 +55,16 @@ export default function Home() {
         {/* Main entry */}
         <div className="col-span-12 md:col-span-9 lg:col-span-9 relative">
           <p className="typewriter text-[0.72rem] tracking-[0.22em] text-ink-fade uppercase">
-            Kapittel 1 · Innledning
+            Innledning
           </p>
 
-          <h1 className="headline-hand text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] mt-3 leading-[0.95]">
+          <h1 className="headline-hand text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] mt-3 leading-[1.05]">
             <Typewriter
               text="Kaspar"
               as="span"
               speed={48}
               cursor={false}
-            />
-            <br />
+            />{" "}
             <span className="relative inline-block">
               <Typewriter
                 text="Knudsen"
@@ -106,7 +105,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Values strip — checklist style */}
+          {/* Values strip – checklist style */}
           <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 max-w-2xl text-sm">
             {[
               "Likeverd mellom mennesker",
@@ -142,7 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ticker — typewriter */}
+      {/* Ticker – typewriter */}
       <section className="mt-20 border-y border-dashed border-ink/30 py-3 overflow-hidden">
         <div className="ticker-track flex gap-12 whitespace-nowrap typewriter text-[0.78rem] tracking-[0.22em] text-ink-fade uppercase">
           {Array.from({ length: 2 }).flatMap((_, dup) =>
@@ -162,12 +161,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured saker — corkboard */}
+      {/* Featured saker – corkboard */}
       <section className="mt-24 relative">
         <div className="flex items-end justify-between flex-wrap gap-4 mb-2">
           <div>
             <p className="typewriter text-[0.72rem] tracking-[0.22em] text-ink-fade uppercase">
-              Kapittel 2
+              Utvalg
             </p>
             <h2 className="headline-hand text-5xl md:text-6xl mt-1">
               Utvalgte saker
@@ -232,7 +231,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Notebook spread — what I do */}
+      {/* Notebook spread – what I do */}
       <section className="mt-32 grid grid-cols-12 gap-6 lg:gap-10 items-start">
         <div className="col-span-12 md:col-span-7 relative">
           <div className="lined-paper p-8 md:p-12 paper-card relative">
@@ -246,7 +245,7 @@ export default function Home() {
             />
 
             <p className="typewriter text-[0.72rem] tracking-[0.22em] text-ink-fade uppercase">
-              Kapittel 3 — Erfaring
+              Erfaring
             </p>
             <h2 className="headline-hand text-4xl md:text-5xl mt-1">
               Dette har jeg gjort

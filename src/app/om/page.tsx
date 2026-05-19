@@ -47,7 +47,7 @@ const ERFARING = [
 export default function OmPage() {
   return (
     <div className="notebook-shell pt-4 pb-24">
-      {/* Header — journal entry */}
+      {/* Header – journal entry */}
       <section className="grid grid-cols-12 gap-x-6 lg:gap-x-10 pt-8">
         <aside className="col-span-12 md:col-span-3">
           <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
@@ -78,19 +78,54 @@ export default function OmPage() {
             </span>
           </h1>
           <p className="text-xl mt-6 max-w-3xl text-ink-soft leading-relaxed">
-            Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
-            Verftet, Nordnes. Mastergrad i undersøkende journalistikk og 15
-            år i mediebransjen. Leverer kvalitetsjournalistikk til
-            nisjepublikasjoner som Fiskeribladet, Intrafish og Kystens
-            Næringsliv.
+            Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
+            Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
+            mediebransjen – jeg leverer kritisk og undersøkende journalistikk
+            til Fiskeribladet, Intrafish og Kystens Næringsliv.
           </p>
         </div>
       </section>
 
-      {/* Bio — journal page */}
+      {/* Bio – journal page */}
       <section className="mt-16 grid grid-cols-12 gap-x-6 lg:gap-x-10">
         <aside className="col-span-12 md:col-span-3 relative">
           <div className="md:sticky md:top-8 space-y-6">
+            <div className="paper-card p-3 relative" style={{ transform: "rotate(1.4deg)" }}>
+              <span
+                className="absolute -top-3 left-6 tape h-6 w-16"
+                style={{ transform: "rotate(-4deg)" }}
+              />
+              <div
+                className="aspect-[4/5] w-full bg-[#e8dec3] flex items-center justify-center overflow-hidden"
+                aria-label="Portrettplassholder"
+              >
+                <svg viewBox="0 0 200 250" className="w-full h-full" aria-hidden="true">
+                  <defs>
+                    <pattern id="om-02-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(60,40,18,0.10)" strokeWidth="0.5" />
+                    </pattern>
+                  </defs>
+                  <rect width="200" height="250" fill="url(#om-02-grid)" />
+                  <g stroke="rgba(60,40,18,0.4)" strokeWidth="1" fill="none">
+                    <path d="M 10 10 L 22 10 M 10 10 L 10 22" />
+                    <path d="M 190 10 L 178 10 M 190 10 L 190 22" />
+                    <path d="M 10 240 L 22 240 M 10 240 L 10 228" />
+                    <path d="M 190 240 L 178 240 M 190 240 L 190 228" />
+                  </g>
+                  <g fill="rgba(60,40,18,0.25)">
+                    <circle cx="100" cy="100" r="34" />
+                    <path d="M 50 200 Q 50 150 100 150 Q 150 150 150 200 Z" />
+                  </g>
+                  <text x="100" y="222" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" letterSpacing="3" fill="rgba(60,40,18,0.7)">
+                    PORTRETT
+                  </text>
+                </svg>
+              </div>
+              <p className="mt-3 handwritten-red text-base leading-tight text-center">
+                Kaspar
+              </p>
+            </div>
+
             <div className="paper-card p-5 relative" style={{ transform: "rotate(-2deg)" }}>
               <Paperclip
                 className="absolute -top-6 left-3 w-5 h-14 z-10"
@@ -124,12 +159,6 @@ export default function OmPage() {
                   </dt>
                   <dd>15+ år i mediebransjen i Bergen</dd>
                 </div>
-                <div>
-                  <dt className="typewriter text-[0.7rem] uppercase tracking-[0.12em] text-ink-fade">
-                    Selskapsform
-                  </dt>
-                  <dd>Enkeltpersonforetak (april 2026–mars 2027)</dd>
-                </div>
               </dl>
             </div>
           </div>
@@ -148,34 +177,28 @@ export default function OmPage() {
 
             <div className="pl-12 md:pl-16 max-w-prose space-y-6 text-lg leading-[2rem]">
               <p className="first-letter:font-bold first-letter:text-3xl first-letter:mr-1 first-letter:float-left first-letter:leading-[2.4rem] first-letter:text-pen-red">
-                Kaspar Knudsen er frilansjournalist i Bergen med kontor på USF
-                Verftet, Nordnes. Han har mastergrad i undersøkende
-                journalistikk og over 15 år i mediebransjen i Bergen.
+                Jeg er frilansjournalist i Bergen, med kontor på USF Verftet
+                på Nordnes. Mastergrad i undersøkende journalistikk og over 15
+                år i mediebransjen.
               </p>
               <p>
-                Han leverer kvalitetsjournalistikk til nisjepublikasjoner som
-                Fiskeribladet, Intrafish og Kystens Næringsliv. Kompetansen
-                spenner over gravejournalistikk innenfor arbeidsliv, krim og
-                flere områder.
+                Jeg jobber særlig med gravejournalistikk innen arbeidsliv,
+                krim og flere felt – og leverer til nisjepublikasjoner som
+                Fiskeribladet, Intrafish og Kystens Næringsliv.
               </p>
               <p>
-                Produktet er bilder og tekst, tilgang til gjenbruk av
-                artikler, kritisk og undersøkende journalistikk samt
-                menneskenære historier. Salgsmodellen omfatter innsalg av
-                enkelt-ideer, innsalg av påbegynte og ferdige artikler,
-                enkeltoppdrag og periode-jobbing i redaksjoner.
+                Det jeg leverer er kritisk og undersøkende journalistikk og
+                menneskenære historier – bilder og tekst, alt levert fra felt.
               </p>
               <p className="handwritten-red text-2xl">
-                «Økonomisk bærekraft i selskapet, å levere
-                kvalitetsjournalistikk, frihet under ansvar — å styre
-                bedriften selv»
+                «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
               </p>
             </div>
           </div>
         </article>
       </section>
 
-      {/* Verdier — checklist */}
+      {/* Verdier – checklist */}
       <section className="mt-24 grid grid-cols-12 gap-x-6 lg:gap-x-10">
         <div className="col-span-12 md:col-span-3">
           <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
@@ -224,15 +247,13 @@ export default function OmPage() {
           </p>
           <h2 className="headline-hand text-3xl md:text-4xl mt-2 pl-12 md:pl-16 leading-tight">
             <span className="relative inline-block">
-              «Økonomisk bærekraft i selskapet, å levere
-              kvalitetsjournalistikk, frihet under ansvar — å styre
-              bedriften selv»
+              «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
             </span>
           </h2>
         </div>
       </section>
 
-      {/* Erfaring — past work */}
+      {/* Erfaring – past work */}
       <section className="mt-24">
         <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
           <div>

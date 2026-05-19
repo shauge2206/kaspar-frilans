@@ -9,7 +9,7 @@ import {
 } from "@/components/Decor";
 
 export const metadata = {
-  title: "Saker — Kaspar Knudsen",
+  title: "Saker – Kaspar Knudsen",
   description:
     "Utvalgte saker av frilansjournalist Kaspar Knudsen. Publisert i Fiskeribladet, Intrafish, Kystens Næringsliv og Bergens Tidende.",
 };
@@ -17,7 +17,7 @@ export const metadata = {
 export default function SakerPage() {
   return (
     <div className="notebook-shell pt-4 pb-20">
-      {/* Heading — corkboard intro */}
+      {/* Heading – corkboard intro */}
       <section className="grid grid-cols-12 gap-x-6 lg:gap-x-10 pt-8">
         <aside className="col-span-12 md:col-span-3">
           <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">

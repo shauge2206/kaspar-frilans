@@ -17,7 +17,7 @@ export async function generateMetadata({
   const sak = getSak(slug);
   if (!sak) return {};
   return {
-    title: `${sak.tittel} — Kaspar Knudsen`,
+    title: `${sak.tittel} – Kaspar Knudsen`,
     description: sak.ingress,
   };
 }
@@ -85,7 +85,7 @@ export default async function SakDetail({
         </div>
       </header>
 
-      {/* Hero photo — taped to page */}
+      {/* Hero photo – taped to page */}
       <section className="mt-14 grid grid-cols-12 gap-x-6 lg:gap-x-10">
         <div className="col-span-12 md:col-span-9 md:col-start-4 relative">
           <div
@@ -113,7 +113,7 @@ export default async function SakDetail({
             </div>
             <p className="mt-3 typewriter text-xs text-ink-fade leading-snug">
               <span className="uppercase tracking-[0.18em] text-ink/70">
-                Bildetekst —
+                Bildetekst –
               </span>{" "}
               {sak.bildetekst}{" "}
               <span className="text-ink/60">(Foto: {sak.fotograf})</span>
@@ -122,7 +122,7 @@ export default async function SakDetail({
         </div>
       </section>
 
-      {/* Body — lined paper with margin */}
+      {/* Body – lined paper with margin */}
       <section className="mt-16 grid grid-cols-12 gap-x-6 lg:gap-x-10">
         <aside className="col-span-12 md:col-span-3 relative">
           <div className="md:sticky md:top-8 space-y-6">
@@ -228,7 +228,8 @@ export default async function SakDetail({
             Kontakt Kaspar Knudsen
           </h2>
           <p className="text-ink-soft mt-4 max-w-xl">
-            Frilansjournalist i Bergen. Kontor på USF Verftet, Nordnes.
+            Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
+            Nordnes.
           </p>
           <div className="mt-5 flex flex-wrap gap-4">
             <Link

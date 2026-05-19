@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { ArrowDoodle, Paperclip, PushPin, Stamp } from "@/components/Decor";
+import { ContactForm } from "@/components/contact-form";
 
 export const metadata = {
-  title: "Kontakt — Kaspar Knudsen",
+  title: "Kontakt – Kaspar Knudsen",
   description:
-    "Ta kontakt med Kaspar Knudsen — frilansjournalist i Bergen. Kontor på USF Verftet, Nordnes.",
+    "Ta kontakt med Kaspar Knudsen – frilansjournalist i Bergen. Kontor på USF Verftet, Nordnes.",
 };
 
 export default function KontaktPage() {
@@ -35,9 +36,9 @@ export default function KontaktPage() {
             Ta kontakt
           </h1>
           <p className="text-xl mt-6 max-w-3xl text-ink-soft leading-relaxed">
-            Frilansjournalist i Bergen. Kontor på USF Verftet, Nordnes.
-            Mastergrad i undersøkende journalistikk. Leverer til Fiskeribladet,
-            Intrafish og Kystens Næringsliv.
+            Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
+            Nordnes. Mastergrad i undersøkende journalistikk – jeg leverer til
+            Fiskeribladet, Intrafish og Kystens Næringsliv.
           </p>
         </div>
       </section>
@@ -110,8 +111,9 @@ export default function KontaktPage() {
               Saker, oppdrag eller samarbeid
             </p>
             <p className="text-ink-soft mt-3 leading-relaxed">
-              Send en e-post med kort beskrivelse av oppdraget eller saken du
-              ønsker dekket. Frist og publikasjon hjelper når det er aktuelt.
+              Send meg en e-post med en kort beskrivelse av oppdraget eller
+              saken. Det hjelper å vite ønsket publikasjon og frist når det er
+              aktuelt.
             </p>
 
             <div className="mt-6">
@@ -144,6 +146,25 @@ export default function KontaktPage() {
             </p>
           </div>
         </aside>
+      </section>
+
+      {/* Contact form */}
+      <section className="mt-16 grid grid-cols-12 gap-x-6 lg:gap-x-10">
+        <div className="col-span-12 md:col-span-3">
+          <p className="typewriter text-[0.7rem] tracking-[0.22em] text-ink-fade uppercase">
+            Skjema
+          </p>
+          <h2 className="headline-hand text-4xl md:text-5xl mt-2 leading-tight">
+            Send melding
+          </h2>
+          <p className="text-ink-soft mt-4 max-w-xs text-sm leading-relaxed">
+            Knappen åpner e-postklienten din med innholdet utfylt – du sender
+            selv fra din egen adresse.
+          </p>
+        </div>
+        <div className="col-span-12 md:col-span-9">
+          <ContactForm />
+        </div>
       </section>
     </div>
   );

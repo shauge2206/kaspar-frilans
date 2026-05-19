@@ -24,7 +24,7 @@ export const saker: Sak[] = [
     dato: "7. april 2025",
     datoIso: "2025-04-07",
     sted: "Senja",
-    notertDato: "Notert 7. april 2025 — Senja",
+    notertDato: "Notert 7. april 2025 – Senja",
     bildetekst:
       "Arnfinn Hay og de andre etterlatte har kjempet for å få fram sannheten om hva som egentlig skjedde da «Utvik Senior» forliste i februar 1978.",
     fotograf: "Privat / Terje Jensen",
@@ -63,7 +63,7 @@ export const saker: Sak[] = [
     dato: "22. august 2023",
     datoIso: "2023-08-22",
     sted: "Skogsvåg, Øygarden",
-    notertDato: "Notert 22. august 2023 — Skogsvåg",
+    notertDato: "Notert 22. august 2023 – Skogsvåg",
     bildetekst:
       "Thomas Olsen (45) sier han ble angrepet av mannen i 30-årene.",
     fotograf: "Geir Martin Strande",
@@ -102,7 +102,7 @@ export const saker: Sak[] = [
     dato: "31. juli 2023",
     datoIso: "2023-07-31",
     sted: "Fyllingsdalen, Bergen",
-    notertDato: "Notert 31. juli 2023 — Fyllingsdalen",
+    notertDato: "Notert 31. juli 2023 – Fyllingsdalen",
     bildetekst:
       "Butikksjef Ljubov Novosad viser frem et av mange plagg som er ødelagt.",
     fotograf: "Jannica Luoto",

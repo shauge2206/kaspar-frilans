@@ -54,8 +54,7 @@ export function SiteFooter() {
             © {year} Kaspar Knudsen
           </p>
           <p className="handwritten-red text-base max-w-2xl md:text-right">
-            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
-            frihet under ansvar — å styre bedriften selv»
+            «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
           </p>
         </div>
       </div>
