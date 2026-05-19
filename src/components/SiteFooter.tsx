@@ -79,6 +79,17 @@ export function SiteFooter() {
           <span>© {new Date().getFullYear()} Kaspar Knudsen</span>
           <span>Org.nr 999 999 999 – Enkeltpersonforetak</span>
         </div>
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pb-5 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-paper/55">
+          Lagd av{" "}
+          <a
+            href="https://www.naermedia.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dotted-link hover:text-accent"
+          >
+            Nær Media
+          </a>
+        </div>
       </div>
     </footer>
   );
