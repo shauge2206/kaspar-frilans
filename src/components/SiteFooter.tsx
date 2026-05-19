@@ -71,6 +71,17 @@ export function SiteFooter() {
           <span>© {year} – Kaspar Knudsen</span>
           <span>Idé 07 · Precision Monochrome</span>
         </div>
+        <div className="mx-auto max-w-[1240px] px-5 pb-5 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-ink/50 sm:px-8">
+          Lagd av{" "}
+          <a
+            href="https://www.naermedia.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-4 hover:underline hover:text-ink"
+          >
+            Nær Media
+          </a>
+        </div>
       </div>
     </footer>
   );
