@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { saker } from "@/lib/saker";
 import { Stamp } from "@/components/stamp";
-import { Redact } from "@/components/redact";
 import { Paperclip } from "@/components/paperclip";
 
 export default function Home() {
@@ -79,7 +78,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Pinned brief — like a bulletin with strings */}
+          {/* Pinned brief – like a bulletin with strings */}
           <div className="relative mt-6 grid lg:grid-cols-12 gap-8">
             <div className="lg:col-span-7 paper p-7 md:p-9 relative">
               <div className="holes hidden md:flex">
@@ -90,12 +89,10 @@ export default function Home() {
                   VISJON
                 </p>
                 <p className="mt-3 font-serif text-2xl md:text-3xl leading-snug">
-                  «Økonomisk bærekraft i selskapet, å levere
-                  kvalitetsjournalistikk, frihet under ansvar — å styre{" "}
-                  <Redact title="Hold over for å avsløre">bedriften selv</Redact>»
+                  «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
                 </p>
                 <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
-                  — Kaspar Knudsen
+                  – Kaspar Knudsen
                 </p>
 
                 <div className="mt-6 grid sm:grid-cols-3 gap-3">
@@ -117,9 +114,6 @@ export default function Home() {
               <span className="tape -top-4 left-10 -rotate-6" />
               <span className="tape -bottom-4 right-12 rotate-3" />
 
-              <div className="absolute -bottom-6 -right-4 hidden md:block">
-                <Stamp rotate={-8}>KONFIDENSIELT</Stamp>
-              </div>
             </div>
 
             <div className="lg:col-span-5 relative">
@@ -129,7 +123,7 @@ export default function Home() {
                 <div className="relative w-full aspect-[4/5] overflow-hidden">
                   <Image
                     src="/images/saker/sak-2/bilde-1.jpeg"
-                    alt="Felt — Skogsvåg, Øygarden"
+                    alt="Felt – Skogsvåg, Øygarden"
                     fill
                     className="object-cover grayscale-[20%]"
                     sizes="(min-width: 1024px) 340px, 80vw"
@@ -137,7 +131,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft text-center">
-                  KH · 2023 — fra felt, Sotra
+                  KH · 2023 – fra felt, Sotra
                 </p>
               </div>
 

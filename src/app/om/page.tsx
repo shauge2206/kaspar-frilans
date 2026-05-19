@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Stamp } from "@/components/stamp";
 import { Paperclip } from "@/components/paperclip";
-import { Redact } from "@/components/redact";
 
 export const metadata: Metadata = {
-  title: "Om Kaspar Knudsen — Frilansjournalist",
+  title: "Om Kaspar Knudsen – Frilansjournalist",
   description:
     "Bio, verdier, visjon og tjenester for frilansjournalist Kaspar Knudsen i Bergen.",
 };
@@ -25,20 +23,20 @@ const verdier = [
 
 const tjenester = [
   {
-    title: "Innsalg av enkelt-ideer",
-    body: "Innsalg av enkelt-ideer til redaksjoner.",
+    title: "Undersøkende reportasje",
+    body: "Gravesaker innen arbeidsliv, krim og samfunn — lange løp der research og kildekontakt avgjør utfallet.",
   },
   {
-    title: "Påbegynte eller ferdige artikler",
-    body: "Innsalg av påbegynte eller ferdige artikler.",
+    title: "Reportasje fra felt",
+    body: "Drar ut til stedet, ser miljøet og møter menneskene. Journalistikk som kommer nærmere virkeligheten.",
   },
   {
-    title: "Enkeltoppdrag",
-    body: "Enkeltoppdrag etter avtale. Stykkpris per sak.",
+    title: "Bilder og tekst",
+    body: "Leverer bilder og tekst som én helhet, klar til redigering og publisering.",
   },
   {
-    title: "Periode-jobbing",
-    body: "Periode-jobbing i redaksjoner. Betalt pr periode.",
+    title: "Ekstern redaksjonsressurs",
+    body: "Tilgjengelig i kortere eller lengre perioder når redaksjonen trenger ekstra hender.",
   },
 ];
 
@@ -70,15 +68,15 @@ export default function OmPage() {
               </p>
 
               <p className="mt-7 font-serif text-xl leading-relaxed text-ink">
-                Kaspar Knudsen er frilansjournalist i Bergen med kontor på{" "}
-                <span className="underline decoration-stamp/40">USF Verftet</span>
-                , Nordnes.
+                Jeg er frilansjournalist i Bergen, med kontor på{" "}
+                <span className="underline decoration-stamp/40">USF Verftet</span>{" "}
+                på Nordnes.
               </p>
 
               <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-soft">
                 <p>
                   Mastergrad i undersøkende journalistikk og 15 år i
-                  mediebransjen. Leverer kvalitetsjournalistikk til
+                  mediebransjen. Jeg leverer kvalitetsjournalistikk til
                   nisjepublikasjoner som <em>Fiskeribladet</em>,{" "}
                   <em>Intrafish</em> og <em>Kystens Næringsliv</em>.
                 </p>
@@ -92,18 +90,60 @@ export default function OmPage() {
             <aside className="lg:col-span-5 space-y-6">
               <div className="polaroid relative rotate-[2deg] max-w-[340px] mx-auto">
                 <Paperclip />
-                <div className="relative w-full aspect-[4/5] overflow-hidden bg-ink/10">
-                  <Image
-                    src="/images/saker/sak-1/bilde-1.jpeg"
-                    alt="Kaspar i felt"
-                    fill
-                    className="object-cover grayscale-[10%]"
-                    sizes="(min-width: 1024px) 340px, 80vw"
-                    priority
-                  />
+                <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#e8dec3] flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 200 250"
+                    className="w-full h-full"
+                    aria-label="Portrettplassholder"
+                  >
+                    {/* faint grid suggesting unexposed paper */}
+                    <defs>
+                      <pattern
+                        id="placeholder-grid"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <path
+                          d="M 20 0 L 0 0 0 20"
+                          fill="none"
+                          stroke="rgba(60,40,18,0.12)"
+                          strokeWidth="0.5"
+                        />
+                      </pattern>
+                    </defs>
+                    <rect width="200" height="250" fill="url(#placeholder-grid)" />
+                    {/* corner crop-marks like a contact sheet */}
+                    <g
+                      stroke="rgba(60,40,18,0.45)"
+                      strokeWidth="1"
+                      fill="none"
+                    >
+                      <path d="M 10 10 L 22 10 M 10 10 L 10 22" />
+                      <path d="M 190 10 L 178 10 M 190 10 L 190 22" />
+                      <path d="M 10 240 L 22 240 M 10 240 L 10 228" />
+                      <path d="M 190 240 L 178 240 M 190 240 L 190 228" />
+                    </g>
+                    {/* simplified portrait silhouette */}
+                    <g fill="rgba(60,40,18,0.25)">
+                      <circle cx="100" cy="100" r="34" />
+                      <path d="M 50 200 Q 50 150 100 150 Q 150 150 150 200 Z" />
+                    </g>
+                    <text
+                      x="100"
+                      y="222"
+                      textAnchor="middle"
+                      fontFamily="ui-monospace, monospace"
+                      fontSize="9"
+                      letterSpacing="3"
+                      fill="rgba(60,40,18,0.7)"
+                    >
+                      PORTRETT
+                    </text>
+                  </svg>
                 </div>
                 <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft text-center">
-                  KH · fra felt — Senja
+                  KH · plassholder
                 </p>
               </div>
 
@@ -117,10 +157,6 @@ export default function OmPage() {
                   <Row k="Erfaring" v="15 år i mediebransjen" />
                   <Row k="Utdanning" v="Master i undersøkende journalistikk" />
                   <Row k="Foretak" v="Enkeltpersonforetak (2026–)" />
-                  <Row
-                    k="Personnr."
-                    v={<Redact>██████ ██████</Redact>}
-                  />
                 </dl>
               </div>
             </aside>
@@ -143,12 +179,12 @@ export default function OmPage() {
             </div>
           </section>
 
-          {/* services */}
+          {/* erfaringer */}
           <section className="md:pl-12 mt-16">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-              TJENESTER
+              ERFARINGER
             </p>
-            <h2 className="mt-2 font-serif text-3xl">Tjenester</h2>
+            <h2 className="mt-2 font-serif text-3xl">Erfaringer</h2>
             <div className="mt-6 grid md:grid-cols-2 gap-5">
               {tjenester.map((t) => (
                 <div key={t.title} className="paper p-5 relative">
@@ -169,12 +205,10 @@ export default function OmPage() {
                 VISJON
               </p>
               <p className="mt-3 font-serif text-2xl md:text-3xl leading-snug italic text-ink">
-                «Økonomisk bærekraft i selskapet, å levere
-                kvalitetsjournalistikk, frihet under ansvar — å styre
-                bedriften selv»
+                «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
               </p>
               <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
-                — Kaspar Knudsen
+                – Kaspar Knudsen
               </p>
             </div>
             <div className="lg:col-span-4 flex justify-center lg:justify-end">

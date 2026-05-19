@@ -20,7 +20,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Kaspar Knudsen — Frilansjournalist · Bergen",
+  title: "Kaspar Knudsen – Frilansjournalist · Bergen",
   description:
     "Arkivet til frilansjournalist Kaspar Knudsen. Gravesaker, reportasjer og menneskenære historier fra Bergen og kysten.",
 };

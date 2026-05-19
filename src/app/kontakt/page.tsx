@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Stamp } from "@/components/stamp";
+import { SketchMap } from "@/components/sketch-map";
 
 export const metadata: Metadata = {
-  title: "Kontakt — Kaspar Knudsen",
+  title: "Kontakt – Kaspar Knudsen",
   description:
     "Kontaktinformasjon til frilansjournalist Kaspar Knudsen. USF Verftet, Nordnes, Bergen.",
 };
@@ -23,7 +24,7 @@ export default function KontaktPage() {
       </div>
 
       <div className="mt-6 grid lg:grid-cols-12 gap-10 items-start">
-        {/* contact form — like a typed memo form */}
+        {/* contact form – like a typed memo form */}
         <div className="lg:col-span-7">
           <div className="paper p-6 md:p-10 relative">
             <span className="tape -top-3 left-12 -rotate-3" />
@@ -101,61 +102,51 @@ export default function KontaktPage() {
             </div>
           </div>
 
-          {/* faux map */}
+          {/* Bergen — Nordnes (Stamen Toner Lite via Stadia Maps — pen-on-paper) */}
           <div className="paper p-2">
-            <div
-              className="relative aspect-[4/3] overflow-hidden border border-ink/15"
-              style={{
-                backgroundColor: "#e6decb",
-                backgroundImage:
-                  "repeating-linear-gradient(0deg, rgba(107,79,42,0.18) 0, rgba(107,79,42,0.18) 1px, transparent 1px, transparent 24px), repeating-linear-gradient(90deg, rgba(107,79,42,0.18) 0, rgba(107,79,42,0.18) 1px, transparent 1px, transparent 24px), radial-gradient(ellipse at 30% 60%, rgba(107,79,42,0.18) 0, transparent 38%), radial-gradient(ellipse at 70% 30%, rgba(107,79,42,0.14) 0, transparent 30%)",
-              }}
-            >
-              {/* coastline */}
-              <svg
-                viewBox="0 0 400 300"
-                className="absolute inset-0 w-full h-full"
+            <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 bg-[#efe6cf]">
+              <SketchMap />
+              {/* sepia wash so the B&W tiles read warm like the rest of the sheet */}
+              <div
                 aria-hidden="true"
-              >
-                <path
-                  d="M0,180 C40,160 80,210 130,200 S210,150 250,170 320,220 400,200 L400,300 L0,300 Z"
-                  fill="rgba(107,79,42,0.18)"
-                  stroke="rgba(60,40,18,0.4)"
-                  strokeWidth="1.2"
-                />
-                <path
-                  d="M0,90 C60,80 90,110 150,95 S260,60 330,80 380,100 400,95"
-                  fill="none"
-                  stroke="rgba(60,40,18,0.3)"
-                  strokeDasharray="3 3"
-                />
-                {/* X marks the spot */}
-                <g transform="translate(200 130)">
-                  <circle r="14" fill="rgba(139,31,31,0.18)" />
-                  <line x1="-7" y1="-7" x2="7" y2="7" stroke="#8b1f1f" strokeWidth="2.2" />
-                  <line x1="-7" y1="7" x2="7" y2="-7" stroke="#8b1f1f" strokeWidth="2.2" />
-                </g>
-              </svg>
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(214,178,110,0.4), rgba(139,99,50,0.22))",
+                  mixBlendMode: "multiply",
+                }}
+              />
+              {/* paper grain */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none opacity-65"
+                style={{
+                  backgroundImage:
+                    "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.31  0 0 0 0 0.22  0 0 0 0 0.09  0 0 0 0.65 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+                  mixBlendMode: "multiply",
+                }}
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-1 pointer-events-none border border-dashed border-ink/35"
+              />
 
-              <div className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted bg-paper/70 px-1.5 py-0.5">
-                BERGEN — NORDNES
+              <div className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted bg-paper/85 px-1.5 py-0.5 z-[400]">
+                BERGEN – NORDNES
               </div>
-              <div className="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] text-stamp bg-paper/70 px-1.5 py-0.5">
+              <div className="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] text-stamp bg-paper/85 px-1.5 py-0.5 z-[400]">
                 ✕ USF VERFTET
               </div>
             </div>
             <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted text-center">
-              KART · IKKE I MÅLESTOKK
-            </p>
-          </div>
-
-          <div className="border border-dashed border-ink/30 p-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-stamp">
-              KILDEVERN
-            </p>
-            <p className="mt-2 text-sm text-ink-soft">
-              Journalister har taushetsplikt om kilder. Tips kan sendes
-              anonymt.
+              <a
+                href="https://www.openstreetmap.org/?mlat=60.3957&mlon=5.3128#map=17/60.3957/5.3128"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-stamp"
+              >
+                ÅPNE PÅ KART ↗
+              </a>
             </p>
           </div>
         </aside>
@@ -165,7 +156,7 @@ export default function KontaktPage() {
 }
 
 function Form() {
-  // Simple HTML mailto form. No JS needed — meets brief.
+  // Simple HTML mailto form. No JS needed – meets brief.
   return (
     <form
       method="post"

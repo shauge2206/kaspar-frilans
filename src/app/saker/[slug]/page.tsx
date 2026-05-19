@@ -19,7 +19,7 @@ export async function generateMetadata({
   const sak = getSak(slug);
   if (!sak) return { title: "Sak ikke funnet" };
   return {
-    title: `${sak.title} — ${sak.publication}`,
+    title: `${sak.title} – ${sak.publication}`,
     description: sak.excerpt[0],
   };
 }
@@ -100,7 +100,7 @@ export default async function SakPage({
               ))}
 
               <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted pt-3">
-                — Utdrag fra publisert sak
+                – Utdrag fra publisert sak
               </p>
             </div>
 
@@ -148,38 +148,6 @@ export default async function SakPage({
                 </div>
               </div>
             </aside>
-          </div>
-
-          {/* gallery — pinned photos */}
-          <div className="md:pl-12 mt-16">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
-              VEDLEGG · BILDER FRA FELT
-            </p>
-            <h2 className="mt-2 font-serif text-2xl">Skjermbilder og dokumentasjon</h2>
-
-            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-              {sak.images.map((img, i) => (
-                <figure
-                  key={img.src}
-                  className="polaroid relative group"
-                  style={{ transform: `rotate(${i === 0 ? -2 : i === 1 ? 1.5 : -1}deg)` }}
-                >
-                  <Paperclip />
-                  <div className="relative w-full aspect-[4/5] overflow-hidden bg-ink/10">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover grayscale-[20%] group-hover:grayscale-0 transition"
-                      sizes="(min-width: 1024px) 320px, 90vw"
-                    />
-                  </div>
-                  <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft text-center">
-                    {img.note}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
           </div>
 
           {/* signoff */}

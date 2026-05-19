@@ -4,7 +4,7 @@ import { FolderCard } from "@/components/folder-card";
 import { Stamp } from "@/components/stamp";
 
 export const metadata: Metadata = {
-  title: "Saksarkiv — Kaspar Knudsen",
+  title: "Saksarkiv – Kaspar Knudsen",
   description:
     "Arkivet til frilansjournalist Kaspar Knudsen. Bla i saker fra arbeidsliv, kriminal og kysten.",
 };

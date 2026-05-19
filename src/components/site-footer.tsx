@@ -12,11 +12,10 @@ export function SiteFooter() {
             USF Verftet, Nordnes
           </p>
           <p className="mt-4 text-sm text-ink-soft max-w-md italic">
-            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
-            frihet under ansvar — å styre bedriften selv»
+            «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
           </p>
           <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
-            — Kaspar Knudsen
+            – Kaspar Knudsen
           </p>
         </div>
         <div>
