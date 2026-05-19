@@ -44,7 +44,7 @@ export default async function ArticlePage(
             ← Saker
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted tnum">
-            NR. {article.number} — {article.category}
+            NR. {article.number} – {article.category}
           </span>
         </div>
       </div>
@@ -153,49 +153,6 @@ export default async function ArticlePage(
         </div>
       </section>
 
-      <hr className="rule" />
-
-      {/* Gallery */}
-      <section className="grid grid-cols-12 gap-x-6 py-20 md:py-28">
-        <div className="col-span-12 mb-10 flex items-baseline justify-between md:mb-16">
-          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            Bildeserie
-          </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted tnum">
-            {article.images.length} bilder
-          </span>
-        </div>
-
-        <div className="col-span-12 grid grid-cols-12 gap-6">
-          {article.images.map((img, i) => (
-            <FadeUp
-              key={img.src}
-              delay={i * 80}
-              className={
-                i === 0
-                  ? "col-span-12 md:col-span-8"
-                  : "col-span-12 md:col-span-4"
-              }
-            >
-              <figure>
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-hairline">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-                  Fig. {article.number}.{(i + 1).toString().padStart(2, "0")}
-                </figcaption>
-              </figure>
-            </FadeUp>
-          ))}
-        </div>
-      </section>
-
       <hr className="rule-strong" />
 
       {/* Pagination */}
@@ -208,7 +165,7 @@ export default async function ArticlePage(
           className="group col-span-12 border-r border-hairline pr-6 md:col-span-6"
         >
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            ← Forrige sak — NR. {prev.number}
+            ← Forrige sak – NR. {prev.number}
           </div>
           <div className="mt-3 font-serif text-2xl leading-tight tracking-tight transition-[letter-spacing] duration-200 group-hover:tracking-[-0.018em] md:text-3xl">
             {prev.title}
@@ -219,7 +176,7 @@ export default async function ArticlePage(
           className="group col-span-12 mt-10 pl-0 text-right md:col-span-6 md:mt-0 md:pl-6"
         >
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            Neste sak — NR. {next.number} →
+            Neste sak – NR. {next.number} →
           </div>
           <div className="mt-3 font-serif text-2xl leading-tight tracking-tight transition-[letter-spacing] duration-200 group-hover:tracking-[-0.018em] md:text-3xl">
             {next.title}

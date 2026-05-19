@@ -21,8 +21,8 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kaspar Knudsen — Frilansjournalist, Bergen",
-    template: "%s — Kaspar Knudsen",
+    default: "Kaspar Knudsen – Frilansjournalist, Bergen",
+    template: "%s – Kaspar Knudsen",
   },
   description:
     "Kaspar Knudsen er frilansjournalist i Bergen med spesialfelt innen graving, fiskeri, kystnæring og arbeidsliv. Kvalitetsjournalistikk fra felt.",

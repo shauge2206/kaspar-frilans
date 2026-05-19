@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontakt frilansjournalist Kaspar Knudsen — USF Verftet, Bergen. Tips og henvendelser fra kilder, redaksjoner og oppdragsgivere er velkomne.",
+    "Kontakt frilansjournalist Kaspar Knudsen – USF Verftet, Bergen. Tips og henvendelser fra kilder, redaksjoner og oppdragsgivere er velkomne.",
 };
 
 export default function KontaktPage() {
@@ -16,7 +16,7 @@ export default function KontaktPage() {
       <section className="grid grid-cols-12 gap-x-6 pt-16 pb-16 md:pt-28 md:pb-24">
         <div className="col-span-12 mb-10 flex items-baseline justify-between md:mb-16">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 04 — Kontakt
+            NR. 04 – Kontakt
           </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted tnum">
             Bergen · 60.39° N · 5.32° Ø
@@ -39,7 +39,7 @@ export default function KontaktPage() {
       <section className="grid grid-cols-12 gap-x-6 gap-y-12 py-20 md:py-28">
         <div className="col-span-12 md:col-span-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 01 — Direkte
+            NR. 01 – Direkte
           </span>
         </div>
         <div className="col-span-12 md:col-span-9">
@@ -77,7 +77,7 @@ export default function KontaktPage() {
       <section className="grid grid-cols-12 gap-x-6 gap-y-10 py-20 md:py-28">
         <div className="col-span-12 md:col-span-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 02 — Skjema
+            NR. 02 – Skjema
           </span>
         </div>
         <div className="col-span-12 md:col-span-9">
@@ -100,7 +100,7 @@ export default function KontaktPage() {
       <section className="grid grid-cols-12 gap-x-6 gap-y-10 py-20 md:py-28">
         <div className="col-span-12 md:col-span-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 03 — Kontor
+            NR. 03 – Kontor
           </span>
         </div>
         <div className="col-span-12 md:col-span-9">

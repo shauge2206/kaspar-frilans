@@ -6,12 +6,10 @@ export default function Footer() {
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-12 gap-x-6 gap-y-12 px-6 py-16 md:px-12 md:py-24">
         <div className="col-span-12 md:col-span-5">
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-            Visjon
+            Filosofi
           </div>
           <p className="mt-6 max-w-md font-serif text-2xl leading-snug tracking-tight md:text-3xl">
-            «Økonomisk bærekraft i selskapet, å levere
-            kvalitetsjournalistikk, frihet under ansvar — å styre
-            bedriften selv»
+            «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
           </p>
         </div>
 
@@ -51,7 +49,7 @@ export default function Footer() {
 
         <div className="col-span-12 mt-12 grid grid-cols-12 gap-x-6 border-t border-hairline pt-8">
           <div className="col-span-6 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-            © {new Date().getFullYear()} Kaspar Knudsen — Org.nr. 000 000 000
+            © {new Date().getFullYear()} Kaspar Knudsen – Org.nr. 000 000 000
           </div>
           <nav
             aria-label="Bunnmeny"

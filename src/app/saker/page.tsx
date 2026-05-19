@@ -7,7 +7,7 @@ import FadeUp from "../components/FadeUp";
 export const metadata: Metadata = {
   title: "Saker",
   description:
-    "Et utvalg saker av frilansjournalist Kaspar Knudsen — reportasje, nyhet og feature fra Bergen og kysten.",
+    "Et utvalg saker av frilansjournalist Kaspar Knudsen – reportasje, nyhet og feature fra Bergen og kysten.",
 };
 
 export default function SakerPage() {
@@ -17,7 +17,7 @@ export default function SakerPage() {
       <section className="grid grid-cols-12 gap-x-6 pt-16 pb-16 md:pt-28 md:pb-24">
         <div className="col-span-12 mb-10 flex items-baseline justify-between md:mb-16">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 02 — Arkiv
+            NR. 02 – Arkiv
           </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted tnum">
             {articles.length} oppføringer

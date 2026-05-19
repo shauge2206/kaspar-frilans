@@ -10,7 +10,7 @@ export default function Home() {
       <section className="grid grid-cols-12 gap-x-6 pt-16 pb-24 md:pt-28 md:pb-40">
         <div className="col-span-12 mb-10 flex items-baseline justify-between md:mb-16">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 01 — Forside
+            NR. 01 – Forside
           </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted tnum">
             Bergen · 60.39° N
@@ -47,7 +47,7 @@ export default function Home() {
       <section className="grid grid-cols-12 gap-x-6 gap-y-10 py-20 md:py-28">
         <div className="col-span-12 md:col-span-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 02 — Posisjon
+            NR. 02 – Posisjon
           </span>
         </div>
         <div className="col-span-12 md:col-span-9">
@@ -55,7 +55,7 @@ export default function Home() {
             <p className="max-w-4xl font-serif text-2xl leading-snug tracking-tight md:text-[34px] md:leading-[1.18]">
               <span className="text-muted">Drar ut i felt. </span>
               Kritisk og undersøkende journalistikk innen arbeidsliv, krim
-              og flere områder — levert som bilder og tekst.
+              og flere områder – levert som bilder og tekst.
             </p>
           </FadeUp>
 
@@ -101,7 +101,7 @@ export default function Home() {
       <section className="grid grid-cols-12 gap-x-6 gap-y-10 py-20 md:py-28">
         <div className="col-span-12 mb-4 flex items-baseline justify-between md:col-span-12">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 03 — Utvalgte saker
+            NR. 03 – Utvalgte saker
           </span>
           <Link
             href="/saker"
@@ -162,7 +162,7 @@ export default function Home() {
       <section className="grid grid-cols-12 gap-x-6 py-20 md:py-32">
         <div className="col-span-12 md:col-span-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            NR. 04 — Henvendelser
+            NR. 04 – Henvendelser
           </span>
         </div>
         <div className="col-span-12 md:col-span-9">

@@ -17,7 +17,7 @@ export default function ContactForm() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const subject = `Henvendelse — ${KIND_OPTIONS.find((k) => k.value === kind)?.label ?? "Annet"}`;
+    const subject = `Henvendelse – ${KIND_OPTIONS.find((k) => k.value === kind)?.label ?? "Annet"}`;
     const body = `Fra: ${name} <${email}>\n\n${message}`;
     window.location.href = `mailto:kaspar@kasparknudsen.no?subject=${encodeURIComponent(
       subject
