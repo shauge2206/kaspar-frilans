@@ -86,6 +86,17 @@ export function SiteFooter() {
             Bygget i Bergen
           </p>
         </div>
+        <div className="mx-auto max-w-[1280px] px-6 pb-5 text-center text-xs text-mute md:px-10">
+          Lagd av{" "}
+          <a
+            href="https://www.naermedia.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline text-ink-2 hover:text-ink"
+          >
+            Nær Media
+          </a>
+        </div>
       </div>
     </footer>
   );
