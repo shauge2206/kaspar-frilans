@@ -57,6 +57,17 @@ export function SiteFooter() {
             «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
           </p>
         </div>
+        <p className="pb-4 text-center typewriter text-[0.7rem] tracking-[0.18em] text-ink-fade uppercase">
+          Lagd av{" "}
+          <a
+            href="https://www.naermedia.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pencil-link"
+          >
+            Nær Media
+          </a>
+        </p>
       </div>
     </footer>
   );
