@@ -5,7 +5,7 @@ import { SplitText } from "@/components/split-text";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontakt Kaspar — frilansjournalist på USF Verftet i Bergen. Tips, oppdrag og samarbeid.",
+    "Kontakt Kaspar – frilansjournalist på USF Verftet i Bergen. Tips, oppdrag og samarbeid.",
 };
 
 export default function KontaktPage() {

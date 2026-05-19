@@ -39,7 +39,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  /* paper feel — soft warm vignette + fibre texture */
+  /* paper feel – soft warm vignette + fibre texture */
   background-color: var(--paper);
   background-image:
     radial-gradient(

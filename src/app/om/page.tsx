@@ -5,7 +5,7 @@ import { SplitText } from "@/components/split-text";
 export const metadata: Metadata = {
   title: "Om Kaspar",
   description:
-    "Om Kaspar — frilansjournalist i Bergen med master i undersøkende journalistikk. Kontor på USF Verftet, Nordnes.",
+    "Om Kaspar – frilansjournalist i Bergen med master i undersøkende journalistikk. Kontor på USF Verftet, Nordnes.",
 };
 
 const verdier = [
@@ -60,10 +60,36 @@ export default function OmPage() {
           >
             Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
             Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
-            mediebransjen — eget enkeltpersonforetak fra april 2026.
+            mediebransjen – eget enkeltpersonforetak fra april 2026.
           </p>
         </div>
         <aside className="md:col-span-4 md:col-rule md:pl-8 fade-up" style={{ animationDelay: "900ms" }}>
+          <div
+            className="aspect-[4/5] w-full mb-5 border border-rule-soft bg-paper-deep flex items-center justify-center overflow-hidden"
+            aria-label="Portrettplassholder"
+          >
+            <svg viewBox="0 0 200 250" className="w-full h-full" aria-hidden="true">
+              <defs>
+                <pattern id="om-01-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(20,18,16,0.10)" strokeWidth="0.5" />
+                </pattern>
+              </defs>
+              <rect width="200" height="250" fill="url(#om-01-grid)" />
+              <g stroke="rgba(20,18,16,0.35)" strokeWidth="1" fill="none">
+                <path d="M 10 10 L 22 10 M 10 10 L 10 22" />
+                <path d="M 190 10 L 178 10 M 190 10 L 190 22" />
+                <path d="M 10 240 L 22 240 M 10 240 L 10 228" />
+                <path d="M 190 240 L 178 240 M 190 240 L 190 228" />
+              </g>
+              <g fill="rgba(20,18,16,0.22)">
+                <circle cx="100" cy="100" r="34" />
+                <path d="M 50 200 Q 50 150 100 150 Q 150 150 150 200 Z" />
+              </g>
+              <text x="100" y="222" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" letterSpacing="3" fill="rgba(20,18,16,0.6)">
+                PORTRETT
+              </text>
+            </svg>
+          </div>
           <div className="rule-bar mb-4" />
           <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-3 text-sm">
             <dt className="smallcaps text-ink-mute">Kontor</dt>
@@ -88,13 +114,13 @@ export default function OmPage() {
           <p className="font-serif text-[1.1rem] md:text-[1.18rem] leading-[1.7] text-ink dropcap">
             Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
             Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
-            mediebransjen — særlig gravejournalistikk knyttet til arbeidsliv,
+            mediebransjen – særlig gravejournalistikk knyttet til arbeidsliv,
             krim og flere felt. Jeg drar ut i felt for å komme tett på og
             fortelle de sterke historiene.
           </p>
           <p className="mt-6 font-serif text-[1.1rem] md:text-[1.18rem] leading-[1.7] text-ink">
             Det jeg leverer er kritisk og undersøkende journalistikk og
-            menneskenære historier — bilder og tekst, levert til
+            menneskenære historier – bilder og tekst, levert til
             nisjepublikasjoner som Kystens Næringsliv, Intrafish og
             Fiskeribladet.
           </p>
@@ -182,7 +208,7 @@ export default function OmPage() {
             «God journalistikk begynner med å være der saken er. Jeg drar ut i
             felt og lar virkeligheten forme det jeg skriver.»
           </p>
-          <footer className="dateline mt-5">— KASPAR KNUDSEN</footer>
+          <footer className="dateline mt-5">– KASPAR KNUDSEN</footer>
 
           <Link
             href="/kontakt"

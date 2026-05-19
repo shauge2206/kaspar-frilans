@@ -34,7 +34,7 @@ export default function HomePage() {
               className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-ink-soft fade-up"
               style={{ animationDelay: "1100ms" }}
             >
-              Jeg er frilansjournalist med kontor på USF Verftet på Nordnes. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen i Bergen — jeg leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.
+              Jeg er frilansjournalist med kontor på USF Verftet på Nordnes. Mastergrad i undersøkende journalistikk og 15 år i mediebransjen i Bergen – jeg leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.
             </p>
 
             <div
@@ -89,7 +89,7 @@ export default function HomePage() {
 
       <div className="rule-thick" />
 
-      {/* rotating lead — random sak every 15s with a swoop-in on change */}
+      {/* rotating lead – random sak every 15s with a swoop-in on change */}
       <RotatingLead saker={saker} />
 
       <div className="rule-thick" />
@@ -169,12 +169,12 @@ export default function HomePage() {
           <p className="text-lg leading-relaxed text-ink-soft">
             Jeg er frilansjournalist i Bergen, med kontor på USF Verftet på
             Nordnes. Mastergrad i undersøkende journalistikk og 15 år i
-            mediebransjen — særlig gravejournalistikk innen arbeidsliv, krim
+            mediebransjen – særlig gravejournalistikk innen arbeidsliv, krim
             og flere felt.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
             Jeg leverer kritisk og undersøkende journalistikk og menneskenære
-            historier — bilder og tekst, til nisjepublikasjoner som
+            historier – bilder og tekst, til nisjepublikasjoner som
             Fiskeribladet, Intrafish og Kystens Næringsliv. Alt levert fra
             felt.
           </p>

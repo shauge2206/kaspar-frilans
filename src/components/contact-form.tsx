@@ -11,7 +11,7 @@ export function ContactForm() {
   const mailto = useMemo(() => {
     const subject = (emne || "Ingen emne").trim();
     const body = [
-      `Fra: ${navn || "—"} <${epost || "—"}>`,
+      `Fra: ${navn || "–"} <${epost || "–"}>`,
       "",
       melding || "",
     ].join("\n");

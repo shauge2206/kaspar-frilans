@@ -25,13 +25,13 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kaspar.no"),
   title: {
-    default: "Kaspar — Frilansjournalist i Bergen",
+    default: "Kaspar – Frilansjournalist i Bergen",
     template: "%s · Kaspar",
   },
   description:
-    "Kvalitetsjournalistikk fra felt. Reportasje, feature og graving fra Bergen og kysten — av Kaspar, frilansjournalist med kontor på USF Verftet.",
+    "Kvalitetsjournalistikk fra felt. Reportasje, feature og graving fra Bergen og kysten – av Kaspar, frilansjournalist med kontor på USF Verftet.",
   openGraph: {
-    title: "Kaspar — Frilansjournalist i Bergen",
+    title: "Kaspar – Frilansjournalist i Bergen",
     description:
       "Reportasje, feature og graving fra kysten. Kontor på USF Verftet, Nordnes.",
     type: "website",

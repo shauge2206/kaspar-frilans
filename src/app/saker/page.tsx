@@ -5,9 +5,9 @@ import { saker } from "@/lib/saker";
 import { SplitText } from "@/components/split-text";
 
 export const metadata: Metadata = {
-  title: "Saker — Arkiv",
+  title: "Saker – Arkiv",
   description:
-    "Et utvalg saker av Kaspar — reportasje, feature og graving for Bergens Tidende, Fiskeribladet og andre.",
+    "Et utvalg saker av Kaspar – reportasje, feature og graving for Bergens Tidende, Fiskeribladet og andre.",
 };
 
 export default function SakerPage() {
@@ -23,7 +23,7 @@ export default function SakerPage() {
         />
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft fade-up" style={{ animationDelay: "300ms" }}>
           Et utvalg saker publisert for Fiskeribladet, Bergens Tidende og
-          andre. Kritisk og undersøkende journalistikk med bilder og tekst —
+          andre. Kritisk og undersøkende journalistikk med bilder og tekst –
           levert fra felt.
         </p>
         <p className="mt-6 dateline text-ink-mute">
