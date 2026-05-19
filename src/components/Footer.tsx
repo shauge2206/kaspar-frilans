@@ -63,6 +63,17 @@ export function Footer() {
             Sist oppdatert mai 2026
           </span>
         </div>
+        <div className="mx-auto max-w-6xl px-6 pb-5 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
+          Lagd av{" "}
+          <a
+            href="https://www.naermedia.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glow text-ink-soft hover:text-amber"
+          >
+            Nær Media
+          </a>
+        </div>
       </div>
     </footer>
   );
