@@ -4,7 +4,7 @@ import { SakerView } from "@/components/SakerView";
 export const metadata: Metadata = {
   title: "Saker",
   description:
-    "Arkiv over Kaspar Knudsens reportasjer — bla i kart eller liste, eller filtrer på tema.",
+    "Arkiv over Kaspar Knudsens reportasjer – bla i kart eller liste, eller filtrer på tema.",
 };
 
 export default function SakerPage() {
@@ -22,7 +22,7 @@ export default function SakerPage() {
         <div className="lg:col-span-5 lg:pl-8 lg:border-l border-line/50">
           <p className="text-[16px] leading-relaxed text-deep/80 max-w-md font-serif">
             Bla gjennom arkivet i kartvisning eller som liste. Sakene er
-            kategorisert etter tema — krim, arbeidsliv, kyst, samfunn og
+            kategorisert etter tema – krim, arbeidsliv, kyst, samfunn og
             feature. Dato og publikasjon er likestilt med stedet de ble
             laget.
           </p>

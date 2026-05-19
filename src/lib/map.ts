@@ -1,5 +1,5 @@
 // Norway boundary geometry sourced from mledoze/countries
-// (https://github.com/mledoze/countries) — derived from Natural Earth
+// (https://github.com/mledoze/countries) – derived from Natural Earth
 // public domain data, simplified with Ramer-Douglas-Peucker (tol 0.02°).
 // Filtered to mainland bounds (LAT 57-72, LNG 0-32); Svalbard, Jan Mayen
 // and Bouvet excluded as they fall outside the map viewbox.
@@ -9,10 +9,16 @@ export const MAP_VIEWBOX = { x: -30, y: -20, w: 660, h: 940 };
 const LNG_RANGE = { min: 0, max: 32 };
 const LAT_RANGE = { min: 57.5, max: 71.5 };
 
+// The source path was rendered with an unequal aspect (more units per ° lat
+// than per ° lng). At ~62°N a metre of longitude is ~cos(62°)≈0.47× a metre
+// of latitude, so a faithful map needs the y-axis compressed. 0.62 looks
+// right next to the existing path width.
+export const SCALE_Y = 0.62;
+
 export function project(lat: number, lng: number): { x: number; y: number } {
   const x = ((lng - LNG_RANGE.min) / (LNG_RANGE.max - LNG_RANGE.min)) * 600;
   const y =
-    ((LAT_RANGE.max - lat) / (LAT_RANGE.max - LAT_RANGE.min)) * 900;
+    ((LAT_RANGE.max - lat) / (LAT_RANGE.max - LAT_RANGE.min)) * 900 * SCALE_Y;
   return { x, y };
 }
 

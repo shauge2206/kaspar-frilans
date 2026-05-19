@@ -60,29 +60,25 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-14 grid md:grid-cols-4 gap-10">
           {[
             {
-              k: "01",
               title: "Fra felt",
               body: "Drar ut i felt. Leverer bilder og tekst fra stedet historien skjer.",
             },
             {
-              k: "02",
               title: "Kvalitet",
               body: "Mastergrad i undersøkende journalistikk og 15 år i mediebransjen i Bergen.",
             },
             {
-              k: "03",
               title: "Undersøkende",
               body: "Gravejournalistikk innenfor arbeidsliv, krim og flere områder.",
             },
             {
-              k: "04",
               title: "Fleksibel",
               body: "Enkeltoppdrag, ferdige saker eller periodejobbing i redaksjoner.",
             },
           ].map((c) => (
-            <div key={c.k}>
-              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent tabular mb-3">
-                {c.k} · {c.title}
+            <div key={c.title}>
+              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent mb-3">
+                {c.title}
               </div>
               <p className="text-[15px] leading-relaxed text-deep/85 font-serif">
                 {c.body}
@@ -178,10 +174,9 @@ export default function Home() {
               oppdrag.
             </h2>
             <p className="text-[17px] text-paper/80 max-w-xl leading-relaxed font-serif mb-8">
-              Salgsmodell: innsalg av enkeltideer, innsalg av påbegynte eller
-              ferdige artikler, enkeltoppdrag og periodejobbing i redaksjoner.
-              Prismodell: stykkpris per sak eller betalt per periode. Base på
-              USF Verftet, Bergen.
+              Undersøkende reportasje, research, intervju og bilder – levert
+              som ferdig sak fra felt. Tilgjengelig for både enkeltoppdrag og
+              lengre perioder i redaksjonen. Base på USF Verftet, Bergen.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link

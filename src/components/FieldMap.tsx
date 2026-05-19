@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { articles, formatCoord, themes, type ThemeKey } from "@/lib/articles";
-import { MAP_VIEWBOX, NORWAY_PATH, project } from "@/lib/map";
+import { MAP_VIEWBOX, NORWAY_PATH, SCALE_Y, project } from "@/lib/map";
 
 type Props = {
   variant?: "hero" | "page";
@@ -16,12 +16,14 @@ type Props = {
 const ALL_THEMES: ThemeKey[] = ["krim", "arbeidsliv", "kyst", "samfunn", "feature"];
 
 // Rectangular visible window. Underlying map data is ~660×940 (MAP_VIEWBOX)
-// — the user pans within this smaller window.
-const WIN = { w: 460, h: 320 };
+// – the user pans within this smaller window. Smaller window = more zoom
+// because the same content units fill the same screen width.
+const WIN = { w: 360, h: 340 };
 
-// Soft pan limits in MAP coords (translate offset applied to map content)
-const PAN_MIN = { x: -240, y: -640 };
-const PAN_MAX = { x: 60, y: 60 };
+// Soft pan limits in MAP coords (translate offset applied to map content).
+// y range matches the vertically-compressed country (about 12–540 effective).
+const PAN_MIN = { x: -240, y: -360 };
+const PAN_MAX = { x: 60, y: 100 };
 
 function clampOffset(o: { x: number; y: number }) {
   return {
@@ -38,6 +40,13 @@ const REGIONS: Record<RegionKey, { label: string; lat: number; lng: number }> = 
   midt: { label: "Midt", lat: 63.4, lng: 10.4 },
   nord: { label: "Nord", lat: 69.4, lng: 18.6 },
 };
+
+function regionForLat(lat: number): RegionKey {
+  if (lat >= 65.5) return "nord";
+  if (lat >= 62.5) return "midt";
+  if (lat >= 59.5) return "vest";
+  return "sor";
+}
 
 function offsetForRegion(key: RegionKey) {
   const r = REGIONS[key];
@@ -63,6 +72,7 @@ export function FieldMap({
   function panToRegion(key: RegionKey) {
     setActiveRegion(key);
     setOffset(offsetForRegion(key));
+    setActive(null);
   }
 
   function onPointerDown(e: PointerEvent<SVGSVGElement>) {
@@ -179,15 +189,15 @@ export function FieldMap({
         </div>
       )}
 
-      <div className="relative grid lg:grid-cols-[minmax(0,460px)_minmax(0,400px)] gap-6 items-start lg:justify-start mx-auto lg:mx-0 lg:max-w-[884px]">
-        <div className="relative bg-fog/40 border border-line/50 rounded-lg overflow-hidden">
+      <div className="relative grid lg:grid-cols-12 gap-10 items-start">
+        <div className="relative bg-fog/40 border border-line/50 rounded-lg overflow-hidden lg:col-span-7">
           <div className="absolute inset-0 grid-paper opacity-50 pointer-events-none" />
           <svg
             ref={svgRef}
             viewBox={`0 0 ${WIN.w} ${WIN.h}`}
             className="w-full h-auto block"
             role="img"
-            aria-label="Kart over Norge med plottede reportasjer — dra for å bla, eller velg region"
+            aria-label="Kart over Norge med plottede reportasjer – dra for å bla, eller velg region"
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMoveSvg}
             onPointerUp={onPointerUp}
@@ -233,18 +243,21 @@ export function FieldMap({
             >
             {/* sea grid markers */}
             <g opacity="0.18">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <line
-                  key={`h${i}`}
-                  x1={MAP_VIEWBOX.x}
-                  x2={MAP_VIEWBOX.x + MAP_VIEWBOX.w}
-                  y1={(i + 1) * 100}
-                  y2={(i + 1) * 100}
-                  stroke="#1f3852"
-                  strokeDasharray="2 6"
-                  strokeWidth="0.5"
-                />
-              ))}
+              {Array.from({ length: 8 }).map((_, i) => {
+                const y = (i + 1) * 100 * SCALE_Y;
+                return (
+                  <line
+                    key={`h${i}`}
+                    x1={MAP_VIEWBOX.x}
+                    x2={MAP_VIEWBOX.x + MAP_VIEWBOX.w}
+                    y1={y}
+                    y2={y}
+                    stroke="#1f3852"
+                    strokeDasharray="2 6"
+                    strokeWidth="0.5"
+                  />
+                );
+              })}
             </g>
 
             {/* lat labels */}
@@ -276,14 +289,16 @@ export function FieldMap({
               })}
             </g>
 
-            {/* mainland */}
-            <g>
+            {/* mainland – vertical compression to fix the natural-earth
+                projection's stretched aspect at Nordic latitudes */}
+            <g transform={`scale(1 ${SCALE_Y})`}>
               <path
                 d={NORWAY_PATH}
                 fill="url(#landGlow)"
                 stroke="#1f3852"
-                strokeWidth="1.4"
+                strokeWidth={1.4}
                 strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
               />
               <path
                 d={NORWAY_PATH}
@@ -412,7 +427,7 @@ export function FieldMap({
             </g>
           </svg>
 
-          {/* Region selector — top right */}
+          {/* Region selector – top right */}
           <div className="absolute top-3 right-3 flex flex-col gap-1 bg-paper/90 backdrop-blur-sm rounded-md border border-line/60 p-1.5 shadow-sm">
             <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-deep/55 px-2 pt-0.5 pb-0.5">
               Region
@@ -442,11 +457,15 @@ export function FieldMap({
         </div>
 
         {/* side card panel */}
-        <aside className="lg:sticky lg:top-24 self-start min-h-[420px]">
+        <aside className="lg:col-span-5 lg:sticky lg:top-24 self-start min-h-[420px]">
           {activePoint ? (
             <SideCard slug={activePoint.article.slug} />
           ) : (
-            <Empty variant={variant} />
+            <Empty
+              variant={variant}
+              activeRegion={activeRegion}
+              onSelect={(slug) => setActive(slug)}
+            />
           )}
         </aside>
       </div>
@@ -454,36 +473,62 @@ export function FieldMap({
   );
 }
 
-function Empty({ variant }: { variant: "hero" | "page" }) {
+function Empty({
+  variant,
+  activeRegion,
+  onSelect,
+}: {
+  variant: "hero" | "page";
+  activeRegion: RegionKey | null;
+  onSelect: (slug: string) => void;
+}) {
+  const list = activeRegion
+    ? articles.filter((a) => regionForLat(a.location.lat) === activeRegion)
+    : articles;
+  const regionLabel = activeRegion ? REGIONS[activeRegion].label : null;
   return (
     <div className="border border-line/50 bg-sand/40 rounded-lg p-7 text-deep">
       <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-deep/60 mb-4">
         Reportasjeregister
+        {regionLabel ? (
+          <span className="ml-2 text-accent">– {regionLabel}</span>
+        ) : null}
       </div>
       <h2
         className={`font-semibold tracking-tight leading-tight ${
           variant === "hero" ? "text-2xl" : "text-xl"
         } mb-4`}
       >
-        Klikk en markør for å lese et utdrag.
+        {activeRegion
+          ? list.length > 0
+            ? "Reportasjer fra denne regionen."
+            : "Ingen reportasjer i denne regionen ennå."
+          : "Klikk en markør for å lese et utdrag."}
       </h2>
       <p className="text-[14.5px] text-deep/75 leading-relaxed mb-6">
         Hver reportasje er plottet på kartet etter stedet den ble laget.
       </p>
-      <ul className="space-y-3">
-        {articles.map((a, i) => (
-          <li
-            key={a.slug}
-            className="flex items-baseline gap-3 text-[13px] text-deep/80"
-          >
-            <span className="font-mono text-[11px] text-deep/50 tabular">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span className="font-medium">{a.location.name}</span>
-            <span className="text-deep/50 truncate">{a.publication}</span>
-          </li>
-        ))}
-      </ul>
+      {list.length > 0 ? (
+        <ul className="divide-y divide-deep/10 -mx-2">
+          {list.map((a, i) => (
+            <li key={a.slug}>
+              <button
+                type="button"
+                onClick={() => onSelect(a.slug)}
+                className="group w-full text-left flex items-baseline gap-3 text-[13px] text-deep/80 px-2 py-2.5 rounded transition-colors hover:bg-deep/5"
+              >
+                <span className="font-mono text-[11px] text-deep/50 tabular">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-medium group-hover:text-accent transition-colors">
+                  {a.location.name}
+                </span>
+                <span className="text-deep/50 truncate">{a.publication}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 }

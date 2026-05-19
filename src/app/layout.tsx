@@ -24,7 +24,7 @@ const serif = Lora({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kaspar Knudsen — Frilansjournalist, Bergen",
+    default: "Kaspar Knudsen – Frilansjournalist, Bergen",
     template: "%s · Kaspar Knudsen",
   },
   description:

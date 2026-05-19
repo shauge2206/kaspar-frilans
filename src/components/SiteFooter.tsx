@@ -18,8 +18,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="text-paper/70 max-w-md leading-relaxed text-[15px] font-serif italic">
-            «Økonomisk bærekraft i selskapet, å levere kvalitetsjournalistikk,
-            frihet under ansvar — å styre bedriften selv»
+            «Jeg drar ut i felt for å se stedene og møte menneskene jeg skriver om – det er det som gjør journalistikken nærmere.»
           </p>
         </div>
 
@@ -78,7 +77,7 @@ export function SiteFooter() {
       <div className="border-t border-paper/15">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5 flex flex-wrap items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/55">
           <span>© {new Date().getFullYear()} Kaspar Knudsen</span>
-          <span>Org.nr 999 999 999 — Enkeltpersonforetak</span>
+          <span>Org.nr 999 999 999 – Enkeltpersonforetak</span>
         </div>
       </div>
     </footer>
