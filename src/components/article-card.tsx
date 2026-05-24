@@ -41,17 +41,17 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
             sizes="(min-width: 1024px) 600px, 100vw"
             className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
           />
-          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
           <div className="absolute left-4 top-4 flex items-center gap-2">
-            <span className="rounded-full bg-paper/85 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-ink backdrop-blur-sm">
+            <span className="rounded-full bg-white/90 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-black backdrop-blur-sm">
               {sak.seksjon}
             </span>
           </div>
           <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-            <p className="font-mono text-[0.66rem] uppercase tracking-[0.22em] text-paper/85">
+            <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-white/85">
               {sak.publikasjon} · {sak.sted}
             </p>
-            <h3 className="mt-1.5 max-w-[28ch] font-display text-[clamp(1.2rem,1rem+0.7vw,1.65rem)] font-medium leading-[1.18] tracking-tight text-paper">
+            <h3 className="mt-1.5 max-w-[28ch] font-display text-[clamp(1.2rem,1rem+0.7vw,1.65rem)] font-semibold leading-[1.18] tracking-tight text-white">
               {sak.tittel}
             </h3>
           </div>

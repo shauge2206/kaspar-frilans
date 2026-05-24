@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { GradientBackdrop } from "@/components/gradient-backdrop";
 import { PageTransition } from "@/components/page-transition";
+import { ThemeProvider, themeBootScript } from "@/components/theme-provider";
 
-const fraunces = Fraunces({
+const manrope = Manrope({
+  subsets: ["latin"],
   variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-  axes: ["opsz", "SOFT"],
-});
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
   display: "swap",
 });
 
@@ -40,16 +34,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="nb"
-      className={`${fraunces.variable} ${inter.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="relative min-h-screen flex flex-col bg-paper text-ink antialiased selection:bg-coral-200/80 selection:text-ink">
-        <GradientBackdrop />
-        <SiteHeader />
-        <PageTransition>{children}</PageTransition>
-        <SiteFooter />
+    <html lang="nb" className={manrope.variable} suppressHydrationWarning>
+      <head>
+        <script
+          // Sets data-theme from localStorage before paint to prevent FOUC.
+          dangerouslySetInnerHTML={{ __html: themeBootScript }}
+        />
+      </head>
+      <body className="relative min-h-screen flex flex-col bg-paper text-ink antialiased">
+        <ThemeProvider>
+          <GradientBackdrop />
+          <SiteHeader />
+          <PageTransition>{children}</PageTransition>
+          <SiteFooter />
+        </ThemeProvider>
       </body>
     </html>
   );

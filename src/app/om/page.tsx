@@ -102,7 +102,7 @@ export default function OmPage() {
 
             <Reveal delay={0.6} y={36} className="md:col-span-5 md:pt-6">
               <div
-                className="aspect-[4/5] rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft bg-paper-2 flex items-center justify-center overflow-hidden"
+                className="aspect-[4/5] rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft bg-paper-2 flex items-center justify-center overflow-hidden text-ink-2"
                 aria-label="Bildeplassholder"
               >
                 <svg
@@ -120,14 +120,16 @@ export default function OmPage() {
                       <path
                         d="M 20 0 L 0 0 0 20"
                         fill="none"
-                        stroke="rgba(40,30,20,0.10)"
+                        stroke="currentColor"
+                        strokeOpacity="0.12"
                         strokeWidth="0.5"
                       />
                     </pattern>
                   </defs>
                   <rect width="200" height="250" fill="url(#om-placeholder-grid)" />
                   <g
-                    stroke="rgba(40,30,20,0.35)"
+                    stroke="currentColor"
+                    strokeOpacity="0.35"
                     strokeWidth="1"
                     fill="none"
                   >
@@ -136,7 +138,7 @@ export default function OmPage() {
                     <path d="M 10 240 L 22 240 M 10 240 L 10 228" />
                     <path d="M 190 240 L 178 240 M 190 240 L 190 228" />
                   </g>
-                  <g fill="rgba(40,30,20,0.22)">
+                  <g fill="currentColor" fillOpacity="0.22">
                     <circle cx="100" cy="100" r="34" />
                     <path d="M 50 200 Q 50 150 100 150 Q 150 150 150 200 Z" />
                   </g>
@@ -144,10 +146,11 @@ export default function OmPage() {
                     x="100"
                     y="222"
                     textAnchor="middle"
-                    fontFamily="ui-monospace, monospace"
+                    fontFamily="var(--font-display)"
                     fontSize="9"
                     letterSpacing="3"
-                    fill="rgba(40,30,20,0.6)"
+                    fill="currentColor"
+                    fillOpacity="0.7"
                   >
                     PORTRETT
                   </text>
