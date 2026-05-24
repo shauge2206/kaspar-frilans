@@ -38,7 +38,9 @@ export function WordReveal({
         return (
           <span
             key={i}
-            className="inline-block overflow-hidden align-baseline pb-[0.12em]"
+            className={`inline-block overflow-hidden align-baseline ${
+              isHighlight ? "pb-[0.3em] pr-[0.12em]" : "pb-[0.18em]"
+            }`}
             style={{ marginRight: i < words.length - 1 ? "0.28em" : 0 }}
           >
             <motion.span

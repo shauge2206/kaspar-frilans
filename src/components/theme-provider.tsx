@@ -10,32 +10,24 @@ import {
 } from "react";
 
 export const THEMES = [
-  "midnight",
-  "linen",
-  "marine",
-  "sand",
-  "forest",
-  "dawn",
-  "ember",
-  "slate",
   "graphite",
+  "linen",
+  "sand",
+  "ember",
+  "dawn",
 ] as const;
 export type Theme = (typeof THEMES)[number];
 
 export const THEME_LABELS: Record<Theme, string> = {
-  midnight: "Midnight",
-  linen: "Linen",
-  marine: "Marine",
-  sand: "Sand",
-  forest: "Forest",
-  dawn: "Dawn",
-  ember: "Ember",
-  slate: "Slate",
   graphite: "Graphite",
+  linen: "Linen",
+  sand: "Sand",
+  ember: "Ember",
+  dawn: "Dawn",
 };
 
 const STORAGE_KEY = "theme";
-const DEFAULT_THEME: Theme = "midnight";
+const DEFAULT_THEME: Theme = "graphite";
 
 type ThemeCtx = {
   theme: Theme;

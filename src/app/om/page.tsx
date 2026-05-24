@@ -110,23 +110,6 @@ export default function OmPage() {
                   className="w-full h-full"
                   aria-hidden="true"
                 >
-                  <defs>
-                    <pattern
-                      id="om-placeholder-grid"
-                      width="20"
-                      height="20"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <path
-                        d="M 20 0 L 0 0 0 20"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeOpacity="0.12"
-                        strokeWidth="0.5"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect width="200" height="250" fill="url(#om-placeholder-grid)" />
                   <g
                     stroke="currentColor"
                     strokeOpacity="0.35"

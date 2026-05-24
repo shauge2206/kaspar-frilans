@@ -3,8 +3,8 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { GradientBackdrop } from "@/components/gradient-backdrop";
 import { PageTransition } from "@/components/page-transition";
+import { DotPattern } from "@/components/dot-pattern";
 import { ThemeProvider, themeBootScript } from "@/components/theme-provider";
 
 const manrope = Manrope({
@@ -43,7 +43,18 @@ export default function RootLayout({
       </head>
       <body className="relative min-h-screen flex flex-col bg-paper text-ink antialiased">
         <ThemeProvider>
-          <GradientBackdrop />
+          <div
+            aria-hidden
+            className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+            style={{
+              maskImage:
+                "radial-gradient(ellipse at center, black 30%, transparent 80%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse at center, black 30%, transparent 80%)",
+            }}
+          >
+            <DotPattern />
+          </div>
           <SiteHeader />
           <PageTransition>{children}</PageTransition>
           <SiteFooter />

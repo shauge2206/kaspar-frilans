@@ -5,44 +5,44 @@
 /* ------------------------------------------------------------------ */
 /* @theme registers the token names with Tailwind so utilities like    */
 /* bg-paper, text-ink, ring-line, bg-coral-500 etc. resolve to CSS     */
-/* custom properties. The defaults below = "midnight". Each [data-theme]*/
+/* custom properties. The defaults below = "graphite". Each [data-theme]*/
 /* override below redefines the SAME variables, so a single attribute  */
 /* on <html> swaps the whole palette without rewriting any components. */
 /* ------------------------------------------------------------------ */
 
 @theme {
-  /* Surfaces — defaults match the "midnight" theme */
-  --color-paper:   #0a0e1a;
-  --color-paper-2: #131726;
-  --color-paper-3: #1c2236;
+  /* Surfaces — defaults match the "graphite" theme */
+  --color-paper:   #1a1a1c;
+  --color-paper-2: #232326;
+  --color-paper-3: #2d2d31;
 
   /* Type */
-  --color-ink:   #f0f4ff;
-  --color-ink-2: #cbd3ec;
-  --color-mute:  #8893b8;
-  --color-mute-2:#5a6286;
+  --color-ink:   #ededec;
+  --color-ink-2: #b9b9b6;
+  --color-mute:  #7d7d79;
+  --color-mute-2:#555552;
 
   /* Lines */
-  --color-line: #25304a;
+  --color-line: #323236;
 
   /* Accent (token name kept as "coral" so existing classes work) */
-  --color-coral-50:  #eef2ff;
-  --color-coral-100: #e0e7ff;
-  --color-coral-200: #c7d2fe;
-  --color-coral-300: #a5b4fc;
-  --color-coral-400: #818cf8;
-  --color-coral-500: #7c93ff;
-  --color-coral-600: #5b73e6;
+  --color-coral-50:  #f5efe4;
+  --color-coral-100: #ebe0c8;
+  --color-coral-200: #dcc7a0;
+  --color-coral-300: #c9ad7d;
+  --color-coral-400: #b89870;
+  --color-coral-500: #a6855d;
+  --color-coral-600: #87683f;
 
   /* Secondary accent (kept as "apricot") */
-  --color-apricot-50:  #1c1d3a;
-  --color-apricot-100: #232548;
-  --color-apricot-200: #c7d2fe;
+  --color-apricot-50:  #2a2620;
+  --color-apricot-100: #38322a;
+  --color-apricot-200: #dcc7a0;
 
   /* Tertiary tint (kept as "teal") */
-  --color-teal-100: #1b1f2a;
-  --color-teal-300: #4338ca;
-  --color-teal-500: #7c93ff;
+  --color-teal-100: #2a2824;
+  --color-teal-300: #87683f;
+  --color-teal-500: #a6855d;
 
   /* Type */
   --font-display: var(--font-display), "Manrope", ui-sans-serif, system-ui,
@@ -62,46 +62,6 @@
 /* ------------------------------------------------------------------ */
 /* Theme palettes                                                      */
 /* ------------------------------------------------------------------ */
-
-:root,
-[data-theme="midnight"] {
-  color-scheme: dark;
-
-  --color-paper:   #0a0e1a;
-  --color-paper-2: #131726;
-  --color-paper-3: #1c2236;
-  --color-ink:     #f0f4ff;
-  --color-ink-2:   #cbd3ec;
-  --color-mute:    #8893b8;
-  --color-mute-2:  #5a6286;
-  --color-line:    #25304a;
-
-  --color-coral-50:  #eef2ff;
-  --color-coral-100: #e0e7ff;
-  --color-coral-200: #c7d2fe;
-  --color-coral-300: #a5b4fc;
-  --color-coral-400: #818cf8;
-  --color-coral-500: #7c93ff;
-  --color-coral-600: #5b73e6;
-
-  --color-apricot-50:  #1a2040;
-  --color-apricot-100: #232b54;
-  --color-apricot-200: #c7d2fe;
-
-  --color-teal-100: #1a2040;
-  --color-teal-300: #4f5fb5;
-  --color-teal-500: #7c93ff;
-
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4),
-    0 8px 24px -8px rgba(0, 0, 0, 0.6);
-  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5),
-    0 24px 60px -16px rgba(0, 0, 0, 0.75);
-
-  --blob-1: #5b73e6;
-  --blob-2: #3949a8;
-  --blob-3: #1f2a6b;
-  --blob-alpha: 0.26;
-}
 
 [data-theme="sand"] {
   color-scheme: light;
@@ -136,49 +96,6 @@
   --shadow-lift: 0 2px 4px rgba(45, 42, 38, 0.07),
     0 24px 60px -16px rgba(45, 42, 38, 0.22);
 
-  --blob-1: #d8b888;
-  --blob-2: #e6cf9c;
-  --blob-3: #ead4b3;
-  --blob-alpha: 0.5;
-}
-
-[data-theme="marine"] {
-  color-scheme: dark;
-
-  --color-paper:   #0f1f2e;
-  --color-paper-2: #16293d;
-  --color-paper-3: #1c3550;
-  --color-ink:     #e8f4f8;
-  --color-ink-2:   #c5d8df;
-  --color-mute:    #7a92a0;
-  --color-mute-2:  #506574;
-  --color-line:    #1f3650;
-
-  --color-coral-50:  #e7faf6;
-  --color-coral-100: #c8f1e8;
-  --color-coral-200: #98e3d3;
-  --color-coral-300: #5fd1ba;
-  --color-coral-400: #2cbfa1;
-  --color-coral-500: #14b8a6;
-  --color-coral-600: #0d9488;
-
-  --color-apricot-50:  #103040;
-  --color-apricot-100: #15405c;
-  --color-apricot-200: #98e3d3;
-
-  --color-teal-100: #15405c;
-  --color-teal-300: #2cbfa1;
-  --color-teal-500: #14b8a6;
-
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.32),
-    0 8px 24px -8px rgba(0, 0, 0, 0.55);
-  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.4),
-    0 24px 60px -16px rgba(0, 0, 0, 0.7);
-
-  --blob-1: #14b8a6;
-  --blob-2: #0e7c8a;
-  --blob-3: #075a72;
-  --blob-alpha: 0.28;
 }
 
 [data-theme="dawn"] {
@@ -214,10 +131,6 @@
   --shadow-lift: 0 2px 4px rgba(60, 40, 10, 0.08),
     0 24px 60px -16px rgba(60, 40, 10, 0.2);
 
-  --blob-1: #fcd9a0;
-  --blob-2: #f5a93d;
-  --blob-3: #f9c478;
-  --blob-alpha: 0.55;
 }
 
 [data-theme="linen"] {
@@ -253,23 +166,19 @@
   --shadow-lift: 0 2px 4px rgba(28, 28, 28, 0.06),
     0 24px 60px -16px rgba(28, 28, 28, 0.16);
 
-  --blob-1: #e5e2dc;
-  --blob-2: #d4cdbe;
-  --blob-3: #f3a8a8;
-  --blob-alpha: 0.42;
 }
 
 [data-theme="ember"] {
   color-scheme: dark;
 
-  --color-paper:   #1a120c;
-  --color-paper-2: #261a11;
-  --color-paper-3: #322217;
+  --color-paper:   #0d0805;
+  --color-paper-2: #170f08;
+  --color-paper-3: #20150d;
   --color-ink:     #f5e6d3;
   --color-ink-2:   #d9c1a3;
   --color-mute:    #998a72;
   --color-mute-2:  #6b614f;
-  --color-line:    #3a2a1c;
+  --color-line:    #251810;
 
   --color-coral-50:  #fff3e6;
   --color-coral-100: #ffdfb8;
@@ -279,11 +188,11 @@
   --color-coral-500: #ea7c2e;
   --color-coral-600: #c75d10;
 
-  --color-apricot-50:  #2a1a0d;
-  --color-apricot-100: #3a2412;
+  --color-apricot-50:  #170d06;
+  --color-apricot-100: #25180c;
   --color-apricot-200: #ffc587;
 
-  --color-teal-100: #2a1a0d;
+  --color-teal-100: #170d06;
   --color-teal-300: #b9560f;
   --color-teal-500: #ea7c2e;
 
@@ -292,12 +201,9 @@
   --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5),
     0 24px 60px -16px rgba(40, 18, 0, 0.7);
 
-  --blob-1: #ea7c2e;
-  --blob-2: #b9560f;
-  --blob-3: #7a3a0a;
-  --blob-alpha: 0.3;
 }
 
+:root,
 [data-theme="graphite"] {
   color-scheme: dark;
 
@@ -331,88 +237,6 @@
   --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5),
     0 24px 60px -16px rgba(0, 0, 0, 0.7);
 
-  --blob-1: #4a4a4d;
-  --blob-2: #87683f;
-  --blob-3: #2d2d31;
-  --blob-alpha: 0.32;
-}
-
-[data-theme="slate"] {
-  color-scheme: light;
-
-  --color-paper:   #f1f4f8;
-  --color-paper-2: #ffffff;
-  --color-paper-3: #e3e8ee;
-  --color-ink:     #0f172a;
-  --color-ink-2:   #334155;
-  --color-mute:    #64748b;
-  --color-mute-2:  #94a3b8;
-  --color-line:    #d8dee6;
-
-  --color-coral-50:  #eff6ff;
-  --color-coral-100: #dbeafe;
-  --color-coral-200: #bfdbfe;
-  --color-coral-300: #93c5fd;
-  --color-coral-400: #60a5fa;
-  --color-coral-500: #1e40af;
-  --color-coral-600: #1e3a8a;
-
-  --color-apricot-50:  #e2e8f0;
-  --color-apricot-100: #cbd5e1;
-  --color-apricot-200: #93c5fd;
-
-  --color-teal-100: #dbeafe;
-  --color-teal-300: #60a5fa;
-  --color-teal-500: #1e40af;
-
-  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.05),
-    0 8px 24px -8px rgba(15, 23, 42, 0.12);
-  --shadow-lift: 0 2px 4px rgba(15, 23, 42, 0.08),
-    0 24px 60px -16px rgba(15, 23, 42, 0.22);
-
-  --blob-1: #93c5fd;
-  --blob-2: #60a5fa;
-  --blob-3: #3b82f6;
-  --blob-alpha: 0.4;
-}
-
-[data-theme="forest"] {
-  color-scheme: dark;
-
-  --color-paper:   #1a2e1f;
-  --color-paper-2: #243b2a;
-  --color-paper-3: #2d4733;
-  --color-ink:     #f5f3ee;
-  --color-ink-2:   #d8d5cc;
-  --color-mute:    #8a9787;
-  --color-mute-2:  #5f6d5c;
-  --color-line:    #2f4934;
-
-  --color-coral-50:  #f6ffe2;
-  --color-coral-100: #e6f5b8;
-  --color-coral-200: #d2eb84;
-  --color-coral-300: #b8db4d;
-  --color-coral-400: #9bc92a;
-  --color-coral-500: #84cc16;
-  --color-coral-600: #65a30d;
-
-  --color-apricot-50:  #1f3a26;
-  --color-apricot-100: #294d31;
-  --color-apricot-200: #d2eb84;
-
-  --color-teal-100: #294d31;
-  --color-teal-300: #65a30d;
-  --color-teal-500: #84cc16;
-
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3),
-    0 8px 24px -8px rgba(0, 0, 0, 0.5);
-  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.4),
-    0 24px 60px -16px rgba(0, 0, 0, 0.65);
-
-  --blob-1: #84cc16;
-  --blob-2: #4d7c0f;
-  --blob-3: #365314;
-  --blob-alpha: 0.26;
 }
 
 /* ------------------------------------------------------------------ */
@@ -475,56 +299,6 @@ html.theme-booting * {
   letter-spacing: -0.018em;
 }
 
-/* Drifting fluid gradient – uses theme blob vars */
-@keyframes drift-a {
-  0%   { transform: translate3d(-12%, -8%, 0) scale(1.05); }
-  50%  { transform: translate3d(8%, 4%, 0) scale(1.18); }
-  100% { transform: translate3d(-12%, -8%, 0) scale(1.05); }
-}
-@keyframes drift-b {
-  0%   { transform: translate3d(10%, 12%, 0) scale(1.0); }
-  50%  { transform: translate3d(-6%, -4%, 0) scale(1.12); }
-  100% { transform: translate3d(10%, 12%, 0) scale(1.0); }
-}
-@keyframes drift-c {
-  0%   { transform: translate3d(-4%, 18%, 0) scale(0.95); }
-  50%  { transform: translate3d(6%, -10%, 0) scale(1.08); }
-  100% { transform: translate3d(-4%, 18%, 0) scale(0.95); }
-}
-
-.blob-a, .blob-b, .blob-c {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: var(--blob-alpha, 0.4);
-  will-change: transform;
-  transition: opacity 600ms var(--ease-spring);
-}
-.blob-a {
-  width: 60vmax;
-  height: 60vmax;
-  left: -10vmax;
-  top: -16vmax;
-  background: radial-gradient(closest-side, var(--blob-1), transparent 70%);
-  animation: drift-a 28s ease-in-out infinite;
-}
-.blob-b {
-  width: 52vmax;
-  height: 52vmax;
-  right: -14vmax;
-  top: -8vmax;
-  background: radial-gradient(closest-side, var(--blob-2), transparent 70%);
-  animation: drift-b 34s ease-in-out infinite;
-}
-.blob-c {
-  width: 48vmax;
-  height: 48vmax;
-  left: 30vmax;
-  top: 36vmax;
-  background: radial-gradient(closest-side, var(--blob-3), transparent 70%);
-  animation: drift-c 40s ease-in-out infinite;
-}
-
 /* Underline link */
 .link-underline {
   background-image: linear-gradient(currentColor, currentColor);
@@ -581,5 +355,4 @@ html.theme-booting * {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .blob-a, .blob-b, .blob-c { animation: none !important; }
 }
