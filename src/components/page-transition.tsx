@@ -8,13 +8,18 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   const reduce = useReducedMotion();
 
   if (reduce) {
-    return <main className="relative flex-1">{children}</main>;
+    return (
+      <main id="main" className="relative flex-1">
+        {children}
+      </main>
+    );
   }
 
   return (
     <AnimatePresence mode="wait" initial={false}>
       <motion.main
         key={pathname}
+        id="main"
         className="relative flex-1"
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}

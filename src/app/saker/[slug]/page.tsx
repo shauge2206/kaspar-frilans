@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { saker, getSak } from "@/lib/saker";
+import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { ParallaxImage } from "@/components/parallax-image";
@@ -68,7 +69,7 @@ export default async function SakPage(props: Props) {
       <section className="relative px-6 pt-12 pb-8 md:px-10 md:pt-20">
         <div className="mx-auto max-w-[820px]">
           <Reveal>
-            <div className="flex flex-wrap items-center gap-3 text-xs font-mono uppercase tracking-[0.22em] text-mute">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono uppercase tracking-[0.2em] text-mute">
               <Link
                 href="/saker"
                 className="rounded-full bg-paper-2 px-3 py-1.5 text-ink ring-1 ring-line transition-colors hover:bg-paper-3"
@@ -139,9 +140,7 @@ export default async function SakPage(props: Props) {
           <Reveal>
             <div className="mb-10 flex items-end justify-between gap-6 border-t border-line/70 pt-10">
               <div>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
-                  Andre saker
-                </p>
+                <Kicker>Andre saker</Kicker>
                 <h2 className="mt-2 font-display text-[clamp(1.6rem,2vw+1rem,2.6rem)] font-medium leading-[1.05] tracking-tight text-ink">
                   Bla videre
                 </h2>

@@ -49,6 +49,14 @@ export function SiteFooter() {
                 Kontakt
               </Link>
             </li>
+            <li>
+              <Link
+                href="/personvern"
+                className="link-underline text-mute hover:text-ink"
+              >
+                Personvern
+              </Link>
+            </li>
           </ul>
         </div>
 

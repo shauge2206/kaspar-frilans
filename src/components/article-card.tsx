@@ -48,7 +48,7 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
             </span>
           </div>
           <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-            <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-white/85">
+            <p className="text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-white/85">
               {sak.publikasjon} · {sak.sted}
             </p>
             <h3 className="mt-1.5 max-w-[28ch] font-display text-[clamp(1.2rem,1rem+0.7vw,1.65rem)] font-semibold leading-[1.18] tracking-tight text-white">

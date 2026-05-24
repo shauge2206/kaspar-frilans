@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Kicker } from "@/components/kicker";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/reveal";
 import { WordReveal } from "@/components/word-reveal";
 import { MagneticButton } from "@/components/magnetic-button";
@@ -153,9 +154,7 @@ export default function OmPage() {
           <Reveal>
             <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
-                  Publikasjoner
-                </p>
+                <Kicker>Publikasjoner</Kicker>
                 <h2 className="mt-3 font-display text-[clamp(1.8rem,2.6vw+1rem,3rem)] font-medium leading-[1.05] tracking-tight text-ink">
                   Hvor du finner arbeidet mitt
                 </h2>
@@ -167,7 +166,7 @@ export default function OmPage() {
             {publikasjoner.map((p) => (
               <StaggerItem
                 key={p.navn}
-                className="group flex items-center justify-between rounded-[18px] bg-paper/70 px-6 py-5 ring-1 ring-line/70 shadow-soft backdrop-blur-sm transition-shadow duration-500 hover:shadow-lift"
+                className="group flex items-center justify-between rounded-[18px] bg-paper/70 px-6 py-5 ring-1 ring-line/70 shadow-soft backdrop-blur-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-paper hover:shadow-lift hover:ring-line"
               >
                 <span className="font-display text-[1.25rem] font-medium tracking-tight text-ink">
                   {p.navn}
@@ -184,9 +183,7 @@ export default function OmPage() {
           <Reveal>
             <div className="mb-10 grid gap-4 md:grid-cols-12">
               <div className="md:col-span-5">
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
-                  Arbeidsområder
-                </p>
+                <Kicker>Arbeidsområder</Kicker>
                 <h2 className="mt-3 font-display text-[clamp(1.8rem,2.6vw+1rem,3rem)] font-medium leading-[1.05] tracking-tight text-ink">
                   Hva jeg leverer
                 </h2>
@@ -202,7 +199,7 @@ export default function OmPage() {
           <StaggerGroup className="flex flex-wrap gap-3">
             {arbeidsområder.map((a) => (
               <StaggerItem key={a}>
-                <span className="inline-block rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-line/80 shadow-soft">
+                <span className="inline-block cursor-default rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-line/80 shadow-soft transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:ring-coral-400/60 hover:shadow-lift">
                   {a}
                 </span>
               </StaggerItem>
@@ -223,10 +220,10 @@ export default function OmPage() {
             {verdier.map((v) => (
               <StaggerItem
                 key={v.nr}
-                className="rounded-[var(--radius-card)] bg-paper/75 p-8 ring-1 ring-line/70 shadow-soft backdrop-blur-sm"
+                className="group cursor-default rounded-[var(--radius-card)] bg-paper/75 p-8 ring-1 ring-line/70 shadow-soft backdrop-blur-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:bg-paper hover:shadow-lift hover:ring-line"
               >
                 <div className="flex items-start gap-5">
-                  <span className="font-mono text-xs uppercase tracking-[0.22em] text-coral-500">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-coral-500">
                     {v.nr}
                   </span>
                   <div>
@@ -248,11 +245,9 @@ export default function OmPage() {
       <section className="relative px-6 pb-32 md:px-10">
         <div className="mx-auto max-w-[1100px]">
           <Reveal>
-            <div className="flex flex-col items-start gap-6 rounded-[28px] bg-gradient-to-br from-paper-2 via-paper to-coral-100 p-10 ring-1 ring-line/70 shadow-soft md:flex-row md:items-center md:justify-between md:p-14">
+            <div className="group card-gradient-drift flex flex-col items-start gap-6 rounded-[28px] p-10 ring-1 ring-line/70 shadow-soft transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-lift hover:ring-line md:flex-row md:items-center md:justify-between md:p-14">
               <div>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
-                  Tilgjengelig for oppdrag
-                </p>
+                <Kicker>Tilgjengelig for oppdrag</Kicker>
                 <p className="mt-2 max-w-[34ch] font-display text-[clamp(1.4rem,1.6vw+0.8rem,2.2rem)] font-medium leading-tight tracking-tight text-ink">
                   Enkeltoppdrag eller periode-jobbing i redaksjoner.
                 </p>

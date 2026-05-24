@@ -43,6 +43,12 @@ export default function RootLayout({
       </head>
       <body className="relative min-h-screen flex flex-col bg-paper text-ink antialiased">
         <ThemeProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:inline-flex focus:items-center focus:gap-2 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-paper focus:shadow-lift focus:outline-none focus:ring-2 focus:ring-coral-400 focus:ring-offset-2 focus:ring-offset-paper"
+          >
+            Hopp til hovedinnhold
+          </a>
           <div
             aria-hidden
             className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"

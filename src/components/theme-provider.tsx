@@ -46,13 +46,25 @@ function readInitial(): Theme {
   return DEFAULT_THEME;
 }
 
+// Commit theme to DOM + localStorage. The site's globals.css has a
+// site-wide CSS transition on background-color/color/border-color (360ms,
+// ease-spring) so changing the data-theme attribute is enough — every
+// themed property crossfades to its new value automatically.
+function applyTheme(next: Theme) {
+  document.documentElement.setAttribute("data-theme", next);
+  try {
+    localStorage.setItem(STORAGE_KEY, next);
+  } catch {
+    /* ignore storage failures */
+  }
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(DEFAULT_THEME);
 
   // Sync state from the pre-paint script that already set <html data-theme>
   useEffect(() => {
     setThemeState(readInitial());
-    // Allow transitions after the first paint
     const id = window.requestAnimationFrame(() => {
       document.documentElement.classList.remove("theme-booting");
     });
@@ -61,26 +73,22 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const setTheme = useCallback((t: Theme) => {
     setThemeState(t);
-    document.documentElement.setAttribute("data-theme", t);
-    try {
-      localStorage.setItem(STORAGE_KEY, t);
-    } catch {
-      /* ignore storage failures */
-    }
+    applyTheme(t);
   }, []);
 
   const cycle = useCallback(() => {
-    setThemeState((curr) => {
-      const idx = THEMES.indexOf(curr);
-      const next = THEMES[(idx + 1) % THEMES.length];
-      document.documentElement.setAttribute("data-theme", next);
-      try {
-        localStorage.setItem(STORAGE_KEY, next);
-      } catch {
-        /* ignore */
-      }
-      return next;
-    });
+    // Read current theme straight from the DOM, not from React state —
+    // the attribute is the canonical source and isn't subject to strict-mode
+    // double-invocation that would skip a step in the cycle.
+    const attr = document.documentElement.getAttribute("data-theme") as Theme | null;
+    const curr =
+      attr && (THEMES as readonly string[]).includes(attr)
+        ? attr
+        : DEFAULT_THEME;
+    const idx = THEMES.indexOf(curr);
+    const next = THEMES[(idx + 1) % THEMES.length];
+    setThemeState(next);
+    applyTheme(next);
   }, []);
 
   const value = useMemo<ThemeCtx>(

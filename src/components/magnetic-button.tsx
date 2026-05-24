@@ -1,13 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-} from "motion/react";
-import { useRef } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
 type Variant = "primary" | "ghost";
 
@@ -18,33 +12,13 @@ type Props = {
   className?: string;
 };
 
-const stiff = { stiffness: 220, damping: 18, mass: 0.4 };
-
 export function MagneticButton({
   href,
   children,
   variant = "primary",
   className = "",
 }: Props) {
-  const ref = useRef<HTMLAnchorElement | null>(null);
   const reduce = useReducedMotion();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const sx = useSpring(x, stiff);
-  const sy = useSpring(y, stiff);
-
-  function onMove(e: React.MouseEvent<HTMLAnchorElement>) {
-    if (reduce || !ref.current) return;
-    const r = ref.current.getBoundingClientRect();
-    const dx = e.clientX - (r.left + r.width / 2);
-    const dy = e.clientY - (r.top + r.height / 2);
-    x.set(dx * 0.18);
-    y.set(dy * 0.22);
-  }
-  function onLeave() {
-    x.set(0);
-    y.set(0);
-  }
 
   const base =
     "inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium tracking-tight transition-shadow duration-500 will-change-transform";
@@ -55,16 +29,12 @@ export function MagneticButton({
 
   return (
     <motion.span
-      style={{ x: sx, y: sy }}
       className="inline-block"
-      onMouseLeave={onLeave}
+      whileHover={reduce ? undefined : { scale: 1.015 }}
+      whileTap={reduce ? undefined : { scale: 0.985 }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link
-        ref={ref}
-        href={href}
-        onMouseMove={onMove}
-        className={`${base} ${styles} ${className}`}
-      >
+      <Link href={href} className={`${base} ${styles} ${className}`}>
         {children}
       </Link>
     </motion.span>

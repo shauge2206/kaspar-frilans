@@ -61,7 +61,7 @@ export default function SakerPage() {
                 >
                   {/* number */}
                   <div className="md:col-span-1">
-                    <span className="font-mono text-xs uppercase tracking-[0.22em] text-mute">
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-mute">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -82,7 +82,7 @@ export default function SakerPage() {
                   {/* text */}
                   <div className="md:col-span-7 flex flex-col justify-between gap-6 md:py-2">
                     <div>
-                      <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
+                      <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-coral-500">
                         {sectionLabel[sak.seksjon]} · {sak.publikasjon}
                       </p>
                       <h2 className="mt-3 font-display text-[clamp(1.6rem,2vw+1rem,2.8rem)] font-medium leading-[1.08] tracking-tight text-ink transition-colors group-hover:text-coral-600">

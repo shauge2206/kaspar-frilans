@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-24T00:00:00Z",
+  "title": "Design System: Kaspar Knudsen — Frilansjournalist",
+  "extensions": {
+    "colorMeta": {
+      "paper":       { "role": "neutral", "displayName": "Press Black",          "canonical": "oklch(20% 0.002 80)",  "tonalRamp": ["#0a0a0b", "#101012", "#15151717", "#1a1a1c", "#232326", "#2d2d31", "#3c3c41", "#52525a"] },
+      "paper-2":     { "role": "neutral", "displayName": "Press Black Elevated", "canonical": "oklch(23% 0.002 80)",  "tonalRamp": ["#101012", "#15151717", "#1a1a1c", "#232326", "#2d2d31", "#3c3c41", "#52525a", "#6e6e75"] },
+      "paper-3":     { "role": "neutral", "displayName": "Press Black Lifted",   "canonical": "oklch(26% 0.002 80)",  "tonalRamp": ["#15151717", "#1a1a1c", "#232326", "#2d2d31", "#3c3c41", "#52525a", "#6e6e75", "#8d8d93"] },
+      "ink":         { "role": "neutral", "displayName": "Newsprint Off-White",  "canonical": "oklch(93% 0.002 80)",  "tonalRamp": ["#52525a", "#75757b", "#9b9b9b", "#b9b9b6", "#d4d4cf", "#ededec", "#f6f6f3", "#fcfcfa"] },
+      "ink-2":       { "role": "neutral", "displayName": "Halftone Grey",        "canonical": "oklch(76% 0.002 80)",  "tonalRamp": ["#3c3c41", "#52525a", "#6e6e75", "#8d8d93", "#a8a8a4", "#b9b9b6", "#d0d0cb", "#e0e0db"] },
+      "mute":        { "role": "neutral", "displayName": "Cold Grey",            "canonical": "oklch(54% 0.002 80)",  "tonalRamp": ["#1a1a1c", "#2d2d31", "#414148", "#555552", "#6c6c68", "#7d7d79", "#9b9b97", "#bfbfbc"] },
+      "mute-2":      { "role": "neutral", "displayName": "Cold Grey Deep",       "canonical": "oklch(38% 0.002 80)",  "tonalRamp": ["#1a1a1c", "#252528", "#3a3a3f", "#555552", "#6c6c68", "#7d7d79", "#9b9b97", "#bfbfbc"] },
+      "line":        { "role": "neutral", "displayName": "Rule",                 "canonical": "oklch(28% 0.002 80)",  "tonalRamp": ["#15151717", "#1f1f22", "#2a2a2e", "#323236", "#3c3c41", "#4c4c52", "#65656c", "#85858c"] },
+      "coral-500":   { "role": "primary", "displayName": "Pressroom Brass",      "canonical": "oklch(63% 0.06 70)",   "tonalRamp": ["#3a2b18", "#4f3b21", "#67502c", "#7e633a", "#94764a", "#a6855d", "#b89870", "#cdb393"] },
+      "coral-400":   { "role": "primary", "displayName": "Brass Light",          "canonical": "oklch(67% 0.05 70)",   "tonalRamp": ["#48381f", "#5e482a", "#765c35", "#8c6e44", "#a08056", "#b89870", "#caab86", "#dec5a4"] },
+      "coral-600":   { "role": "primary", "displayName": "Brass Deep",           "canonical": "oklch(52% 0.05 70)",   "tonalRamp": ["#2c2010", "#3a2c18", "#4d3b22", "#5f482b", "#735834", "#87683f", "#9d7e51", "#b59568"] },
+      "apricot-200": { "role": "secondary", "displayName": "Aged Newsprint",     "canonical": "oklch(83% 0.04 80)",   "tonalRamp": ["#5a4d34", "#74633f", "#8e7a4d", "#a8915d", "#c0a872", "#dcc7a0", "#ead7b5", "#f4e6cd"] },
+      "teal-300":    { "role": "tertiary", "displayName": "Brass Deep (tertiary slot)", "canonical": "oklch(52% 0.05 70)", "tonalRamp": ["#2c2010", "#3a2c18", "#4d3b22", "#5f482b", "#735834", "#87683f", "#9d7e51", "#b59568"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "Page-defining headlines — one per page." },
+      "headline": { "displayName": "Headline", "purpose": "Section openers within long pages." },
+      "title":    { "displayName": "Title",    "purpose": "Card titles, footer headers." },
+      "body":     { "displayName": "Body",     "purpose": "Long-form paragraphs. Max line length 65–75ch." },
+      "label":    { "displayName": "Label",    "purpose": "Tracked-uppercase kickers, metadata, badges." }
+    },
+    "shadows": [
+      { "name": "shadow-soft", "value": "0 1px 2px rgba(0,0,0,0.18), 0 8px 24px -8px rgba(0,0,0,0.32)", "purpose": "Default card-at-rest and primary-button-at-rest elevation." },
+      { "name": "shadow-lift", "value": "0 2px 4px rgba(0,0,0,0.24), 0 24px 60px -16px rgba(0,0,0,0.48)", "purpose": "Card and primary-button hover-state. 500ms transition." }
+    ],
+    "motion": [
+      { "name": "ease-spring",    "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Site-wide easing for state, hover, transitions, and word-reveal." },
+      { "name": "duration-state", "value": "300ms",                          "purpose": "Default state-change duration (focus rings, color shifts)." },
+      { "name": "duration-lift",  "value": "500ms",                          "purpose": "Card/button shadow-soft → shadow-lift transition." },
+      { "name": "duration-reveal","value": "900ms",                          "purpose": "Word-reveal headline reveal-in." },
+      { "name": "stagger-reveal", "value": "70ms",                           "purpose": "Per-word stagger inside word-reveal headlines." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Inked solid CTA. One per screen.",
+      "html": "<button class=\"ds-btn-primary\">Snakkes om et oppdrag</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--color-ink, #ededec); color: var(--color-paper, #1a1a1c); font-family: Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif; font-size: 1.05rem; font-weight: 500; letter-spacing: -0.005em; border: 0; border-radius: 9999px; box-shadow: 0 1px 2px rgba(0,0,0,0.18), 0 8px 24px -8px rgba(0,0,0,0.32); cursor: pointer; transition: box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { box-shadow: 0 2px 4px rgba(0,0,0,0.24), 0 24px 60px -16px rgba(0,0,0,0.48); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-coral-400, #b89870); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Tinted-neutral surface secondary button. No shadow.",
+      "html": "<button class=\"ds-btn-ghost\">Se alle saker</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--color-paper-2, #232326); color: var(--color-ink, #ededec); font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 1.05rem; font-weight: 500; letter-spacing: -0.005em; border: 1px solid var(--color-line, #323236); border-radius: 9999px; cursor: pointer; transition: background 300ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-ghost:hover { background: var(--color-paper-3, #2d2d31); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--color-coral-400, #b89870); outline-offset: 3px; }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "theme-toggle",
+      "description": "Header pill that names the current theme and cycles on click.",
+      "html": "<button class=\"ds-theme-toggle\" aria-label=\"Bytt tema\"><span class=\"ds-theme-toggle__dot\"></span><span class=\"ds-theme-toggle__label\">Graphite</span></button>",
+      "css": ".ds-theme-toggle { display: inline-flex; align-items: center; gap: 10px; padding: 6px 12px; background: color-mix(in srgb, var(--color-paper-2, #232326) 85%, transparent); color: var(--color-ink, #ededec); font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: -0.005em; border: 1px solid var(--color-line, #323236); border-radius: 9999px; backdrop-filter: blur(8px); cursor: pointer; } .ds-theme-toggle:hover { background: var(--color-paper-3, #2d2d31); } .ds-theme-toggle__dot { position: relative; width: 10px; height: 10px; border-radius: 50%; background: var(--color-coral-500, #a6855d); } .ds-theme-toggle__dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--color-coral-500, #a6855d); opacity: 0.4; animation: ds-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite; } @keyframes ds-ping { 75%, 100% { transform: scale(2); opacity: 0; } }"
+    },
+    {
+      "name": "Kicker Label",
+      "kind": "chip",
+      "refersTo": "label-kicker",
+      "description": "Tracked-uppercase metadata pill. The most repeated typographic element on the site.",
+      "html": "<span class=\"ds-kicker\">Sak · Næringsliv</span>",
+      "css": ".ds-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; background: color-mix(in srgb, var(--color-paper, #1a1a1c) 70%, transparent); color: var(--color-mute, #7d7d79); font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid color-mix(in srgb, var(--color-line, #323236) 80%, transparent); border-radius: 9999px; backdrop-filter: blur(4px); }"
+    },
+    {
+      "name": "Article Card",
+      "kind": "card",
+      "refersTo": "card-article",
+      "description": "Image + title + kicker card. Hover lifts the shadow.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card__media\"></div><div class=\"ds-card__body\"><span class=\"ds-card__kicker\">Sak · Næringsliv</span><h3 class=\"ds-card__title\">Slik tjente fiskerederiet milliarder på tre år</h3></div></a>",
+      "css": ".ds-card { display: block; overflow: hidden; background: var(--color-paper-2, #232326); border: 1px solid color-mix(in srgb, var(--color-line, #323236) 70%, transparent); border-radius: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.18), 0 8px 24px -8px rgba(0,0,0,0.32); color: inherit; text-decoration: none; transition: box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1); font-family: Manrope, ui-sans-serif, system-ui, sans-serif; } .ds-card:hover { box-shadow: 0 2px 4px rgba(0,0,0,0.24), 0 24px 60px -16px rgba(0,0,0,0.48); } .ds-card__media { aspect-ratio: 16 / 10; background: linear-gradient(135deg, var(--color-paper-3, #2d2d31), var(--color-paper-2, #232326)); } .ds-card__body { padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 12px; } .ds-card__kicker { color: var(--color-mute, #7d7d79); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; } .ds-card__title { margin: 0; color: var(--color-ink, #ededec); font-size: 1.25rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Wall Label",
+    "overview": "The site is the museum wall label, not the painting. A wall label is small, plainly typeset, sits in a specific place, and tells you only what you need to know to take the work seriously — who, where, when, and one line of context. It carries authority through restraint. No marketing voice, no decoration, no attempt to entertain. The visitor walks away with the name, the publications, and a way to make contact. That is the entire conversion event.\n\nThe system is built from editorial print conventions adapted to web: a clear masthead, kicker labels in tracked uppercase, generous whitespace, a single sans family at hierarchical weights, paper-toned surfaces with subtle elevation, and one warm accent that earns its presence by being used rarely. Five themes (graphite, linen, sand, ember, dawn) all sit inside the same restrained voice — they shift palette, never personality. Cross-cutting motion is slow, fade-and-rise, and never decorative.",
+    "keyCharacteristics": [
+      "Tinted-neutral surfaces with one warm-metallic accent used sparingly (≤10% of any screen).",
+      "Single sans family (Manrope) carrying the full hierarchy through weight and scale, never through font mixing.",
+      "Editorial idioms: kicker labels in tracked uppercase, ruled separators, generous body line-height, drop-cap on first paragraph of long prose, pill chips.",
+      "Five thematic palettes (graphite default + linen / sand / ember / dawn), swap-via-attribute, identical structural language.",
+      "Subtle two-step elevation (shadow-soft / shadow-lift); flat by default on borders and labels.",
+      "Motion is slow, fade-and-rise, never bouncy, never elastic."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule",         "section": "colors",     "body": "The Pressroom Brass accent is used on ≤10% of any given screen. Its rarity is the point. The moment two competing accent uses appear in the same view, one of them is wrong." },
+      { "name": "The Tinted Neutral Rule",    "section": "colors",     "body": "#000 and #fff are forbidden. Every neutral carries a faint warm tint toward the brand hue (chroma ≈ 0.005–0.01). Pure black and pure white are the hallmark of templates and must be designed past." },
+      { "name": "The Theme Swap Rule",        "section": "colors",     "body": "All five themes use the same token names and the same structural relationships. A theme swap may change palette but must not change personality, density, or hierarchy." },
+      { "name": "The One Family Rule",        "section": "typography", "body": "Manrope only, all weights, all sizes. No serif fallback for headings. No monospace for accents. No second display face." },
+      { "name": "The Tracked-Label Rule",     "section": "typography", "body": "Anything in uppercase carries letter-spacing 0.18em or 0.2em and lives at label-size (≤0.78rem). Lowercase text never receives extended tracking, ever." },
+      { "name": "The Italic-as-Editorial Rule","section": "typography","body": "Italic is reserved for emphasis within journalism's idiom — a single highlighted word in a kicker headline (rendered in the accent color), or a quoted-source aside. Decorative italic is forbidden." },
+      { "name": "The Flat-By-Default Rule",   "section": "elevation",  "body": "Surfaces are flat at rest except for cards and primary buttons. Labels, badges, inputs, list items, sections, and full-bleed regions never carry shadow." },
+      { "name": "The Editorial Hairline Rule","section": "elevation", "body": "Borders are always 1px and tinted with the theme's line token. Side-stripe borders (a border-left or border-right >1px as a colored accent) are forbidden." }
+    ],
+    "dos": [
+      "Do use Manrope for every piece of text. Display weight 500, body weight 400, label weight 500.",
+      "Do keep the Pressroom Brass accent below 10% of any screen. If two accent uses compete in one view, remove one.",
+      "Do use tracked uppercase (letter-spacing 0.18em or higher) for every label, kicker, and metadata field — and only at label sizes (≤0.78rem).",
+      "Do put the email and phone one tap or one glance away on every page. Contact is the conversion.",
+      "Do use the editorial hairline (ring-1 ring-line or border-1 border-line) for separation, never a colored side-stripe.",
+      "Do respect prefers-reduced-motion. Word-reveal headlines, page transitions, and parallax must degrade to a static state.",
+      "Do keep card hover-shadow transitions slow (500ms) and use the spring cubic-bezier(0.22, 1, 0.36, 1) exclusively.",
+      "Do test contrast at WCAG AAA (≥7:1 body, ≥4.5:1 large text) on every one of the five themes."
+    ],
+    "donts": [
+      "Don't ship anything that could be mistaken for a Squarespace / Wix portfolio template — centred hero photo, big-script tagline, three feature cards, scroll-snap testimonials.",
+      "Don't ship anything that reads as a glossy influencer / personal-brand page — hero portrait at 80vh, display-cursive name, work-with-me CTA, soft pastel gradients.",
+      "Don't ship anything that looks like a generic SaaS marketing landing — gradient hero, three benefit columns with icons, trusted-by logo strip, animated product mockup, dark-mode-toggle-in-the-corner.",
+      "Don't use #000 or #fff anywhere. Every neutral is tinted toward warm-grey.",
+      "Don't use a border-left or border-right greater than 1px as a colored accent on cards, list items, callouts, or alerts.",
+      "Don't apply background-clip: text with a gradient. Gradient text is forbidden.",
+      "Don't use glassmorphism decoratively. The header backdrop-blur and the contact-card backdrop-blur are sanctioned because they sit over the dotted vignette; nothing else gets backdrop-blur without explicit purpose.",
+      "Don't use shadows on labels, badges, kickers, or any non-card surface.",
+      "Don't introduce a second typeface. No serif for body, no monospace for accents, no display script for the name.",
+      "Don't use em dashes in copy. Commas, colons, semicolons, periods, or parentheses instead.",
+      "Don't add a CTA modal, schedule-a-call widget, or newsletter signup. Friction-free contact is the conversion.",
+      "Don't invent a sixth theme. Five is the surface area; six is too many.",
+      "Don't animate CSS layout properties. Animate transform and opacity only.",
+      "Don't use bounce or elastic easing curves. Spring cubic-bezier(0.22, 1, 0.36, 1) exclusively."
+    ]
+  }
+}

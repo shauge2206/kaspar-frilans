@@ -62,6 +62,46 @@
 /* ------------------------------------------------------------------ */
 /* Theme palettes                                                      */
 /* ------------------------------------------------------------------ */
+/* :root carries the graphite defaults so the page renders correctly  */
+/* before the theme boot script paints. The remaining [data-theme="X"]*/
+/* blocks below MUST come after :root so cascade order lets them win  */
+/* when the attribute is set. (same specificity → later rule wins.)   */
+/* ------------------------------------------------------------------ */
+
+:root,
+[data-theme="graphite"] {
+  color-scheme: dark;
+
+  --color-paper:   #1a1a1c;
+  --color-paper-2: #232326;
+  --color-paper-3: #2d2d31;
+  --color-ink:     #ededec;
+  --color-ink-2:   #b9b9b6;
+  --color-mute:    #7d7d79;
+  --color-mute-2:  #555552;
+  --color-line:    #323236;
+
+  --color-coral-50:  #f5efe4;
+  --color-coral-100: #ebe0c8;
+  --color-coral-200: #dcc7a0;
+  --color-coral-300: #c9ad7d;
+  --color-coral-400: #b89870;
+  --color-coral-500: #a6855d;
+  --color-coral-600: #87683f;
+
+  --color-apricot-50:  #2a2620;
+  --color-apricot-100: #38322a;
+  --color-apricot-200: #dcc7a0;
+
+  --color-teal-100: #2a2824;
+  --color-teal-300: #87683f;
+  --color-teal-500: #a6855d;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4),
+    0 8px 24px -8px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5),
+    0 24px 60px -16px rgba(0, 0, 0, 0.7);
+}
 
 [data-theme="sand"] {
   color-scheme: light;
@@ -203,42 +243,6 @@
 
 }
 
-:root,
-[data-theme="graphite"] {
-  color-scheme: dark;
-
-  --color-paper:   #1a1a1c;
-  --color-paper-2: #232326;
-  --color-paper-3: #2d2d31;
-  --color-ink:     #ededec;
-  --color-ink-2:   #b9b9b6;
-  --color-mute:    #7d7d79;
-  --color-mute-2:  #555552;
-  --color-line:    #323236;
-
-  --color-coral-50:  #f5efe4;
-  --color-coral-100: #ebe0c8;
-  --color-coral-200: #dcc7a0;
-  --color-coral-300: #c9ad7d;
-  --color-coral-400: #b89870;
-  --color-coral-500: #a6855d;
-  --color-coral-600: #87683f;
-
-  --color-apricot-50:  #2a2620;
-  --color-apricot-100: #38322a;
-  --color-apricot-200: #dcc7a0;
-
-  --color-teal-100: #2a2824;
-  --color-teal-300: #87683f;
-  --color-teal-500: #a6855d;
-
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4),
-    0 8px 24px -8px rgba(0, 0, 0, 0.55);
-  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5),
-    0 24px 60px -16px rgba(0, 0, 0, 0.7);
-
-}
-
 /* ------------------------------------------------------------------ */
 /* Base                                                                */
 /* ------------------------------------------------------------------ */
@@ -297,6 +301,48 @@ html.theme-booting * {
   font-family: var(--font-display);
   font-feature-settings: "ss01", "ss02";
   letter-spacing: -0.018em;
+}
+
+/* Publication marquee — slow horizontal auto-scroll with hover-pause. */
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+.animate-marquee {
+  animation: marquee 55s linear infinite;
+  will-change: transform;
+}
+
+/* Subtle drifting gradient for tiles. Uses theme tokens so it follows the
+   active theme. 22s alternate loop = ~44s full cycle; slow enough to read
+   as ambient atmosphere, never as motion. prefers-reduced-motion already
+   neutralizes this via the global animation override. */
+@keyframes card-gradient-drift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.card-gradient-drift {
+  /* 9-stop gradient with interpolated intermediates between every major
+     color so transitions are smooth and no individual stop is visible as a
+     band. Warmth peak (at 56%) is the saturated accent (coral-500) mixed
+     only 8% into paper-3, so it reads as a faint warm haze on dark themes
+     (graphite, ember) and a very gentle tint on light themes. */
+  background-image: linear-gradient(
+    120deg,
+    var(--color-paper-2) 0%,
+    color-mix(in oklab, var(--color-paper-2) 50%, var(--color-paper)) 14%,
+    var(--color-paper) 28%,
+    color-mix(in oklab, var(--color-paper) 60%, var(--color-paper-3)) 42%,
+    color-mix(in oklab, var(--color-coral-500) 8%, var(--color-paper-3)) 56%,
+    color-mix(in oklab, var(--color-paper) 60%, var(--color-paper-3)) 70%,
+    var(--color-paper) 84%,
+    color-mix(in oklab, var(--color-paper-2) 50%, var(--color-paper)) 93%,
+    var(--color-paper-2) 100%
+  );
+  background-size: 240% 240%;
+  background-position: 0% 50%;
+  animation: card-gradient-drift 28s ease-in-out infinite alternate;
+  will-change: background-position;
 }
 
 /* Underline link */

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { saker } from "@/lib/saker";
 import { ArticleCard } from "@/components/article-card";
+import { Kicker } from "@/components/kicker";
 import { MagneticButton } from "@/components/magnetic-button";
+import { PublicationMarquee } from "@/components/publication-marquee";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/reveal";
 import { WordReveal } from "@/components/word-reveal";
 
@@ -48,7 +50,7 @@ export default function HomePage() {
                 </span>
               </Reveal>
 
-              <h1 className="mt-7 font-display text-[clamp(2.6rem,4.6vw+1.2rem,6.4rem)] font-medium leading-[1.02] tracking-[-0.022em] text-ink">
+              <h1 className="mt-7 font-display text-[clamp(3rem,5.5vw+1rem,7.2rem)] font-bold leading-[1.02] tracking-[-0.028em] text-ink">
                 <WordReveal
                   text="Kaspar Knudsen"
                   delay={0.05}
@@ -56,7 +58,6 @@ export default function HomePage() {
                 <br />
                 <WordReveal
                   text="Frilansjournalist i Bergen"
-                  highlightWords={["Bergen"]}
                   delay={0.45}
                 />
               </h1>
@@ -144,16 +145,10 @@ export default function HomePage() {
 
           {/* Marquee of publikasjoner */}
           <Reveal delay={0.4} y={20} className="mt-24 md:mt-32">
-            <div className="flex flex-col gap-4 border-y border-line/70 py-6 md:flex-row md:items-center md:justify-between md:gap-10">
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-mute">
-                Publisert hos
-              </p>
-              <ul className="flex flex-wrap items-center gap-x-7 gap-y-2 font-display text-[1.05rem] leading-none tracking-tight text-ink-2 md:text-[1.2rem]">
-                {publikasjoner.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-            </div>
+            <PublicationMarquee
+              label="Publisert hos"
+              publications={publikasjoner}
+            />
           </Reveal>
         </div>
       </section>
@@ -161,19 +156,17 @@ export default function HomePage() {
       {/* FEATURED WORK */}
       <section
         id="saker"
-        className="relative px-6 pb-32 md:px-10"
+        className="relative px-6 pb-28 md:px-10 md:pb-36"
         aria-labelledby="utvalgte-saker"
       >
         <div className="mx-auto max-w-[1280px]">
           <Reveal>
             <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-10">
               <div>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
-                  Utvalg · 2023–2025
-                </p>
+                <Kicker>Utvalg · 2023–2025</Kicker>
                 <h2
                   id="utvalgte-saker"
-                  className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.6rem)] font-medium leading-[1.02] tracking-tight text-ink"
+                  className="mt-3 font-display text-[clamp(2.4rem,3.5vw+1rem,4.4rem)] font-semibold leading-[1.02] tracking-tight text-ink"
                 >
                   Utvalgte saker
                   <br />
@@ -199,15 +192,15 @@ export default function HomePage() {
             <StaggerItem className="md:col-span-5 md:col-start-3">
               <ArticleCard sak={others[1]} size="md" />
             </StaggerItem>
-            <StaggerItem className="md:col-span-5 hidden md:block">
-              <div className="flex h-full flex-col justify-end pb-4">
-                <p className="max-w-sm font-display text-[1.4rem] leading-snug tracking-tight text-ink-2">
+            <StaggerItem className="col-span-12 md:col-span-5">
+              <div className="flex h-full flex-col justify-end pt-2 pb-4 md:pt-0">
+                <p className="max-w-sm font-display text-[1.2rem] leading-snug tracking-tight text-ink-2 md:text-[1.4rem]">
                   Kritisk og undersøkende journalistikk innenfor arbeidsliv,
                   krim og flere områder.
                 </p>
                 <Link
                   href="/saker"
-                  className="link-underline mt-6 w-max font-mono text-[0.78rem] uppercase tracking-[0.18em] text-coral-500"
+                  className="link-underline mt-5 w-max font-mono text-[0.78rem] uppercase tracking-[0.18em] text-coral-500 md:mt-6"
                 >
                   Bla i arkivet →
                 </Link>
@@ -218,19 +211,15 @@ export default function HomePage() {
       </section>
 
       {/* APPROACH / VALUES */}
-      <section className="relative px-6 pb-32 md:px-10">
+      <section className="relative px-6 pb-20 md:px-10 md:pb-24">
         <div className="mx-auto max-w-[1280px]">
           <div className="grid gap-12 md:grid-cols-12 md:gap-16">
             <Reveal as="div" className="md:col-span-5">
-              <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
-                Arbeidsmåte
-              </p>
-              <h2 className="mt-3 font-display text-[clamp(1.9rem,2.4vw+1rem,3.2rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <Kicker>Arbeidsmåte</Kicker>
+              <h2 className="mt-3 font-display text-[clamp(2.2rem,3vw+1rem,4rem)] font-semibold leading-[1.05] tracking-tight text-ink">
                 Kvalitetsjournalistikk
                 <br />
-                <span className="bg-gradient-to-r from-coral-500 to-apricot-200 bg-clip-text text-transparent">
-                  fra felt.
-                </span>
+                <em className="not-italic text-coral-500">fra felt.</em>
               </h2>
               <p className="mt-6 max-w-[44ch] text-base leading-relaxed text-ink-2">
                 Gode ideer, kvalitetsjournalistikk og fleksibilitet. Innsalg
@@ -239,26 +228,24 @@ export default function HomePage() {
               </p>
             </Reveal>
 
-            <StaggerGroup className="grid gap-4 md:col-span-7 md:grid-cols-2">
-              {values.map((v) => (
+            <StaggerGroup className="md:col-span-7">
+              {values.map((v, i) => (
                 <StaggerItem
                   key={v.title}
-                  className="rounded-[var(--radius-card)] bg-paper/70 p-7 ring-1 ring-line/70 shadow-soft backdrop-blur-sm"
+                  className="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 border-t border-line/70 py-7 transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-line"
                 >
-                  <div className="flex items-start gap-4">
-                    <span
-                      aria-hidden
-                      className="mt-1 inline-block h-8 w-1 rounded-full bg-gradient-to-b from-coral-400 to-apricot-200"
-                    />
-                    <div>
-                      <h3 className="font-display text-[1.4rem] font-medium tracking-tight text-ink">
-                        {v.title}
-                      </h3>
-                      <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-2">
-                        {v.body}
-                      </p>
-                    </div>
-                  </div>
+                  <span
+                    aria-hidden
+                    className="col-span-2 font-mono text-[0.78rem] uppercase tracking-[0.2em] text-mute transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-coral-500 md:col-span-1"
+                  >
+                    {i + 1}
+                  </span>
+                  <h3 className="col-span-10 font-display text-[1.3rem] font-medium tracking-tight text-ink md:col-span-5">
+                    {v.title}
+                  </h3>
+                  <p className="col-span-12 text-[0.95rem] leading-relaxed text-ink-2 md:col-span-6">
+                    {v.body}
+                  </p>
                 </StaggerItem>
               ))}
             </StaggerGroup>
@@ -267,12 +254,22 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative px-6 pb-32 md:px-10">
+      <section className="relative px-6 pb-40 md:px-10">
         <div className="mx-auto max-w-[1100px]">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-coral-100 via-apricot-50 to-teal-100 p-10 md:p-16 ring-1 ring-line/70 shadow-soft">
-              <div className="paper-grain absolute inset-0" />
-              <div className="relative flex flex-wrap items-center gap-3">
+            <div className="h-px w-full bg-line/70" aria-hidden />
+            <div className="grid gap-10 pt-16 md:grid-cols-12 md:gap-16">
+              <div className="md:col-span-8">
+                <Kicker>Ta kontakt</Kicker>
+                <h2 className="mt-3 font-display text-[clamp(2.4rem,3.5vw+1rem,4.4rem)] font-semibold leading-[1.05] tracking-tight text-ink">
+                  Klar for et samarbeid?
+                </h2>
+                <p className="mt-6 max-w-[44ch] text-[1.05rem] leading-relaxed text-ink-2">
+                  Send en e-post eller ring direkte. Enkeltoppdrag,
+                  periode-jobbing eller en idé du vil teste.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-start gap-3 md:col-span-4 md:flex-col md:items-stretch md:pt-2">
                 <MagneticButton href="/kontakt">
                   Snakkes om et oppdrag
                 </MagneticButton>

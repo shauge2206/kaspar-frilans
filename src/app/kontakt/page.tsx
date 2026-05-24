@@ -66,9 +66,9 @@ export default function KontaktPage() {
               {channels.map((c) => (
                 <div
                   key={c.label}
-                  className="flex items-center justify-between gap-4 rounded-[18px] bg-paper/70 px-5 py-4 ring-1 ring-line/70 shadow-soft backdrop-blur-sm"
+                  className="group flex items-center justify-between gap-4 rounded-[18px] bg-paper/70 px-5 py-4 ring-1 ring-line/70 shadow-soft backdrop-blur-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-paper hover:shadow-lift hover:ring-line"
                 >
-                  <span className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
+                  <span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-mute transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-coral-500">
                     {c.label}
                   </span>
                   {c.href ? (
