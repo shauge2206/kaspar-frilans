@@ -27,7 +27,7 @@ export default function KontaktPage() {
       <section className="mx-auto max-w-6xl px-6 pb-24 grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-5 space-y-10">
           <Reveal>
-            <div className="border border-rule p-8 bg-bg-elev">
+            <div className="tile-hover-amber border border-rule p-8 bg-bg-elev">
               <p className="smallcaps text-amber mb-3">På kontoret</p>
               <p className="font-serif text-2xl leading-snug">
                 USF Verftet
@@ -41,10 +41,10 @@ export default function KontaktPage() {
                 <li className="flex justify-between gap-4">
                   <span className="text-ink-mute">E-post</span>
                   <a
-                    href="mailto:kaspar@knudsen.no"
+                    href="mailto:post@kasparknudsen.no"
                     className="text-amber glow"
                   >
-                    kaspar@knudsen.no
+                    post@kasparknudsen.no
                   </a>
                 </li>
                 <li className="flex justify-between gap-4">
@@ -56,6 +56,15 @@ export default function KontaktPage() {
                 <li className="flex justify-between gap-4">
                   <span className="text-ink-mute">Signal</span>
                   <span className="text-ink-soft">På forespørsel</span>
+                </li>
+                <li className="flex justify-between gap-4 border-t border-rule pt-3 mt-1">
+                  <span className="text-amber font-semibold">
+                    Sensitive tips
+                  </span>
+                  <span className="text-ink-soft text-right">
+                    Bruk Signal eller kryptert e-post. Kilders identitet
+                    beskyttes etter Vær Varsom 3.4.
+                  </span>
                 </li>
                 <li className="flex justify-between gap-4">
                   <span className="text-ink-mute">Org.nr</span>
@@ -69,25 +78,25 @@ export default function KontaktPage() {
               <p className="smallcaps text-ink-mute mb-3">Erfaring</p>
               <ul className="tick-list font-sans text-sm">
                 <li>
-                  <span className="text-amber font-mono">01</span>
+                  <span className="text-amber font-mono">1</span>
                   <span className="text-ink-soft">
                     Undersøkende reportasje innen arbeidsliv, krim og samfunn.
                   </span>
                 </li>
                 <li>
-                  <span className="text-amber font-mono">02</span>
+                  <span className="text-amber font-mono">2</span>
                   <span className="text-ink-soft">
                     Reportasje fra felt – ser stedene og møter menneskene.
                   </span>
                 </li>
                 <li>
-                  <span className="text-amber font-mono">03</span>
+                  <span className="text-amber font-mono">3</span>
                   <span className="text-ink-soft">
                     Bilder og tekst levert som én helhet.
                   </span>
                 </li>
                 <li>
-                  <span className="text-amber font-mono">04</span>
+                  <span className="text-amber font-mono">4</span>
                   <span className="text-ink-soft">
                     Ekstern redaksjonsressurs i kortere eller lengre perioder.
                   </span>
@@ -99,7 +108,7 @@ export default function KontaktPage() {
 
         <div className="lg:col-span-7">
           <Reveal>
-            <div className="border border-rule p-8 md:p-10 bg-bg-elev">
+            <div className="tile-hover-amber border border-rule p-8 md:p-10 bg-bg-elev">
               <p className="smallcaps text-amber mb-3">Skriv en melding</p>
               <h2 className="font-serif text-3xl leading-tight">
                 Hva handler det om?
@@ -108,10 +117,10 @@ export default function KontaktPage() {
                 Skjemaet åpner en e-post i din vanlige klient. Du står fritt
                 til å sende direkte til{" "}
                 <a
-                  href="mailto:kaspar@knudsen.no"
+                  href="mailto:post@kasparknudsen.no"
                   className="text-amber glow"
                 >
-                  kaspar@knudsen.no
+                  post@kasparknudsen.no
                 </a>{" "}
                 hvis du foretrekker det.
               </p>

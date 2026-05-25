@@ -1,3 +1,5 @@
+import type { TagId } from "./tags";
+
 export type Sak = {
   slug: string;
   tittel: string;
@@ -12,7 +14,7 @@ export type Sak = {
   bilder: { src: string; tekst: string }[];
   brodtekst: string[];
   pullquote?: string;
-  emneknagger: string[];
+  emneknagger: TagId[];
 };
 
 export const saker: Sak[] = [
@@ -51,7 +53,7 @@ export const saker: Sak[] = [
       "– Jeg har lært meg å ikke bli for optimistisk. Men nå ser jeg en åpning. Vi har grunn til optimisme, sier han.",
     ],
     pullquote: "",
-    emneknagger: ["Fiskeri", "Gravejournalistikk", "Senja"],
+    emneknagger: ["fiskeri", "gravejournalistikk", "senja"],
   },
   {
     slug: "drama-pa-sotra",
@@ -89,7 +91,7 @@ export const saker: Sak[] = [
       "Han la på, kledde på seg, og gikk ut for å se hva som foregikk. Det skulle bli en natt han ikke kommer til å glemme.",
     ],
     pullquote: "",
-    emneknagger: ["Krim", "Bergen", "Reportasje"],
+    emneknagger: ["krim", "bergen", "reportasje"],
   },
   {
     slug: "gratisbutikk-flyktninger",
@@ -125,7 +127,7 @@ export const saker: Sak[] = [
       "– Det er trist å måtte kaste så mye. Vi vil heller ha færre, men brukbare ting, sier Novosad.",
     ],
     pullquote: "",
-    emneknagger: ["Samfunn", "Bergen", "Featurereportasje"],
+    emneknagger: ["samfunn", "bergen", "featurereportasje"],
   },
 ];
 

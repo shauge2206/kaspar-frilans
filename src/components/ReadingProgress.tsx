@@ -27,7 +27,11 @@ export function ReadingProgress() {
     >
       <div
         className="h-full bg-amber transition-[width] duration-150"
-        style={{ width: `${progress}%`, boxShadow: "0 0 12px rgba(214,165,68,0.5)" }}
+        style={{
+          width: `${progress}%`,
+          boxShadow:
+            "0 0 12px color-mix(in oklab, var(--amber) 50%, transparent)",
+        }}
       />
     </div>
   );

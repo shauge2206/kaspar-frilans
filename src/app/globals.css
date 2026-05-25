@@ -1,19 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0e0e0e;
-  --bg-elev: #161513;
-  --bg-elev-2: #1c1a17;
-  --ink: #ece4d4;
-  --ink-soft: #cfc6b4;
-  --ink-mute: #7d756a;
-  --rule: #2a2723;
-  --amber: #d6a544;
-  --amber-soft: #b78a2f;
-  --warn: #c97a4a;
-}
-
-[data-theme="light"] {
   --bg: #f5efe2;
   --bg-elev: #ece5d3;
   --bg-elev-2: #e2dac4;
@@ -21,8 +8,8 @@
   --ink-soft: #34302a;
   --ink-mute: #6b6458;
   --rule: #d2c9b3;
-  --amber: #a87515;
-  --amber-soft: #8a5e0f;
+  --amber: #7a5210;
+  --amber-soft: #5e3f0b;
   --warn: #a04a1f;
 }
 
@@ -110,14 +97,27 @@ a.glow,
 }
 .reveal {
   opacity: 0;
+  transform: translateY(14px);
 }
 .reveal.visible {
   animation: fadeUp 720ms ease-out forwards;
 }
 
+/* Subtle amber dissolve on tile hover. Mixes the amber accent into the tile's
+   surface so light themes get a warm tint without becoming saturated. */
+.tile-hover-amber {
+  transition:
+    background-color 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tile-hover-amber:hover {
+  background-color: color-mix(in oklab, var(--amber) 8%, var(--bg-elev));
+  border-color: color-mix(in oklab, var(--amber) 30%, var(--rule));
+}
+
 .prose-longform {
-  font-size: 1.15rem;
-  line-height: 1.85;
+  font-size: clamp(1.25rem, 0.7vw + 1.1rem, 1.45rem);
+  line-height: 1.7;
   color: var(--ink);
 }
 .prose-longform p {
@@ -125,10 +125,10 @@ a.glow,
 }
 .prose-longform p:first-of-type::first-letter {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 4.6rem;
-  line-height: 0.92;
+  font-size: 7.2rem;
+  line-height: 0.88;
   float: left;
-  padding: 0.35rem 0.6rem 0 0;
+  padding: 0.45rem 0.85rem 0 0;
   color: var(--amber);
   font-weight: 600;
 }
@@ -139,20 +139,30 @@ a.glow,
   font-size: 1.6rem;
   line-height: 1.5;
   color: var(--ink-soft);
-  padding: 2rem 0 2rem 1.6rem;
+  padding: 3.5rem 0 3.5rem 1.6rem;
   border-left: 2px solid var(--amber);
   margin: 2.5rem 0;
   position: relative;
 }
-.pullquote::before {
-  content: "\201C";
+.pullquote::before,
+.pullquote::after {
   position: absolute;
-  left: -0.6rem;
-  top: -1.4rem;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 5rem;
+  line-height: 1;
   color: var(--amber);
   opacity: 0.45;
-  font-family: var(--font-serif), Georgia, serif;
+  font-style: normal;
+}
+.pullquote::before {
+  content: "\201C";
+  left: 0.4rem;
+  top: -0.4rem;
+}
+.pullquote::after {
+  content: "\201D";
+  right: 0.4rem;
+  bottom: -1.6rem;
 }
 
 .scrollbar-thin::-webkit-scrollbar {
@@ -160,16 +170,6 @@ a.glow,
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
   background: var(--rule);
-}
-
-.noise {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
-  z-index: 0;
 }
 
 .tick-list li {
@@ -182,18 +182,56 @@ a.glow,
   border-bottom: 0;
 }
 
-.toc-link {
-  display: block;
-  padding: 0.35rem 0;
-  color: var(--ink-mute);
-  border-left: 1px solid var(--rule);
-  padding-left: 0.85rem;
-  transition: color 200ms ease, border-color 200ms ease;
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+  z-index: 0;
 }
-.toc-link:hover {
-  color: var(--ink-soft);
+
+/* Keyboard focus indicator. Tab-only users get a clear amber ring on every
+   interactive element; mouse users don't (focus-visible omits them). */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
-.toc-link.active {
-  color: var(--amber);
-  border-left-color: var(--amber);
+
+/* Respect prefers-reduced-motion. Disables Reveal fadeUp, ReadingProgress
+   width transition, tile-hover-amber transitions, and any other animated
+   property site-wide for motion-sensitive users. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
+
+/* Visually-hidden skip-to-content link. Becomes visible only when focused. */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 12px 20px;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: top 200ms ease;
+}
+.skip-to-content:focus,
+.skip-to-content:focus-visible {
+  top: 1rem;
+}
+

@@ -1,216 +1,160 @@
-import Link from "next/link";
-import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { hentSak, saker } from "@/lib/saker";
-import { ArticleToc } from "@/components/ArticleToc";
-import { ListenButton } from "@/components/ListenButton";
-import { ShareLinks } from "@/components/ShareLinks";
+import Image from "next/image";
+import Link from "next/link";
+import { saker, hentSak } from "@/lib/saker";
+import { tagLabel } from "@/lib/tags";
 import { Reveal } from "@/components/Reveal";
+import { ArticleCard } from "@/components/ArticleCard";
 
 export function generateStaticParams() {
-  return saker.map((sak) => ({ slug: sak.slug }));
+  return saker.map((s) => ({ slug: s.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const { slug } = await props.params;
   const sak = hentSak(slug);
   if (!sak) return {};
   return {
     title: `${sak.tittel} – Kaspar Knudsen`,
     description: sak.ingress,
+    openGraph: {
+      title: sak.tittel,
+      description: sak.ingress,
+      images: [{ url: sak.hovedbilde }],
+    },
   };
 }
 
-export default async function SakDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export default async function SakPage(props: Props) {
+  const { slug } = await props.params;
   const sak = hentSak(slug);
   if (!sak) notFound();
 
-  const sectionIds = {
-    ingress: "ingress",
-    hovedbilde: "hovedbilde",
-    brodtekst: "brodtekst",
-    sitat: "sitat",
-    kolofon: "kolofon",
-  };
-
-  const tocItems = [
-    { id: sectionIds.ingress, label: "Ingress" },
-    { id: sectionIds.hovedbilde, label: "Hovedbilde" },
-    { id: sectionIds.brodtekst, label: "Reportasjen" },
-    ...(sak.pullquote ? [{ id: sectionIds.sitat, label: "Sitat" }] : []),
-    { id: sectionIds.kolofon, label: "Kolofon" },
-  ];
-
-  const indeks = saker.findIndex((s) => s.slug === sak.slug);
-  const neste = saker[(indeks + 1) % saker.length];
+  const others = saker.filter((s) => s.slug !== slug);
 
   return (
-    <article className="relative">
-      <header className="mx-auto max-w-6xl px-6 pt-16 md:pt-24 pb-10">
-        <Link
-          href="/saker"
-          className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute hover:text-amber transition"
-        >
-          ← Tilbake til arkivet
-        </Link>
-        <div className="mt-8 flex flex-wrap gap-2 items-center">
-          <span className="smallcaps text-amber border border-amber/40 px-2 py-0.5 rounded-full">
-            {sak.publikasjon}
-          </span>
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-            {sak.dato}
-          </span>
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-            ·
-          </span>
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-amber">
-            {sak.lesetidMinutter} min lesing
-          </span>
+    <>
+      {/* HERO IMAGE */}
+      <section className="relative px-4 pt-6 md:px-8 md:pt-8">
+        <div className="mx-auto max-w-[960px]">
+          <Reveal>
+            <div className="relative aspect-[16/9] overflow-hidden rounded-[28px] border border-rule bg-bg-elev">
+              <Image
+                src={sak.hovedbilde}
+                alt={sak.bilder[0]?.tekst ?? sak.bildetekst}
+                fill
+                priority
+                sizes="(min-width: 960px) 920px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
         </div>
-        <h1 className="mt-6 font-serif text-[clamp(2.2rem,5.4vw,4.6rem)] leading-[1.05] tracking-tight max-w-4xl">
-          {sak.tittel}
-        </h1>
-        <p
-          id={sectionIds.ingress}
-          className="mt-8 max-w-2xl font-serif italic text-ink-soft text-xl md:text-2xl leading-relaxed scroll-mt-24"
-        >
-          {sak.ingress}
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-4 justify-between">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-            Av Kaspar Knudsen · Foto: {sak.fotograf}
-          </p>
-          <ListenButton minutes={sak.lesetidMinutter} />
-        </div>
-      </header>
-
-      <section id={sectionIds.hovedbilde} className="mx-auto max-w-6xl px-6 scroll-mt-24">
-        <figure>
-          <div className="relative aspect-[16/10] overflow-hidden border border-rule">
-            <Image
-              src={sak.hovedbilde}
-              alt={sak.bildetekst}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="mt-3 font-mono text-xs uppercase tracking-[0.15em] text-ink-mute max-w-3xl">
-            {sak.bildetekst}{" "}
-            <span className="text-ink-mute/70">
-              (Foto: {sak.fotograf})
-            </span>
-          </figcaption>
-        </figure>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 mt-20 grid lg:grid-cols-12 gap-12">
-        <aside className="hidden lg:block lg:col-span-3">
-          <div className="sticky top-28 space-y-10">
-            <ArticleToc items={tocItems} />
-            <div>
-              <p className="smallcaps text-ink-mute mb-3">Byline</p>
-              <p className="font-serif text-lg leading-snug">Kaspar Knudsen</p>
-              <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-                USF Verftet · Bergen
+      {/* HEADER */}
+      <section className="relative px-6 pt-12 pb-8 md:px-10 md:pt-20">
+        <div className="mx-auto max-w-[820px]">
+          <Reveal>
+            <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-ink-mute">
+              <Link
+                href="/saker"
+                className="rounded-full border border-rule bg-bg-elev px-3 py-1.5 text-ink transition-colors hover:bg-bg-elev-2"
+              >
+                ← Saker
+              </Link>
+              {sak.emneknagger[0] ? (
+                <span className="text-amber">{tagLabel(sak.emneknagger[0])}</span>
+              ) : null}
+              <span>{sak.publikasjon}</span>
+              <time dateTime={sak.datoIso}>{sak.dato}</time>
+              <span className="text-amber">
+                {sak.lesetidMinutter} min lesing
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={50}>
+            <h1 className="mt-8 font-serif text-[clamp(2.2rem,3.6vw+1rem,4.6rem)] leading-[1.05] tracking-[-0.02em] text-ink">
+              {sak.tittel}
+            </h1>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <p className="mt-6 max-w-[60ch] font-serif italic text-[clamp(1.15rem,1vw+1rem,1.5rem)] font-light leading-[1.45] text-ink-soft">
+              {sak.ingress}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* META + BILDETEKST */}
+      <section className="relative px-6 pb-12 md:px-10">
+        <div className="mx-auto max-w-[820px]">
+          <Reveal>
+            <div className="flex flex-col gap-2 border-y border-rule py-5 md:flex-row md:items-center md:justify-between">
+              <p className="text-xs leading-relaxed text-ink-mute md:max-w-[55ch]">
+                {sak.bildetekst}
+              </p>
+              <p className="font-mono text-[0.66rem] uppercase tracking-[0.2em] text-ink-mute">
+                Foto: {sak.fotograf}
               </p>
             </div>
-            <ShareLinks tittel={sak.tittel} />
-          </div>
-        </aside>
-
-        <div className="lg:col-span-9 lg:pl-6 lg:border-l lg:border-rule">
-          <div
-            id={sectionIds.brodtekst}
-            className="prose-longform max-w-[640px] mx-auto scroll-mt-24"
-          >
-            {sak.brodtekst.slice(0, 2).map((p, i) => (
-              <Reveal key={i}>
-                <p>{p}</p>
-              </Reveal>
-            ))}
-
-            {sak.pullquote ? (
-              <Reveal>
-                <blockquote
-                  id={sectionIds.sitat}
-                  className="pullquote scroll-mt-24"
-                >
-                  {sak.pullquote}
-                </blockquote>
-              </Reveal>
-            ) : null}
-
-            {sak.brodtekst.slice(2).map((p, i) => (
-              <Reveal key={`b-${i}`}>
-                <p>{p}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          <section
-            id={sectionIds.kolofon}
-            className="mt-24 max-w-[640px] mx-auto scroll-mt-24"
-          >
-            <div className="border-t border-rule pt-10">
-              <p className="smallcaps text-ink-mute mb-3">Kolofon</p>
-              <dl className="grid grid-cols-3 gap-y-3 font-mono text-xs uppercase tracking-[0.15em] text-ink-soft">
-                <dt className="text-ink-mute">Publikasjon</dt>
-                <dd className="col-span-2">{sak.publikasjon}</dd>
-                <dt className="text-ink-mute">Publisert</dt>
-                <dd className="col-span-2">
-                  <time dateTime={sak.datoIso}>{sak.dato}</time>
-                </dd>
-                <dt className="text-ink-mute">Forfatter</dt>
-                <dd className="col-span-2">Kaspar Knudsen</dd>
-                <dt className="text-ink-mute">Foto</dt>
-                <dd className="col-span-2">{sak.fotograf}</dd>
-                <dt className="text-ink-mute">Lesetid</dt>
-                <dd className="col-span-2">{sak.lesetidMinutter} minutter</dd>
-                <dt className="text-ink-mute">Emner</dt>
-                <dd className="col-span-2">{sak.emneknagger.join(", ")}</dd>
-              </dl>
-            </div>
-          </section>
+          </Reveal>
         </div>
-      </div>
-
-      <section className="mx-auto max-w-6xl px-6 mt-32 mb-10 grid md:grid-cols-2 gap-6">
-        <Link
-          href={`/saker/${neste.slug}`}
-          className="group border border-rule p-8 hover:bg-bg-elev/40 transition-colors block"
-        >
-          <p className="smallcaps text-ink-mute mb-3">Neste sak</p>
-          <h3 className="font-serif text-2xl leading-tight group-hover:text-amber transition-colors">
-            {neste.tittel}
-          </h3>
-          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-            {neste.publikasjon} · {neste.dato} · {neste.lesetidMinutter} min lesing
-          </p>
-        </Link>
-        <Link
-          href="/kontakt"
-          className="group border border-rule p-8 hover:bg-bg-elev/40 transition-colors block"
-        >
-          <p className="smallcaps text-amber mb-3">Ta kontakt</p>
-          <h3 className="font-serif text-2xl leading-tight group-hover:text-amber transition-colors">
-            Skriv til Kaspar.
-          </h3>
-          <p className="mt-3 text-ink-soft leading-relaxed">
-            For oppdrag, reportasjer eller ekstern redaksjonsressurs.
-          </p>
-        </Link>
       </section>
-    </article>
+
+      {/* BODY */}
+      <section className="relative px-6 pb-16 md:px-10">
+        <div className="mx-auto max-w-[900px]">
+          <Reveal>
+            <article className="prose-longform">
+              {sak.brodtekst.slice(0, 2).map((p, i) => (
+                <p key={`a-${i}`}>{p}</p>
+              ))}
+              {sak.pullquote ? (
+                <blockquote className="pullquote">{sak.pullquote}</blockquote>
+              ) : null}
+              {sak.brodtekst.slice(2).map((p, i) => (
+                <p key={`b-${i}`}>{p}</p>
+              ))}
+            </article>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FOOTER NAV */}
+      <section className="relative px-6 pb-32 md:px-10">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <div className="mb-10 flex items-end justify-between gap-6 border-t border-rule pt-10">
+              <div>
+                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-ink-mute">
+                  Andre saker
+                </p>
+                <h2 className="mt-2 font-serif text-[clamp(1.6rem,2vw+1rem,2.6rem)] leading-[1.05] tracking-tight text-ink">
+                  Bla videre
+                </h2>
+              </div>
+              <Link
+                href="/saker"
+                className="font-mono text-[0.78rem] uppercase tracking-[0.18em] text-ink hover:text-amber transition-colors"
+              >
+                Alle saker →
+              </Link>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {others.map((s) => (
+              <ArticleCard key={s.slug} sak={s} size="md" />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

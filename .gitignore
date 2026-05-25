@@ -42,3 +42,6 @@ next-env.d.ts
 
 # build briefs (local only)
 .prompt.md
+
+# impeccable skill local artefacts
+.impeccable/

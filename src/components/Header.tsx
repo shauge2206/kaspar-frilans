@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
   { href: "/", label: "Forside" },
   { href: "/saker", label: "Saker" },
   { href: "/om", label: "Om" },
+  { href: "/oppdrag", label: "Oppdrag" },
+  { href: "/presse", label: "Presse" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -34,8 +35,6 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          <span className="hidden sm:inline-block w-px h-5 bg-rule mx-2" />
-          <ThemeToggle />
         </nav>
       </div>
     </header>

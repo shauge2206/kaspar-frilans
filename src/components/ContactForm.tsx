@@ -22,7 +22,7 @@ export function ContactForm() {
     const body = encodeURIComponent(
       `${melding}\n\n– ${navn}\n${epost}`,
     );
-    window.location.href = `mailto:kaspar@knudsen.no?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:post@kasparknudsen.no?subject=${subject}&body=${body}`;
   }
 
   const inputCls =
@@ -107,7 +107,7 @@ export function ContactForm() {
         </p>
         <button
           type="submit"
-          className="font-sans text-sm bg-amber text-[#0e0e0e] px-6 py-3 rounded-full hover:brightness-110 transition inline-flex items-center gap-2"
+          className="font-sans text-sm bg-amber text-bg px-6 py-3.5 rounded-full hover:brightness-110 transition inline-flex items-center gap-2"
         >
           Send melding
           <span aria-hidden>↗</span>

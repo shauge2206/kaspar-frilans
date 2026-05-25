@@ -1,6 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
+// Re-fires the fadeUp animation every time the element re-enters the viewport.
+// When the element scrolls out, `visible` is cleared and the CSS animation is
+// removed; re-entering re-adds the class, replaying the animation.
 export function Reveal({
   children,
   className = "",
@@ -16,19 +19,28 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            setTimeout(() => setVisible(true), delay);
-            obs.unobserve(el);
+            timeoutId = setTimeout(() => setVisible(true), delay);
+          } else {
+            if (timeoutId) {
+              clearTimeout(timeoutId);
+              timeoutId = null;
+            }
+            setVisible(false);
           }
         });
       },
       { threshold: 0.12, rootMargin: "0px 0px -10% 0px" },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [delay]);
 
   return (
