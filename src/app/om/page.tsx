@@ -133,6 +133,25 @@ export default function OmPage() {
                 </text>
               </svg>
             </div>
+
+            {/* TILGJENGELIGHET, status line under the portrait. Pulsing
+                amber dot signals an active "available" state. */}
+            <div className="mb-7 border-t border-rule pt-5">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span
+                  aria-hidden
+                  className="relative inline-flex w-2 h-2"
+                >
+                  <span className="absolute inset-0 inline-flex rounded-full bg-amber opacity-75 animate-ping" />
+                  <span className="relative inline-flex w-2 h-2 rounded-full bg-amber" />
+                </span>
+                <span className="smallcaps text-amber text-[0.7rem]">Tilgjengelig fra</span>
+                <span className="font-serif text-base text-ink leading-snug">
+                  våren 2026
+                </span>
+              </div>
+            </div>
+
             <p className="smallcaps text-ink-mute mb-3">Kort fortalt</p>
             <ul className="font-sans text-sm space-y-3 text-ink-soft">
               <li>15+ år i mediebransjen i Bergen</li>
@@ -195,24 +214,6 @@ export default function OmPage() {
               Liste oppdateres etter avtale.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* TILGJENGELIGHET, status line set manually. Defuses the
-          "tar han oppdrag?"-question without committing to dates. */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="border-t border-rule pt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2">
-          <span
-            aria-hidden
-            className="inline-block w-2 h-2 rounded-full bg-amber"
-          />
-          <span className="smallcaps text-amber">Tilgjengelig fra</span>
-          <span className="font-serif text-xl text-ink">
-            våren 2026
-          </span>
-          <span className="font-sans text-sm text-ink-mute">
-            Enkeltoppdrag, periodejobbing og innsalg av ideer.
-          </span>
         </div>
       </section>
 
