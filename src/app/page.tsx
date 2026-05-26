@@ -181,58 +181,135 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="space-y-2">
-          {saker.map((sak, i) => (
-            <Reveal key={sak.slug} delay={i * 80}>
+        <div className="grid gap-6 md:grid-cols-12 md:gap-8">
+          {/* Featured (large) */}
+          <Reveal delay={0} className="md:col-span-7">
+            <Link
+              href={`/saker/${saker[0].slug}`}
+              className="group relative block aspect-[3/2] overflow-hidden border border-rule"
+            >
+              <Image
+                src={saker[0].hovedbilde}
+                alt={saker[0].bildetekst}
+                fill
+                sizes="(max-width: 768px) 100vw, 58vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                priority
+              />
+              {saker[0].emneknagger[0] && (
+                <span className="absolute top-5 left-5 md:top-6 md:left-6 z-10 bg-bg text-ink font-mono text-[11px] uppercase tracking-[0.16em] px-3.5 py-1.5 rounded-full">
+                  {tagLabel(saker[0].emneknagger[0])}
+                </span>
+              )}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-3/5 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.88) 100%)",
+                }}
+              />
+              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/75 mb-3">
+                  {saker[0].publikasjon} · {saker[0].dato} ·{" "}
+                  <span className="text-amber">{saker[0].lesetidMinutter} min lesing</span>
+                </p>
+                <h3 className="font-serif text-2xl md:text-3xl leading-tight text-white">
+                  {saker[0].tittel}
+                </h3>
+              </div>
+            </Link>
+          </Reveal>
+
+          {/* Medium tile 1 (top-right) */}
+          <Reveal delay={80} className="md:col-span-5 md:pt-10">
+            <Link
+              href={`/saker/${saker[1].slug}`}
+              className="group relative block aspect-[4/3] overflow-hidden border border-rule"
+            >
+              <Image
+                src={saker[1].hovedbilde}
+                alt={saker[1].bildetekst}
+                fill
+                sizes="(max-width: 768px) 100vw, 42vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+              {saker[1].emneknagger[0] && (
+                <span className="absolute top-4 left-4 md:top-5 md:left-5 z-10 bg-bg text-ink font-mono text-[11px] uppercase tracking-[0.16em] px-3.5 py-1.5 rounded-full">
+                  {tagLabel(saker[1].emneknagger[0])}
+                </span>
+              )}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-3/5 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.88) 100%)",
+                }}
+              />
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/75 mb-2">
+                  {saker[1].publikasjon} · {saker[1].dato}
+                </p>
+                <h3 className="font-serif text-xl md:text-2xl leading-tight text-white">
+                  {saker[1].tittel}
+                </h3>
+              </div>
+            </Link>
+          </Reveal>
+
+          {/* Medium tile 2 (bottom-left, offset) */}
+          <Reveal delay={160} className="md:col-span-5 md:col-start-3">
+            <Link
+              href={`/saker/${saker[2].slug}`}
+              className="group relative block aspect-[4/3] overflow-hidden border border-rule"
+            >
+              <Image
+                src={saker[2].hovedbilde}
+                alt={saker[2].bildetekst}
+                fill
+                sizes="(max-width: 768px) 100vw, 42vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+              {saker[2].emneknagger[0] && (
+                <span className="absolute top-4 left-4 md:top-5 md:left-5 z-10 bg-bg text-ink font-mono text-[11px] uppercase tracking-[0.16em] px-3.5 py-1.5 rounded-full">
+                  {tagLabel(saker[2].emneknagger[0])}
+                </span>
+              )}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-3/5 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.88) 100%)",
+                }}
+              />
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/75 mb-2">
+                  {saker[2].publikasjon} · {saker[2].dato}
+                </p>
+                <h3 className="font-serif text-xl md:text-2xl leading-tight text-white">
+                  {saker[2].tittel}
+                </h3>
+              </div>
+            </Link>
+          </Reveal>
+
+          {/* Text + CTA block (bottom-right) */}
+          <Reveal delay={240} className="col-span-12 md:col-span-5">
+            <div className="flex h-full flex-col justify-end pt-2 pb-4 md:pt-0">
+              <p className="max-w-sm font-serif text-[1.2rem] md:text-[1.4rem] leading-snug text-ink-soft">
+                Kritisk og undersøkende journalistikk innenfor arbeidsliv,
+                krim og flere områder.
+              </p>
               <Link
-                href={`/saker/${sak.slug}`}
-                className="group grid md:grid-cols-12 gap-6 items-start py-8 border-t border-rule hover:bg-bg-elev/40 transition-colors px-2 -mx-2 rounded-sm"
+                href="/saker"
+                className="mt-5 md:mt-6 w-max font-mono text-[0.78rem] uppercase tracking-[0.18em] text-amber hover:text-ink transition-colors glow"
               >
-                <div className="md:col-span-1 font-mono text-xs uppercase tracking-[0.18em] text-ink-mute pt-1">
-                  №&nbsp;{i + 1}
-                </div>
-                <div className="md:col-span-7">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute mb-2">
-                    {sak.publikasjon} · {sak.dato} ·{" "}
-                    <span className="text-amber">{sak.lesetidMinutter} min lesing</span>
-                  </p>
-                  <h3 className="font-serif text-2xl md:text-3xl leading-tight text-ink group-hover:text-amber transition-colors">
-                    {sak.tittel}
-                  </h3>
-                  <p className="mt-3 text-ink-soft leading-relaxed max-w-2xl">
-                    {sak.ingress}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {sak.emneknagger.map((tag) => (
-                      <span
-                        key={tag}
-                        className="smallcaps text-ink-mute border border-rule px-2 py-0.5 rounded-full"
-                      >
-                        {tagLabel(tag)}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="md:col-span-4">
-                  <div className="relative aspect-[4/3] overflow-hidden border border-rule">
-                    <Image
-                      src={sak.hovedbilde}
-                      alt={sak.bildetekst}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `linear-gradient(180deg, transparent 50%, color-mix(in oklab, var(--ink) 45%, transparent) 100%)`,
-                      }}
-                    />
-                  </div>
-                </div>
+                Bla i arkivet →
               </Link>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 

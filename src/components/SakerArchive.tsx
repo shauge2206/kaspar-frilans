@@ -165,23 +165,23 @@ export function SakerArchive({ saker }: Props) {
               >
                 <Link
                   href={`/saker/${sak.slug}`}
-                  className="group grid md:grid-cols-12 gap-6 items-start py-10 border-b border-rule hover:bg-bg-elev/40 transition-colors px-2 -mx-2"
+                  className="group grid lg:grid-cols-12 gap-6 items-start py-10 border-b border-rule hover:bg-bg-elev/40 transition-colors px-2 -mx-2"
                 >
-                  <div className="md:col-span-1 font-mono text-xs uppercase tracking-[0.18em] text-ink-mute pt-1">
+                  <div className="lg:col-span-1 font-mono text-xs uppercase tracking-[0.18em] text-ink-mute pt-1">
                     {i + 1}
                   </div>
-                  <div className="md:col-span-4">
-                    <div className="relative aspect-[4/5] overflow-hidden border border-rule">
+                  <div className="lg:col-span-5">
+                    <div className="relative aspect-[3/2] overflow-hidden border border-rule bg-bg-elev">
                       <Image
                         src={sak.hovedbilde}
                         alt={sak.bildetekst}
                         fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        sizes="(max-width: 1024px) 100vw, 42vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                       />
                     </div>
                   </div>
-                  <div className="md:col-span-7">
+                  <div className="lg:col-span-6">
                     <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute mb-3">
                       {sak.publikasjon} · {sak.dato}
                     </p>

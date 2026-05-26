@@ -90,24 +90,14 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href="https://x.com/kasparknudsen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glow text-ink-soft"
-              >
+              <span className="text-ink-soft cursor-default">
                 X
-              </a>
+              </span>
             </li>
             <li>
-              <a
-                href="https://instagram.com/kasparknudsen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glow text-ink-soft"
-              >
+              <span className="text-ink-soft cursor-default">
                 Instagram
-              </a>
+              </span>
             </li>
           </ul>
         </div>

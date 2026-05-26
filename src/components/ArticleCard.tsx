@@ -27,7 +27,7 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
       aria-label={`${sak.tittel} – ${sak.publikasjon}, ${sak.dato}`}
     >
       <div
-        className={`relative ${aspect[size]} overflow-hidden rounded-[18px] border border-rule bg-bg-elev transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1`}
+        className={`relative ${aspect[size]} overflow-hidden border border-rule bg-bg-elev transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1`}
       >
         <Image
           src={sak.hovedbilde}
@@ -36,7 +36,7 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
           sizes="(min-width: 1024px) 600px, 100vw"
           className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
         />
-        <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-[color:var(--bg)]/85 via-[color:var(--bg)]/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
         {tag ? (
           <div className="absolute left-4 top-4">
             <span className="rounded-full border border-amber/40 bg-bg/80 px-2.5 py-1 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-amber backdrop-blur-sm">
@@ -45,10 +45,10 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
           </div>
         ) : null}
         <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-          <p className="font-mono text-[0.66rem] uppercase tracking-[0.2em] text-ink-soft">
+          <p className="font-mono text-[0.66rem] uppercase tracking-[0.2em] text-white/75">
             {sak.publikasjon} · {sak.dato}
           </p>
-          <h3 className="mt-1.5 max-w-[28ch] font-serif text-[clamp(1.15rem,1rem+0.6vw,1.55rem)] leading-[1.18] tracking-tight text-ink transition-colors duration-500 group-hover:text-amber">
+          <h3 className="mt-1.5 max-w-[28ch] font-serif text-[clamp(1.15rem,1rem+0.6vw,1.55rem)] leading-[1.18] tracking-tight text-white">
             {sak.tittel}
           </h3>
         </div>

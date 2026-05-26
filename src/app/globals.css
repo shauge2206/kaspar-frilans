@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Carousel: hide scrollbars while preserving wheel/touch scrolling */
+.carousel-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --bg: #f5efe2;
   --bg-elev: #ece5d3;

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { saker, hentSak } from "@/lib/saker";
 import { tagLabel } from "@/lib/tags";
 import { Reveal } from "@/components/Reveal";
-import { ArticleCard } from "@/components/ArticleCard";
+import { RelatedCarousel } from "@/components/RelatedCarousel";
 
 export function generateStaticParams() {
   return saker.map((s) => ({ slug: s.slug }));
@@ -33,7 +33,9 @@ export default async function SakPage(props: Props) {
   const sak = hentSak(slug);
   if (!sak) notFound();
 
-  const others = saker.filter((s) => s.slug !== slug);
+  // Carousel shows the full archive (including the current sak) so the loop has
+  // real prev / active / next neighbours. Users land on the current sak via the
+  // detail page anyway; seeing it in the carousel preserves orientation.
 
   return (
     <>
@@ -41,7 +43,7 @@ export default async function SakPage(props: Props) {
       <section className="relative px-4 pt-6 md:px-8 md:pt-8">
         <div className="mx-auto max-w-[960px]">
           <Reveal>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-[28px] border border-rule bg-bg-elev">
+            <div className="relative aspect-[16/9] overflow-hidden border border-rule bg-bg-elev">
               <Image
                 src={sak.hovedbilde}
                 alt={sak.bilder[0]?.tekst ?? sak.bildetekst}
@@ -148,11 +150,7 @@ export default async function SakPage(props: Props) {
             </div>
           </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {others.map((s) => (
-              <ArticleCard key={s.slug} sak={s} size="md" />
-            ))}
-          </div>
+          <RelatedCarousel items={saker} />
         </div>
       </section>
     </>
