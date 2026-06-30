@@ -2,11 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+} from "motion/react";
 
 const links = [
   { href: "/saker", label: "Saker" },
+  { href: "/oppdrag", label: "Oppdrag" },
   { href: "/om", label: "Om" },
+  { href: "/presse", label: "Presse" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -14,16 +21,12 @@ export function SiteHeader() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
   const blur = useTransform(scrollY, [0, 120], [4, 14]);
-  const bg = useTransform(
-    scrollY,
-    [0, 120],
-    ["rgba(250, 246, 240, 0.55)", "rgba(250, 246, 240, 0.78)"],
-  );
-  const border = useTransform(
-    scrollY,
-    [0, 120],
-    ["rgba(230, 220, 203, 0)", "rgba(230, 220, 203, 0.7)"],
-  );
+  // Color comes from the active theme (--header-rgb / --header-border-rgb);
+  // scroll only drives the alpha so the header tints to match each theme.
+  const bgAlpha = useTransform(scrollY, [0, 120], [0.55, 0.78]);
+  const borderAlpha = useTransform(scrollY, [0, 120], [0, 0.7]);
+  const bg = useMotionTemplate`rgb(var(--header-rgb) / ${bgAlpha})`;
+  const border = useMotionTemplate`rgb(var(--header-border-rgb) / ${borderAlpha})`;
   const backdropFilter = useTransform(blur, (v) => `blur(${v}px) saturate(1.1)`);
 
   return (

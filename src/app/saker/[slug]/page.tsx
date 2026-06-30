@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
-import { saker, getSak } from "@/lib/saker";
+import { saker, hentSak } from "@/lib/saker";
+import { tagLabel } from "@/lib/tags";
 import { Reveal } from "@/components/reveal";
-import { ScrollProgress } from "@/components/scroll-progress";
 import { ParallaxImage } from "@/components/parallax-image";
-import { ArticleCard } from "@/components/article-card";
+import { RelatedCarousel } from "@/components/related-carousel";
 
 export function generateStaticParams() {
   return saker.map((s) => ({ slug: s.slug }));
@@ -14,14 +13,12 @@ export function generateStaticParams() {
 
 type Props = { params: Promise<{ slug: string }> };
 
-export async function generateMetadata(
-  props: Props,
-): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
   const { slug } = await props.params;
-  const sak = getSak(slug);
+  const sak = hentSak(slug);
   if (!sak) return {};
   return {
-    title: sak.tittel,
+    title: `${sak.tittel} – Kaspar Knudsen`,
     description: sak.ingress,
     openGraph: {
       title: sak.tittel,
@@ -31,30 +28,22 @@ export async function generateMetadata(
   };
 }
 
-const sectionLabel = {
-  GRAVING: "Graving",
-  REPORTASJE: "Reportasje",
-  FEATURE: "Feature",
-} as const;
-
 export default async function SakPage(props: Props) {
   const { slug } = await props.params;
-  const sak = getSak(slug);
+  const sak = hentSak(slug);
   if (!sak) notFound();
 
-  const others = saker.filter((s) => s.slug !== slug);
+  const primaryTag = sak.emneknagger[0];
 
   return (
     <>
-      <ScrollProgress />
-
       {/* HERO IMAGE */}
       <section className="relative px-4 pt-6 md:px-8 md:pt-8">
         <div className="mx-auto max-w-[960px]">
           <Reveal y={20}>
             <ParallaxImage
               src={sak.hovedbilde}
-              alt={sak.bilder[0]?.alt ?? sak.tittel}
+              alt={sak.bilder[0]?.tekst ?? sak.tittel}
               priority
               className="aspect-[16/9] rounded-[28px] ring-1 ring-line/70 shadow-soft"
               offset={60}
@@ -68,17 +57,21 @@ export default async function SakPage(props: Props) {
       <section className="relative px-6 pt-12 pb-8 md:px-10 md:pt-20">
         <div className="mx-auto max-w-[820px]">
           <Reveal>
-            <div className="flex flex-wrap items-center gap-3 text-xs font-mono uppercase tracking-[0.22em] text-mute">
+            <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-mute">
               <Link
                 href="/saker"
                 className="rounded-full bg-paper-2 px-3 py-1.5 text-ink ring-1 ring-line transition-colors hover:bg-paper-3"
               >
                 ← Saker
               </Link>
-              <span className="text-coral-500">{sectionLabel[sak.seksjon]}</span>
+              {primaryTag ? (
+                <span className="text-coral-500">{tagLabel(primaryTag)}</span>
+              ) : null}
               <span>{sak.publikasjon}</span>
-              <span>{sak.sted}</span>
               <time dateTime={sak.datoIso}>{sak.dato}</time>
+              <span className="text-coral-500">
+                {sak.lesetidMinutter} min lesing
+              </span>
             </div>
           </Reveal>
 
@@ -89,7 +82,7 @@ export default async function SakPage(props: Props) {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-[60ch] font-display text-[clamp(1.15rem,1vw+1rem,1.5rem)] font-light leading-[1.45] text-ink-2">
+            <p className="mt-6 max-w-[60ch] font-display text-[clamp(1.15rem,1vw+1rem,1.5rem)] font-light italic leading-[1.45] text-ink-2">
               {sak.ingress}
             </p>
           </Reveal>
@@ -118,15 +111,15 @@ export default async function SakPage(props: Props) {
           <Reveal>
             <article className="prose-fluid">
               {sak.brodtekst.slice(0, 2).map((p, i) => (
-                <p key={i}>{p}</p>
+                <p key={`a-${i}`}>{p}</p>
               ))}
-            </article>
-          </Reveal>
-
-          <Reveal>
-            <article className="prose-fluid">
+              {sak.pullquote ? (
+                <blockquote className="my-10 border-l-2 border-coral-400 pl-6 font-display text-[clamp(1.4rem,1.4vw+1rem,1.9rem)] font-light italic leading-[1.4] text-ink">
+                  «{sak.pullquote}»
+                </blockquote>
+              ) : null}
               {sak.brodtekst.slice(2).map((p, i) => (
-                <p key={i}>{p}</p>
+                <p key={`b-${i}`}>{p}</p>
               ))}
             </article>
           </Reveal>
@@ -155,11 +148,7 @@ export default async function SakPage(props: Props) {
             </div>
           </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {others.map((s) => (
-              <ArticleCard key={s.slug} sak={s} size="md" />
-            ))}
-          </div>
+          <RelatedCarousel items={saker} />
         </div>
       </section>
     </>

@@ -37,8 +37,24 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link
+                href="/oppdrag"
+                className="link-underline text-ink-2 hover:text-ink"
+              >
+                Oppdrag
+              </Link>
+            </li>
+            <li>
               <Link href="/om" className="link-underline text-ink-2 hover:text-ink">
                 Om
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/presse"
+                className="link-underline text-ink-2 hover:text-ink"
+              >
+                Presse
               </Link>
             </li>
             <li>

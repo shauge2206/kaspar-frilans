@@ -5,6 +5,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { GradientBackdrop } from "@/components/gradient-backdrop";
 import { PageTransition } from "@/components/page-transition";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { ScrollProgress } from "@/components/scroll-progress";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -46,6 +48,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="relative min-h-screen flex flex-col bg-paper text-ink antialiased selection:bg-coral-200/80 selection:text-ink">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('kk-theme');if(t&&t!=='default')document.documentElement.dataset.theme=t;}catch(e){}`,
+          }}
+        />
+        <ScrollProgress />
+        <ThemeSwitcher />
         <GradientBackdrop />
         <SiteHeader />
         <PageTransition>{children}</PageTransition>
