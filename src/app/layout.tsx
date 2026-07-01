@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Source_Serif_4, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -8,11 +8,11 @@ import { PageTransition } from "@/components/page-transition";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { ScrollProgress } from "@/components/scroll-progress";
 
-const fraunces = Fraunces({
+const fraunces = Source_Serif_4({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  axes: ["opsz", "SOFT"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({

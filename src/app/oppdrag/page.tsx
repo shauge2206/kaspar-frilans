@@ -69,7 +69,7 @@ export default function OppdragPage() {
             </span>
           </Reveal>
 
-          <h1 className="mt-7 max-w-[20ch] font-display text-[clamp(2.4rem,4vw+1rem,5.4rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+          <h1 className="mt-7 max-w-[20ch] font-display text-[clamp(2.04rem,3.4vw+0.85rem,4.59rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
             <WordReveal text="Tre måter å bestille." delay={0.05} />
             <br />
             <WordReveal
@@ -135,7 +135,7 @@ export default function OppdragPage() {
       <section className="relative px-6 pb-32 md:px-10">
         <div className="mx-auto max-w-[1100px]">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-coral-100 via-apricot-50 to-teal-100 p-10 ring-1 ring-line/70 shadow-soft md:p-14">
+            <div className="relative overflow-hidden rounded-none bg-gradient-to-br from-coral-100 via-apricot-50 to-teal-100 p-10 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift md:p-14">
               <div className="paper-grain absolute inset-0" />
               <div className="relative grid gap-10 md:grid-cols-12">
                 <div className="md:col-span-7">

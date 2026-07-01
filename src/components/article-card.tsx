@@ -46,7 +46,7 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
           <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           {primaryTag ? (
             <div className="absolute left-4 top-4 flex items-center gap-2">
-              <span className="rounded-full bg-paper/85 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-ink backdrop-blur-sm">
+              <span className="rounded-none bg-paper/85 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-ink backdrop-blur-sm">
                 {tagLabel(primaryTag)}
               </span>
             </div>

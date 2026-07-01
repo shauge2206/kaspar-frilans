@@ -45,7 +45,7 @@ export default async function SakPage(props: Props) {
               src={sak.hovedbilde}
               alt={sak.bilder[0]?.tekst ?? sak.tittel}
               priority
-              className="aspect-[16/9] rounded-[28px] ring-1 ring-line/70 shadow-soft"
+              className="aspect-[16/9] rounded-none ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
               offset={60}
               sizes="(min-width: 960px) 920px, 100vw"
             />
@@ -60,7 +60,7 @@ export default async function SakPage(props: Props) {
             <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-mute">
               <Link
                 href="/saker"
-                className="rounded-full bg-paper-2 px-3 py-1.5 text-ink ring-1 ring-line transition-colors hover:bg-paper-3"
+                className="rounded-none bg-paper-2 px-3 py-1.5 text-ink ring-1 ring-line transition-colors hover:bg-paper-3"
               >
                 ← Saker
               </Link>
@@ -76,7 +76,7 @@ export default async function SakPage(props: Props) {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h1 className="mt-8 font-display text-[clamp(2.2rem,3.6vw+1rem,4.6rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+            <h1 className="mt-8 font-display text-[clamp(1.87rem,3.06vw+0.85rem,3.91rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
               {sak.tittel}
             </h1>
           </Reveal>

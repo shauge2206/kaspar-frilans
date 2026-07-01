@@ -27,7 +27,7 @@ export function HomeContent() {
                 </span>
               </Reveal>
 
-              <h1 className="mt-7 font-display text-[clamp(2.6rem,4.6vw+1.2rem,6.4rem)] font-medium leading-[1.02] tracking-[-0.022em] text-ink">
+              <h1 className="mt-7 font-display text-[clamp(2.21rem,3.91vw+1.02rem,5.44rem)] font-medium leading-[1.02] tracking-[-0.022em] text-ink">
                 <WordReveal text="Kaspar Knudsen" delay={0.05} />
                 <br />
                 <WordReveal
@@ -85,7 +85,7 @@ export function HomeContent() {
               className="flex flex-col gap-5 md:col-span-4 md:pt-10"
             >
               <div
-                className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft"
+                className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
                 aria-label="Portrettplassholder"
               >
                 <svg
@@ -147,7 +147,7 @@ export function HomeContent() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Posisjon
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.6rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,3.06rem)] font-medium leading-[1.05] tracking-tight text-ink">
                 Kvalitetsjournalistikk
                 <br />
                 fra Bergen.
@@ -185,7 +185,7 @@ export function HomeContent() {
                 </p>
                 <h2
                   id="utvalgte-saker"
-                  className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.6rem)] font-medium leading-[1.02] tracking-tight text-ink"
+                  className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,3.06rem)] font-medium leading-[1.02] tracking-tight text-ink"
                 >
                   Saker fra arkivet
                 </h2>
@@ -235,13 +235,13 @@ export function HomeContent() {
       <section className="relative px-6 pb-32 md:px-10">
         <div className="mx-auto max-w-[1100px]">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-coral-100 via-apricot-50 to-teal-100 p-10 ring-1 ring-line/70 shadow-soft md:p-14">
+            <div className="relative overflow-hidden rounded-none bg-gradient-to-br from-coral-100 via-apricot-50 to-teal-100 p-10 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift md:p-14">
               <div className="paper-grain absolute inset-0" />
               <div className="relative">
                 <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
                   Bestilling
                 </p>
-                <h2 className="mt-3 max-w-3xl font-display text-[clamp(1.8rem,3vw+1rem,3.2rem)] font-medium leading-tight tracking-tight text-ink">
+                <h2 className="mt-3 max-w-3xl font-display text-[clamp(1.53rem,2.55vw+0.85rem,2.72rem)] font-medium leading-tight tracking-tight text-ink">
                   Trenger redaksjonen din en frilanser?
                 </h2>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">

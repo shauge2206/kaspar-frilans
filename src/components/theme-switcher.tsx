@@ -41,8 +41,8 @@ export function ThemeSwitcher() {
   }
 
   return (
-    <div className="fixed left-1/2 top-3 z-[100] w-[95vw] max-w-[760px] -translate-x-1/2">
-      <div className="flex flex-wrap items-center justify-center gap-1 rounded-[20px] border border-line/70 bg-paper/80 px-1.5 py-1.5 shadow-lift backdrop-blur-md">
+    <div className="fixed left-1/2 top-3 z-[100] -translate-x-1/2">
+      <div className="flex max-w-[95vw] flex-wrap items-center justify-center gap-1 rounded-none border border-line/70 bg-paper/90 px-1.5 py-1.5 shadow-lift backdrop-blur-md">
         <span className="px-2 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-mute">
           Tema
         </span>
@@ -55,12 +55,12 @@ export function ThemeSwitcher() {
               onClick={() => pick(t.id)}
               aria-pressed={isActive}
               title={t.name}
-              className={`group flex items-center gap-1.5 rounded-full py-1 pl-1 pr-2.5 transition-colors ${
+              className={`group flex items-center gap-1.5 rounded-none py-1 pl-1 pr-2.5 transition-colors ${
                 isActive ? "bg-ink/10" : "hover:bg-ink/5"
               }`}
             >
               <span
-                className="h-4 w-4 overflow-hidden rounded-full bg-cover bg-center ring-1 ring-black/10"
+                className="h-4 w-4 overflow-hidden rounded-none bg-cover bg-center ring-1 ring-black/10"
                 style={{
                   background: t.img
                     ? undefined

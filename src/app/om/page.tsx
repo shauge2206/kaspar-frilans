@@ -81,7 +81,7 @@ export default function OmPage() {
                   <span className="text-coral-500">/</span> Bio
                 </span>
               </Reveal>
-              <h1 className="mt-7 max-w-[18ch] font-display text-[clamp(2.4rem,4vw+1rem,5.4rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+              <h1 className="mt-7 max-w-[18ch] font-display text-[clamp(2.04rem,3.4vw+0.85rem,4.59rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
                 <WordReveal text="Om Kaspar Knudsen" delay={0.05} />
                 <br />
                 <WordReveal
@@ -110,7 +110,7 @@ export default function OmPage() {
 
             <Reveal delay={0.6} y={36} className="md:col-span-5 md:pt-6">
               <div
-                className="mx-auto flex aspect-[4/5] w-full max-w-[320px] items-center justify-center overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft"
+                className="mx-auto flex aspect-[4/5] w-full max-w-[320px] items-center justify-center overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
                 aria-label="Portrettplassholder"
               >
                 <svg
@@ -159,11 +159,11 @@ export default function OmPage() {
               </div>
 
               {/* Tilgjengelighet */}
-              <div className="mt-6 rounded-[var(--radius-card)] bg-paper/70 px-5 py-4 ring-1 ring-line/70 shadow-soft backdrop-blur-sm">
+              <div className="mt-6 rounded-[var(--radius-card)] bg-paper/70 px-5 py-4 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm">
                 <div className="flex flex-wrap items-center gap-3">
                   <span aria-hidden className="relative inline-flex h-2 w-2">
-                    <span className="absolute inset-0 inline-flex animate-ping rounded-full bg-coral-400 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-coral-500" />
+                    <span className="absolute inset-0 inline-flex animate-ping rounded-none bg-coral-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-none bg-coral-500" />
                   </span>
                   <span className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                     Tilgjengelig fra
@@ -175,7 +175,7 @@ export default function OmPage() {
               </div>
 
               {/* Kort fortalt */}
-              <div className="mt-5 rounded-[var(--radius-card)] bg-paper/70 px-5 py-5 ring-1 ring-line/70 shadow-soft backdrop-blur-sm">
+              <div className="mt-5 rounded-[var(--radius-card)] bg-paper/70 px-5 py-5 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm">
                 <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
                   Kort fortalt
                 </p>
@@ -202,7 +202,7 @@ export default function OmPage() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Publikasjoner
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.4rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,2.89rem)] font-medium leading-[1.05] tracking-tight text-ink">
                 Levert til.
               </h2>
             </Reveal>
@@ -214,7 +214,7 @@ export default function OmPage() {
                 {["Fiskeribladet", "Intrafish", "Kystens Næringsliv"].map((p) => (
                   <StaggerItem
                     key={p}
-                    className="flex items-center justify-center rounded-[18px] bg-paper/70 px-5 py-7 text-center font-display text-[1.2rem] font-medium leading-snug tracking-tight text-ink ring-1 ring-line/70 shadow-soft backdrop-blur-sm transition-shadow hover:shadow-lift"
+                    className="flex items-center justify-center rounded-none bg-paper/70 px-5 py-7 text-center font-display text-[1.2rem] font-medium leading-snug tracking-tight text-ink ring-1 ring-line/70 shadow-soft backdrop-blur-sm transition-shadow hover:shadow-lift"
                   >
                     {p}
                   </StaggerItem>
@@ -236,7 +236,7 @@ export default function OmPage() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Bak sakene
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.4rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,2.89rem)] font-medium leading-[1.05] tracking-tight text-ink">
                 Slik jobber jeg.
               </h2>
               <p className="mt-5 max-w-md text-base leading-relaxed text-ink-2">
@@ -273,7 +273,7 @@ export default function OmPage() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Verdier
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.4rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,2.89rem)] font-medium leading-[1.05] tracking-tight text-ink">
                 Kjerneverdier.
               </h2>
             </Reveal>
@@ -281,7 +281,7 @@ export default function OmPage() {
               {verdier.map((v) => (
                 <StaggerItem
                   key={v}
-                  className="rounded-[18px] bg-paper/70 px-5 py-6 ring-1 ring-line/70 shadow-soft backdrop-blur-sm"
+                  className="rounded-none bg-paper/70 px-5 py-6 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm"
                 >
                   <p className="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-coral-500">
                     {v}
@@ -301,7 +301,7 @@ export default function OmPage() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Visjon
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.4rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,2.89rem)] font-medium leading-[1.05] tracking-tight text-ink">
                 Frihet under ansvar.
               </h2>
             </Reveal>
@@ -323,7 +323,7 @@ export default function OmPage() {
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
               Erfaring
             </p>
-            <h2 className="mt-3 max-w-2xl font-display text-[clamp(2rem,3vw+1rem,3.4rem)] font-medium leading-[1.05] tracking-tight text-ink">
+            <h2 className="mt-3 max-w-2xl font-display text-[clamp(1.7rem,2.55vw+0.85rem,2.89rem)] font-medium leading-[1.05] tracking-tight text-ink">
               Hva jeg leverer.
             </h2>
           </Reveal>
@@ -358,7 +358,7 @@ export default function OmPage() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Kontoret
               </p>
-              <h2 className="mt-3 font-display text-[clamp(1.8rem,3vw+1rem,3rem)] font-medium leading-tight tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.53rem,2.55vw+0.85rem,2.55rem)] font-medium leading-tight tracking-tight text-ink">
                 USF Verftet, Nordnes.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
@@ -387,7 +387,7 @@ export default function OmPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <div className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft backdrop-blur-sm">
+              <div className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm">
                 <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
                   Adresse
                 </p>

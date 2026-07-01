@@ -22,7 +22,7 @@ export default function SakerPage() {
             </span>
           </Reveal>
 
-          <h1 className="mt-7 max-w-[20ch] font-display text-[clamp(2.6rem,4.6vw+1rem,5.8rem)] font-medium leading-[1.02] tracking-[-0.02em] text-ink">
+          <h1 className="mt-7 max-w-[20ch] font-display text-[clamp(2.21rem,3.91vw+0.85rem,4.93rem)] font-medium leading-[1.02] tracking-[-0.02em] text-ink">
             <WordReveal text="Saker" delay={0.05} />
             <br />
             <WordReveal

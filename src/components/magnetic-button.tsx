@@ -47,7 +47,7 @@ export function MagneticButton({
   }
 
   const base =
-    "inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium tracking-tight transition-shadow duration-500 will-change-transform";
+    "inline-flex items-center gap-2 rounded-none px-6 py-3.5 text-sm font-medium tracking-tight transition-shadow duration-500 will-change-transform";
   const styles =
     variant === "primary"
       ? "bg-ink text-paper shadow-soft hover:shadow-lift"

@@ -91,7 +91,7 @@ export function SakerArchive({ saker }: Props) {
     <>
       <section className="relative px-6 pb-10 md:px-10">
         <div className="mx-auto max-w-[1280px]">
-          <div className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft backdrop-blur-sm md:p-8">
+          <div className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm md:p-8">
             <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
               <label
                 htmlFor="saker-search"
@@ -138,7 +138,7 @@ export function SakerArchive({ saker }: Props) {
       <section className="relative px-6 pb-32 md:px-10">
         <div className="mx-auto max-w-[1280px]">
           {filtered.length === 0 ? (
-            <div className="rounded-[var(--radius-card)] bg-paper/70 px-6 py-16 text-center ring-1 ring-line/70 shadow-soft backdrop-blur-sm">
+            <div className="rounded-[var(--radius-card)] bg-paper/70 px-6 py-16 text-center ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm">
               <p className="font-display text-2xl leading-snug text-ink-2">
                 Ingen saker matcher dette filteret.
               </p>
@@ -169,7 +169,7 @@ export function SakerArchive({ saker }: Props) {
                     </div>
 
                     <div className="md:col-span-4">
-                      <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft">
+                      <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-card)] bg-paper-2 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift">
                         <Image
                           src={sak.hovedbilde}
                           alt={sak.bilder[0]?.tekst ?? sak.tittel}
@@ -259,8 +259,8 @@ function FilterRow({
               aria-pressed={isActive}
               className={
                 isActive
-                  ? "rounded-full bg-ink px-3.5 py-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-paper shadow-soft transition-colors"
-                  : "rounded-full bg-paper px-3.5 py-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-ink-2 ring-1 ring-line/70 transition-colors hover:bg-paper-2 hover:text-ink"
+                  ? "rounded-none bg-ink px-3.5 py-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-paper shadow-soft transition-colors"
+                  : "rounded-none bg-paper px-3.5 py-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-ink-2 ring-1 ring-line/70 transition-colors hover:bg-paper-2 hover:text-ink"
               }
             >
               {tagLabel(c)}

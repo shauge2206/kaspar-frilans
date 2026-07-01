@@ -37,7 +37,7 @@ export function CopyButton({ text, label = "Kopier tekst" }: Props) {
       whileHover={reduce ? undefined : { y: -1 }}
       whileTap={reduce ? undefined : { scale: 0.97 }}
       transition={{ type: "spring", stiffness: 320, damping: 22 }}
-      className="inline-flex items-center gap-2 rounded-full bg-paper/80 px-3.5 py-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-mute ring-1 ring-line/70 shadow-soft transition-colors hover:text-ink"
+      className="inline-flex items-center gap-2 rounded-none bg-paper/80 px-3.5 py-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-mute ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift transition-colors hover:text-ink"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

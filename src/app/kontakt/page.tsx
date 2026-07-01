@@ -50,7 +50,7 @@ export default function KontaktPage() {
               </span>
             </Reveal>
 
-            <h1 className="mt-7 font-display text-[clamp(2.4rem,4vw+1rem,5.2rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+            <h1 className="mt-7 font-display text-[clamp(2.04rem,3.4vw+0.85rem,4.42rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
               <WordReveal text="Kontakt Kaspar" delay={0.05} />
               <br />
               <WordReveal
@@ -67,7 +67,7 @@ export default function KontaktPage() {
             </Reveal>
 
             <Reveal delay={1.1} className="mt-10">
-              <div className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft backdrop-blur-sm">
+              <div className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm">
                 <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                   På kontoret
                 </p>

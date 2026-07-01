@@ -18,7 +18,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid gap-5 rounded-[28px] bg-paper/80 p-7 ring-1 ring-line/70 shadow-soft backdrop-blur-md md:p-10"
+      className="grid gap-5 rounded-none bg-paper/80 p-7 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-md md:p-10"
     >
       <Field label="Navn" name="navn" autoComplete="name" required />
       <Field
@@ -55,7 +55,7 @@ export function ContactForm() {
           whileHover={reduce || status !== "idle" ? undefined : { scale: 1.02 }}
           whileTap={reduce || status !== "idle" ? undefined : { scale: 0.97 }}
           transition={{ type: "spring", stiffness: 320, damping: 22 }}
-          className="relative inline-flex items-center justify-center gap-2 self-start overflow-hidden rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-paper shadow-soft transition-shadow duration-500 hover:shadow-lift disabled:opacity-90"
+          className="relative inline-flex items-center justify-center gap-2 self-start overflow-hidden rounded-none bg-ink px-7 py-3.5 text-sm font-medium text-paper shadow-soft transition-shadow duration-500 hover:shadow-lift disabled:opacity-90"
         >
           <AnimatePresence mode="wait" initial={false}>
             {status === "idle" && (
@@ -88,7 +88,7 @@ export function ContactForm() {
                 transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 className="flex items-center gap-2"
               >
-                <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-paper/40 border-t-paper" />
+                <span className="inline-block h-3 w-3 animate-spin rounded-none border-2 border-paper/40 border-t-paper" />
                 Sender …
               </motion.span>
             )}
@@ -141,7 +141,7 @@ function Field({
 }) {
   const id = `field-${name}`;
   const baseClasses =
-    "peer w-full rounded-[14px] bg-paper px-4 pt-7 pb-2.5 text-base text-ink ring-1 ring-line/80 outline-none transition-all duration-300 placeholder:text-transparent focus:ring-2 focus:ring-coral-400 focus:bg-paper-2/60";
+    "peer w-full rounded-none bg-paper px-4 pt-7 pb-2.5 text-base text-ink ring-1 ring-line/80 outline-none transition-all duration-300 placeholder:text-transparent focus:ring-2 focus:ring-coral-400 focus:bg-paper-2/60";
 
   return (
     <div className="group relative">
@@ -173,7 +173,7 @@ function Field({
       </label>
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-x-3 bottom-0 h-[2px] origin-left scale-x-0 rounded-full bg-gradient-to-r from-coral-400 to-apricot-200 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] peer-focus:scale-x-100"
+        className="pointer-events-none absolute inset-x-3 bottom-0 h-[2px] origin-left scale-x-0 rounded-none bg-gradient-to-r from-coral-400 to-apricot-200 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] peer-focus:scale-x-100"
       />
     </div>
   );

@@ -143,7 +143,7 @@ export function RelatedCarousel({ items }: { items: Sak[] }) {
               type="button"
               onClick={() => step(-1)}
               aria-label="Forrige sak"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-paper/80 text-ink ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-none bg-paper/80 text-ink ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M10 13L5 8l5-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -153,7 +153,7 @@ export function RelatedCarousel({ items }: { items: Sak[] }) {
               type="button"
               onClick={() => step(1)}
               aria-label="Neste sak"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-paper/80 text-ink ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-none bg-paper/80 text-ink ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />

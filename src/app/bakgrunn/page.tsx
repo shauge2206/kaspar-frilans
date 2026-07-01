@@ -50,7 +50,7 @@ export default function BakgrunnIndexPage() {
         <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
           Forhåndsvisning
         </p>
-        <h1 className="mt-3 max-w-[18ch] font-display text-[clamp(2.4rem,4vw+1rem,4.8rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+        <h1 className="mt-3 max-w-[18ch] font-display text-[clamp(2.04rem,3.4vw+0.85rem,4.08rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
           Fem bakgrunner.{" "}
           <span className="italic text-mute">Velg en stemning.</span>
         </h1>
@@ -74,11 +74,11 @@ export default function BakgrunnIndexPage() {
                 </div>
                 <div className="md:col-span-4">
                   <div
-                    className="relative aspect-[5/3] overflow-hidden rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft"
+                    className="relative aspect-[5/3] overflow-hidden rounded-[var(--radius-card)] ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift"
                     style={swatches[v.id]}
                   >
                     <div className="absolute inset-0 flex items-end justify-between gap-3 p-4">
-                      <span className="rounded-full bg-paper/85 px-2.5 py-1 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-ink backdrop-blur-sm">
+                      <span className="rounded-none bg-paper/85 px-2.5 py-1 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-ink backdrop-blur-sm">
                         {v.tone}
                       </span>
                     </div>

@@ -45,7 +45,7 @@ export function SiteHeader() {
           className="group flex items-center gap-2 font-display text-[1.05rem] font-medium tracking-tight text-ink"
           aria-label="Kaspar Knudsen – forside"
         >
-          <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-coral-300 to-apricot-200 text-ink shadow-soft">
+          <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-none bg-gradient-to-br from-coral-300 to-apricot-200 text-ink shadow-soft">
             <span className="font-display text-[0.78rem] font-semibold leading-none">
               KK
             </span>
@@ -64,12 +64,12 @@ export function SiteHeader() {
                 key={l.href}
                 href={l.href}
                 aria-current={active ? "page" : undefined}
-                className="relative rounded-full px-3.5 py-2 text-sm font-medium text-ink-2 transition-colors hover:text-ink"
+                className="relative rounded-none px-3.5 py-2 text-sm font-medium text-ink-2 transition-colors hover:text-ink"
               >
                 {active && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute inset-0 rounded-full bg-paper-2 ring-1 ring-line"
+                    className="absolute inset-0 rounded-none bg-paper-2 ring-1 ring-line"
                     transition={{ type: "spring", stiffness: 360, damping: 32 }}
                   />
                 )}

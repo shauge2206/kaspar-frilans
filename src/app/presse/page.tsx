@@ -50,7 +50,7 @@ export default function PressePage() {
             </span>
           </Reveal>
 
-          <h1 className="mt-7 max-w-[20ch] font-display text-[clamp(2.4rem,4vw+1rem,5.4rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+          <h1 className="mt-7 max-w-[20ch] font-display text-[clamp(2.04rem,3.4vw+0.85rem,4.59rem)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
             <WordReveal text="For redaksjoner og presse" delay={0.05} />
             <br />
             <WordReveal
@@ -76,7 +76,7 @@ export default function PressePage() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Last ned
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.4rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,2.89rem)] font-medium leading-[1.05] tracking-tight text-ink">
                 Filer.
               </h2>
               <p className="mt-5 max-w-md leading-relaxed text-ink-2">
@@ -128,7 +128,7 @@ export default function PressePage() {
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-coral-500">
                 Bio
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,3vw+1rem,3.4rem)] font-medium leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-3 font-display text-[clamp(1.7rem,2.55vw+0.85rem,2.89rem)] font-medium leading-[1.05] tracking-tight text-ink">
                 To lengder.
               </h2>
               <p className="mt-5 max-w-md leading-relaxed text-ink-2">
@@ -142,7 +142,7 @@ export default function PressePage() {
               <div className="grid gap-8">
                 {bioer.map((b, i) => (
                   <Reveal key={b.tittel} delay={i * 0.08}>
-                    <article className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft backdrop-blur-sm md:p-8">
+                    <article className="rounded-[var(--radius-card)] bg-paper/70 p-6 ring-1 ring-line/70 shadow-soft transition-shadow hover:shadow-lift backdrop-blur-sm md:p-8">
                       <div className="mb-4 flex items-center justify-between gap-4">
                         <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-mute">
                           {b.tittel}
