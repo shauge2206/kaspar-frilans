@@ -14,9 +14,7 @@ type Theme = {
 const THEMES: Theme[] = [
   { id: "default", name: "Lys", bg: "#faf6f0", accent: "#f25c2a" },
   { id: "sand", name: "Sand", bg: "#f3ede3", accent: "#f25c2a" },
-  { id: "leire", name: "Leire", bg: "#ebe1d3", accent: "#f25c2a" },
   { id: "blekkvask", name: "Blekkvask", bg: "#f3eee6", accent: "#e8501f", img: "/backgrounds/blekkvask.png" },
-  { id: "vintage", name: "Vintage", bg: "#f6efdc", accent: "#db4e1d", img: "/backgrounds/vintage.png" },
   { id: "lysglimt", name: "Lysglimt", bg: "#f5f1e9", accent: "#f25c2a", img: "/backgrounds/lysglimt.png" },
 ];
 

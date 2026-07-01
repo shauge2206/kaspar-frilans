@@ -86,27 +86,6 @@
   --header-border-rgb: 221 207 186;
 }
 
-/* — Leire: warm clay, clearly dimmer — */
-:root[data-theme="leire"] {
-  --color-paper: #ebe1d3;
-  --color-paper-2: #e2d6c4;
-  --color-paper-3: #d6c8b2;
-  --color-line: #d0c0a6;
-
-  --color-coral-100: #f2d2ba;
-  --color-apricot-50: #f6ecd4;
-  --color-teal-100: #cadfd3;
-
-  --progress-color: #df4a1c;
-
-  --blob-1: #efbf97;
-  --blob-2: #e8a77b;
-  --blob-3: #bedacf;
-
-  --header-rgb: 235 225 211;
-  --header-border-rgb: 208 192 166;
-}
-
 /* ============================================================
    Image-texture themes — a clean fixed screen background,
    no drifting blobs. The warm paper color multiplies into the
@@ -118,6 +97,7 @@
   --page-bg-image: url("/backgrounds/blekkvask.png");
   --page-bg-overlay: linear-gradient(rgba(245, 238, 228, 0.26), rgba(245, 238, 228, 0.26));
   --blob-display: none;
+  --bg-blur: 7px;
   --color-paper: #f3eee6;
   --color-paper-2: #ebe5da;
   --color-paper-3: #e0d8ca;
@@ -130,28 +110,14 @@
   --progress-color: #e8501f;
 }
 
-/* — Vintage: warm ghosted ivory — */
-:root[data-theme="vintage"] {
-  --page-bg-image: url("/backgrounds/vintage.png");
-  --page-bg-overlay: linear-gradient(rgba(246, 239, 220, 0.12), rgba(246, 239, 220, 0.12));
-  --blob-display: none;
-  --color-paper: #f6efdc;
-  --color-paper-2: #efe6cf;
-  --color-paper-3: #e6dcc0;
-  --color-line: #ddd0b3;
-  --color-coral-100: #f5d8bf;
-  --color-apricot-50: #faeccf;
-  --color-teal-100: #d0ddc9;
-  --header-rgb: 246 239 220;
-  --header-border-rgb: 221 208 179;
-  --progress-color: #db4e1d;
-}
-
 /* — Lysglimt: soft window light on warm white — */
 :root[data-theme="lysglimt"] {
   --page-bg-image: url("/backgrounds/lysglimt.png");
-  --page-bg-overlay: linear-gradient(rgba(245, 241, 233, 0.14), rgba(245, 241, 233, 0.14));
+  --page-bg-overlay: linear-gradient(rgba(233, 226, 212, 0.22), rgba(233, 226, 212, 0.22));
   --blob-display: none;
+  --bg-shift: 0%;
+  --bg-zoom-a: 1.12;
+  --bg-zoom-b: 1.3;
   --color-paper: #f5f1e9;
   --color-paper-2: #ede8dd;
   --color-paper-3: #e3ddce;
@@ -191,17 +157,18 @@ body {
   display: var(--blob-display, block);
 }
 
-/* Lysglimt theme — slowly drift the window-light texture so the
-   shadows shift like real daylight (very subtle, position-only so the
-   cover never reveals an edge). */
+/* Texture themes — a gentle brightness pulse plus a smooth left-right
+   glide. The layer is scaled up so the translate (and optional blur,
+   set per theme via --bg-blur) never reveal an edge. */
 @keyframes light-drift {
-  0%   { background-position: 38% 22%; filter: brightness(0.96); }
-  50%  { background-position: 62% 78%; filter: brightness(1.1); }
-  100% { background-position: 38% 22%; filter: brightness(0.96); }
+  0%   { transform: scale(var(--bg-zoom-a, 1.18)) translateX(calc(var(--bg-shift, 5%) * -1)); filter: brightness(0.9) contrast(1.22) blur(var(--bg-blur, 0px)); }
+  50%  { transform: scale(var(--bg-zoom-b, 1.18)) translateX(var(--bg-shift, 5%));            filter: brightness(1) contrast(1.22) blur(var(--bg-blur, 0px)); }
+  100% { transform: scale(var(--bg-zoom-a, 1.18)) translateX(calc(var(--bg-shift, 5%) * -1)); filter: brightness(0.9) contrast(1.22) blur(var(--bg-blur, 0px)); }
 }
-:root[data-theme="lysglimt"] .screen-bg {
-  animation: light-drift 18s ease-in-out infinite;
-  will-change: background-position, filter;
+:root[data-theme="lysglimt"] .screen-bg,
+:root[data-theme="blekkvask"] .screen-bg {
+  animation: light-drift 14s ease-in-out infinite;
+  will-change: transform, filter;
 }
 
 /* Display font tweaks */
