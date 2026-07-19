@@ -23,6 +23,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kaspar-frilans.vercel.app"),
   title: "Kaspar Knudsen – frilansjournalist i Bergen",
   description:
     "Frilansjournalist i Bergen. Mastergrad i undersøkende journalistikk. Leverer til Fiskeribladet, Intrafish og Kystens Næringsliv.",
