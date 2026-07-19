@@ -41,15 +41,16 @@ export default async function SakPage(props: Props) {
     <>
       {/* HERO IMAGE */}
       <section className="relative px-4 pt-6 md:px-8 md:pt-8">
-        <div className="mx-auto max-w-[960px]">
+        <div className="mx-auto max-w-[820px]">
           <Reveal>
-            <div className="relative aspect-[16/9] overflow-hidden border border-rule bg-bg-elev">
+            <div className="relative aspect-[3/2] overflow-hidden border border-rule bg-bg-elev">
               <Image
                 src={sak.hovedbilde}
                 alt={sak.bilder[0]?.tekst ?? sak.bildetekst}
                 fill
                 priority
-                sizes="(min-width: 960px) 920px, 100vw"
+                quality={90}
+                sizes="(min-width: 820px) 820px, 100vw"
                 className="object-cover"
               />
             </div>
@@ -113,17 +114,10 @@ export default async function SakPage(props: Props) {
       <section className="relative px-6 pb-16 md:px-10">
         <div className="mx-auto max-w-[900px]">
           <Reveal>
-            <article className="prose-longform">
-              {sak.brodtekst.slice(0, 2).map((p, i) => (
-                <p key={`a-${i}`}>{p}</p>
-              ))}
-              {sak.pullquote ? (
-                <blockquote className="pullquote">{sak.pullquote}</blockquote>
-              ) : null}
-              {sak.brodtekst.slice(2).map((p, i) => (
-                <p key={`b-${i}`}>{p}</p>
-              ))}
-            </article>
+            <article
+              className="prose-longform"
+              dangerouslySetInnerHTML={{ __html: sak.bodyHtml }}
+            />
           </Reveal>
         </div>
       </section>

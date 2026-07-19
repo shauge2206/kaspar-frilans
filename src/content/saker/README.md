@@ -1,53 +1,44 @@
 # Saker – innholdskilde
 
-Denne mappa er **sannhetskilden** for alle artikler på nettsiden. Hver `.ts`-fil
-representerer én sak.
+Hver `.md`-fil i denne mappa er én sak. Nettsiden leser dem på serveren
+(`src/lib/saker.ts`) og sorterer nyeste først etter `datoIso`.
 
-## Legge til en ny sak
+## Legge til en ny sak (vanligste måte)
 
-1. Lag en ny fil: `src/content/saker/<slug>.ts`
-2. Eksporter et `Sak`-objekt med skjemaet fra `@/lib/saker`:
+1. Legg Word-dokumentet (`.docx`) i `content/saker-docx/`.
+2. Kjør:
 
-   ```ts
-   import type { Sak } from "@/lib/saker";
-
-   export const sak: Sak = {
-     slug: "min-nye-sak",
-     tittel: "...",
-     ingress: "...",
-     publikasjon: "Bergens Tidende",
-     dato: "1. januar 2026",
-     datoIso: "2026-01-01",
-     bildetekst: "...",
-     fotograf: "...",
-     lesetidMinutter: 7,
-     hovedbilde: "/images/saker/sak-4/bilde-1.jpeg",
-     bilder: [{ src: "...", tekst: "..." }],
-     brodtekst: ["Avsnitt 1", "Avsnitt 2"],
-     pullquote: "",
-     emneknagger: ["krim", "bergen"],
-   };
+   ```bash
+   npm run import:saker
    ```
 
-3. Importer og legg den til `index.ts` (nyeste først):
+   Skriptet lager `<slug>.md` her og henter bildene til
+   `public/images/saker/<slug>/`.
+3. Åpne den nye `.md`-fila og bekreft feltene som er markert med `# TODO`:
+   - `emneknagger` – velg tema/sjanger (se `src/lib/tags.ts`).
+   - `datoIso` – fylles vanligvis automatisk, men sjekk at den stemmer.
 
-   ```ts
-   import { sak as minNyeSak } from "./min-nye-sak";
-   // ...
-   export const saker: Sak[] = [minNyeSak, /* eksisterende */];
-   ```
+   Se også over `tittel`, `ingress` og `bildetekst`, og fjern eventuelle
+   bilder du ikke vil ha (både `.md`-lista og filen i `public/...`).
 
-4. Legg tilhørende bilder under `public/images/saker/sak-<n>/`.
+Skriptet hopper over saker som allerede har en `.md`. Vil du re-importere en
+sak fra bunnen, slett `.md`-fila først.
 
-Saken vises automatisk i:
-- Forsidens "Saker fra arkivet"-tile-grid (3 første saker)
-- `/saker` (alle saker)
-- `/saker/<slug>` (selve detaljvisningen, statisk generert)
-- "Bla videre"-karusellen nederst på andre detaljsider
+> Merk: kjører `npm run dev` allerede? Start den på nytt etter at du har lagt
+> til eller fjernet en sak – saklista leses inn når serveren starter.
 
-Alle disse komponentene leser fra `@/lib/saker`, som re-eksporterer arrayet
-i `index.ts`. Det finnes ingen annen kilde å oppdatere.
+Denne README-fila teller ikke som en sak (den hoppes over automatisk).
 
-## Skjemafelt
+## Redigere en sak
 
-Se `Sak`-typen i `src/lib/saker.ts` for fulle typer.
+Rediger `.md`-fila direkte. Front-matter (mellom `---`) er metadata; teksten
+under er brødteksten i markdown:
+
+- `## Mellomtittel` gir en mellomtittel.
+- `![bildetekst](/images/saker/<slug>/bilde-2.jpeg)` setter et bilde i teksten.
+- `> Sitat` gir et uthevet sitat.
+
+## Legge til en sak for hånd (uten docx)
+
+Lag `src/content/saker/<slug>.md` med samme front-matter-felt som de andre
+filene, og legg bildene i `public/images/saker/<slug>/`.

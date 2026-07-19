@@ -20,6 +20,7 @@
   --amber: #7a5210;
   --amber-soft: #5e3f0b;
   --warn: #a04a1f;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 @theme inline {
@@ -45,11 +46,18 @@ body {
 }
 
 body {
-  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
-  font-feature-settings: "ss01", "ss02", "kern", "liga";
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11", "kern", "liga";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sharp corners everywhere — strict aesthetic, radius 0 */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
 }
 
 ::selection {
@@ -65,6 +73,8 @@ body {
 }
 .font-serif {
   font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-feature-settings: "ss01", "ss02";
+  font-optical-sizing: auto;
 }
 
 .smallcaps {
@@ -125,21 +135,63 @@ a.glow,
 }
 
 .prose-longform {
-  font-size: clamp(1.25rem, 0.7vw + 1.1rem, 1.45rem);
-  line-height: 1.7;
+  font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.3rem);
+  line-height: 1.65;
+  letter-spacing: -0.005em;
   color: var(--ink);
 }
 .prose-longform p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.1em;
 }
 .prose-longform p:first-of-type::first-letter {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 7.2rem;
-  line-height: 0.88;
+  font-size: 4.4em;
+  line-height: 0.9;
   float: left;
-  padding: 0.45rem 0.85rem 0 0;
+  padding: 0.05em 0.12em 0 0;
   color: var(--amber);
+  font-weight: 500;
+}
+/* Mellomtitler i brødteksten */
+.prose-longform h2,
+.prose-longform h3 {
+  font-family: var(--font-serif), Georgia, serif;
   font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 2em 0 0.6em;
+}
+.prose-longform h2 {
+  font-size: clamp(1.4rem, 1vw + 1.1rem, 1.9rem);
+}
+.prose-longform h3 {
+  font-size: clamp(1.2rem, 0.6vw + 1.05rem, 1.5rem);
+}
+/* Bilder plassert inne i teksten. Kildene fra Word er ikke høyoppløste, så vi
+   holder dem litt smalere og sentrert for å unngå oppskalering (skarpere). */
+.prose-longform img {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  margin: 2.4em auto 0.5em;
+  border: 1px solid var(--rule);
+}
+.prose-longform a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+/* Sitat / blockquote i teksten gjenbruker pullquote-uttrykket */
+.prose-longform blockquote {
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--amber);
+  padding: 0.4rem 0 0.4rem 1.4rem;
+  margin: 2rem 0;
 }
 
 .pullquote {
@@ -195,10 +247,9 @@ a.glow,
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
-  z-index: 0;
+  z-index: -1;
 }
 
 /* Keyboard focus indicator. Tab-only users get a clear amber ring on every

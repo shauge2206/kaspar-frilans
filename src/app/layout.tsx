@@ -1,28 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Spectral } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { PageTransition } from "@/components/PageTransition";
 
-const spectral = Spectral({
+const sourceSerif = Source_Serif_4({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
-  display: "swap",
+  display: "optional",
+  preload: true,
 });
 
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "swap",
+  display: "optional",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -39,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="nb"
-      className={`${spectral.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${sourceSerif.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-bg text-ink">
@@ -49,9 +46,7 @@ export default function RootLayout({
         <ReadingProgress />
         <div className="noise" aria-hidden />
         <Header />
-        <main id="main" className="relative z-10 flex-1">
-          {children}
-        </main>
+        <PageTransition>{children}</PageTransition>
         <Footer />
       </body>
     </html>

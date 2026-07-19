@@ -33,6 +33,7 @@ export function ArticleCard({ sak, size = "md", className = "" }: Props) {
           src={sak.hovedbilde}
           alt={sak.bildetekst}
           fill
+          quality={90}
           sizes="(min-width: 1024px) 600px, 100vw"
           className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
         />

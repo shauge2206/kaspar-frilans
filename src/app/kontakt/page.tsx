@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
+import { WordReveal } from "@/components/WordReveal";
 
 export const metadata = {
   title: "Kontakt – Kaspar Knudsen",
@@ -12,10 +13,10 @@ export default function KontaktPage() {
     <div>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
         <p className="smallcaps text-amber mb-5">Kontakt</p>
-        <h1 className="font-serif text-[clamp(2.4rem,5vw,4.8rem)] leading-[1.05] tracking-tight max-w-4xl">
-          Kontakt Kaspar
+        <h1 className="font-serif text-[clamp(2.04rem,3.4vw+0.85rem,4.42rem)] font-medium leading-[1.05] tracking-[-0.02em] max-w-4xl">
+          <WordReveal text="Kontakt Kaspar" delay={0.05} />
           <span className="block italic text-ink-soft">
-            USF Verftet, Bergen.
+            <WordReveal text="USF Verftet, Bergen." delay={0.4} />
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">
@@ -78,25 +79,21 @@ export default function KontaktPage() {
               <p className="smallcaps text-ink-mute mb-3">Erfaring</p>
               <ul className="tick-list font-sans text-sm">
                 <li>
-                  <span className="text-amber font-mono">1</span>
                   <span className="text-ink-soft">
                     Undersøkende reportasje innen arbeidsliv, krim og samfunn.
                   </span>
                 </li>
                 <li>
-                  <span className="text-amber font-mono">2</span>
                   <span className="text-ink-soft">
                     Reportasje fra felt – ser stedene og møter menneskene.
                   </span>
                 </li>
                 <li>
-                  <span className="text-amber font-mono">3</span>
                   <span className="text-ink-soft">
                     Bilder og tekst levert som én helhet.
                   </span>
                 </li>
                 <li>
-                  <span className="text-amber font-mono">4</span>
                   <span className="text-ink-soft">
                     Ekstern redaksjonsressurs i kortere eller lengre perioder.
                   </span>
@@ -108,22 +105,19 @@ export default function KontaktPage() {
 
         <div className="lg:col-span-7">
           <Reveal>
-            <div className="tile-hover-amber border border-rule p-8 md:p-10 bg-bg-elev">
-              <p className="smallcaps text-amber mb-3">Skriv en melding</p>
-              <h2 className="font-serif text-3xl leading-tight">
-                Hva handler det om?
-              </h2>
-              <p className="mt-3 text-ink-soft leading-relaxed">
-                Skjemaet åpner en e-post i din vanlige klient. Du står fritt
-                til å sende direkte til{" "}
-                <a
-                  href="mailto:post@kasparknudsen.no"
-                  className="text-amber glow"
-                >
-                  post@kasparknudsen.no
-                </a>{" "}
-                hvis du foretrekker det.
-              </p>
+            <p className="smallcaps text-amber mb-3">Skriv en melding</p>
+            <h2 className="font-serif text-3xl leading-tight">
+              Hva handler det om?
+            </h2>
+            <p className="mt-3 max-w-2xl text-ink-soft leading-relaxed">
+              Skjemaet åpner en e-post i din vanlige klient. Du står fritt til
+              å sende direkte til{" "}
+              <a href="mailto:post@kasparknudsen.no" className="text-amber glow">
+                post@kasparknudsen.no
+              </a>{" "}
+              hvis du foretrekker det.
+            </p>
+            <div className="mt-6">
               <ContactForm />
             </div>
           </Reveal>

@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { saker } from "@/lib/saker";
 import { SakerArchive } from "@/components/SakerArchive";
+import { WordReveal } from "@/components/WordReveal";
 
 export const metadata = {
   title: "Saker – Kaspar Knudsen",
@@ -13,10 +14,10 @@ export default function SakerPage() {
     <div>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
         <p className="smallcaps text-amber mb-5">Arkiv</p>
-        <h1 className="font-serif text-[clamp(2.4rem,5vw,4.8rem)] leading-tight tracking-tight">
-          Saker
+        <h1 className="font-serif text-[clamp(2.04rem,3.4vw+0.85rem,4.42rem)] font-medium leading-tight tracking-[-0.02em]">
+          <WordReveal text="Saker" delay={0.05} />
           <span className="block italic text-ink-soft text-[0.6em]">
-            Et utvalg fra de siste årene.
+            <WordReveal text="Et utvalg fra de siste årene." delay={0.35} />
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">

@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import { CopyButton } from "@/components/CopyButton";
+import { WordReveal } from "@/components/WordReveal";
 
 export const metadata = {
   title: "Presse, Kaspar Knudsen",
@@ -40,10 +41,10 @@ export default function PressePage() {
     <div>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
         <p className="smallcaps text-amber mb-5">Presse</p>
-        <h1 className="font-serif text-[clamp(2.4rem,5vw,4.8rem)] leading-tight tracking-tight max-w-4xl">
-          For redaksjoner og presse
+        <h1 className="font-serif text-[clamp(2.04rem,3.4vw+0.85rem,4.42rem)] font-medium leading-tight tracking-[-0.02em] max-w-4xl">
+          <WordReveal text="For redaksjoner og presse" delay={0.05} />
           <span className="block italic text-ink-soft">
-            som trenger bio eller bilde.
+            <WordReveal text="som trenger bio eller bilde." delay={0.4} />
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">
@@ -74,10 +75,7 @@ export default function PressePage() {
             {filer.map((f, i) => (
               <Reveal key={f.navn} delay={i * 80}>
                 <li className="grid grid-cols-12 items-baseline gap-x-6 gap-y-3 border-t border-rule py-8 md:py-10">
-                  <span className="col-span-2 font-mono text-sm uppercase tracking-[0.2em] text-amber md:col-span-1">
-                    {i + 1}
-                  </span>
-                  <div className="col-span-10 md:col-span-6">
+                  <div className="col-span-12 md:col-span-7">
                     <a
                       href={f.href}
                       download

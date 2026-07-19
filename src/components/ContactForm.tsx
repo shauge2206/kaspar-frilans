@@ -1,118 +1,174 @@
 "use client";
+
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { useState } from "react";
 
-const emner = [
-  "Reportasje",
-  "Featurejournalistikk",
-  "Gravesak",
-  "Foto",
-  "Tips til en sak",
-  "Annet",
-];
+type Status = "idle" | "sending" | "sent";
 
 export function ContactForm() {
-  const [navn, setNavn] = useState("");
-  const [epost, setEpost] = useState("");
-  const [emne, setEmne] = useState(emner[0]);
-  const [melding, setMelding] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const reduce = useReducedMotion();
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const subject = encodeURIComponent(`[${emne}] ${navn || "Henvendelse"}`);
-    const body = encodeURIComponent(
-      `${melding}\n\n– ${navn}\n${epost}`,
-    );
-    window.location.href = `mailto:post@kasparknudsen.no?subject=${subject}&body=${body}`;
+    setStatus("sending");
+    setTimeout(() => setStatus("sent"), 900);
   }
 
-  const inputCls =
-    "w-full bg-transparent border-b border-rule focus:border-amber outline-none py-3 font-sans text-base text-ink placeholder:text-ink-mute transition-colors";
-
   return (
-    <form onSubmit={handleSubmit} className="mt-8 space-y-7">
-      <div>
-        <label
-          htmlFor="navn"
-          className="smallcaps text-ink-mute block mb-2"
-        >
-          Navn
-        </label>
-        <input
-          id="navn"
-          type="text"
-          required
-          value={navn}
-          onChange={(e) => setNavn(e.target.value)}
-          placeholder="Ditt navn"
-          className={inputCls}
-        />
-      </div>
-      <div>
-        <label
-          htmlFor="epost"
-          className="smallcaps text-ink-mute block mb-2"
-        >
-          E-post
-        </label>
-        <input
-          id="epost"
-          type="email"
-          required
-          value={epost}
-          onChange={(e) => setEpost(e.target.value)}
-          placeholder="navn@redaksjon.no"
-          className={inputCls}
-        />
-      </div>
-      <div>
-        <label
-          htmlFor="emne"
-          className="smallcaps text-ink-mute block mb-2"
-        >
-          Emne
-        </label>
-        <select
-          id="emne"
-          value={emne}
-          onChange={(e) => setEmne(e.target.value)}
-          className={`${inputCls} cursor-pointer`}
-        >
-          {emner.map((e) => (
-            <option key={e} value={e} className="bg-bg-elev text-ink">
-              {e}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label
-          htmlFor="melding"
-          className="smallcaps text-ink-mute block mb-2"
-        >
-          Melding
-        </label>
-        <textarea
-          id="melding"
-          required
-          rows={6}
-          value={melding}
-          onChange={(e) => setMelding(e.target.value)}
-          placeholder="Hva trenger redaksjonen, og når?"
-          className={`${inputCls} resize-none`}
-        />
-      </div>
-      <div className="flex flex-wrap items-center justify-between gap-4 pt-3">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-          USF Verftet · Bergen
+    <form
+      onSubmit={handleSubmit}
+      className="grid gap-5 bg-bg-elev/80 p-7 ring-1 ring-rule backdrop-blur-md md:p-10"
+    >
+      <Field label="Navn" name="navn" autoComplete="name" required />
+      <Field
+        label="E-post"
+        type="email"
+        name="epost"
+        autoComplete="email"
+        required
+      />
+      <Field
+        label="Tema"
+        name="tema"
+        placeholder="Tips, oppdrag, eller noe annet?"
+      />
+      <Field label="Melding" name="melding" textarea rows={5} required />
+
+      <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs leading-relaxed text-ink-mute">
+          Sensitive opplysninger? Bruk gjerne kryptert e-post eller{" "}
+          <a className="text-ink glow" href="https://signal.org">
+            Signal
+          </a>
+          .
         </p>
-        <button
+        <motion.button
           type="submit"
-          className="font-sans text-sm bg-amber text-bg px-6 py-3.5 rounded-full hover:brightness-110 transition inline-flex items-center gap-2"
+          disabled={status !== "idle"}
+          whileHover={reduce || status !== "idle" ? undefined : { scale: 1.02 }}
+          whileTap={reduce || status !== "idle" ? undefined : { scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 320, damping: 22 }}
+          className="relative inline-flex items-center justify-center gap-2 self-start overflow-hidden bg-ink px-7 py-3.5 font-sans text-sm font-medium text-bg transition disabled:opacity-90"
         >
-          Send melding
-          <span aria-hidden>↗</span>
-        </button>
+          <AnimatePresence mode="wait" initial={false}>
+            {status === "idle" && (
+              <motion.span
+                key="idle"
+                initial={{ y: 16, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -16, opacity: 0 }}
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                className="flex items-center gap-2"
+              >
+                Send melding
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </motion.span>
+            )}
+            {status === "sending" && (
+              <motion.span
+                key="sending"
+                initial={{ y: 16, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -16, opacity: 0 }}
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                className="flex items-center gap-2"
+              >
+                <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-bg/40 border-t-bg" />
+                Sender …
+              </motion.span>
+            )}
+            {status === "sent" && (
+              <motion.span
+                key="sent"
+                initial={{ y: 16, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -16, opacity: 0 }}
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                className="flex items-center gap-2"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12l5 5 9-11"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                Takk – jeg svarer snart
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.button>
       </div>
     </form>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type = "text",
+  required,
+  autoComplete,
+  placeholder,
+  textarea,
+  rows = 4,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  autoComplete?: string;
+  placeholder?: string;
+  textarea?: boolean;
+  rows?: number;
+}) {
+  const id = `field-${name}`;
+  const baseClasses =
+    "peer w-full bg-bg px-4 pt-7 pb-2.5 font-sans text-base text-ink ring-1 ring-rule outline-none transition-all duration-300 placeholder:text-transparent focus:ring-2 focus:ring-amber focus:bg-bg-elev-2/60";
+
+  return (
+    <div className="group relative">
+      {textarea ? (
+        <textarea
+          id={id}
+          name={name}
+          rows={rows}
+          required={required}
+          placeholder={placeholder ?? label}
+          className={`${baseClasses} resize-none`}
+        />
+      ) : (
+        <input
+          id={id}
+          name={name}
+          type={type}
+          required={required}
+          autoComplete={autoComplete}
+          placeholder={placeholder ?? label}
+          className={baseClasses}
+        />
+      )}
+      <label
+        htmlFor={id}
+        className="pointer-events-none absolute left-4 top-2 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-ink-mute transition-colors duration-300 peer-focus:text-amber"
+      >
+        {label}
+      </label>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-3 bottom-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-amber to-warn transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] peer-focus:scale-x-100"
+      />
+    </div>
   );
 }

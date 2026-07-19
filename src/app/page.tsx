@@ -3,6 +3,8 @@ import Image from "next/image";
 import { saker } from "@/lib/saker";
 import { tagLabel } from "@/lib/tags";
 import { Reveal } from "@/components/Reveal";
+import { WordReveal } from "@/components/WordReveal";
+import { FeaturedArticle } from "@/components/FeaturedArticle";
 
 export default function Home() {
   return (
@@ -10,10 +12,10 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-32 md:pb-32">
         <div className="grid md:grid-cols-12 gap-10 items-start">
           <div className="md:col-span-8">
-            <h1 className="font-serif text-[clamp(2.6rem,5.5vw+1rem,6.5rem)] leading-[1.02] tracking-[-0.02em] text-ink">
-              Kaspar Knudsen
+            <h1 className="font-serif text-[clamp(2.21rem,3.91vw+1.02rem,5.44rem)] font-medium leading-[1.02] tracking-[-0.022em] text-ink">
+              <WordReveal text="Kaspar Knudsen" delay={0.05} />
               <span className="block italic text-ink-soft">
-                Frilansjournalist i Bergen.
+                <WordReveal text="Frilansjournalist i Bergen." delay={0.45} />
               </span>
             </h1>
             <div className="mt-8 max-w-xl space-y-4 text-base md:text-lg leading-relaxed text-ink-soft">
@@ -117,22 +119,7 @@ export default function Home() {
                 </text>
               </svg>
             </div>
-            <Link
-              href={`/saker/${saker[0].slug}`}
-              className="tile-hover-amber group block border border-rule p-6 bg-bg-elev"
-            >
-              <p className="smallcaps text-ink-mute mb-3">Sist publisert</p>
-              <p className="font-serif text-xl leading-snug text-ink group-hover:text-amber transition-colors">
-                {saker[0].tittel}
-              </p>
-              <p className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-mute">
-                {saker[0].publikasjon} · {saker[0].dato}
-              </p>
-              <span className="glow font-sans text-sm mt-5 inline-flex items-center gap-2 text-amber">
-                Åpne saken
-                <span aria-hidden>↘</span>
-              </span>
-            </Link>
+            <FeaturedArticle saker={saker} />
           </div>
         </div>
       </section>
@@ -143,7 +130,7 @@ export default function Home() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="smallcaps text-amber mb-4">Posisjon</p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+            <h2 className="font-serif text-[clamp(1.5rem,1.6vw+0.9rem,2.3rem)] font-medium leading-[1.1] tracking-tight">
               Kvalitetsjournalistikk fra Bergen.
             </h2>
           </div>
@@ -169,7 +156,7 @@ export default function Home() {
         <div className="flex items-end justify-between mb-12 gap-6">
           <div>
             <p className="smallcaps text-amber mb-3">Utvalgt</p>
-            <h2 className="font-serif text-4xl md:text-5xl">
+            <h2 className="font-serif text-[clamp(1.7rem,2.55vw+0.85rem,3.06rem)] font-medium leading-[1.02] tracking-tight">
               Saker fra arkivet
             </h2>
           </div>
@@ -192,6 +179,7 @@ export default function Home() {
                 src={saker[0].hovedbilde}
                 alt={saker[0].bildetekst}
                 fill
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 58vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 priority
@@ -231,6 +219,7 @@ export default function Home() {
                 src={saker[1].hovedbilde}
                 alt={saker[1].bildetekst}
                 fill
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 42vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
@@ -268,6 +257,7 @@ export default function Home() {
                 src={saker[2].hovedbilde}
                 alt={saker[2].bildetekst}
                 fill
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 42vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
@@ -319,7 +309,7 @@ export default function Home() {
         <Reveal>
           <div className="tile-hover-amber border border-rule bg-bg-elev p-10 md:p-14">
             <p className="smallcaps text-amber mb-5">Bestilling</p>
-            <h2 className="font-serif text-3xl md:text-5xl leading-tight max-w-3xl">
+            <h2 className="font-serif text-[clamp(1.53rem,2.55vw+0.85rem,2.72rem)] font-medium leading-tight tracking-tight max-w-3xl">
               Trenger redaksjonen din en frilanser?
             </h2>
             <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">

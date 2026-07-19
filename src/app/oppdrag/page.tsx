@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
+import { WordReveal } from "@/components/WordReveal";
 
 export const metadata = {
   title: "Oppdrag og priser, Kaspar Knudsen",
@@ -59,10 +60,10 @@ export default function OppdragPage() {
     <div>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
         <p className="smallcaps text-amber mb-5">Oppdrag</p>
-        <h1 className="font-serif text-[clamp(2.4rem,5vw,4.8rem)] leading-tight tracking-tight max-w-4xl">
-          Tre måter å bestille.
+        <h1 className="font-serif text-[clamp(2.04rem,3.4vw+0.85rem,4.42rem)] font-medium leading-tight tracking-[-0.02em] max-w-4xl">
+          <WordReveal text="Tre måter å bestille." delay={0.05} />
           <span className="block italic text-ink-soft">
-            Stykkpris, dagsats, periode.
+            <WordReveal text="Stykkpris, dagsats, periode." delay={0.4} />
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-ink-soft text-lg leading-relaxed">

@@ -11,7 +11,7 @@ const nav = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-bg/85 border-b border-rule">
+    <header className="sticky top-0 z-40 bg-bg/95 border-b border-rule">
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between gap-6">
         <Link
           href="/"

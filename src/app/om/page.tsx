@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
+import { WordReveal } from "@/components/WordReveal";
 
 export const metadata = {
   title: "Om Kaspar Knudsen – frilansjournalist i Bergen",
@@ -47,10 +48,10 @@ export default function OmPage() {
     <div>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
         <p className="smallcaps text-amber mb-5">Bio</p>
-        <h1 className="font-serif text-[clamp(2.4rem,5vw,4.8rem)] leading-[1.05] tracking-tight max-w-4xl">
-          Om Kaspar Knudsen
+        <h1 className="font-serif text-[clamp(2.04rem,3.4vw+0.85rem,4.42rem)] font-medium leading-[1.05] tracking-[-0.02em] max-w-4xl">
+          <WordReveal text="Om Kaspar Knudsen" delay={0.05} />
           <span className="block italic text-ink-soft">
-            Frilansjournalist i Bergen.
+            <WordReveal text="Frilansjournalist i Bergen." delay={0.4} />
           </span>
         </h1>
       </section>
@@ -237,10 +238,7 @@ export default function OmPage() {
           <ol className="md:col-span-8 md:col-start-5">
             <Reveal>
               <li className="grid grid-cols-12 items-baseline gap-x-6 gap-y-3 border-t border-rule py-8 md:py-10">
-                <span className="col-span-2 font-mono text-sm uppercase tracking-[0.2em] text-amber md:col-span-1">
-                  1
-                </span>
-                <h3 className="col-span-10 font-serif text-2xl leading-tight md:col-span-4">
+                <h3 className="col-span-12 font-serif text-2xl leading-tight md:col-span-5">
                   Idé og research
                 </h3>
                 <p className="col-span-12 text-ink-soft leading-relaxed md:col-span-7">
@@ -252,10 +250,7 @@ export default function OmPage() {
             </Reveal>
             <Reveal delay={80}>
               <li className="grid grid-cols-12 items-baseline gap-x-6 gap-y-3 border-t border-rule py-8 md:py-10">
-                <span className="col-span-2 font-mono text-sm uppercase tracking-[0.2em] text-amber md:col-span-1">
-                  2
-                </span>
-                <h3 className="col-span-10 font-serif text-2xl leading-tight md:col-span-4">
+                <h3 className="col-span-12 font-serif text-2xl leading-tight md:col-span-5">
                   Kildearbeid
                 </h3>
                 <p className="col-span-12 text-ink-soft leading-relaxed md:col-span-7">
@@ -267,10 +262,7 @@ export default function OmPage() {
             </Reveal>
             <Reveal delay={160}>
               <li className="grid grid-cols-12 items-baseline gap-x-6 gap-y-3 border-t border-rule py-8 md:py-10">
-                <span className="col-span-2 font-mono text-sm uppercase tracking-[0.2em] text-amber md:col-span-1">
-                  3
-                </span>
-                <h3 className="col-span-10 font-serif text-2xl leading-tight md:col-span-4">
+                <h3 className="col-span-12 font-serif text-2xl leading-tight md:col-span-5">
                   Feltarbeid og bilder
                 </h3>
                 <p className="col-span-12 text-ink-soft leading-relaxed md:col-span-7">
@@ -282,10 +274,7 @@ export default function OmPage() {
             </Reveal>
             <Reveal delay={240}>
               <li className="grid grid-cols-12 items-baseline gap-x-6 gap-y-3 border-t border-rule py-8 md:py-10">
-                <span className="col-span-2 font-mono text-sm uppercase tracking-[0.2em] text-amber md:col-span-1">
-                  4
-                </span>
-                <h3 className="col-span-10 font-serif text-2xl leading-tight md:col-span-4">
+                <h3 className="col-span-12 font-serif text-2xl leading-tight md:col-span-5">
                   Levering
                 </h3>
                 <p className="col-span-12 text-ink-soft leading-relaxed md:col-span-7">
@@ -350,16 +339,10 @@ export default function OmPage() {
           {tjenester.map((t, i) => (
             <Reveal key={t.tittel} delay={i * 80}>
               <li className="grid grid-cols-12 items-baseline gap-x-6 gap-y-3 border-t border-rule py-8 first:border-t-0 first:pt-0 md:py-10">
-                <span
-                  aria-hidden
-                  className="col-span-2 font-mono text-sm uppercase tracking-[0.2em] text-amber md:col-span-1"
-                >
-                  {i + 1}
-                </span>
-                <h3 className="col-span-10 font-serif text-2xl leading-tight md:col-span-5">
+                <h3 className="col-span-12 font-serif text-2xl leading-tight md:col-span-5">
                   {t.tittel}
                 </h3>
-                <p className="col-span-12 text-ink-soft leading-relaxed md:col-span-6">
+                <p className="col-span-12 text-ink-soft leading-relaxed md:col-span-7">
                   {t.tekst}
                 </p>
               </li>

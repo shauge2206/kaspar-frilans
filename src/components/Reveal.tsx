@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-// Re-fires the fadeUp animation every time the element re-enters the viewport.
-// When the element scrolls out, `visible` is cleared and the CSS animation is
-// removed; re-entering re-adds the class, replaying the animation.
+// Fires the fadeUp animation once, the first time the element enters the
+// viewport, then stops observing. It does not re-play on scroll-back, which
+// avoids repeated animation work while scrolling.
 export function Reveal({
   children,
   className = "",
@@ -25,16 +25,13 @@ export function Reveal({
         entries.forEach((e) => {
           if (e.isIntersecting) {
             timeoutId = setTimeout(() => setVisible(true), delay);
-          } else {
-            if (timeoutId) {
-              clearTimeout(timeoutId);
-              timeoutId = null;
-            }
-            setVisible(false);
+            obs.disconnect();
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" },
+      // threshold 0 (not a ratio) so tall elements taller than the viewport
+      // still trigger — a ratio like 0.12 can never be met by very long articles.
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
     );
     obs.observe(el);
     return () => {
